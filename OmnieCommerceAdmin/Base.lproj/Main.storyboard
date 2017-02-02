@@ -81,7 +81,10 @@
                         <constraints>
                             <constraint firstItem="xGf-vz-8B6" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="2pR-wm-7tU"/>
                             <constraint firstAttribute="trailing" secondItem="whr-fV-2YZ" secondAttribute="trailing" id="Che-oA-Fts"/>
-                            <constraint firstItem="whr-fV-2YZ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="EJN-zd-Mla"/>
+                            <constraint firstItem="whr-fV-2YZ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="EJN-zd-Mla">
+                                <variation key="heightClass=compact-widthClass=compact" constant="-20"/>
+                                <variation key="heightClass=compact-widthClass=regular" constant="-20"/>
+                            </constraint>
                             <constraint firstAttribute="bottom" secondItem="xGf-vz-8B6" secondAttribute="bottom" id="PR7-Bn-1Ne"/>
                             <constraint firstAttribute="trailing" secondItem="xGf-vz-8B6" secondAttribute="trailing" id="SZ1-YH-Ays"/>
                             <constraint firstItem="xGf-vz-8B6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="cXy-aE-qgq"/>
@@ -89,6 +92,7 @@
                             <constraint firstItem="whr-fV-2YZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="o9e-aX-qjK"/>
                         </constraints>
                     </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="guestView" destination="xGf-vz-8B6" id="Qo2-AE-vZp"/>
                         <outlet property="userView" destination="whr-fV-2YZ" id="M3y-0c-nbx"/>
