@@ -1,9 +1,22 @@
-/* 
-  Localizable.strings
-  OmnieCommerceAdmin
-
-  Created by msm72 on 02.02.17.
-  Copyright © 2017 Omniesoft. All rights reserved.
-*/
+/*
+ Localizable.strings
+ OmnieCommerceAdmin
+ 
+ Created by msm72 on 02.02.17.
+ Copyright © 2017 Omniesoft. All rights reserved.
+ */
 
 // Menu Items
+"My organization"               =   "Мої організації";
+"Services"                      =   "Послуги";
+"Orders"                        =   "Замовлення";
+"Messages"                      =   "Повідомлення";
+"News"                          =   "Новини";
+"Management Resources"          =   "Керування персоналом";
+"Statistics"                    =   "Статистика";
+"Discounts"                     =   "Знижки";
+"My office"                     =   "Мій кабінет";
+"Settings"                      =   "Налаштування";
+"Help"                          =   "Справка";
+"OmnieSoft"                     =   "OmnieSoft";
+"Sign Out"                      =   "Вийти";

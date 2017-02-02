@@ -10,10 +10,11 @@
 		8E8B37A6952A87F0D2737C02 /* Pods_OmnieCommerceAdmin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE7B7698EDC4E9318058B61D /* Pods_OmnieCommerceAdmin.framework */; };
 		B1EADCCB1E436316006341D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EADCCA1E436316006341D2 /* AppDelegate.swift */; };
 		B1EADCD21E436316006341D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1EADCD11E436316006341D2 /* Assets.xcassets */; };
-		B1EADCE81E43732F006341D2 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B1EADCE71E43732F006341D2 /* Info.plist */; };
 		B1EADCED1E4374C2006341D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1EADCE91E4374C2006341D2 /* LaunchScreen.storyboard */; };
 		B1EADCEE1E4374C2006341D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1EADCEB1E4374C2006341D2 /* Main.storyboard */; };
 		B1EADCF51E437534006341D2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B1EADCF71E437534006341D2 /* Localizable.strings */; };
+		B1EADCFD1E43794F006341D2 /* LaunchScreenView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1EADCFC1E43794F006341D2 /* LaunchScreenView.xib */; };
+		B1EADCFF1E437968006341D2 /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EADCFE1E437968006341D2 /* LaunchScreenView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,9 +30,11 @@
 		B1EADCF11E4374E2006341D2 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		B1EADCF21E4374E3006341D2 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Main.strings; sourceTree = "<group>"; };
 		B1EADCF61E437534006341D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
-		B1EADCF81E437536006341D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		B1EADCF91E437537006341D2 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
-		B1EADCFA1E437538006341D2 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B1EADCFC1E43794F006341D2 /* LaunchScreenView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreenView.xib; sourceTree = "<group>"; };
+		B1EADCFE1E437968006341D2 /* LaunchScreenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
+		B1EADD001E437B7F006341D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B1EADD011E437B81006341D2 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B1EADD021E437B83006341D2 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
 		BE7B7698EDC4E9318058B61D /* Pods_OmnieCommerceAdmin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OmnieCommerceAdmin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3521CD7320E35D8C0761F46 /* Pods-OmnieCommerceAdmin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OmnieCommerceAdmin.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OmnieCommerceAdmin/Pods-OmnieCommerceAdmin.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -108,6 +111,7 @@
 		B1EADCDD1E437238006341D2 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				B1EADCFB1E4378D0006341D2 /* UIViews */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -134,6 +138,15 @@
 				B1EADCF71E437534006341D2 /* Localizable.strings */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		B1EADCFB1E4378D0006341D2 /* UIViews */ = {
+			isa = PBXGroup;
+			children = (
+				B1EADCFE1E437968006341D2 /* LaunchScreenView.swift */,
+				B1EADCFC1E43794F006341D2 /* LaunchScreenView.xib */,
+			);
+			path = UIViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,8 +215,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B1EADCF51E437534006341D2 /* Localizable.strings in Resources */,
+				B1EADCFD1E43794F006341D2 /* LaunchScreenView.xib in Resources */,
 				B1EADCED1E4374C2006341D2 /* LaunchScreen.storyboard in Resources */,
-				B1EADCE81E43732F006341D2 /* Info.plist in Resources */,
 				B1EADCD21E436316006341D2 /* Assets.xcassets in Resources */,
 				B1EADCEE1E4374C2006341D2 /* Main.storyboard in Resources */,
 			);
@@ -265,6 +278,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B1EADCCB1E436316006341D2 /* AppDelegate.swift in Sources */,
+				B1EADCFF1E437968006341D2 /* LaunchScreenView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,9 +311,9 @@
 			isa = PBXVariantGroup;
 			children = (
 				B1EADCF61E437534006341D2 /* Base */,
-				B1EADCF81E437536006341D2 /* en */,
-				B1EADCF91E437537006341D2 /* ru */,
-				B1EADCFA1E437538006341D2 /* uk */,
+				B1EADD001E437B7F006341D2 /* en */,
+				B1EADD011E437B81006341D2 /* ru */,
+				B1EADD021E437B83006341D2 /* uk */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
