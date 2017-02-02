@@ -15,7 +15,7 @@ extension UIView {
             backgroundColor = UIColor(hexString: "#252929", withAlpha: 1.0)
         
         default:
-            backgroundColor = UIColor(hexString: "#25ab9d", withAlpha: 1.0)
+            backgroundColor = UIColor(hexString: (Config.Constants.isUserGuest) ? "#25ab9d" : "#ececec", withAlpha: 1.0)
         }
     }
 }

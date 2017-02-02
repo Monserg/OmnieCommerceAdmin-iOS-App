@@ -22,6 +22,35 @@
 		B1EADD341E4390A2006341D2 /* MainShowWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EADD2D1E4390A2006341D2 /* MainShowWorker.swift */; };
 		B1FBB8921E43B99000C02BC3 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FBB8911E43B99000C02BC3 /* UIView+Extensions.swift */; };
 		B1FBB8941E43BA9700C02BC3 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FBB8931E43BA9700C02BC3 /* UIColor+Extensions.swift */; };
+		B1FBB8961E43BF6500C02BC3 /* UIFont+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FBB8951E43BF6500C02BC3 /* UIFont+Extensions.swift */; };
+		B1FBB8991E43C09C00C02BC3 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FBB8981E43C09C00C02BC3 /* CustomLabel.swift */; };
+		B1FBB89B1E43C50300C02BC3 /* UILabel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FBB89A1E43C50300C02BC3 /* UILabel+Extensions.swift */; };
+		B1FBB89D1E43C57000C02BC3 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FBB89C1E43C57000C02BC3 /* String+Ext.swift */; };
+		B1FBB8B81E43C75600C02BC3 /* helveticaneuecyr-black.otf in Resources */ = {isa = PBXBuildFile; fileRef = B1FBB89F1E43C75600C02BC3 /* helveticaneuecyr-black.otf */; };
+		B1FBB8B91E43C75600C02BC3 /* helveticaneuecyr-blackitalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B1FBB8A01E43C75600C02BC3 /* helveticaneuecyr-blackitalic.otf */; };
+		B1FBB8BA1E43C75600C02BC3 /* helveticaneuecyr-bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B1FBB8A11E43C75600C02BC3 /* helveticaneuecyr-bold.otf */; };
+		B1FBB8BB1E43C75600C02BC3 /* helveticaneuecyr-bolditalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B1FBB8A21E43C75600C02BC3 /* helveticaneuecyr-bolditalic.otf */; };
+		B1FBB8BC1E43C75600C02BC3 /* helveticaneuecyr-heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = B1FBB8A31E43C75600C02BC3 /* helveticaneuecyr-heavy.otf */; };
+		B1FBB8BD1E43C75600C02BC3 /* helveticaneuecyr-heavyitalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B1FBB8A41E43C75600C02BC3 /* helveticaneuecyr-heavyitalic.otf */; };
+		B1FBB8BE1E43C75600C02BC3 /* helveticaneuecyr-italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B1FBB8A51E43C75600C02BC3 /* helveticaneuecyr-italic.otf */; };
+		B1FBB8BF1E43C75600C02BC3 /* helveticaneuecyr-light.otf in Resources */ = {isa = PBXBuildFile; fileRef = B1FBB8A61E43C75600C02BC3 /* helveticaneuecyr-light.otf */; };
+		B1FBB8C01E43C75600C02BC3 /* helveticaneuecyr-lightitalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B1FBB8A71E43C75600C02BC3 /* helveticaneuecyr-lightitalic.otf */; };
+		B1FBB8C11E43C75600C02BC3 /* helveticaneuecyr-medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = B1FBB8A81E43C75600C02BC3 /* helveticaneuecyr-medium.otf */; };
+		B1FBB8C21E43C75600C02BC3 /* helveticaneuecyr-mediumitaicl.otf in Resources */ = {isa = PBXBuildFile; fileRef = B1FBB8A91E43C75600C02BC3 /* helveticaneuecyr-mediumitaicl.otf */; };
+		B1FBB8C31E43C75600C02BC3 /* helveticaneuecyr-roman.otf in Resources */ = {isa = PBXBuildFile; fileRef = B1FBB8AA1E43C75600C02BC3 /* helveticaneuecyr-roman.otf */; };
+		B1FBB8C41E43C75600C02BC3 /* helveticaneuecyr-thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = B1FBB8AB1E43C75600C02BC3 /* helveticaneuecyr-thin.otf */; };
+		B1FBB8C51E43C75600C02BC3 /* helveticaneuecyr-thinitalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B1FBB8AC1E43C75600C02BC3 /* helveticaneuecyr-thinitalic.otf */; };
+		B1FBB8C61E43C75600C02BC3 /* helveticaneuecyr-ultralight.otf in Resources */ = {isa = PBXBuildFile; fileRef = B1FBB8AD1E43C75600C02BC3 /* helveticaneuecyr-ultralight.otf */; };
+		B1FBB8C71E43C75600C02BC3 /* helveticaneuecyr-ultralightitalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B1FBB8AE1E43C75600C02BC3 /* helveticaneuecyr-ultralightitalic.otf */; };
+		B1FBB8C81E43C75600C02BC3 /* UBUNTU-B.TTF in Resources */ = {isa = PBXBuildFile; fileRef = B1FBB8AF1E43C75600C02BC3 /* UBUNTU-B.TTF */; };
+		B1FBB8C91E43C75600C02BC3 /* UBUNTU-BI.TTF in Resources */ = {isa = PBXBuildFile; fileRef = B1FBB8B01E43C75600C02BC3 /* UBUNTU-BI.TTF */; };
+		B1FBB8CA1E43C75600C02BC3 /* UBUNTU-C.TTF in Resources */ = {isa = PBXBuildFile; fileRef = B1FBB8B11E43C75600C02BC3 /* UBUNTU-C.TTF */; };
+		B1FBB8CB1E43C75600C02BC3 /* UBUNTU-I.TTF in Resources */ = {isa = PBXBuildFile; fileRef = B1FBB8B21E43C75600C02BC3 /* UBUNTU-I.TTF */; };
+		B1FBB8CC1E43C75600C02BC3 /* UBUNTU-L.TTF in Resources */ = {isa = PBXBuildFile; fileRef = B1FBB8B31E43C75600C02BC3 /* UBUNTU-L.TTF */; };
+		B1FBB8CD1E43C75600C02BC3 /* UBUNTU-LI.TTF in Resources */ = {isa = PBXBuildFile; fileRef = B1FBB8B41E43C75600C02BC3 /* UBUNTU-LI.TTF */; };
+		B1FBB8CE1E43C75600C02BC3 /* UBUNTU-M.TTF in Resources */ = {isa = PBXBuildFile; fileRef = B1FBB8B51E43C75600C02BC3 /* UBUNTU-M.TTF */; };
+		B1FBB8CF1E43C75600C02BC3 /* UBUNTU-MI.TTF in Resources */ = {isa = PBXBuildFile; fileRef = B1FBB8B61E43C75600C02BC3 /* UBUNTU-MI.TTF */; };
+		B1FBB8D01E43C75600C02BC3 /* UBUNTU-R.TTF in Resources */ = {isa = PBXBuildFile; fileRef = B1FBB8B71E43C75600C02BC3 /* UBUNTU-R.TTF */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +76,35 @@
 		B1EADD2D1E4390A2006341D2 /* MainShowWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainShowWorker.swift; sourceTree = "<group>"; };
 		B1FBB8911E43B99000C02BC3 /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		B1FBB8931E43BA9700C02BC3 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		B1FBB8951E43BF6500C02BC3 /* UIFont+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Extensions.swift"; sourceTree = "<group>"; };
+		B1FBB8981E43C09C00C02BC3 /* CustomLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
+		B1FBB89A1E43C50300C02BC3 /* UILabel+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Extensions.swift"; sourceTree = "<group>"; };
+		B1FBB89C1E43C57000C02BC3 /* String+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
+		B1FBB89F1E43C75600C02BC3 /* helveticaneuecyr-black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "helveticaneuecyr-black.otf"; sourceTree = "<group>"; };
+		B1FBB8A01E43C75600C02BC3 /* helveticaneuecyr-blackitalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "helveticaneuecyr-blackitalic.otf"; sourceTree = "<group>"; };
+		B1FBB8A11E43C75600C02BC3 /* helveticaneuecyr-bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "helveticaneuecyr-bold.otf"; sourceTree = "<group>"; };
+		B1FBB8A21E43C75600C02BC3 /* helveticaneuecyr-bolditalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "helveticaneuecyr-bolditalic.otf"; sourceTree = "<group>"; };
+		B1FBB8A31E43C75600C02BC3 /* helveticaneuecyr-heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "helveticaneuecyr-heavy.otf"; sourceTree = "<group>"; };
+		B1FBB8A41E43C75600C02BC3 /* helveticaneuecyr-heavyitalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "helveticaneuecyr-heavyitalic.otf"; sourceTree = "<group>"; };
+		B1FBB8A51E43C75600C02BC3 /* helveticaneuecyr-italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "helveticaneuecyr-italic.otf"; sourceTree = "<group>"; };
+		B1FBB8A61E43C75600C02BC3 /* helveticaneuecyr-light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "helveticaneuecyr-light.otf"; sourceTree = "<group>"; };
+		B1FBB8A71E43C75600C02BC3 /* helveticaneuecyr-lightitalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "helveticaneuecyr-lightitalic.otf"; sourceTree = "<group>"; };
+		B1FBB8A81E43C75600C02BC3 /* helveticaneuecyr-medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "helveticaneuecyr-medium.otf"; sourceTree = "<group>"; };
+		B1FBB8A91E43C75600C02BC3 /* helveticaneuecyr-mediumitaicl.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "helveticaneuecyr-mediumitaicl.otf"; sourceTree = "<group>"; };
+		B1FBB8AA1E43C75600C02BC3 /* helveticaneuecyr-roman.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "helveticaneuecyr-roman.otf"; sourceTree = "<group>"; };
+		B1FBB8AB1E43C75600C02BC3 /* helveticaneuecyr-thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "helveticaneuecyr-thin.otf"; sourceTree = "<group>"; };
+		B1FBB8AC1E43C75600C02BC3 /* helveticaneuecyr-thinitalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "helveticaneuecyr-thinitalic.otf"; sourceTree = "<group>"; };
+		B1FBB8AD1E43C75600C02BC3 /* helveticaneuecyr-ultralight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "helveticaneuecyr-ultralight.otf"; sourceTree = "<group>"; };
+		B1FBB8AE1E43C75600C02BC3 /* helveticaneuecyr-ultralightitalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "helveticaneuecyr-ultralightitalic.otf"; sourceTree = "<group>"; };
+		B1FBB8AF1E43C75600C02BC3 /* UBUNTU-B.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "UBUNTU-B.TTF"; sourceTree = "<group>"; };
+		B1FBB8B01E43C75600C02BC3 /* UBUNTU-BI.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "UBUNTU-BI.TTF"; sourceTree = "<group>"; };
+		B1FBB8B11E43C75600C02BC3 /* UBUNTU-C.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "UBUNTU-C.TTF"; sourceTree = "<group>"; };
+		B1FBB8B21E43C75600C02BC3 /* UBUNTU-I.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "UBUNTU-I.TTF"; sourceTree = "<group>"; };
+		B1FBB8B31E43C75600C02BC3 /* UBUNTU-L.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "UBUNTU-L.TTF"; sourceTree = "<group>"; };
+		B1FBB8B41E43C75600C02BC3 /* UBUNTU-LI.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "UBUNTU-LI.TTF"; sourceTree = "<group>"; };
+		B1FBB8B51E43C75600C02BC3 /* UBUNTU-M.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "UBUNTU-M.TTF"; sourceTree = "<group>"; };
+		B1FBB8B61E43C75600C02BC3 /* UBUNTU-MI.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "UBUNTU-MI.TTF"; sourceTree = "<group>"; };
+		B1FBB8B71E43C75600C02BC3 /* UBUNTU-R.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "UBUNTU-R.TTF"; sourceTree = "<group>"; };
 		BE7B7698EDC4E9318058B61D /* Pods_OmnieCommerceAdmin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OmnieCommerceAdmin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3521CD7320E35D8C0761F46 /* Pods-OmnieCommerceAdmin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OmnieCommerceAdmin.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OmnieCommerceAdmin/Pods-OmnieCommerceAdmin.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -124,6 +182,7 @@
 			children = (
 				B1FBB8901E43B97100C02BC3 /* Extensions */,
 				B1EADD061E4386DC006341D2 /* Models */,
+				B1FBB8971E43C06400C02BC3 /* UILabels */,
 				B1EADCFB1E4378D0006341D2 /* UIViews */,
 			);
 			path = Common;
@@ -147,6 +206,7 @@
 		B1EADCE61E4372E0006341D2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B1FBB89E1E43C75600C02BC3 /* Fonts */,
 				B1EADCD11E436316006341D2 /* Assets.xcassets */,
 				B1EADCE71E43732F006341D2 /* Info.plist */,
 				B1EADCF71E437534006341D2 /* Localizable.strings */,
@@ -186,10 +246,53 @@
 		B1FBB8901E43B97100C02BC3 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				B1FBB89C1E43C57000C02BC3 /* String+Ext.swift */,
 				B1FBB8931E43BA9700C02BC3 /* UIColor+Extensions.swift */,
 				B1FBB8911E43B99000C02BC3 /* UIView+Extensions.swift */,
+				B1FBB8951E43BF6500C02BC3 /* UIFont+Extensions.swift */,
+				B1FBB89A1E43C50300C02BC3 /* UILabel+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B1FBB8971E43C06400C02BC3 /* UILabels */ = {
+			isa = PBXGroup;
+			children = (
+				B1FBB8981E43C09C00C02BC3 /* CustomLabel.swift */,
+			);
+			path = UILabels;
+			sourceTree = "<group>";
+		};
+		B1FBB89E1E43C75600C02BC3 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				B1FBB89F1E43C75600C02BC3 /* helveticaneuecyr-black.otf */,
+				B1FBB8A01E43C75600C02BC3 /* helveticaneuecyr-blackitalic.otf */,
+				B1FBB8A11E43C75600C02BC3 /* helveticaneuecyr-bold.otf */,
+				B1FBB8A21E43C75600C02BC3 /* helveticaneuecyr-bolditalic.otf */,
+				B1FBB8A31E43C75600C02BC3 /* helveticaneuecyr-heavy.otf */,
+				B1FBB8A41E43C75600C02BC3 /* helveticaneuecyr-heavyitalic.otf */,
+				B1FBB8A51E43C75600C02BC3 /* helveticaneuecyr-italic.otf */,
+				B1FBB8A61E43C75600C02BC3 /* helveticaneuecyr-light.otf */,
+				B1FBB8A71E43C75600C02BC3 /* helveticaneuecyr-lightitalic.otf */,
+				B1FBB8A81E43C75600C02BC3 /* helveticaneuecyr-medium.otf */,
+				B1FBB8A91E43C75600C02BC3 /* helveticaneuecyr-mediumitaicl.otf */,
+				B1FBB8AA1E43C75600C02BC3 /* helveticaneuecyr-roman.otf */,
+				B1FBB8AB1E43C75600C02BC3 /* helveticaneuecyr-thin.otf */,
+				B1FBB8AC1E43C75600C02BC3 /* helveticaneuecyr-thinitalic.otf */,
+				B1FBB8AD1E43C75600C02BC3 /* helveticaneuecyr-ultralight.otf */,
+				B1FBB8AE1E43C75600C02BC3 /* helveticaneuecyr-ultralightitalic.otf */,
+				B1FBB8AF1E43C75600C02BC3 /* UBUNTU-B.TTF */,
+				B1FBB8B01E43C75600C02BC3 /* UBUNTU-BI.TTF */,
+				B1FBB8B11E43C75600C02BC3 /* UBUNTU-C.TTF */,
+				B1FBB8B21E43C75600C02BC3 /* UBUNTU-I.TTF */,
+				B1FBB8B31E43C75600C02BC3 /* UBUNTU-L.TTF */,
+				B1FBB8B41E43C75600C02BC3 /* UBUNTU-LI.TTF */,
+				B1FBB8B51E43C75600C02BC3 /* UBUNTU-M.TTF */,
+				B1FBB8B61E43C75600C02BC3 /* UBUNTU-MI.TTF */,
+				B1FBB8B71E43C75600C02BC3 /* UBUNTU-R.TTF */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,9 +360,34 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1FBB8C41E43C75600C02BC3 /* helveticaneuecyr-thin.otf in Resources */,
+				B1FBB8CE1E43C75600C02BC3 /* UBUNTU-M.TTF in Resources */,
+				B1FBB8CB1E43C75600C02BC3 /* UBUNTU-I.TTF in Resources */,
 				B1EADCF51E437534006341D2 /* Localizable.strings in Resources */,
+				B1FBB8C81E43C75600C02BC3 /* UBUNTU-B.TTF in Resources */,
 				B1EADCD21E436316006341D2 /* Assets.xcassets in Resources */,
+				B1FBB8B91E43C75600C02BC3 /* helveticaneuecyr-blackitalic.otf in Resources */,
+				B1FBB8CA1E43C75600C02BC3 /* UBUNTU-C.TTF in Resources */,
+				B1FBB8CF1E43C75600C02BC3 /* UBUNTU-MI.TTF in Resources */,
+				B1FBB8BC1E43C75600C02BC3 /* helveticaneuecyr-heavy.otf in Resources */,
 				B1EADCEE1E4374C2006341D2 /* Main.storyboard in Resources */,
+				B1FBB8BF1E43C75600C02BC3 /* helveticaneuecyr-light.otf in Resources */,
+				B1FBB8C91E43C75600C02BC3 /* UBUNTU-BI.TTF in Resources */,
+				B1FBB8C51E43C75600C02BC3 /* helveticaneuecyr-thinitalic.otf in Resources */,
+				B1FBB8CC1E43C75600C02BC3 /* UBUNTU-L.TTF in Resources */,
+				B1FBB8BB1E43C75600C02BC3 /* helveticaneuecyr-bolditalic.otf in Resources */,
+				B1FBB8C11E43C75600C02BC3 /* helveticaneuecyr-medium.otf in Resources */,
+				B1FBB8BA1E43C75600C02BC3 /* helveticaneuecyr-bold.otf in Resources */,
+				B1FBB8CD1E43C75600C02BC3 /* UBUNTU-LI.TTF in Resources */,
+				B1FBB8C01E43C75600C02BC3 /* helveticaneuecyr-lightitalic.otf in Resources */,
+				B1FBB8BE1E43C75600C02BC3 /* helveticaneuecyr-italic.otf in Resources */,
+				B1FBB8C31E43C75600C02BC3 /* helveticaneuecyr-roman.otf in Resources */,
+				B1FBB8D01E43C75600C02BC3 /* UBUNTU-R.TTF in Resources */,
+				B1FBB8B81E43C75600C02BC3 /* helveticaneuecyr-black.otf in Resources */,
+				B1FBB8C21E43C75600C02BC3 /* helveticaneuecyr-mediumitaicl.otf in Resources */,
+				B1FBB8BD1E43C75600C02BC3 /* helveticaneuecyr-heavyitalic.otf in Resources */,
+				B1FBB8C61E43C75600C02BC3 /* helveticaneuecyr-ultralight.otf in Resources */,
+				B1FBB8C71E43C75600C02BC3 /* helveticaneuecyr-ultralightitalic.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,13 +449,17 @@
 				B1EADD311E4390A2006341D2 /* MainShowPresenter.swift in Sources */,
 				B1EADCCB1E436316006341D2 /* AppDelegate.swift in Sources */,
 				B1FBB8921E43B99000C02BC3 /* UIView+Extensions.swift in Sources */,
+				B1FBB89D1E43C57000C02BC3 /* String+Ext.swift in Sources */,
 				B1EADD081E4386F2006341D2 /* Config.swift in Sources */,
 				B1EADD301E4390A2006341D2 /* MainShowModels.swift in Sources */,
 				B1EADD321E4390A2006341D2 /* MainShowRouter.swift in Sources */,
+				B1FBB89B1E43C50300C02BC3 /* UILabel+Extensions.swift in Sources */,
 				B1EADD341E4390A2006341D2 /* MainShowWorker.swift in Sources */,
 				B1EADD2F1E4390A2006341D2 /* MainShowInteractor.swift in Sources */,
 				B1FBB8941E43BA9700C02BC3 /* UIColor+Extensions.swift in Sources */,
+				B1FBB8991E43C09C00C02BC3 /* CustomLabel.swift in Sources */,
 				B1EADD331E4390A2006341D2 /* MainShowViewController.swift in Sources */,
+				B1FBB8961E43BF6500C02BC3 /* UIFont+Extensions.swift in Sources */,
 				B1EADD2E1E4390A2006341D2 /* MainShowConfigurator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

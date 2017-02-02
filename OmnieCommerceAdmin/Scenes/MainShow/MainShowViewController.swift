@@ -46,7 +46,7 @@ class MainShowViewController: UIViewController, MainShowViewControllerInput {
     
 
     // MARK: - Custom Functions
-    func showBackground() {
+    func showBackground() {        
         switch Config.Constants.isUserGuest {
         case true:
             userView.isHidden = true
