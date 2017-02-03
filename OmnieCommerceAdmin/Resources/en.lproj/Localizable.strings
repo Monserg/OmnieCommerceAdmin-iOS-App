@@ -26,3 +26,8 @@
 "Welcome"                       =   "Welcome!";
 "Registration"                  =   "Registration";
 "Forgot password"               =   "Forgot Password";
+
+
+// Fields
+"Name"                          =   "Name";
+"Password"                      =   "Password";

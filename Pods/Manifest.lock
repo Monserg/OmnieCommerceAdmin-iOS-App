@@ -1,21 +1,15 @@
 PODS:
-  - Eureka (1.7.0)
-  - GenericPasswordRow (1.0.0):
-    - Eureka (~> 1.7)
   - Localize-Swift (1.7.1)
   - SWRevealViewController (2.3.0)
 
 DEPENDENCIES:
-  - GenericPasswordRow (~> 1.0)
   - Localize-Swift (~> 1.6)
   - SWRevealViewController (~> 2.3)
 
 SPEC CHECKSUMS:
-  Eureka: 2020d9faeef7b7e9adeb9e3d8af779e5931c1897
-  GenericPasswordRow: 3dfd1f7ae354eae83e6ee6b8807b9cd63a0c4442
   Localize-Swift: 6cabc1087c0e910e77bfa87c2ed3f65c80c0b2df
   SWRevealViewController: 6d3fd97f70112fd7cef9de14df4260eacce4c63a
 
-PODFILE CHECKSUM: 8b6819114c6e0264a15fc5438a1eff1b3b3a90da
+PODFILE CHECKSUM: ece9845041c1f6bc80de068b0219242abd195c26
 
 COCOAPODS: 1.2.0.beta.1

@@ -20,6 +20,27 @@ extension UIFont {
         }
     }
     
+    open class var ubuntuLight12: UIFont {
+        set {
+            self.ubuntuLight12 = UIFont(name: "Ubuntu-Light", size: 12.0)!
+        }
+        
+        get {
+            return UIFont(name: "Ubuntu-Light", size: 12.0)!
+        }
+    }
+
+    open class var ubuntuLightItalic12: UIFont {
+        set {
+            self.ubuntuLightItalic12 = UIFont(name: "Ubuntu-LightItalic", size: 12.0)!
+        }
+        
+        get {
+            return UIFont(name: "Ubuntu-LightItalic", size: 12.0)!
+        }
+    }
+
+    
     // HelveticaNeueCyr
     open class var helveticaNeueCyrLight15: UIFont {
         set {

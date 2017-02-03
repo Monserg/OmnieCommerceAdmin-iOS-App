@@ -26,3 +26,8 @@
 "Welcome"                       =   "Вітаємо!";
 "Registration"                  =   "Реєстрація";
 "Forgot password"               =   "Забули пароль";
+
+
+// Fields
+"Name"                          =   "Ім'я";
+"Password"                      =   "Пароль";
