@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8E8B37A6952A87F0D2737C02 /* Pods_OmnieCommerceAdmin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE7B7698EDC4E9318058B61D /* Pods_OmnieCommerceAdmin.framework */; };
+		B137231D1E44E7DB001AE102 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B137231C1E44E7DB001AE102 /* CustomTextField.swift */; };
 		B1C320B81E44A3C400D84BC3 /* SignUpShowConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C320B11E44A3C400D84BC3 /* SignUpShowConfigurator.swift */; };
 		B1C320B91E44A3C400D84BC3 /* SignUpShowInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C320B21E44A3C400D84BC3 /* SignUpShowInteractor.swift */; };
 		B1C320BA1E44A3C400D84BC3 /* SignUpShowModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C320B31E44A3C400D84BC3 /* SignUpShowModels.swift */; };
@@ -88,6 +89,7 @@
 
 /* Begin PBXFileReference section */
 		07DD4A3748C06FC225729B4E /* Pods-OmnieCommerceAdmin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OmnieCommerceAdmin.release.xcconfig"; path = "Pods/Target Support Files/Pods-OmnieCommerceAdmin/Pods-OmnieCommerceAdmin.release.xcconfig"; sourceTree = "<group>"; };
+		B137231C1E44E7DB001AE102 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		B1C320B11E44A3C400D84BC3 /* SignUpShowConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpShowConfigurator.swift; sourceTree = "<group>"; };
 		B1C320B21E44A3C400D84BC3 /* SignUpShowInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpShowInteractor.swift; sourceTree = "<group>"; };
 		B1C320B31E44A3C400D84BC3 /* SignUpShowModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpShowModels.swift; sourceTree = "<group>"; };
@@ -204,6 +206,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B137231B1E44E7B3001AE102 /* UITextFields */ = {
+			isa = PBXGroup;
+			children = (
+				B137231C1E44E7DB001AE102 /* CustomTextField.swift */,
+			);
+			path = UITextFields;
+			sourceTree = "<group>";
+		};
 		B1C320B01E44A3AA00D84BC3 /* SignUpShow */ = {
 			isa = PBXGroup;
 			children = (
@@ -295,6 +305,7 @@
 				B1FBB8901E43B97100C02BC3 /* Extensions */,
 				B1EADD061E4386DC006341D2 /* Models */,
 				B1FBB8971E43C06400C02BC3 /* UILabels */,
+				B137231B1E44E7B3001AE102 /* UITextFields */,
 				B1EADCFB1E4378D0006341D2 /* UIViews */,
 			);
 			path = Common;
@@ -625,6 +636,7 @@
 				B1FBB8961E43BF6500C02BC3 /* UIFont+Extensions.swift in Sources */,
 				B1C320CD1E44A43A00D84BC3 /* SignInShowModels.swift in Sources */,
 				B1EADD2E1E4390A2006341D2 /* MainShowConfigurator.swift in Sources */,
+				B137231D1E44E7DB001AE102 /* CustomTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
