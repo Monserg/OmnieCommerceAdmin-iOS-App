@@ -6,5 +6,6 @@ target 'OmnieCommerceAdmin' do
 
     pod 'SWRevealViewController', '~> 2.3'
     pod 'Localize-Swift', '~> 1.6'
-
+    pod 'GenericPasswordRow', '~> 1.0'
+    
 end
