@@ -41,7 +41,7 @@ class MainShowViewController: UIViewController, MainShowViewControllerInput {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        doSomethingOnLoad()
+        doSomethingOnLoad()        
     }
     
 

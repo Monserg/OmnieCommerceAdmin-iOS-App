@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		8E8B37A6952A87F0D2737C02 /* Pods_OmnieCommerceAdmin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE7B7698EDC4E9318058B61D /* Pods_OmnieCommerceAdmin.framework */; };
+		B1C320B81E44A3C400D84BC3 /* SignUpShowConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C320B11E44A3C400D84BC3 /* SignUpShowConfigurator.swift */; };
+		B1C320B91E44A3C400D84BC3 /* SignUpShowInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C320B21E44A3C400D84BC3 /* SignUpShowInteractor.swift */; };
+		B1C320BA1E44A3C400D84BC3 /* SignUpShowModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C320B31E44A3C400D84BC3 /* SignUpShowModels.swift */; };
+		B1C320BB1E44A3C400D84BC3 /* SignUpShowPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C320B41E44A3C400D84BC3 /* SignUpShowPresenter.swift */; };
+		B1C320BC1E44A3C400D84BC3 /* SignUpShowRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C320B51E44A3C400D84BC3 /* SignUpShowRouter.swift */; };
+		B1C320BD1E44A3C400D84BC3 /* SignUpShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C320B61E44A3C400D84BC3 /* SignUpShowViewController.swift */; };
+		B1C320BE1E44A3C400D84BC3 /* SignUpShowWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C320B71E44A3C400D84BC3 /* SignUpShowWorker.swift */; };
+		B1C320C01E44A3D900D84BC3 /* SignUpShow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1C320BF1E44A3D900D84BC3 /* SignUpShow.storyboard */; };
 		B1EADCCB1E436316006341D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EADCCA1E436316006341D2 /* AppDelegate.swift */; };
 		B1EADCD21E436316006341D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1EADCD11E436316006341D2 /* Assets.xcassets */; };
 		B1EADCEE1E4374C2006341D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1EADCEB1E4374C2006341D2 /* Main.storyboard */; };
@@ -51,10 +59,26 @@
 		B1FBB8CE1E43C75600C02BC3 /* UBUNTU-M.TTF in Resources */ = {isa = PBXBuildFile; fileRef = B1FBB8B51E43C75600C02BC3 /* UBUNTU-M.TTF */; };
 		B1FBB8CF1E43C75600C02BC3 /* UBUNTU-MI.TTF in Resources */ = {isa = PBXBuildFile; fileRef = B1FBB8B61E43C75600C02BC3 /* UBUNTU-MI.TTF */; };
 		B1FBB8D01E43C75600C02BC3 /* UBUNTU-R.TTF in Resources */ = {isa = PBXBuildFile; fileRef = B1FBB8B71E43C75600C02BC3 /* UBUNTU-R.TTF */; };
+		B1FBB8D91E43D28F00C02BC3 /* OrganizationsListShowConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FBB8D21E43D28F00C02BC3 /* OrganizationsListShowConfigurator.swift */; };
+		B1FBB8DA1E43D28F00C02BC3 /* OrganizationsListShowInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FBB8D31E43D28F00C02BC3 /* OrganizationsListShowInteractor.swift */; };
+		B1FBB8DB1E43D28F00C02BC3 /* OrganizationsListShowModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FBB8D41E43D28F00C02BC3 /* OrganizationsListShowModels.swift */; };
+		B1FBB8DC1E43D28F00C02BC3 /* OrganizationsListShowPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FBB8D51E43D28F00C02BC3 /* OrganizationsListShowPresenter.swift */; };
+		B1FBB8DD1E43D28F00C02BC3 /* OrganizationsListShowRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FBB8D61E43D28F00C02BC3 /* OrganizationsListShowRouter.swift */; };
+		B1FBB8DE1E43D28F00C02BC3 /* OrganizationsListShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FBB8D71E43D28F00C02BC3 /* OrganizationsListShowViewController.swift */; };
+		B1FBB8DF1E43D28F00C02BC3 /* OrganizationsListShowWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FBB8D81E43D28F00C02BC3 /* OrganizationsListShowWorker.swift */; };
+		B1FBB8E11E43D29E00C02BC3 /* OrganizationsListShow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1FBB8E01E43D29E00C02BC3 /* OrganizationsListShow.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		07DD4A3748C06FC225729B4E /* Pods-OmnieCommerceAdmin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OmnieCommerceAdmin.release.xcconfig"; path = "Pods/Target Support Files/Pods-OmnieCommerceAdmin/Pods-OmnieCommerceAdmin.release.xcconfig"; sourceTree = "<group>"; };
+		B1C320B11E44A3C400D84BC3 /* SignUpShowConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpShowConfigurator.swift; sourceTree = "<group>"; };
+		B1C320B21E44A3C400D84BC3 /* SignUpShowInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpShowInteractor.swift; sourceTree = "<group>"; };
+		B1C320B31E44A3C400D84BC3 /* SignUpShowModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpShowModels.swift; sourceTree = "<group>"; };
+		B1C320B41E44A3C400D84BC3 /* SignUpShowPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpShowPresenter.swift; sourceTree = "<group>"; };
+		B1C320B51E44A3C400D84BC3 /* SignUpShowRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpShowRouter.swift; sourceTree = "<group>"; };
+		B1C320B61E44A3C400D84BC3 /* SignUpShowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpShowViewController.swift; sourceTree = "<group>"; };
+		B1C320B71E44A3C400D84BC3 /* SignUpShowWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpShowWorker.swift; sourceTree = "<group>"; };
+		B1C320BF1E44A3D900D84BC3 /* SignUpShow.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignUpShow.storyboard; sourceTree = "<group>"; };
 		B1EADCC71E436316006341D2 /* OmnieCommerceAdmin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OmnieCommerceAdmin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1EADCCA1E436316006341D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B1EADCD11E436316006341D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
@@ -105,6 +129,14 @@
 		B1FBB8B51E43C75600C02BC3 /* UBUNTU-M.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "UBUNTU-M.TTF"; sourceTree = "<group>"; };
 		B1FBB8B61E43C75600C02BC3 /* UBUNTU-MI.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "UBUNTU-MI.TTF"; sourceTree = "<group>"; };
 		B1FBB8B71E43C75600C02BC3 /* UBUNTU-R.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "UBUNTU-R.TTF"; sourceTree = "<group>"; };
+		B1FBB8D21E43D28F00C02BC3 /* OrganizationsListShowConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationsListShowConfigurator.swift; sourceTree = "<group>"; };
+		B1FBB8D31E43D28F00C02BC3 /* OrganizationsListShowInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationsListShowInteractor.swift; sourceTree = "<group>"; };
+		B1FBB8D41E43D28F00C02BC3 /* OrganizationsListShowModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationsListShowModels.swift; sourceTree = "<group>"; };
+		B1FBB8D51E43D28F00C02BC3 /* OrganizationsListShowPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationsListShowPresenter.swift; sourceTree = "<group>"; };
+		B1FBB8D61E43D28F00C02BC3 /* OrganizationsListShowRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationsListShowRouter.swift; sourceTree = "<group>"; };
+		B1FBB8D71E43D28F00C02BC3 /* OrganizationsListShowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationsListShowViewController.swift; sourceTree = "<group>"; };
+		B1FBB8D81E43D28F00C02BC3 /* OrganizationsListShowWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationsListShowWorker.swift; sourceTree = "<group>"; };
+		B1FBB8E01E43D29E00C02BC3 /* OrganizationsListShow.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = OrganizationsListShow.storyboard; sourceTree = "<group>"; };
 		BE7B7698EDC4E9318058B61D /* Pods_OmnieCommerceAdmin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OmnieCommerceAdmin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3521CD7320E35D8C0761F46 /* Pods-OmnieCommerceAdmin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OmnieCommerceAdmin.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OmnieCommerceAdmin/Pods-OmnieCommerceAdmin.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -136,6 +168,20 @@
 				BE7B7698EDC4E9318058B61D /* Pods_OmnieCommerceAdmin.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B1C320B01E44A3AA00D84BC3 /* SignUpShow */ = {
+			isa = PBXGroup;
+			children = (
+				B1C320B11E44A3C400D84BC3 /* SignUpShowConfigurator.swift */,
+				B1C320B21E44A3C400D84BC3 /* SignUpShowInteractor.swift */,
+				B1C320B31E44A3C400D84BC3 /* SignUpShowModels.swift */,
+				B1C320B41E44A3C400D84BC3 /* SignUpShowPresenter.swift */,
+				B1C320B51E44A3C400D84BC3 /* SignUpShowRouter.swift */,
+				B1C320B61E44A3C400D84BC3 /* SignUpShowViewController.swift */,
+				B1C320B71E44A3C400D84BC3 /* SignUpShowWorker.swift */,
+			);
+			path = SignUpShow;
 			sourceTree = "<group>";
 		};
 		B1EADCBE1E436316006341D2 = {
@@ -173,6 +219,8 @@
 			isa = PBXGroup;
 			children = (
 				B1EADCEB1E4374C2006341D2 /* Main.storyboard */,
+				B1FBB8E01E43D29E00C02BC3 /* OrganizationsListShow.storyboard */,
+				B1C320BF1E44A3D900D84BC3 /* SignUpShow.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -192,6 +240,8 @@
 			isa = PBXGroup;
 			children = (
 				B1EADD261E43906D006341D2 /* MainShow */,
+				B1FBB8D11E43D23100C02BC3 /* OrganizationsListShow */,
+				B1C320B01E44A3AA00D84BC3 /* SignUpShow */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -295,6 +345,20 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		B1FBB8D11E43D23100C02BC3 /* OrganizationsListShow */ = {
+			isa = PBXGroup;
+			children = (
+				B1FBB8D21E43D28F00C02BC3 /* OrganizationsListShowConfigurator.swift */,
+				B1FBB8D31E43D28F00C02BC3 /* OrganizationsListShowInteractor.swift */,
+				B1FBB8D41E43D28F00C02BC3 /* OrganizationsListShowModels.swift */,
+				B1FBB8D51E43D28F00C02BC3 /* OrganizationsListShowPresenter.swift */,
+				B1FBB8D61E43D28F00C02BC3 /* OrganizationsListShowRouter.swift */,
+				B1FBB8D71E43D28F00C02BC3 /* OrganizationsListShowViewController.swift */,
+				B1FBB8D81E43D28F00C02BC3 /* OrganizationsListShowWorker.swift */,
+			);
+			path = OrganizationsListShow;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -366,6 +430,8 @@
 				B1EADCF51E437534006341D2 /* Localizable.strings in Resources */,
 				B1FBB8C81E43C75600C02BC3 /* UBUNTU-B.TTF in Resources */,
 				B1EADCD21E436316006341D2 /* Assets.xcassets in Resources */,
+				B1FBB8E11E43D29E00C02BC3 /* OrganizationsListShow.storyboard in Resources */,
+				B1C320C01E44A3D900D84BC3 /* SignUpShow.storyboard in Resources */,
 				B1FBB8B91E43C75600C02BC3 /* helveticaneuecyr-blackitalic.otf in Resources */,
 				B1FBB8CA1E43C75600C02BC3 /* UBUNTU-C.TTF in Resources */,
 				B1FBB8CF1E43C75600C02BC3 /* UBUNTU-MI.TTF in Resources */,
@@ -446,19 +512,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1FBB8DC1E43D28F00C02BC3 /* OrganizationsListShowPresenter.swift in Sources */,
 				B1EADD311E4390A2006341D2 /* MainShowPresenter.swift in Sources */,
 				B1EADCCB1E436316006341D2 /* AppDelegate.swift in Sources */,
+				B1FBB8DF1E43D28F00C02BC3 /* OrganizationsListShowWorker.swift in Sources */,
+				B1FBB8DA1E43D28F00C02BC3 /* OrganizationsListShowInteractor.swift in Sources */,
 				B1FBB8921E43B99000C02BC3 /* UIView+Extensions.swift in Sources */,
+				B1C320B81E44A3C400D84BC3 /* SignUpShowConfigurator.swift in Sources */,
+				B1C320B91E44A3C400D84BC3 /* SignUpShowInteractor.swift in Sources */,
 				B1FBB89D1E43C57000C02BC3 /* String+Ext.swift in Sources */,
+				B1FBB8DB1E43D28F00C02BC3 /* OrganizationsListShowModels.swift in Sources */,
 				B1EADD081E4386F2006341D2 /* Config.swift in Sources */,
 				B1EADD301E4390A2006341D2 /* MainShowModels.swift in Sources */,
 				B1EADD321E4390A2006341D2 /* MainShowRouter.swift in Sources */,
 				B1FBB89B1E43C50300C02BC3 /* UILabel+Extensions.swift in Sources */,
+				B1FBB8DE1E43D28F00C02BC3 /* OrganizationsListShowViewController.swift in Sources */,
 				B1EADD341E4390A2006341D2 /* MainShowWorker.swift in Sources */,
+				B1C320BA1E44A3C400D84BC3 /* SignUpShowModels.swift in Sources */,
+				B1C320BB1E44A3C400D84BC3 /* SignUpShowPresenter.swift in Sources */,
 				B1EADD2F1E4390A2006341D2 /* MainShowInteractor.swift in Sources */,
+				B1FBB8D91E43D28F00C02BC3 /* OrganizationsListShowConfigurator.swift in Sources */,
+				B1FBB8DD1E43D28F00C02BC3 /* OrganizationsListShowRouter.swift in Sources */,
 				B1FBB8941E43BA9700C02BC3 /* UIColor+Extensions.swift in Sources */,
+				B1C320BC1E44A3C400D84BC3 /* SignUpShowRouter.swift in Sources */,
+				B1C320BD1E44A3C400D84BC3 /* SignUpShowViewController.swift in Sources */,
 				B1FBB8991E43C09C00C02BC3 /* CustomLabel.swift in Sources */,
 				B1EADD331E4390A2006341D2 /* MainShowViewController.swift in Sources */,
+				B1C320BE1E44A3C400D84BC3 /* SignUpShowWorker.swift in Sources */,
 				B1FBB8961E43BF6500C02BC3 /* UIFont+Extensions.swift in Sources */,
 				B1EADD2E1E4390A2006341D2 /* MainShowConfigurator.swift in Sources */,
 			);
