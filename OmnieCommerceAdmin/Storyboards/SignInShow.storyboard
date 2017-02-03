@@ -28,7 +28,7 @@
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image-logo-vertical" translatesAutoresizingMaskIntoConstraints="NO" id="msX-uK-raq">
                                         <rect key="frame" x="0.0" y="0.0" width="275" height="138.5"/>
                                         <variation key="heightClass=compact-widthClass=compact" image="image-logo-horizontal"/>
-                                        <variation key="heightClass=compact-widthClass=regular" image="28ABC4AB-6949-4E30-90C2-7C4BE015AFB0"/>
+                                        <variation key="heightClass=compact-widthClass=regular" image="5DE8C4F2-4ECE-4EE6-8619-E72C6E0079EB"/>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="r0S-9A-Zgy">
                                         <rect key="frame" x="0.0" y="138.5" width="275" height="496.5"/>
@@ -37,7 +37,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="275" height="136.5"/>
                                                 <subviews>
                                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kyb-Ck-2ZP" userLabel="Title Label" customClass="CustomLabel" customModule="OmnieCommerceAdmin" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="96" width="275" height="20.5"/>
+                                                        <rect key="frame" x="0.0" y="74" width="275" height="42.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -83,7 +83,7 @@
                                                                         <rect key="frame" x="0.0" y="0.0" width="275" height="37"/>
                                                                         <subviews>
                                                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="swM-42-2YU" userLabel="Name Text Field" customClass="CustomTextField" customModule="OmnieCommerceAdmin" customModuleProvider="target">
-                                                                                <rect key="frame" x="8" y="17" width="259" height="17"/>
+                                                                                <rect key="frame" x="8" y="15" width="259" height="19"/>
                                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                                 <nil key="textColor"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -109,7 +109,7 @@
                                                                         <rect key="frame" x="0.0" y="37" width="275" height="37"/>
                                                                         <subviews>
                                                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="puu-bd-4T6" userLabel="Password Text Field" customClass="CustomTextField" customModule="OmnieCommerceAdmin" customModuleProvider="target">
-                                                                                <rect key="frame" x="8" y="17" width="259" height="17"/>
+                                                                                <rect key="frame" x="8" y="15" width="259" height="19"/>
                                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                                 <nil key="textColor"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -246,7 +246,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="28ABC4AB-6949-4E30-90C2-7C4BE015AFB0" width="113" height="148">
+        <image name="5DE8C4F2-4ECE-4EE6-8619-E72C6E0079EB" width="113" height="148">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
