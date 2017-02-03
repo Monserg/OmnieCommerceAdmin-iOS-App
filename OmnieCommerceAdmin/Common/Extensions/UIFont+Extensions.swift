@@ -31,4 +31,14 @@ extension UIFont {
         }
     }
 
+    open class var helveticaNeueCyrThin47: UIFont {
+        set {
+            self.helveticaNeueCyrThin47 = UIFont(name: "helveticaNeueCyr-Thin", size: 47.0)!
+        }
+        
+        get {
+            return UIFont(name: "helveticaNeueCyr-Thin", size: 47.0)!
+        }
+    }
+
 }

@@ -25,7 +25,9 @@ class SignInShowViewController: UIViewController, SignInShowViewControllerInput 
     var output: SignInShowViewControllerOutput!
     var router: SignInShowRouter!
     
+    @IBOutlet weak var scrollView: UIScrollView!
 
+    
     // MARK: - Class initialization
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -38,15 +40,18 @@ class SignInShowViewController: UIViewController, SignInShowViewControllerInput 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        doSomethingOnLoad()
+        doInitialSetupOnLoad()
     }
     
 
     // MARK: - Custom Functions
-    func doSomethingOnLoad() {
+    func doInitialSetupOnLoad() {
         // NOTE: Ask the Interactor to do some work
         let request = SignInShow.Something.Request()
         output.doSomething(request: request)
+        
+        // Setup App background color theme
+        view.applyBackgroundTheme()
     }
     
     // Display logic

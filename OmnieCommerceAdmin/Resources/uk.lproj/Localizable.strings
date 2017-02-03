@@ -20,3 +20,9 @@
 "Help"                          =   "Справка";
 "OmnieSoft"                     =   "OmnieSoft";
 "Sign Out"                      =   "Вийти";
+
+
+// Labels
+"Welcome"                       =   "Вітаємо!";
+"Registration"                  =   "Реєстрація";
+"Forgot password"               =   "Забули пароль";

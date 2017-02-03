@@ -20,3 +20,9 @@
 "Help"                          =   "Help";
 "OmnieSoft"                     =   "OmnieSoft";
 "Sign Out"                      =   "Sign Out";
+
+
+// Labels
+"Welcome"                       =   "Welcome!";
+"Registration"                  =   "Registration";
+"Forgot password"               =   "Forgot Password";

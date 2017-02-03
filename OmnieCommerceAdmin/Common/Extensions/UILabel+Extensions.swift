@@ -11,6 +11,7 @@ import Localize_Swift
 
 enum LabelStyle: String {
     case HelveticaNeueCyrLight15VeryLightGray = "HelveticaNeueCyrLight15VeryLightGray"
+    case HelveticaNeueCyrThin47VeryLightGray = "HelveticaNeueCyrThin47VeryLightGray"
 }
 
 extension UILabel {
@@ -32,8 +33,12 @@ extension UILabel {
         case .HelveticaNeueCyrLight15VeryLightGray:
             font = UIFont.helveticaNeueCyrLight15
             textColor = UIColor(hexString: "#dedede", withAlpha: 1.0)
-        }
         
+        case .HelveticaNeueCyrThin47VeryLightGray:
+            font = UIFont.helveticaNeueCyrThin47
+            textColor = UIColor(hexString: "#dedede", withAlpha: 1.0)
+    }
+    
         self.adjustsFontSizeToFitWidth = true
     }
 }

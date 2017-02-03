@@ -41,7 +41,7 @@ class MainShowViewController: UIViewController, MainShowViewControllerInput {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        doSomethingOnLoad()        
+        doInitialSetupOnLoad()
     }
     
 
@@ -58,7 +58,7 @@ class MainShowViewController: UIViewController, MainShowViewControllerInput {
         }
     }
     
-    func doSomethingOnLoad() {
+    func doInitialSetupOnLoad() {
         // NOTE: Ask the Interactor to do some work
         let request = MainShow.Something.Request()
         output.doSomething(request: request)

@@ -38,15 +38,18 @@ class ForgotPasswordShowViewController: UIViewController, ForgotPasswordShowView
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        doSomethingOnLoad()
+        doInitialSetupOnLoad()
     }
     
 
     // MARK: - Custom Functions
-    func doSomethingOnLoad() {
+    func doInitialSetupOnLoad() {
         // NOTE: Ask the Interactor to do some work
         let request = ForgotPasswordShow.Something.Request()
         output.doSomething(request: request)
+
+        // Setup App background color theme
+        view.applyBackgroundTheme()
     }
     
     // Display logic
