@@ -15,13 +15,7 @@ enum FieldStyle: String {
 
 @IBDesignable class CustomTextField: UITextField {
     // MARK: - Properties
-    // MARK: - Properties
     var attributedPlaceholderString: NSAttributedString!
-    
-    @IBInspectable var fieldLast: Bool? {
-        set { returnKeyType = (newValue)! ? .default : .next }
-        get { return false }
-    }
     
     @IBInspectable var fieldStyle: String? {
         set {
@@ -34,45 +28,45 @@ enum FieldStyle: String {
     }
     
     
-    // MARK: - Custom Functions
-    func setupWithStyle(_ fieldStyle: FieldStyle) {
-        guard fieldLast != nil else {
-            return
-        }
+    // MARK: - Class Functions
+    override func clearButtonRect(forBounds bounds: CGRect) -> CGRect {
+        let originalRect = super.clearButtonRect(forBounds: bounds)
         
-        tintColor = (Config.Constants.isAppThemesDark) ? (UIColor(hexString: "#5e6969", withAlpha: 1.0)) : (UIColor(hexString: "#9ec9c6", withAlpha: 1.0))
-        keyboardAppearance = (Config.Constants.isAppThemesDark) ? .light : .dark
+        return CGRect.init(origin: CGPoint.init(x: originalRect.origin.x, y: originalRect.origin.y), size: originalRect.size)
+    }
+    
+    
+    // MARK: - Custom Functions
+    // tag = 99: self is last with Return keyboard button
+    func setupWithStyle(_ fieldStyle: FieldStyle) {
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.firstLineHeadIndent  =   0
+        
+        autocapitalizationType              =   .sentences
+        autocorrectionType                  =   .no
+        spellCheckingType                   =   .no
+        keyboardType                        =   .default
+        keyboardAppearance                  =   (Config.Constants.isAppThemesDark) ? .light : .dark
+        enablesReturnKeyAutomatically       =   true
+        returnKeyType                       =   (tag == 99) ? .default : .next
+        isSecureTextEntry                   =   false
         clearButtonMode                     =   .whileEditing
+        font                                =   UIFont.ubuntuLight12
+        textColor                           =   (Config.Constants.isAppThemesDark) ? (UIColor(hexString: "#5e6969", withAlpha: 1.0)) : (UIColor(hexString: "#9ec9c6", withAlpha: 1.0))
+        tintColor                           =   (Config.Constants.isAppThemesDark) ? (UIColor(hexString: "#5e6969", withAlpha: 1.0)) : (UIColor(hexString: "#9ec9c6", withAlpha: 1.0))
 
+        // Placeholder design
+        attributedPlaceholder = NSAttributedString(string: (placeholder?.localized())!, attributes: [NSFontAttributeName: UIFont.ubuntuLightItalic12, NSForegroundColorAttributeName: UIColor(hexString: "#dedede", withAlpha: 1.0)!, NSKernAttributeName: 0.0, NSParagraphStyleAttributeName: paragraphStyle])
+
+        // Set differences
         switch fieldStyle {
-        case .Name:
-            autocapitalizationType          =   .sentences
-            autocorrectionType              =   .no
-            spellCheckingType               =   .no
-            keyboardType                    =   .default
-            keyboardAppearance              =   .default
-            enablesReturnKeyAutomatically   =   true
-            font                            =   UIFont.ubuntuLight12
-            textColor                       =   (Config.Constants.isAppThemesDark) ? (UIColor(hexString: "#5e6969", withAlpha: 1.0)) : (UIColor(hexString: "#9ec9c6", withAlpha: 1.0))
-
-            // Placeholder design
-            attributedPlaceholder = NSAttributedString(string: (placeholder?.localized())!, attributes: [NSFontAttributeName: UIFont.ubuntuLightItalic12, NSForegroundColorAttributeName: UIColor(hexString: "#dedede", withAlpha: 1.0)!, NSKernAttributeName: 0.0, NSParagraphStyleAttributeName: paragraphStyle])
-
         case .Password:
             autocapitalizationType          =   .none
-            autocorrectionType              =   .no
-            spellCheckingType               =   .no
-            keyboardType                    =   .default
-            keyboardAppearance              =   .default
-            enablesReturnKeyAutomatically   =   true
             isSecureTextEntry               =   true
-            font                            =   UIFont.ubuntuLight12
-            textColor                       =   (Config.Constants.isAppThemesDark) ? (UIColor(hexString: "#5e6969", withAlpha: 1.0)) : (UIColor(hexString: "#9ec9c6", withAlpha: 1.0))
             
-            // Placeholder design
-            attributedPlaceholder = NSAttributedString(string: (placeholder?.localized())!, attributes: [NSFontAttributeName: UIFont.ubuntuLightItalic12, NSForegroundColorAttributeName: UIColor(hexString: "#dedede", withAlpha: 1.0)!, NSKernAttributeName: 0.0, NSParagraphStyleAttributeName: paragraphStyle])
+        // Name
+        default:
+            break
         }
     }
 }

@@ -31,3 +31,7 @@
 // Fields
 "Name"                          =   "Ім'я";
 "Password"                      =   "Пароль";
+
+
+// Buttons
+"Sign In"                       =   "Зайти";

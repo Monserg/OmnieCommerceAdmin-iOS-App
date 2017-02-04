@@ -28,7 +28,7 @@
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image-logo-vertical" translatesAutoresizingMaskIntoConstraints="NO" id="msX-uK-raq">
                                         <rect key="frame" x="0.0" y="0.0" width="275" height="138.5"/>
                                         <variation key="heightClass=compact-widthClass=compact" image="image-logo-horizontal"/>
-                                        <variation key="heightClass=compact-widthClass=regular" image="5DE8C4F2-4ECE-4EE6-8619-E72C6E0079EB"/>
+                                        <variation key="heightClass=compact-widthClass=regular" image="61440840-AE9A-477D-9723-96F2AE4DF6AF"/>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="r0S-9A-Zgy">
                                         <rect key="frame" x="0.0" y="138.5" width="275" height="496.5"/>
@@ -83,13 +83,12 @@
                                                                         <rect key="frame" x="0.0" y="0.0" width="275" height="37"/>
                                                                         <subviews>
                                                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="swM-42-2YU" userLabel="Name Text Field" customClass="CustomTextField" customModule="OmnieCommerceAdmin" customModuleProvider="target">
-                                                                                <rect key="frame" x="8" y="15" width="259" height="19"/>
+                                                                                <rect key="frame" x="8" y="15" width="267" height="19"/>
                                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                                 <nil key="textColor"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no"/>
                                                                                 <userDefinedRuntimeAttributes>
-                                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="fieldLast" value="NO"/>
                                                                                     <userDefinedRuntimeAttribute type="string" keyPath="fieldStyle" value="Name"/>
                                                                                 </userDefinedRuntimeAttributes>
                                                                             </textField>
@@ -97,8 +96,7 @@
                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                         <constraints>
                                                                             <constraint firstItem="swM-42-2YU" firstAttribute="leading" secondItem="Esj-u5-vXG" secondAttribute="leading" constant="8" id="4UU-Rf-kcg"/>
-                                                                            <constraint firstAttribute="height" constant="37" id="CTo-CV-gmT"/>
-                                                                            <constraint firstAttribute="trailing" secondItem="swM-42-2YU" secondAttribute="trailing" constant="8" id="Rn0-D0-0nI"/>
+                                                                            <constraint firstAttribute="trailing" secondItem="swM-42-2YU" secondAttribute="trailing" id="Rn0-D0-0nI"/>
                                                                             <constraint firstAttribute="bottom" secondItem="swM-42-2YU" secondAttribute="bottom" constant="3" id="Wl0-Li-vDz"/>
                                                                         </constraints>
                                                                         <userDefinedRuntimeAttributes>
@@ -108,40 +106,68 @@
                                                                     <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x1v-Ri-hv4" userLabel="Password Line View" customClass="CustomView" customModule="OmnieCommerceAdmin" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="37" width="275" height="37"/>
                                                                         <subviews>
-                                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="puu-bd-4T6" userLabel="Password Text Field" customClass="CustomTextField" customModule="OmnieCommerceAdmin" customModuleProvider="target">
-                                                                                <rect key="frame" x="8" y="15" width="259" height="19"/>
+                                                                            <textField opaque="NO" clipsSubviews="YES" tag="99" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="puu-bd-4T6" userLabel="Password Text Field" customClass="CustomTextField" customModule="OmnieCommerceAdmin" customModuleProvider="target">
+                                                                                <rect key="frame" x="8" y="15" width="267" height="19"/>
                                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                                 <nil key="textColor"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no"/>
                                                                                 <userDefinedRuntimeAttributes>
-                                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="fieldLast" value="YES"/>
                                                                                     <userDefinedRuntimeAttribute type="string" keyPath="fieldStyle" value="Password"/>
                                                                                 </userDefinedRuntimeAttributes>
                                                                             </textField>
                                                                         </subviews>
                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                         <constraints>
-                                                                            <constraint firstAttribute="trailing" secondItem="puu-bd-4T6" secondAttribute="trailing" constant="8" id="0WO-na-OkS"/>
+                                                                            <constraint firstAttribute="trailing" secondItem="puu-bd-4T6" secondAttribute="trailing" id="0WO-na-OkS"/>
                                                                             <constraint firstItem="puu-bd-4T6" firstAttribute="leading" secondItem="x1v-Ri-hv4" secondAttribute="leading" constant="8" id="jbw-oi-xUJ"/>
                                                                             <constraint firstAttribute="bottom" secondItem="puu-bd-4T6" secondAttribute="bottom" constant="3" id="mgu-ZH-hXq"/>
-                                                                            <constraint firstAttribute="height" constant="37" id="pSo-7S-xj3"/>
                                                                         </constraints>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="string" keyPath="viewDesign" value="SingleBottomVeryLightGrayLine"/>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </view>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="THC-Uc-Gbl" userLabel="Action Button View">
+                                                                        <rect key="frame" x="0.0" y="74" width="275" height="65"/>
+                                                                        <subviews>
+                                                                            <button clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FFS-4c-Swg" userLabel="Sign In Button" customClass="CustomButton" customModule="OmnieCommerceAdmin" customModuleProvider="target">
+                                                                                <rect key="frame" x="0.0" y="29" width="275" height="36"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="height" constant="36" id="phR-2n-WDH"/>
+                                                                                </constraints>
+                                                                                <state key="normal" title="Sign In"/>
+                                                                                <userDefinedRuntimeAttributes>
+                                                                                    <userDefinedRuntimeAttribute type="string" keyPath="buttonStyle" value="Border"/>
+                                                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                                        <real key="value" value="1"/>
+                                                                                    </userDefinedRuntimeAttribute>
+                                                                                </userDefinedRuntimeAttributes>
+                                                                                <connections>
+                                                                                    <action selector="handlerSignInButtonTap:" destination="593-QN-qcr" eventType="touchUpInside" id="ycf-GO-XfB"/>
+                                                                                </connections>
+                                                                            </button>
+                                                                        </subviews>
+                                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                                        <constraints>
+                                                                            <constraint firstItem="FFS-4c-Swg" firstAttribute="leading" secondItem="THC-Uc-Gbl" secondAttribute="leading" id="OwX-N5-T3Q"/>
+                                                                            <constraint firstAttribute="bottom" secondItem="FFS-4c-Swg" secondAttribute="bottom" id="lNZ-xX-3Ae"/>
+                                                                            <constraint firstAttribute="trailing" secondItem="FFS-4c-Swg" secondAttribute="trailing" id="yqa-m2-iIw"/>
+                                                                        </constraints>
+                                                                    </view>
                                                                 </subviews>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="trailing" secondItem="Esj-u5-vXG" secondAttribute="trailing" id="3fS-hs-MMc"/>
+                                                                    <constraint firstItem="THC-Uc-Gbl" firstAttribute="leading" secondItem="eoE-MW-EyJ" secondAttribute="leading" id="6JU-5q-8tn"/>
                                                                     <constraint firstItem="Esj-u5-vXG" firstAttribute="leading" secondItem="eoE-MW-EyJ" secondAttribute="leading" id="FeF-f2-MFL"/>
                                                                     <constraint firstAttribute="trailing" secondItem="x1v-Ri-hv4" secondAttribute="trailing" id="k14-lo-dcl"/>
                                                                     <constraint firstItem="Esj-u5-vXG" firstAttribute="top" secondItem="eoE-MW-EyJ" secondAttribute="top" id="mSt-1k-tNU"/>
+                                                                    <constraint firstItem="THC-Uc-Gbl" firstAttribute="top" secondItem="x1v-Ri-hv4" secondAttribute="bottom" id="maA-xd-yxN"/>
                                                                     <constraint firstAttribute="trailing" secondItem="Esj-u5-vXG" secondAttribute="trailing" id="mps-8V-1Ee"/>
                                                                     <constraint firstItem="x1v-Ri-hv4" firstAttribute="top" secondItem="Esj-u5-vXG" secondAttribute="bottom" id="nZS-2t-EBr"/>
                                                                     <constraint firstItem="x1v-Ri-hv4" firstAttribute="leading" secondItem="eoE-MW-EyJ" secondAttribute="leading" id="qei-p5-MEC"/>
                                                                     <constraint firstItem="Esj-u5-vXG" firstAttribute="leading" secondItem="eoE-MW-EyJ" secondAttribute="leading" id="tBL-kL-6Va"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="THC-Uc-Gbl" secondAttribute="trailing" id="ygl-qe-5vN"/>
                                                                 </constraints>
                                                             </view>
                                                         </subviews>
@@ -171,8 +197,31 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </stackView>
                                 </subviews>
-                                <variation key="heightClass=compact-widthClass=compact" axis="horizontal" spacing="50"/>
-                                <variation key="heightClass=compact-widthClass=regular" axis="horizontal" spacing="60"/>
+                                <constraints>
+                                    <constraint firstItem="x1v-Ri-hv4" firstAttribute="height" secondItem="Mh1-C1-Q49" secondAttribute="height" multiplier="37:355" id="6vh-Xz-24Q"/>
+                                    <constraint firstItem="Esj-u5-vXG" firstAttribute="height" secondItem="Mh1-C1-Q49" secondAttribute="height" multiplier="37:355" id="XgL-i1-bgD"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="XgL-i1-bgD"/>
+                                        <exclude reference="6vh-Xz-24Q"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=compact" axis="horizontal" spacing="50">
+                                    <mask key="constraints">
+                                        <include reference="XgL-i1-bgD"/>
+                                        <include reference="6vh-Xz-24Q"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=regular" axis="horizontal" spacing="60">
+                                    <mask key="constraints">
+                                        <include reference="XgL-i1-bgD"/>
+                                        <include reference="6vh-Xz-24Q"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="w2b-Bq-AnN" appends="YES" id="acM-a4-r2a"/>
+                                </connections>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -181,8 +230,11 @@
                                 <variation key="heightClass=compact-widthClass=regular" constant="70"/>
                             </constraint>
                             <constraint firstItem="msX-uK-raq" firstAttribute="width" secondItem="7Lg-Ep-VFz" secondAttribute="width" multiplier="180:667" id="Ouy-Ny-5Er"/>
+                            <constraint firstItem="x1v-Ri-hv4" firstAttribute="height" secondItem="7Lg-Ep-VFz" secondAttribute="height" multiplier="37:667" id="Uqk-te-TfL"/>
                             <constraint firstItem="msX-uK-raq" firstAttribute="height" secondItem="7Lg-Ep-VFz" secondAttribute="height" multiplier="132:635" id="YfI-F5-P6b"/>
+                            <constraint firstItem="Esj-u5-vXG" firstAttribute="height" secondItem="7Lg-Ep-VFz" secondAttribute="height" multiplier="37:667" id="eSS-Jh-NEx"/>
                             <constraint firstItem="msX-uK-raq" firstAttribute="height" secondItem="7Lg-Ep-VFz" secondAttribute="height" multiplier="230:375" id="hzz-ug-TEo"/>
+                            <constraint firstItem="THC-Uc-Gbl" firstAttribute="height" secondItem="7Lg-Ep-VFz" secondAttribute="height" multiplier="65:667" id="l9O-hu-1nk"/>
                             <constraint firstAttribute="trailing" secondItem="Mh1-C1-Q49" secondAttribute="trailing" constant="50" id="nyW-Go-uYm">
                                 <variation key="heightClass=compact-widthClass=compact" constant="0.0"/>
                                 <variation key="heightClass=compact-widthClass=regular" constant="0.0"/>
@@ -205,6 +257,8 @@
                                 <include reference="Ouy-Ny-5Er"/>
                                 <exclude reference="YfI-F5-P6b"/>
                                 <exclude reference="hzz-ug-TEo"/>
+                                <exclude reference="eSS-Jh-NEx"/>
+                                <exclude reference="Uqk-te-TfL"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact-widthClass=regular">
@@ -212,8 +266,13 @@
                                 <include reference="Ouy-Ny-5Er"/>
                                 <exclude reference="YfI-F5-P6b"/>
                                 <exclude reference="hzz-ug-TEo"/>
+                                <exclude reference="eSS-Jh-NEx"/>
+                                <exclude reference="Uqk-te-TfL"/>
                             </mask>
                         </variation>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="w2b-Bq-AnN" appends="YES" id="6t3-Ya-Iyc"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="scrollView" destination="cxl-lM-0aG" id="tPm-jc-33E"/>
@@ -241,12 +300,18 @@
                         <constraint firstAttribute="width" constant="134" id="wfg-eW-eCw"/>
                     </constraints>
                 </stackView>
+                <tapGestureRecognizer id="w2b-Bq-AnN">
+                    <connections>
+                        <action selector="handlerTapGestureRecognizer:" destination="593-QN-qcr" id="kxm-cr-yqv"/>
+                        <outlet property="delegate" destination="593-QN-qcr" id="DyK-PD-1WV"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="231.19999999999999" y="63.418290854572717"/>
         </scene>
     </scenes>
     <resources>
-        <image name="5DE8C4F2-4ECE-4EE6-8619-E72C6E0079EB" width="113" height="148">
+        <image name="61440840-AE9A-477D-9723-96F2AE4DF6AF" width="113" height="148">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw

@@ -11,10 +11,29 @@
 
 import UIKit
 
+enum ThemeDesign: String {
+    case LightForUser   =   "LightForUser"
+    case LightForGuest  =   "LightForGuest"
+    case DarkForUser    =   "DarkForUser"
+    case DarkForGuest   =   "DarkForGuest"
+}
+
 struct Config {
     struct Constants {
         // FIXME: - DELETE AFTER TEST
         static let isUserGuest: Bool = true
-        static let isAppThemesDark = false
+        static let isAppThemesDark = true
+    }
+    
+    
+    // MARK: - Functions
+    func applyThemeDesign() -> ThemeDesign {
+        switch Constants.isUserGuest {
+        case true:
+            return (Constants.isAppThemesDark) ? .DarkForGuest : .LightForGuest
+            
+        case false:
+            return (Constants.isAppThemesDark) ? .DarkForUser : .LightForUser
+        }
     }
 }

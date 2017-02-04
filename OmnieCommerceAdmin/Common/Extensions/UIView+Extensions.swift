@@ -9,6 +9,17 @@
 import UIKit
 
 extension UIView {
+    // MARK: - Custom Functions
+    func releasePrint(object: Any) {
+        Swift.print(object)
+    }
+    
+    func print(object: Any) {
+        #if DEBUG
+            Swift.print(object)
+        #endif
+    }
+
     func applyBackgroundTheme() {
         switch Config.Constants.isAppThemesDark {
         case true:

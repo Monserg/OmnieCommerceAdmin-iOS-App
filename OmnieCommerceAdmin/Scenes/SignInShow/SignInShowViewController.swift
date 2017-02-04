@@ -59,4 +59,16 @@ class SignInShowViewController: UIViewController, SignInShowViewControllerInput 
         // NOTE: Display the result from the Presenter
         // nameTextField.text = viewModel.name
     }
+    
+    
+    // MARK: - Actions
+    @IBAction func handlerSignInButtonTap(_ sender: CustomButton) {
+        print(object: "\(type(of: self)): \(#function) run. Sign In button tap.")
+    }
+    
+    
+    // MARK: - Gesture
+    @IBAction func handlerTapGestureRecognizer(_ sender: UITapGestureRecognizer) {
+        view.endEditing(true)
+    }
 }
