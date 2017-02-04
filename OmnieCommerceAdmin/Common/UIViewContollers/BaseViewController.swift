@@ -70,6 +70,16 @@ class BaseViewController: UIViewController {
         #endif
     }
     
+    func hideNavigationBar() {
+        navigationController?.isNavigationBarHidden = true
+    }
+    
+    func showNavigationBar() {
+        if (navigationController?.isNavigationBarHidden == true) {
+            navigationController?.isNavigationBarHidden = false
+        }
+    }
+    
     
     // MARK: - Actions
     func handleKeyboardAction(notification: Notification) {

@@ -60,6 +60,9 @@ class SignInShowViewController: BaseViewController, SignInShowViewControllerInpu
         let request = SignInShow.Something.Request()
         output.doSomething(request: request)
         
+        // Hide navigation bar
+        hideNavigationBar()
+        
         // Apply Container childVC
         signInContainerShowVC       =   UIStoryboard(name: "SignInShow", bundle: nil).instantiateViewController(withIdentifier: "SignInContainerShowVC") as? SignInContainerShowViewController
         
