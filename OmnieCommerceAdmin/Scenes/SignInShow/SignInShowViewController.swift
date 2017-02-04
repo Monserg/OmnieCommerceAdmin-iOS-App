@@ -20,12 +20,14 @@ protocol SignInShowViewControllerOutput {
     func doSomething(request: SignInShow.Something.Request)
 }
 
-class SignInShowViewController: UIViewController, SignInShowViewControllerInput {
+class SignInShowViewController: BaseViewController, SignInShowViewControllerInput {
     // MARK: - Properties
     var output: SignInShowViewControllerOutput!
     var router: SignInShowRouter!
     
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var nameTextField: CustomTextField!
+    @IBOutlet weak var passwordTextField: CustomTextField!
 
     
     // MARK: - Class initialization
@@ -49,6 +51,18 @@ class SignInShowViewController: UIViewController, SignInShowViewControllerInput 
         // NOTE: Ask the Interactor to do some work
         let request = SignInShow.Something.Request()
         output.doSomething(request: request)
+        
+        // Delegates
+        nameTextField.delegate      =   self
+        passwordTextField.delegate  =   self
+        
+        // Add fields to array
+//        textFieldsArray = [CustomTextField]()
+        textFieldsArray.append(nameTextField)
+        textFieldsArray.append(passwordTextField)
+        
+        // Apply keyboard handler
+        scrollViewBase              =   scrollView
         
         // Setup App background color theme
         view.applyBackgroundTheme()

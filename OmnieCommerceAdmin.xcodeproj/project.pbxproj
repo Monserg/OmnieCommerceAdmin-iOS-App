@@ -10,7 +10,7 @@
 		B137231D1E44E7DB001AE102 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B137231C1E44E7DB001AE102 /* CustomTextField.swift */; };
 		B18373A81E458AE200A2F36B /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18373A71E458AE200A2F36B /* CustomButton.swift */; };
 		B18373AA1E458B0800A2F36B /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18373A91E458B0800A2F36B /* UIButton+Extensions.swift */; };
-		B18373B01E458ECE00A2F36B /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18373AF1E458ECE00A2F36B /* UIViewController+Extensions.swift */; };
+		B1BD7AF91E45F64800D8FA0A /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BD7AF81E45F64800D8FA0A /* BaseViewController.swift */; };
 		B1C320B81E44A3C400D84BC3 /* SignUpShowConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C320B11E44A3C400D84BC3 /* SignUpShowConfigurator.swift */; };
 		B1C320B91E44A3C400D84BC3 /* SignUpShowInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C320B21E44A3C400D84BC3 /* SignUpShowInteractor.swift */; };
 		B1C320BA1E44A3C400D84BC3 /* SignUpShowModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C320B31E44A3C400D84BC3 /* SignUpShowModels.swift */; };
@@ -96,7 +96,7 @@
 		B137231C1E44E7DB001AE102 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		B18373A71E458AE200A2F36B /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		B18373A91E458B0800A2F36B /* UIButton+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
-		B18373AF1E458ECE00A2F36B /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		B1BD7AF81E45F64800D8FA0A /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		B1C320B11E44A3C400D84BC3 /* SignUpShowConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpShowConfigurator.swift; sourceTree = "<group>"; };
 		B1C320B21E44A3C400D84BC3 /* SignUpShowInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpShowInteractor.swift; sourceTree = "<group>"; };
 		B1C320B31E44A3C400D84BC3 /* SignUpShowModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpShowModels.swift; sourceTree = "<group>"; };
@@ -228,6 +228,14 @@
 			path = UIButtons;
 			sourceTree = "<group>";
 		};
+		B1BD7AF71E45F61F00D8FA0A /* UIViewContollers */ = {
+			isa = PBXGroup;
+			children = (
+				B1BD7AF81E45F64800D8FA0A /* BaseViewController.swift */,
+			);
+			path = UIViewContollers;
+			sourceTree = "<group>";
+		};
 		B1C320B01E44A3AA00D84BC3 /* SignUpShow */ = {
 			isa = PBXGroup;
 			children = (
@@ -321,6 +329,7 @@
 				B18373A61E458ABD00A2F36B /* UIButtons */,
 				B1FBB8971E43C06400C02BC3 /* UILabels */,
 				B137231B1E44E7B3001AE102 /* UITextFields */,
+				B1BD7AF71E45F61F00D8FA0A /* UIViewContollers */,
 				B1EADCFB1E4378D0006341D2 /* UIViews */,
 			);
 			path = Common;
@@ -395,7 +404,6 @@
 				B1FBB8951E43BF6500C02BC3 /* UIFont+Extensions.swift */,
 				B1FBB89A1E43C50300C02BC3 /* UILabel+Extensions.swift */,
 				B1FBB8911E43B99000C02BC3 /* UIView+Extensions.swift */,
-				B18373AF1E458ECE00A2F36B /* UIViewController+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -628,6 +636,7 @@
 				B1FBB89D1E43C57000C02BC3 /* String+Ext.swift in Sources */,
 				B1C320E61E44CBCD00D84BC3 /* CustomView.swift in Sources */,
 				B1FBB8DB1E43D28F00C02BC3 /* OrganizationsListShowModels.swift in Sources */,
+				B1BD7AF91E45F64800D8FA0A /* BaseViewController.swift in Sources */,
 				B1EADD081E4386F2006341D2 /* Config.swift in Sources */,
 				B1EADD301E4390A2006341D2 /* MainShowModels.swift in Sources */,
 				B1EADD321E4390A2006341D2 /* MainShowRouter.swift in Sources */,
@@ -637,7 +646,6 @@
 				B1EADD341E4390A2006341D2 /* MainShowWorker.swift in Sources */,
 				B1C320BA1E44A3C400D84BC3 /* SignUpShowModels.swift in Sources */,
 				B1C320BB1E44A3C400D84BC3 /* SignUpShowPresenter.swift in Sources */,
-				B18373B01E458ECE00A2F36B /* UIViewController+Extensions.swift in Sources */,
 				B1EADD2F1E4390A2006341D2 /* MainShowInteractor.swift in Sources */,
 				B1C320DB1E44A46700D84BC3 /* ForgotPasswordShowInteractor.swift in Sources */,
 				B1C320DC1E44A46700D84BC3 /* ForgotPasswordShowModels.swift in Sources */,
