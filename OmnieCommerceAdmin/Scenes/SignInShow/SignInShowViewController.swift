@@ -25,9 +25,17 @@ class SignInShowViewController: BaseViewController, SignInShowViewControllerInpu
     var output: SignInShowViewControllerOutput!
     var router: SignInShowRouter!
     
-    @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var nameTextField: CustomTextField!
-    @IBOutlet weak var passwordTextField: CustomTextField!
+    // Container childVC
+    var signInContainerShowVC: SignInContainerShowViewController?
+    
+    private var activeViewController: BaseViewController? {
+        didSet {
+            removeInactiveViewController(inactiveViewController: oldValue)
+            updateActiveViewController()
+        }
+    }
+
+    @IBOutlet weak var containerView: UIView!
 
     
     // MARK: - Class initialization
@@ -52,17 +60,10 @@ class SignInShowViewController: BaseViewController, SignInShowViewControllerInpu
         let request = SignInShow.Something.Request()
         output.doSomething(request: request)
         
-        // Delegates
-        nameTextField.delegate      =   self
-        passwordTextField.delegate  =   self
+        // Apply Container childVC
+        signInContainerShowVC       =   UIStoryboard(name: "SignInShow", bundle: nil).instantiateViewController(withIdentifier: "SignInContainerShowVC") as? SignInContainerShowViewController
         
-        // Add fields to array
-//        textFieldsArray = [CustomTextField]()
-        textFieldsArray.append(nameTextField)
-        textFieldsArray.append(passwordTextField)
-        
-        // Apply keyboard handler
-        scrollViewBase              =   scrollView
+        activeViewController        =   signInContainerShowVC
         
         // Setup App background color theme
         view.applyBackgroundTheme()
@@ -74,6 +75,26 @@ class SignInShowViewController: BaseViewController, SignInShowViewControllerInpu
         // nameTextField.text = viewModel.name
     }
     
+    
+    // MARK: - UIContainerView
+    func removeInactiveViewController(inactiveViewController: UIViewController?) {
+        if let inactiveVC = inactiveViewController {
+            inactiveVC.willMove(toParentViewController: nil)
+            inactiveVC.view.removeFromSuperview()
+            inactiveVC.removeFromParentViewController()
+        }
+    }
+    
+    func updateActiveViewController() {
+        if let activeVC = activeViewController {
+            addChildViewController(activeVC)
+            activeVC.view.frame = containerView.bounds
+            containerView.addSubview(activeVC.view)
+            activeVC.didMove(toParentViewController: self)
+            activeVC.didMove(toParentViewController: self)
+        }
+    }
+
     
     // MARK: - Actions
     @IBAction func handlerRegisterButtonTap(_ sender: CustomButton) {

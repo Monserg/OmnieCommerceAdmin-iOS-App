@@ -21,8 +21,8 @@ enum ThemeDesign: String {
 struct Config {
     struct Constants {
         // FIXME: - DELETE AFTER TEST
-        static let isUserGuest: Bool = true
-        static let isAppThemesDark = true
+        static let isUserGuest: Bool    =   true
+        static let isAppThemesDark      =   false
     }
     
     
