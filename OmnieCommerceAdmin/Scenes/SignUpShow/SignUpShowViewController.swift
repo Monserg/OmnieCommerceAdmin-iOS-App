@@ -20,7 +20,7 @@ protocol SignUpShowViewControllerOutput {
     func doSomething(request: SignUpShow.Something.Request)
 }
 
-class SignUpShowViewController: UIViewController, SignUpShowViewControllerInput {
+class SignUpShowViewController: BaseViewController, SignUpShowViewControllerInput {
     // MARK: - Properties
     var output: SignUpShowViewControllerOutput!
     var router: SignUpShowRouter!
@@ -56,5 +56,13 @@ class SignUpShowViewController: UIViewController, SignUpShowViewControllerInput 
     func displaySomething(viewModel: SignUpShow.Something.ViewModel) {
         // NOTE: Display the result from the Presenter
         // nameTextField.text = viewModel.name
+    }
+    
+    
+    // MARK: - Actions
+    @IBAction func handlerCancelButtonTap(_ sender: CustomButton) {
+        print(object: "\(type(of: self)): \(#function) run.")
+        
+        _ = navigationController?.popToRootViewController(animated: true)
     }
 }

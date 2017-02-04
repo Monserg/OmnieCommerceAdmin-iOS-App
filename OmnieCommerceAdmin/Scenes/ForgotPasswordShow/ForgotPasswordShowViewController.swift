@@ -20,7 +20,7 @@ protocol ForgotPasswordShowViewControllerOutput {
     func doSomething(request: ForgotPasswordShow.Something.Request)
 }
 
-class ForgotPasswordShowViewController: UIViewController, ForgotPasswordShowViewControllerInput {
+class ForgotPasswordShowViewController: BaseViewController, ForgotPasswordShowViewControllerInput {
     // MARK: - Properties
     var output: ForgotPasswordShowViewControllerOutput!
     var router: ForgotPasswordShowRouter!
@@ -57,4 +57,12 @@ class ForgotPasswordShowViewController: UIViewController, ForgotPasswordShowView
         // NOTE: Display the result from the Presenter
         // nameTextField.text = viewModel.name
     }
+    
+    
+    // MARK: - Actions
+    @IBAction func handlerCancelButtonTap(_ sender: CustomButton) {
+        print(object: "\(type(of: self)): \(#function) run.")
+        
+        _ = navigationController?.popToRootViewController(animated: true)
+    }    
 }
