@@ -27,11 +27,13 @@
 "Registration"                  =   "Регистрация";
 "Forgot password"               =   "Забыли пароль";
 "Not yet registered?"           =   "Ещё не зарегистрированы";
+"Wrong Number or Email"         =   "* неправильный номер или Email";
 
 
 // Fields
 "Name"                          =   "Имя";
 "Password"                      =   "Пароль";
+"Phone or Email"                =   "Телефон или Email";
 
 
 // Buttons
@@ -39,3 +41,4 @@
 "Register"                      =   "Зарегистрироваться";
 "Forgot password?"              =   "Забыли пароль?";
 "Cancel"                        =   "Отменить";
+"Send"                          =   "Отправить";

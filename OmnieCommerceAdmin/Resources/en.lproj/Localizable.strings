@@ -27,11 +27,13 @@
 "Registration"                  =   "Registration";
 "Forgot password"               =   "Forgot Password";
 "Not yet registered?"           =   "Not yet registered?";
+"Wrong Number or Email"         =   "* Wrong Number or Email";
 
 
 // Fields
 "Name"                          =   "Name";
 "Password"                      =   "Password";
+"Phone or Email"                =   "Phone or Email";
 
 
 // Buttons
@@ -39,3 +41,4 @@
 "Register"                      =   "Register";
 "Forgot password?"              =   "Forgot Password?";
 "Cancel"                        =   "Cancel";
+"Send"                          =   "Send";
