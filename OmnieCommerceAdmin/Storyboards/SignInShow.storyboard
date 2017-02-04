@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="593-QN-qcr">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -19,25 +19,25 @@
                         <viewControllerLayoutGuide type="bottom" id="c0l-Pc-ARL"/>
                     </layoutGuides>
                     <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="7Lg-Ep-VFz">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Mh1-C1-Q49">
-                                <rect key="frame" x="50" y="32" width="275" height="635"/>
+                                <rect key="frame" x="50" y="32" width="314" height="704"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image-logo-vertical" translatesAutoresizingMaskIntoConstraints="NO" id="msX-uK-raq">
-                                        <rect key="frame" x="0.0" y="0.0" width="275" height="138.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="314" height="153"/>
                                         <variation key="heightClass=compact-widthClass=compact" image="image-logo-horizontal"/>
-                                        <variation key="heightClass=compact-widthClass=regular" image="61440840-AE9A-477D-9723-96F2AE4DF6AF"/>
+                                        <variation key="heightClass=compact-widthClass=regular" image="1FF624D1-457A-4447-9A17-837CE570DFEB"/>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="r0S-9A-Zgy">
-                                        <rect key="frame" x="0.0" y="138.5" width="275" height="496.5"/>
+                                        <rect key="frame" x="0.0" y="153" width="314" height="551"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ARy-td-aPT" userLabel="Title View">
-                                                <rect key="frame" x="0.0" y="0.0" width="275" height="136.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="314" height="150.66666666666669"/>
                                                 <subviews>
                                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kyb-Ck-2ZP" userLabel="Title Label" customClass="CustomLabel" customModule="OmnieCommerceAdmin" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="74" width="275" height="42.5"/>
+                                                        <rect key="frame" x="0.0" y="88.333333333333314" width="314" height="42.333333333333371"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -71,19 +71,19 @@
                                                 </variation>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gDZ-eL-fR8">
-                                                <rect key="frame" x="0.0" y="136.5" width="275" height="360"/>
+                                                <rect key="frame" x="0.0" y="150.66666666666671" width="314" height="400.33333333333326"/>
                                                 <subviews>
                                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cxl-lM-0aG">
-                                                        <rect key="frame" x="0.0" y="0.0" width="275" height="360"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="314" height="400.33333333333331"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eoE-MW-EyJ" userLabel="Content View">
-                                                                <rect key="frame" x="0.0" y="0.0" width="275" height="360"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="314" height="400.33333333333331"/>
                                                                 <subviews>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Esj-u5-vXG" userLabel="Name Line View" customClass="CustomView" customModule="OmnieCommerceAdmin" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="275" height="37"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="314" height="41"/>
                                                                         <subviews>
                                                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="swM-42-2YU" userLabel="Name Text Field" customClass="CustomTextField" customModule="OmnieCommerceAdmin" customModuleProvider="target">
-                                                                                <rect key="frame" x="8" y="15" width="267" height="19"/>
+                                                                                <rect key="frame" x="8" y="19" width="306" height="19"/>
                                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                                 <nil key="textColor"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -104,10 +104,10 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </view>
                                                                     <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x1v-Ri-hv4" userLabel="Password Line View" customClass="CustomView" customModule="OmnieCommerceAdmin" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="37" width="275" height="37"/>
+                                                                        <rect key="frame" x="0.0" y="41" width="314" height="40.666666666666629"/>
                                                                         <subviews>
                                                                             <textField opaque="NO" clipsSubviews="YES" tag="99" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="puu-bd-4T6" userLabel="Password Text Field" customClass="CustomTextField" customModule="OmnieCommerceAdmin" customModuleProvider="target">
-                                                                                <rect key="frame" x="8" y="15" width="267" height="19"/>
+                                                                                <rect key="frame" x="8" y="18.666666666666629" width="306" height="19"/>
                                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                                 <nil key="textColor"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -128,13 +128,10 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </view>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="THC-Uc-Gbl" userLabel="Action Button View">
-                                                                        <rect key="frame" x="0.0" y="74" width="275" height="65"/>
+                                                                        <rect key="frame" x="0.0" y="81.666666666666629" width="314" height="71.666666666666686"/>
                                                                         <subviews>
                                                                             <button clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FFS-4c-Swg" userLabel="Sign In Button" customClass="CustomButton" customModule="OmnieCommerceAdmin" customModuleProvider="target">
-                                                                                <rect key="frame" x="0.0" y="29" width="275" height="36"/>
-                                                                                <constraints>
-                                                                                    <constraint firstAttribute="height" constant="36" id="phR-2n-WDH"/>
-                                                                                </constraints>
+                                                                                <rect key="frame" x="0.0" y="32" width="314" height="39.666666666666686"/>
                                                                                 <state key="normal" title="Sign In"/>
                                                                                 <userDefinedRuntimeAttributes>
                                                                                     <userDefinedRuntimeAttribute type="string" keyPath="buttonStyle" value="Border"/>
@@ -149,6 +146,7 @@
                                                                         </subviews>
                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                         <constraints>
+                                                                            <constraint firstItem="FFS-4c-Swg" firstAttribute="height" secondItem="THC-Uc-Gbl" secondAttribute="height" multiplier="36:65" id="Ga8-Cm-lae"/>
                                                                             <constraint firstItem="FFS-4c-Swg" firstAttribute="leading" secondItem="THC-Uc-Gbl" secondAttribute="leading" id="OwX-N5-T3Q"/>
                                                                             <constraint firstAttribute="bottom" secondItem="FFS-4c-Swg" secondAttribute="bottom" id="lNZ-xX-3Ae"/>
                                                                             <constraint firstAttribute="trailing" secondItem="FFS-4c-Swg" secondAttribute="trailing" id="yqa-m2-iIw"/>
@@ -198,6 +196,7 @@
                                     </stackView>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="THC-Uc-Gbl" firstAttribute="height" secondItem="Mh1-C1-Q49" secondAttribute="height" multiplier="65:355" id="62w-rq-j4C"/>
                                     <constraint firstItem="x1v-Ri-hv4" firstAttribute="height" secondItem="Mh1-C1-Q49" secondAttribute="height" multiplier="37:355" id="6vh-Xz-24Q"/>
                                     <constraint firstItem="Esj-u5-vXG" firstAttribute="height" secondItem="Mh1-C1-Q49" secondAttribute="height" multiplier="37:355" id="XgL-i1-bgD"/>
                                 </constraints>
@@ -205,18 +204,21 @@
                                     <mask key="constraints">
                                         <exclude reference="XgL-i1-bgD"/>
                                         <exclude reference="6vh-Xz-24Q"/>
+                                        <exclude reference="62w-rq-j4C"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=compact-widthClass=compact" axis="horizontal" spacing="50">
                                     <mask key="constraints">
                                         <include reference="XgL-i1-bgD"/>
                                         <include reference="6vh-Xz-24Q"/>
+                                        <include reference="62w-rq-j4C"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=compact-widthClass=regular" axis="horizontal" spacing="60">
                                     <mask key="constraints">
                                         <include reference="XgL-i1-bgD"/>
                                         <include reference="6vh-Xz-24Q"/>
+                                        <include reference="62w-rq-j4C"/>
                                     </mask>
                                 </variation>
                                 <connections>
@@ -259,6 +261,7 @@
                                 <exclude reference="hzz-ug-TEo"/>
                                 <exclude reference="eSS-Jh-NEx"/>
                                 <exclude reference="Uqk-te-TfL"/>
+                                <exclude reference="l9O-hu-1nk"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact-widthClass=regular">
@@ -268,6 +271,7 @@
                                 <exclude reference="hzz-ug-TEo"/>
                                 <exclude reference="eSS-Jh-NEx"/>
                                 <exclude reference="Uqk-te-TfL"/>
+                                <exclude reference="l9O-hu-1nk"/>
                             </mask>
                         </variation>
                         <connections>
@@ -311,7 +315,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="61440840-AE9A-477D-9723-96F2AE4DF6AF" width="113" height="148">
+        <image name="1FF624D1-457A-4447-9A17-837CE570DFEB" width="113" height="148">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
