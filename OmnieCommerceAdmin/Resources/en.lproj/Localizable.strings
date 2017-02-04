@@ -26,6 +26,7 @@
 "Welcome"                       =   "Welcome!";
 "Registration"                  =   "Registration";
 "Forgot password"               =   "Forgot Password";
+"Not yet registered?"           =   "Not yet registered?";
 
 
 // Fields
@@ -35,3 +36,5 @@
 
 // Buttons
 "Sign In"                       =   "Sign In";
+"Register"                      =   "Register";
+"Forgot password?"              =   "Forgot Password?";

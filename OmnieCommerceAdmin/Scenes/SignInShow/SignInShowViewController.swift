@@ -62,6 +62,14 @@ class SignInShowViewController: UIViewController, SignInShowViewControllerInput 
     
     
     // MARK: - Actions
+    @IBAction func handlerRegisterButtonTap(_ sender: CustomButton) {
+        print(object: "\(type(of: self)): \(#function) run. Register button tap.")
+    }
+    
+    @IBAction func handlerForgotPasswordButtonTap(_ sender: CustomButton) {
+        print(object: "\(type(of: self)): \(#function) run. Forgot Password button tap.")
+    }
+    
     @IBAction func handlerSignInButtonTap(_ sender: CustomButton) {
         print(object: "\(type(of: self)): \(#function) run. Sign In button tap.")
     }

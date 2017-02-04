@@ -9,7 +9,9 @@
 import UIKit
 
 enum ButtonStyle: String {
-    case Border = "Border"
+    case Border                                     =   "Border"
+    case TitleUbuntuLight12VeryLightOrange          =   "TitleUbuntuLight12VeryLightOrange"
+    case TitleUbuntuLight12UndirlineVeryLightGray   =   "TitleUbuntuLight12UndirlineVeryLightGray"
 
     //    case Social = "Social"
     //    case Fill = "Fill"
@@ -41,17 +43,27 @@ extension UIButton {
     func setupWithStyle(_ buttonStyle: ButtonStyle) {
         setTitle(titleLabel?.text?.localized(), for: .normal)
         setTitle(titleLabel?.text?.localized(), for: .highlighted)
-        setBackgroundColor()
+        
+        // tag = 99: clear highlighted color
+        if (tag != 99) {
+            setBackgroundColor()
+        }
         
         switch buttonStyle {
         case .Border:
-            tintColor           =   (Config.Constants.isAppThemesDark) ? (UIColor(hexString: "#5e6969", withAlpha: 1.0)) : (UIColor(hexString: "#9ec9c6", withAlpha: 1.0))
-            layer.borderColor   =   (Config.Constants.isAppThemesDark) ? (UIColor(hexString: "#5e6969", withAlpha: 1.0)?.cgColor) : (UIColor(hexString: "#9ec9c6", withAlpha: 1.0)?.cgColor)
+            setTitleColor(UIColor(hexString: (Config.Constants.isAppThemesDark) ? "#5e6969" : "#9ec9c6", withAlpha: 1.0), for: .normal)
+            tintColor               =   UIColor(hexString: (Config.Constants.isAppThemesDark) ? "#5e6969" : "#9ec9c6", withAlpha: 1.0)
+            layer.borderColor       =   UIColor(hexString: (Config.Constants.isAppThemesDark) ? "#5e6969" : "#9ec9c6", withAlpha: 1.0)?.cgColor
+            backgroundColor         =   UIColor.clear
+            titleLabel?.font        =   UIFont.ubuntuLight14
+            layer.cornerRadius      =   frame.size.height / 2
+            borderWidth             =   1
             
-            backgroundColor     =   UIColor.clear
-            titleLabel?.font    =   UIFont.ubuntuLight14
-            layer.cornerRadius  =   frame.size.height / 2
-            borderWidth         =   1
+        case .TitleUbuntuLight12VeryLightOrange:
+            setAttributedTitle(NSAttributedString(string: (titleLabel?.text?.localized())!, attributes: UIFont.ubuntuLight12VeryLightOrange), for: .normal)
+            
+        case .TitleUbuntuLight12UndirlineVeryLightGray:
+            setAttributedTitle(NSAttributedString(string: (titleLabel?.text?.localized())!, attributes: UIFont.ubuntuLight12UnderlineVeryLightGray), for: .normal)
         }
     }
     

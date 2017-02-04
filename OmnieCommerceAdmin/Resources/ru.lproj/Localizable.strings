@@ -26,6 +26,7 @@
 "Welcome"                       =   "Поздравляем!";
 "Registration"                  =   "Регистрация";
 "Forgot password"               =   "Забыли пароль";
+"Not yet registered?"           =   "Ещё не зарегистрированы";
 
 
 // Fields
@@ -35,3 +36,5 @@
 
 // Buttons
 "Sign In"                       =   "Войти";
+"Register"                      =   "Зарегистрироваться";
+"Forgot password?"              =   "Забыли пароль?";

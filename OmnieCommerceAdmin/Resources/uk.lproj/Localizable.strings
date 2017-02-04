@@ -26,6 +26,7 @@
 "Welcome"                       =   "Вітаємо!";
 "Registration"                  =   "Реєстрація";
 "Forgot password"               =   "Забули пароль";
+"Not yet registered?"           =   "Ще не зареєстровані?";
 
 
 // Fields
@@ -35,3 +36,5 @@
 
 // Buttons
 "Sign In"                       =   "Зайти";
+"Register"                      =   "Зареєструватись";
+"Forgot password?"              =   "Забули пароль?";

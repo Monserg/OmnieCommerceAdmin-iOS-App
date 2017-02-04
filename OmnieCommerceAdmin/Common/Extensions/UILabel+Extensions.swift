@@ -10,8 +10,9 @@ import UIKit
 import Localize_Swift
 
 enum LabelStyle: String {
-    case HelveticaNeueCyrLight15VeryLightGray = "HelveticaNeueCyrLight15VeryLightGray"
-    case HelveticaNeueCyrThin47VeryLightGray = "HelveticaNeueCyrThin47VeryLightGray"
+    case HelveticaNeueCyrLight15VeryLightGray   =   "HelveticaNeueCyrLight15VeryLightGray"
+    case HelveticaNeueCyrThin47VeryLightGray    =   "HelveticaNeueCyrThin47VeryLightGray"
+    case UbuntuLight12VeryLightGray             =   "UbuntuLight12VeryLightGray"
 }
 
 extension UILabel {
@@ -31,12 +32,16 @@ extension UILabel {
         
         switch labelStyle {
         case .HelveticaNeueCyrLight15VeryLightGray:
-            font = UIFont.helveticaNeueCyrLight15
-            textColor = UIColor(hexString: "#dedede", withAlpha: 1.0)
+            font        =   UIFont.helveticaNeueCyrLight15
+            textColor   =   UIColor(hexString: (Config.Constants.isAppThemesDark) ? "#5e6969" : "#9ec9c6", withAlpha: 1.0)
         
         case .HelveticaNeueCyrThin47VeryLightGray:
-            font = UIFont.helveticaNeueCyrThin47
-            textColor = UIColor(hexString: "#dedede", withAlpha: 1.0)
+            font        =   UIFont.helveticaNeueCyrThin47
+            textColor   =   UIColor(hexString: (Config.Constants.isAppThemesDark) ? "#5e6969" : "#9ec9c6", withAlpha: 1.0)
+            
+        case .UbuntuLight12VeryLightGray:
+            font        =   UIFont.ubuntuLight12
+            textColor   =   UIColor(hexString: (Config.Constants.isAppThemesDark) ? "#5e6969" : "#9ec9c6", withAlpha: 1.0)
     }
     
         self.adjustsFontSizeToFitWidth = true
