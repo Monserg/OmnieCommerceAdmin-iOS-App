@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8E8B37A6952A87F0D2737C02 /* Pods_OmnieCommerceAdmin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE7B7698EDC4E9318058B61D /* Pods_OmnieCommerceAdmin.framework */; };
 		B137231D1E44E7DB001AE102 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B137231C1E44E7DB001AE102 /* CustomTextField.swift */; };
 		B18373A81E458AE200A2F36B /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18373A71E458AE200A2F36B /* CustomButton.swift */; };
 		B18373AA1E458B0800A2F36B /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18373A91E458B0800A2F36B /* UIButton+Extensions.swift */; };
@@ -88,10 +87,12 @@
 		B1FBB8DE1E43D28F00C02BC3 /* OrganizationsListShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FBB8D71E43D28F00C02BC3 /* OrganizationsListShowViewController.swift */; };
 		B1FBB8DF1E43D28F00C02BC3 /* OrganizationsListShowWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FBB8D81E43D28F00C02BC3 /* OrganizationsListShowWorker.swift */; };
 		B1FBB8E11E43D29E00C02BC3 /* OrganizationsListShow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1FBB8E01E43D29E00C02BC3 /* OrganizationsListShow.storyboard */; };
+		CEB9B377E3609B58B2AB0EAF /* Pods_OmnieCommerceAdmin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1422BA451A52E370BFCE6B0 /* Pods_OmnieCommerceAdmin.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		07DD4A3748C06FC225729B4E /* Pods-OmnieCommerceAdmin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OmnieCommerceAdmin.release.xcconfig"; path = "Pods/Target Support Files/Pods-OmnieCommerceAdmin/Pods-OmnieCommerceAdmin.release.xcconfig"; sourceTree = "<group>"; };
+		656665BD3E091CB0F3A1846D /* Pods-OmnieCommerceAdmin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OmnieCommerceAdmin.release.xcconfig"; path = "Pods/Target Support Files/Pods-OmnieCommerceAdmin/Pods-OmnieCommerceAdmin.release.xcconfig"; sourceTree = "<group>"; };
+		81B9D6299E9EC8CC0B95DFC7 /* Pods-OmnieCommerceAdmin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OmnieCommerceAdmin.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OmnieCommerceAdmin/Pods-OmnieCommerceAdmin.debug.xcconfig"; sourceTree = "<group>"; };
 		B137231C1E44E7DB001AE102 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		B18373A71E458AE200A2F36B /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		B18373A91E458B0800A2F36B /* UIButton+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
@@ -179,8 +180,7 @@
 		B1FBB8D71E43D28F00C02BC3 /* OrganizationsListShowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationsListShowViewController.swift; sourceTree = "<group>"; };
 		B1FBB8D81E43D28F00C02BC3 /* OrganizationsListShowWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationsListShowWorker.swift; sourceTree = "<group>"; };
 		B1FBB8E01E43D29E00C02BC3 /* OrganizationsListShow.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = OrganizationsListShow.storyboard; sourceTree = "<group>"; };
-		BE7B7698EDC4E9318058B61D /* Pods_OmnieCommerceAdmin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OmnieCommerceAdmin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D3521CD7320E35D8C0761F46 /* Pods-OmnieCommerceAdmin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OmnieCommerceAdmin.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OmnieCommerceAdmin/Pods-OmnieCommerceAdmin.debug.xcconfig"; sourceTree = "<group>"; };
+		E1422BA451A52E370BFCE6B0 /* Pods_OmnieCommerceAdmin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OmnieCommerceAdmin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,26 +188,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8E8B37A6952A87F0D2737C02 /* Pods_OmnieCommerceAdmin.framework in Frameworks */,
+				CEB9B377E3609B58B2AB0EAF /* Pods_OmnieCommerceAdmin.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1FC2053ACB408625E5D79919 /* Pods */ = {
+		04D5EF6B30B4B835E78FD69E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				D3521CD7320E35D8C0761F46 /* Pods-OmnieCommerceAdmin.debug.xcconfig */,
-				07DD4A3748C06FC225729B4E /* Pods-OmnieCommerceAdmin.release.xcconfig */,
+				81B9D6299E9EC8CC0B95DFC7 /* Pods-OmnieCommerceAdmin.debug.xcconfig */,
+				656665BD3E091CB0F3A1846D /* Pods-OmnieCommerceAdmin.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		77036BDD285D4020F7B57B5E /* Frameworks */ = {
+		6C3DEC16B866523CFFCC2056 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BE7B7698EDC4E9318058B61D /* Pods_OmnieCommerceAdmin.framework */,
+				E1422BA451A52E370BFCE6B0 /* Pods_OmnieCommerceAdmin.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -275,8 +275,8 @@
 			children = (
 				B1EADCC91E436316006341D2 /* OmnieCommerceAdmin */,
 				B1EADCC81E436316006341D2 /* Products */,
-				1FC2053ACB408625E5D79919 /* Pods */,
-				77036BDD285D4020F7B57B5E /* Frameworks */,
+				04D5EF6B30B4B835E78FD69E /* Pods */,
+				6C3DEC16B866523CFFCC2056 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -461,12 +461,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B1EADCD91E436316006341D2 /* Build configuration list for PBXNativeTarget "OmnieCommerceAdmin" */;
 			buildPhases = (
-				C589E9C60107DD5EA921C21C /* [CP] Check Pods Manifest.lock */,
+				B51FB93B819A74328207B9DA /* [CP] Check Pods Manifest.lock */,
 				B1EADCC31E436316006341D2 /* Sources */,
 				B1EADCC41E436316006341D2 /* Frameworks */,
 				B1EADCC51E436316006341D2 /* Resources */,
-				A4E13F03B6BCA77AFA1D478D /* [CP] Embed Pods Frameworks */,
-				9AD9C53D7190DA81112483BB /* [CP] Copy Pods Resources */,
+				ACF6B42F4BF4ED8D1F7FF652 /* [CP] Embed Pods Frameworks */,
+				230B1B60267F1635432540A2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -557,7 +557,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		9AD9C53D7190DA81112483BB /* [CP] Copy Pods Resources */ = {
+		230B1B60267F1635432540A2 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -572,7 +572,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OmnieCommerceAdmin/Pods-OmnieCommerceAdmin-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A4E13F03B6BCA77AFA1D478D /* [CP] Embed Pods Frameworks */ = {
+		ACF6B42F4BF4ED8D1F7FF652 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -587,7 +587,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OmnieCommerceAdmin/Pods-OmnieCommerceAdmin-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C589E9C60107DD5EA921C21C /* [CP] Check Pods Manifest.lock */ = {
+		B51FB93B819A74328207B9DA /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -783,7 +783,7 @@
 		};
 		B1EADCDA1E436316006341D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D3521CD7320E35D8C0761F46 /* Pods-OmnieCommerceAdmin.debug.xcconfig */;
+			baseConfigurationReference = 81B9D6299E9EC8CC0B95DFC7 /* Pods-OmnieCommerceAdmin.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 2DS2B364WY;
@@ -798,7 +798,7 @@
 		};
 		B1EADCDB1E436316006341D2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 07DD4A3748C06FC225729B4E /* Pods-OmnieCommerceAdmin.release.xcconfig */;
+			baseConfigurationReference = 656665BD3E091CB0F3A1846D /* Pods-OmnieCommerceAdmin.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 2DS2B364WY;
