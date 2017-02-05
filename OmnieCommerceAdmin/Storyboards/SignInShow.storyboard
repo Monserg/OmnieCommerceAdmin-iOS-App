@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="6uh-TR-iIl">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -20,17 +20,17 @@
                         <viewControllerLayoutGuide type="bottom" id="c0l-Pc-ARL"/>
                     </layoutGuides>
                     <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="7Lg-Ep-VFz">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Mh1-C1-Q49">
-                                <rect key="frame" x="40" y="32" width="295" height="635"/>
+                                <rect key="frame" x="70" y="12" width="666" height="402"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z1T-Pz-Xb1" userLabel="Image Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="295" height="132"/>
+                                    <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z1T-Pz-Xb1" userLabel="Image Content View">
+                                        <rect key="frame" x="0.0" y="0.0" width="198.66666666666669" height="402"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image-logo-horizontal" translatesAutoresizingMaskIntoConstraints="NO" id="msX-uK-raq">
-                                                <rect key="frame" x="33" y="0.0" width="229" height="132"/>
+                                                <rect key="frame" x="0.0" y="74" width="198.66666666666669" height="254"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="msX-uK-raq" secondAttribute="height" multiplier="230:132" constant="-1" id="VjW-l4-N6x"/>
                                                     <constraint firstAttribute="width" secondItem="msX-uK-raq" secondAttribute="height" multiplier="180:230" id="feM-Ta-2ye"/>
@@ -90,10 +90,67 @@
                                             </mask>
                                         </variation>
                                     </view>
-                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bkf-2j-A4E">
-                                        <rect key="frame" x="0.0" y="132" width="295" height="503"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                    </containerView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="hRJ-Kv-iEv">
+                                        <rect key="frame" x="268.66666666666674" y="0.0" width="397.33333333333326" height="402"/>
+                                        <subviews>
+                                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bkf-2j-A4E">
+                                                <rect key="frame" x="0.0" y="0.0" width="397.33333333333331" height="362"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            </containerView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OQ1-Mo-Zb1">
+                                                <rect key="frame" x="0.0" y="362" width="397.33333333333331" height="40"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="bQz-3z-D6s" userLabel="Social Buttons Stack View">
+                                                        <rect key="frame" x="132.33333333333331" y="0.0" width="134" height="30"/>
+                                                        <subviews>
+                                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uER-Ag-co8" userLabel="VK Button" customClass="CustomButton" customModule="OmnieCommerceAdmin" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                                <state key="normal" image="icon-vk-normal"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="buttonStyle" value="Border"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="handlerVkButtonTap:" destination="593-QN-qcr" eventType="touchUpInside" id="psG-4A-VQp"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t79-g0-C66" userLabel="Google Button" customClass="CustomButton" customModule="OmnieCommerceAdmin" customModuleProvider="target">
+                                                                <rect key="frame" x="52" y="0.0" width="30" height="30"/>
+                                                                <state key="normal" image="icon-google-normal"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="buttonStyle" value="Border"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="handlerGoogleButtonTap:" destination="593-QN-qcr" eventType="touchUpInside" id="wHp-5B-Yhs"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FUe-Vr-dK3" userLabel="FB Button" customClass="CustomButton" customModule="OmnieCommerceAdmin" customModuleProvider="target">
+                                                                <rect key="frame" x="104" y="0.0" width="30" height="30"/>
+                                                                <state key="normal" image="icon-facebook-normal"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="buttonStyle" value="Border"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="handlerFbButtonTap:" destination="593-QN-qcr" eventType="touchUpInside" id="v5k-jE-MPI"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="Vd0-A4-Zyg"/>
+                                                            <constraint firstAttribute="width" constant="134" id="kRh-mf-al9"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstItem="bQz-3z-D6s" firstAttribute="centerX" secondItem="OQ1-Mo-Zb1" secondAttribute="centerX" id="Rue-fY-ib2"/>
+                                                    <constraint firstAttribute="bottom" secondItem="bQz-3z-D6s" secondAttribute="bottom" constant="10" id="bI8-E9-Ctx">
+                                                        <variation key="heightClass=compact-widthClass=compact" constant="5"/>
+                                                    </constraint>
+                                                    <constraint firstAttribute="height" constant="40" id="ixk-wt-6r8"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <variation key="heightClass=compact-widthClass=compact" axis="horizontal" spacing="60"/>
                                 <variation key="heightClass=compact-widthClass=regular" axis="horizontal" spacing="70"/>
@@ -141,6 +198,7 @@
                     <navigationItem key="navigationItem" id="cV6-cY-l07"/>
                     <connections>
                         <outlet property="containerView" destination="Bkf-2j-A4E" id="8PP-ZG-ZvY"/>
+                        <outlet property="logoImageView" destination="msX-uK-raq" id="prQ-Rd-JiK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WS8-oP-PqE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -162,11 +220,11 @@
                         <viewControllerLayoutGuide type="bottom" id="tbf-e7-QFd"/>
                     </layoutGuides>
                     <view key="view" tag="1" contentMode="scaleToFill" id="Vnu-gp-doq">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2lB-WY-Z9p" userLabel="Action Buttons View">
-                                <rect key="frame" x="67" y="269" width="240" height="128"/>
+                                <rect key="frame" x="67" y="63" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tgD-X3-l2h" userLabel="Send Button" customClass="CustomButton" customModule="OmnieCommerceAdmin" customModuleProvider="target">
@@ -212,11 +270,11 @@
                         <viewControllerLayoutGuide type="bottom" id="Tbm-hk-5ez"/>
                     </layoutGuides>
                     <view key="view" tag="1" contentMode="scaleToFill" id="mSZ-Io-FDD">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uN9-KN-x7g" userLabel="Action Buttons View">
-                                <rect key="frame" x="67" y="312" width="240" height="128"/>
+                                <rect key="frame" x="67" y="162" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WU9-QI-dnc" userLabel="Register Button" customClass="CustomButton" customModule="OmnieCommerceAdmin" customModuleProvider="target">
@@ -263,17 +321,17 @@
                         <viewControllerLayoutGuide type="bottom" id="0jX-V4-pUF"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="w4h-dr-gZj">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="r0S-9A-Zgy">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ARy-td-aPT" userLabel="Title View">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="175"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="736" height="108.66666666666667"/>
                                         <subviews>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kyb-Ck-2ZP" userLabel="Title Label" customClass="CustomLabel" customModule="OmnieCommerceAdmin" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="112.5" width="375" height="42.5"/>
+                                                <rect key="frame" x="0.0" y="56.333333333333329" width="676" height="42.333333333333329"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -296,19 +354,19 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gDZ-eL-fR8">
-                                        <rect key="frame" x="0.0" y="175" width="375" height="492"/>
+                                        <rect key="frame" x="0.0" y="108.66666666666666" width="736" height="305.33333333333337"/>
                                         <subviews>
                                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cxl-lM-0aG">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="492"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="676" height="305.33333333333331"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eoE-MW-EyJ" userLabel="Content View">
-                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="492"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="676" height="305.33333333333331"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Esj-u5-vXG" userLabel="Name Line View" customClass="CustomView" customModule="OmnieCommerceAdmin" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="676" height="41.999999999999986"/>
                                                                 <subviews>
                                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="swM-42-2YU" userLabel="Name Text Field" customClass="CustomTextField" customModule="OmnieCommerceAdmin" customModuleProvider="target">
-                                                                        <rect key="frame" x="8" y="27" width="367" height="19"/>
+                                                                        <rect key="frame" x="8" y="19.999999999999986" width="668" height="19"/>
                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                         <nil key="textColor"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -329,10 +387,10 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                             <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x1v-Ri-hv4" userLabel="Password Line View" customClass="CustomView" customModule="OmnieCommerceAdmin" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="49" width="375" height="49"/>
+                                                                <rect key="frame" x="0.0" y="41.999999999999986" width="676" height="42.333333333333343"/>
                                                                 <subviews>
                                                                     <textField opaque="NO" clipsSubviews="YES" tag="99" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="puu-bd-4T6" userLabel="Password Text Field" customClass="CustomTextField" customModule="OmnieCommerceAdmin" customModuleProvider="target">
-                                                                        <rect key="frame" x="8" y="27" width="367" height="19"/>
+                                                                        <rect key="frame" x="8" y="20.333333333333343" width="668" height="19"/>
                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                         <nil key="textColor"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -353,10 +411,10 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="THC-Uc-Gbl" userLabel="Action Button View">
-                                                                <rect key="frame" x="0.0" y="98" width="375" height="86"/>
+                                                                <rect key="frame" x="0.0" y="84.333333333333329" width="676" height="73.999999999999986"/>
                                                                 <subviews>
                                                                     <button clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FFS-4c-Swg" userLabel="Sign In Button" customClass="CustomButton" customModule="OmnieCommerceAdmin" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="38.5" width="375" height="47.5"/>
+                                                                        <rect key="frame" x="0.0" y="33" width="676" height="41"/>
                                                                         <state key="normal" title="Sign In"/>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="string" keyPath="buttonStyle" value="Border"/>
@@ -374,10 +432,10 @@
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gby-PP-Y0W" userLabel="Texts View">
-                                                                <rect key="frame" x="0.0" y="198" width="375" height="86.5"/>
+                                                                <rect key="frame" x="0.0" y="172.33333333333331" width="676" height="74.333333333333314"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not yet registered?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TZp-21-ZpS" customClass="CustomLabel" customModule="OmnieCommerceAdmin" customModuleProvider="target">
-                                                                        <rect key="frame" x="4" y="18" width="102.5" height="30"/>
+                                                                        <rect key="frame" x="4" y="11.333333333333314" width="102.33333333333333" height="30"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -386,7 +444,7 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </label>
                                                                     <button opaque="NO" tag="99" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eRv-z0-W4a" customClass="CustomButton" customModule="OmnieCommerceAdmin" customModuleProvider="target">
-                                                                        <rect key="frame" x="114" y="18" width="45" height="30"/>
+                                                                        <rect key="frame" x="114" y="11.333333333333314" width="45" height="30"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="30" id="cmD-3W-FQj"/>
                                                                         </constraints>
@@ -399,7 +457,7 @@
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="99" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZqH-Ft-3CU" customClass="CustomButton" customModule="OmnieCommerceAdmin" customModuleProvider="target">
-                                                                        <rect key="frame" x="139.5" y="48" width="95" height="30"/>
+                                                                        <rect key="frame" x="290" y="41.333333333333314" width="95" height="30"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="30" id="e5X-IY-4iz"/>
                                                                         </constraints>
@@ -423,57 +481,13 @@
                                                                     <constraint firstItem="TZp-21-ZpS" firstAttribute="centerY" secondItem="Gby-PP-Y0W" secondAttribute="centerY" constant="-10" id="yCf-hv-Wsl"/>
                                                                 </constraints>
                                                             </view>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="bWP-oX-4A5" userLabel="Social Buttons Stack View">
-                                                                <rect key="frame" x="120.5" y="452" width="134" height="30"/>
-                                                                <subviews>
-                                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rPN-jI-Ocu" userLabel="VK Button" customClass="CustomButton" customModule="OmnieCommerceAdmin" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
-                                                                        <state key="normal" image="icon-vk-normal"/>
-                                                                        <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="string" keyPath="buttonStyle" value="Border"/>
-                                                                        </userDefinedRuntimeAttributes>
-                                                                        <connections>
-                                                                            <action selector="handlerVkButtonTap:" destination="Wuu-x3-SQb" eventType="touchUpInside" id="rdN-pv-Hmy"/>
-                                                                        </connections>
-                                                                    </button>
-                                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dgK-Q3-i8l" userLabel="Google Button" customClass="CustomButton" customModule="OmnieCommerceAdmin" customModuleProvider="target">
-                                                                        <rect key="frame" x="52" y="0.0" width="30" height="30"/>
-                                                                        <state key="normal" image="icon-google-normal"/>
-                                                                        <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="string" keyPath="buttonStyle" value="Border"/>
-                                                                        </userDefinedRuntimeAttributes>
-                                                                        <connections>
-                                                                            <action selector="handlerGoogleButtonTap:" destination="Wuu-x3-SQb" eventType="touchUpInside" id="Mug-VN-5GZ"/>
-                                                                        </connections>
-                                                                    </button>
-                                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JpP-YX-Nn4" userLabel="FB Button" customClass="CustomButton" customModule="OmnieCommerceAdmin" customModuleProvider="target">
-                                                                        <rect key="frame" x="104" y="0.0" width="30" height="30"/>
-                                                                        <state key="normal" image="icon-facebook-normal"/>
-                                                                        <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="string" keyPath="buttonStyle" value="Border"/>
-                                                                        </userDefinedRuntimeAttributes>
-                                                                        <connections>
-                                                                            <action selector="handlerFbButtonTap:" destination="Wuu-x3-SQb" eventType="touchUpInside" id="GVt-px-oay"/>
-                                                                        </connections>
-                                                                    </button>
-                                                                </subviews>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="30" id="Dxr-2s-K4B"/>
-                                                                    <constraint firstAttribute="width" constant="134" id="wfg-eW-eCw"/>
-                                                                </constraints>
-                                                            </stackView>
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="trailing" secondItem="Esj-u5-vXG" secondAttribute="trailing" id="3fS-hs-MMc"/>
-                                                            <constraint firstItem="bWP-oX-4A5" firstAttribute="centerX" secondItem="eoE-MW-EyJ" secondAttribute="centerX" id="5Lw-aq-kwO"/>
                                                             <constraint firstItem="THC-Uc-Gbl" firstAttribute="leading" secondItem="eoE-MW-EyJ" secondAttribute="leading" id="6JU-5q-8tn"/>
                                                             <constraint firstItem="Gby-PP-Y0W" firstAttribute="top" secondItem="THC-Uc-Gbl" secondAttribute="bottom" constant="14.5" id="CfZ-BW-RFu"/>
                                                             <constraint firstItem="Gby-PP-Y0W" firstAttribute="leading" secondItem="eoE-MW-EyJ" secondAttribute="leading" id="Jcy-TT-jLf"/>
-                                                            <constraint firstAttribute="bottom" secondItem="bWP-oX-4A5" secondAttribute="bottom" constant="10" id="X4q-D8-IfH">
-                                                                <variation key="heightClass=compact-widthClass=compact" constant="5"/>
-                                                                <variation key="heightClass=compact-widthClass=regular" constant="10"/>
-                                                            </constraint>
                                                             <constraint firstAttribute="trailing" secondItem="x1v-Ri-hv4" secondAttribute="trailing" id="k14-lo-dcl"/>
                                                             <constraint firstItem="Esj-u5-vXG" firstAttribute="top" secondItem="eoE-MW-EyJ" secondAttribute="top" id="mSt-1k-tNU"/>
                                                             <constraint firstItem="THC-Uc-Gbl" firstAttribute="top" secondItem="x1v-Ri-hv4" secondAttribute="bottom" id="maA-xd-yxN"/>

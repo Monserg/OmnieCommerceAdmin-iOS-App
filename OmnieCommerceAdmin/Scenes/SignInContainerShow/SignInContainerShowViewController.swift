@@ -87,17 +87,5 @@ class SignInContainerShowViewController: BaseViewController, SignInContainerShow
     
     @IBAction func handlerSignInButtonTap(_ sender: CustomButton) {
         print(object: "\(type(of: self)): \(#function) run. Sign In button tap.")
-    }
-    
-    @IBAction func handlerVkButtonTap(_ sender: CustomButton) {
-        print(object: "\(type(of: self)): \(#function) run. Vk button tap.")
-    }
-    
-    @IBAction func handlerGoogleButtonTap(_ sender: CustomButton) {
-        print(object: "\(type(of: self)): \(#function) run. Google button tap.")
-    }
-    
-    @IBAction func handlerFbButtonTap(_ sender: CustomButton) {
-        print(object: "\(type(of: self)): \(#function) run. Facebook button tap.")
-    }
+    }    
 }

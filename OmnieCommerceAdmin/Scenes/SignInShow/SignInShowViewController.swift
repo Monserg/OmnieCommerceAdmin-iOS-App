@@ -50,6 +50,7 @@ class SignInShowViewController: BaseViewController, SignInShowViewControllerInpu
     }
 
     @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var logoImageView: UIView!
 
     
     // MARK: - Class initialization
@@ -90,6 +91,20 @@ class SignInShowViewController: BaseViewController, SignInShowViewControllerInpu
         // nameTextField.text = viewModel.name
     }
     
+    
+    // MARK: - Actions
+    @IBAction func handlerVkButtonTap(_ sender: CustomButton) {
+        print(object: "\(type(of: self)): \(#function) run. Vk button tap.")
+    }
+    
+    @IBAction func handlerGoogleButtonTap(_ sender: CustomButton) {
+        print(object: "\(type(of: self)): \(#function) run. Google button tap.")
+    }
+    
+    @IBAction func handlerFbButtonTap(_ sender: CustomButton) {
+        print(object: "\(type(of: self)): \(#function) run. Facebook button tap.")
+    }
+
     
     // MARK: - Gesture
     @IBAction func handlerTapGestureRecognizer(_ sender: UITapGestureRecognizer) {
