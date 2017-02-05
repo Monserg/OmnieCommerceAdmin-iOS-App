@@ -27,7 +27,9 @@
 "Registration"                  =   "Реєстрація";
 "Forgot password"               =   "Забули пароль";
 "Not yet registered?"           =   "Ще не зареєстровані?";
-"Wrong Number or Email"         =   "* неправильний номер або Email";
+"Enter code"                    =   "Введіть код";
+"Wrong Number or Email"         =   "* Неправильний номер або Email";
+"Invalid code"                  =   "* Невірний код. Спробуйте ще раз";
 
 
 // Fields
@@ -42,3 +44,4 @@
 "Forgot password?"              =   "Забули пароль?";
 "Cancel"                        =   "Відмінити";
 "Send"                          =   "Відправити";
+"Do not get password?"          =   "Не отримали пароль?";

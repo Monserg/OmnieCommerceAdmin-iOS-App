@@ -27,7 +27,9 @@
 "Registration"                  =   "Registration";
 "Forgot password"               =   "Forgot Password";
 "Not yet registered?"           =   "Not yet registered?";
+"Enter code"                    =   "Enter code";
 "Wrong Number or Email"         =   "* Wrong Number or Email";
+"Invalid code"                  =   "* Invalid code. Please try again";
 
 
 // Fields
@@ -42,3 +44,4 @@
 "Forgot password?"              =   "Forgot Password?";
 "Cancel"                        =   "Cancel";
 "Send"                          =   "Send";
+"Do not get password?"          =   "Do not get Password?";
