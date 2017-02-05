@@ -28,6 +28,7 @@ class SignInShowViewController: BaseViewController, SignInShowViewControllerInpu
     // Container childVC
     var signInContainerShowVC: SignInContainerShowViewController?
     var signUpShowVC: SignUpShowViewController?
+    var forgotPasswordShowVC: ForgotPasswordShowViewController?
     
     private var activeViewController: BaseViewController? {
         didSet {
@@ -77,6 +78,16 @@ class SignInShowViewController: BaseViewController, SignInShowViewControllerInpu
             self.activeViewController = self.signUpShowVC
         }
         
+        signInContainerShowVC?.handlerForgotPasswordButtonCompletion = { _ in
+            self.forgotPasswordShowVC = UIStoryboard(name: "SignInShow", bundle: nil).instantiateViewController(withIdentifier: "ForgotPasswordShowVC") as? ForgotPasswordShowViewController
+            
+            self.forgotPasswordShowVC?.handlerCancelButtonCompletion = { _ in
+                self.activeViewController = self.signInContainerShowVC
+            }
+            
+            self.activeViewController = self.forgotPasswordShowVC
+        }
+        
         activeViewController = signInContainerShowVC
         
         // Setup App background color theme
@@ -109,32 +120,6 @@ class SignInShowViewController: BaseViewController, SignInShowViewControllerInpu
         }
     }
 
-    
-    // MARK: - Actions
-    @IBAction func handlerRegisterButtonTap(_ sender: CustomButton) {
-        print(object: "\(type(of: self)): \(#function) run. Register button tap.")
-    }
-    
-    @IBAction func handlerForgotPasswordButtonTap(_ sender: CustomButton) {
-        print(object: "\(type(of: self)): \(#function) run. Forgot Password button tap.")
-    }
-    
-    @IBAction func handlerSignInButtonTap(_ sender: CustomButton) {
-        print(object: "\(type(of: self)): \(#function) run. Sign In button tap.")
-    }
-    
-    @IBAction func handlerVkButtonTap(_ sender: CustomButton) {
-        print(object: "\(type(of: self)): \(#function) run. Vk button tap.")
-    }
-    
-    @IBAction func handlerGoogleButtonTap(_ sender: CustomButton) {
-        print(object: "\(type(of: self)): \(#function) run. Google button tap.")
-    }
-    
-    @IBAction func handlerFbButtonTap(_ sender: CustomButton) {
-        print(object: "\(type(of: self)): \(#function) run. Facebook button tap.")
-    }
-    
     
     // MARK: - Gesture
     @IBAction func handlerTapGestureRecognizer(_ sender: UITapGestureRecognizer) {

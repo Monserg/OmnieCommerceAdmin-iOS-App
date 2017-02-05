@@ -25,6 +25,7 @@ class SignInContainerShowViewController: BaseViewController, SignInContainerShow
     var output: SignInContainerShowViewControllerOutput!
     var router: SignInContainerShowRouter!
     var handlerRegisterButtonCompletion: HandlerRegisterButtonCompletion?
+    var handlerForgotPasswordButtonCompletion: HandlerForgotPasswordButtonCompletion?
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var nameTextField: CustomTextField!
@@ -77,13 +78,11 @@ class SignInContainerShowViewController: BaseViewController, SignInContainerShow
     
     // MARK: - Actions
     @IBAction func handlerRegisterButtonTap(_ sender: CustomButton) {
-        print(object: "\(type(of: self)): \(#function) run. Register button tap.")
-        
-        handlerRegisterButtonCompletion?()
+        handlerRegisterButtonCompletion!()
     }
     
     @IBAction func handlerForgotPasswordButtonTap(_ sender: CustomButton) {
-        print(object: "\(type(of: self)): \(#function) run. Forgot Password button tap.")
+        handlerForgotPasswordButtonCompletion!()
     }
     
     @IBAction func handlerSignInButtonTap(_ sender: CustomButton) {

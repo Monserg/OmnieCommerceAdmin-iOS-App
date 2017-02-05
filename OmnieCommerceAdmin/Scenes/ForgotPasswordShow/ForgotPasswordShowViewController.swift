@@ -24,6 +24,8 @@ class ForgotPasswordShowViewController: BaseViewController, ForgotPasswordShowVi
     // MARK: - Properties
     var output: ForgotPasswordShowViewControllerOutput!
     var router: ForgotPasswordShowRouter!
+    var handlerSendButtonCompletion: HandlerSendButtonCompletion?
+    var handlerCancelButtonCompletion: HandlerCancelButtonCompletion?
     
 
     // MARK: - Class initialization
@@ -60,9 +62,11 @@ class ForgotPasswordShowViewController: BaseViewController, ForgotPasswordShowVi
     
     
     // MARK: - Actions
+    @IBAction func handlerSendButtonTap(_ sender: CustomButton) {
+        handlerSendButtonCompletion!()
+    }
+    
     @IBAction func handlerCancelButtonTap(_ sender: CustomButton) {
-        print(object: "\(type(of: self)): \(#function) run.")
-        
-        _ = navigationController?.popToRootViewController(animated: true)
-    }    
+        handlerCancelButtonCompletion!()
+    }
 }

@@ -18,8 +18,10 @@ enum ThemeDesign: String {
     case DarkForGuest   =   "DarkForGuest"
 }
 
-typealias HandlerRegisterButtonCompletion   =   (() -> ())
-typealias HandlerCancelButtonCompletion     =   (() -> ())
+typealias HandlerSendButtonCompletion           =   (() -> ())
+typealias HandlerRegisterButtonCompletion       =   (() -> ())
+typealias HandlerForgotPasswordButtonCompletion =   (() -> ())
+typealias HandlerCancelButtonCompletion         =   (() -> ())
 
 struct Config {
     struct Constants {
