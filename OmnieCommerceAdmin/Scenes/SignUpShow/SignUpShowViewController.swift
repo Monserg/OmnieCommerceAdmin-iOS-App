@@ -26,7 +26,9 @@ class SignUpShowViewController: BaseViewController, SignUpShowViewControllerInpu
     var router: SignUpShowRouter!
     var handlerCancelButtonCompletion: HandlerCancelButtonCompletion?
     
+    @IBOutlet weak var scrollView: UIScrollView!
 
+    
     // MARK: - Class initialization
     override func awakeFromNib() {
         super.awakeFromNib()

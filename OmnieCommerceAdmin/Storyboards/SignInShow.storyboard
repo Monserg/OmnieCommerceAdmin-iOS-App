@@ -27,17 +27,17 @@
                                 <rect key="frame" x="40" y="164" width="295" height="503"/>
                                 <subviews>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bkf-2j-A4E">
-                                        <rect key="frame" x="0.0" y="0.0" width="295" height="463"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="295" height="453"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </containerView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OQ1-Mo-Zb1" userLabel="Social Buttons View">
-                                        <rect key="frame" x="0.0" y="463" width="295" height="40"/>
+                                        <rect key="frame" x="0.0" y="453" width="295" height="50"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="bQz-3z-D6s" userLabel="Social Buttons Stack View">
-                                                <rect key="frame" x="81" y="0.0" width="134" height="30"/>
+                                                <rect key="frame" x="72" y="4" width="152" height="36"/>
                                                 <subviews>
                                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uER-Ag-co8" userLabel="VK Button" customClass="CustomButton" customModule="OmnieCommerceAdmin" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="36" height="36"/>
                                                         <state key="normal" image="icon-vk-normal"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="buttonStyle" value="Border"/>
@@ -47,7 +47,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t79-g0-C66" userLabel="Google Button" customClass="CustomButton" customModule="OmnieCommerceAdmin" customModuleProvider="target">
-                                                        <rect key="frame" x="52" y="0.0" width="30" height="30"/>
+                                                        <rect key="frame" x="58" y="0.0" width="36" height="36"/>
                                                         <state key="normal" image="icon-google-normal"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="buttonStyle" value="Border"/>
@@ -57,7 +57,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FUe-Vr-dK3" userLabel="FB Button" customClass="CustomButton" customModule="OmnieCommerceAdmin" customModuleProvider="target">
-                                                        <rect key="frame" x="104" y="0.0" width="30" height="30"/>
+                                                        <rect key="frame" x="116" y="0.0" width="36" height="36"/>
                                                         <state key="normal" image="icon-facebook-normal"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="buttonStyle" value="Border"/>
@@ -68,8 +68,8 @@
                                                     </button>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="Vd0-A4-Zyg"/>
-                                                    <constraint firstAttribute="width" constant="134" id="kRh-mf-al9"/>
+                                                    <constraint firstAttribute="height" constant="36" id="Vd0-A4-Zyg"/>
+                                                    <constraint firstAttribute="width" constant="152" id="kRh-mf-al9"/>
                                                 </constraints>
                                             </stackView>
                                         </subviews>
@@ -79,7 +79,7 @@
                                             <constraint firstAttribute="bottom" secondItem="bQz-3z-D6s" secondAttribute="bottom" constant="10" id="bI8-E9-Ctx">
                                                 <variation key="heightClass=compact-widthClass=compact" constant="5"/>
                                             </constraint>
-                                            <constraint firstAttribute="height" constant="40" id="ixk-wt-6r8"/>
+                                            <constraint firstAttribute="height" constant="50" id="ixk-wt-6r8"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -255,40 +255,167 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uN9-KN-x7g" userLabel="Action Buttons View">
-                                <rect key="frame" x="67" y="162" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tnf-Wn-jfJ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WU9-QI-dnc" userLabel="Register Button" customClass="CustomButton" customModule="OmnieCommerceAdmin" customModuleProvider="target">
-                                        <rect key="frame" x="8" y="25" width="224" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4gf-8X-NcH" userLabel="Content View">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="fFM-wV-dad" userLabel="Main Stack View">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bMd-pC-J8I" userLabel="Titile View">
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="144"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Registration" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qSV-kW-Ngc" customClass="CustomLabel" customModule="OmnieCommerceAdmin" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="81.5" width="375" height="42.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="labelStyle" value="HelveticaNeueCyrThin47VeryLightGray"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </label>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="bottom" secondItem="qSV-kW-Ngc" secondAttribute="bottom" constant="20" id="P2u-YG-8Cb">
+                                                                <variation key="heightClass=compact-widthClass=compact" constant="5"/>
+                                                                <variation key="heightClass=compact-widthClass=regular" constant="10"/>
+                                                            </constraint>
+                                                            <constraint firstAttribute="trailing" secondItem="qSV-kW-Ngc" secondAttribute="trailing" id="bG2-pj-Fog"/>
+                                                            <constraint firstItem="qSV-kW-Ngc" firstAttribute="leading" secondItem="bMd-pC-J8I" secondAttribute="leading" id="fHz-2d-64f"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2LY-Jg-FBt" userLabel="Name Text Field View">
+                                                        <rect key="frame" x="0.0" y="144" width="375" height="53.5"/>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TPF-cm-coI" userLabel="Email Text Field View">
+                                                        <rect key="frame" x="0.0" y="197.5" width="375" height="53"/>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xw8-zo-fdg" userLabel="Password Text Field View">
+                                                        <rect key="frame" x="0.0" y="250.5" width="375" height="53.5"/>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fgm-nc-z32" userLabel="Password Stength View">
+                                                        <rect key="frame" x="0.0" y="304" width="375" height="3"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="3" id="xYH-B9-rqv"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uN9-KN-x7g" userLabel="Action Buttons View">
+                                                        <rect key="frame" x="0.0" y="307" width="375" height="165.5"/>
+                                                        <subviews>
+                                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WU9-QI-dnc" userLabel="Register Button" customClass="CustomButton" customModule="OmnieCommerceAdmin" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="78" width="375" height="36"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="36" id="u3B-vz-pk6"/>
+                                                                </constraints>
+                                                                <state key="normal" title="Register"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="buttonStyle" value="Border"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="handlerRegisterButtonTap:" destination="wQ4-Bd-uW4" eventType="touchUpInside" id="iDv-at-AoT"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eOR-1l-bfI" userLabel="Cancel Button" customClass="CustomButton" customModule="OmnieCommerceAdmin" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="129" width="375" height="36"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="36" id="wgn-xy-Vce"/>
+                                                                </constraints>
+                                                                <state key="normal" title="Cancel"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="buttonStyle" value="Border"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="handlerCancelButtonTap:" destination="wQ4-Bd-uW4" eventType="touchUpInside" id="72k-0J-flD"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="bottom" secondItem="eOR-1l-bfI" secondAttribute="bottom" id="CwD-kT-Aqt"/>
+                                                            <constraint firstAttribute="trailing" secondItem="eOR-1l-bfI" secondAttribute="trailing" id="Fc0-cB-bkQ"/>
+                                                            <constraint firstItem="WU9-QI-dnc" firstAttribute="leading" secondItem="uN9-KN-x7g" secondAttribute="leading" id="Z3p-fa-Hdn"/>
+                                                            <constraint firstAttribute="trailing" secondItem="WU9-QI-dnc" secondAttribute="trailing" id="dIx-ZA-MMG"/>
+                                                            <constraint firstItem="eOR-1l-bfI" firstAttribute="top" secondItem="WU9-QI-dnc" secondAttribute="bottom" constant="15" id="gbM-ku-wsa"/>
+                                                            <constraint firstItem="eOR-1l-bfI" firstAttribute="leading" secondItem="uN9-KN-x7g" secondAttribute="leading" id="zH8-Kz-zRP"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4eZ-XT-BTv" userLabel="Empty View">
+                                                        <rect key="frame" x="0.0" y="472.5" width="375" height="194.5"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            </stackView>
+                                        </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <state key="normal" title="Register"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="buttonStyle" value="Border"/>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="handlerRegisterButtonTap:" destination="wQ4-Bd-uW4" eventType="touchUpInside" id="iDv-at-AoT"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eOR-1l-bfI" userLabel="Cancel Button" customClass="CustomButton" customModule="OmnieCommerceAdmin" customModuleProvider="target">
-                                        <rect key="frame" x="8" y="79" width="224" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <state key="normal" title="Cancel"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="buttonStyle" value="Border"/>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="handlerCancelButtonTap:" destination="wQ4-Bd-uW4" eventType="touchUpInside" id="72k-0J-flD"/>
-                                        </connections>
-                                    </button>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="fFM-wV-dad" secondAttribute="trailing" id="AEi-6q-Fdt"/>
+                                            <constraint firstItem="fFM-wV-dad" firstAttribute="leading" secondItem="4gf-8X-NcH" secondAttribute="leading" id="HiI-l8-iWH"/>
+                                            <constraint firstAttribute="bottom" secondItem="fFM-wV-dad" secondAttribute="bottom" id="Kvb-zb-5bB"/>
+                                            <constraint firstItem="fFM-wV-dad" firstAttribute="top" secondItem="4gf-8X-NcH" secondAttribute="top" id="XjA-sH-jeO"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            </view>
+                                <constraints>
+                                    <constraint firstItem="4gf-8X-NcH" firstAttribute="height" secondItem="tnf-Wn-jfJ" secondAttribute="height" id="PgS-lb-fpH"/>
+                                    <constraint firstAttribute="trailing" secondItem="4gf-8X-NcH" secondAttribute="trailing" id="Uti-Za-Bdd"/>
+                                    <constraint firstItem="4gf-8X-NcH" firstAttribute="top" secondItem="tnf-Wn-jfJ" secondAttribute="top" id="idV-qp-edL"/>
+                                    <constraint firstItem="4gf-8X-NcH" firstAttribute="leading" secondItem="tnf-Wn-jfJ" secondAttribute="leading" id="j4x-YL-PbY"/>
+                                    <constraint firstItem="4gf-8X-NcH" firstAttribute="width" secondItem="tnf-Wn-jfJ" secondAttribute="width" id="rP5-mx-1OR"/>
+                                    <constraint firstAttribute="bottom" secondItem="4gf-8X-NcH" secondAttribute="bottom" id="xXv-Tp-QHK"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="tnf-Wn-jfJ" firstAttribute="top" secondItem="mSZ-Io-FDD" secondAttribute="top" id="3cc-bb-s4a"/>
+                            <constraint firstItem="TPF-cm-coI" firstAttribute="height" secondItem="mSZ-Io-FDD" secondAttribute="height" multiplier="37:323" id="3hn-bd-KIE"/>
+                            <constraint firstItem="TPF-cm-coI" firstAttribute="height" secondItem="mSZ-Io-FDD" secondAttribute="height" multiplier="37:463" id="9MJ-na-K5c"/>
+                            <constraint firstItem="bMd-pC-J8I" firstAttribute="height" secondItem="mSZ-Io-FDD" secondAttribute="height" multiplier="100:463" id="9qL-Vx-dEd"/>
+                            <constraint firstItem="Xw8-zo-fdg" firstAttribute="height" secondItem="mSZ-Io-FDD" secondAttribute="height" multiplier="37:463" id="AcR-G8-Ccs"/>
+                            <constraint firstItem="tnf-Wn-jfJ" firstAttribute="leading" secondItem="mSZ-Io-FDD" secondAttribute="leading" id="MJe-Dg-Rgf"/>
+                            <constraint firstAttribute="bottom" secondItem="tnf-Wn-jfJ" secondAttribute="bottom" id="OzZ-oH-1sf"/>
+                            <constraint firstItem="Xw8-zo-fdg" firstAttribute="height" secondItem="mSZ-Io-FDD" secondAttribute="height" multiplier="37:323" id="TmG-KR-MVs"/>
+                            <constraint firstItem="uN9-KN-x7g" firstAttribute="height" secondItem="mSZ-Io-FDD" secondAttribute="height" multiplier="115:463" id="X1m-KA-lCs"/>
+                            <constraint firstItem="2LY-Jg-FBt" firstAttribute="height" secondItem="mSZ-Io-FDD" secondAttribute="height" multiplier="37:323" id="nuk-IM-Mkh"/>
+                            <constraint firstItem="bMd-pC-J8I" firstAttribute="height" secondItem="mSZ-Io-FDD" secondAttribute="height" multiplier="90:323" id="okX-aL-n08"/>
+                            <constraint firstAttribute="trailing" secondItem="tnf-Wn-jfJ" secondAttribute="trailing" id="rI1-C9-BrW"/>
+                            <constraint firstItem="2LY-Jg-FBt" firstAttribute="height" secondItem="mSZ-Io-FDD" secondAttribute="height" multiplier="37:463" id="tnd-Fz-5Me"/>
+                            <constraint firstItem="uN9-KN-x7g" firstAttribute="height" secondItem="mSZ-Io-FDD" secondAttribute="height" multiplier="115:323" id="xAA-LC-gce"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="9qL-Vx-dEd"/>
+                                <exclude reference="tnd-Fz-5Me"/>
+                                <exclude reference="9MJ-na-K5c"/>
+                                <exclude reference="AcR-G8-Ccs"/>
+                                <exclude reference="X1m-KA-lCs"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="9qL-Vx-dEd"/>
+                                <exclude reference="okX-aL-n08"/>
+                                <exclude reference="nuk-IM-Mkh"/>
+                                <include reference="tnd-Fz-5Me"/>
+                                <exclude reference="3hn-bd-KIE"/>
+                                <include reference="9MJ-na-K5c"/>
+                                <include reference="AcR-G8-Ccs"/>
+                                <exclude reference="TmG-KR-MVs"/>
+                                <include reference="X1m-KA-lCs"/>
+                                <exclude reference="xAA-LC-gce"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <outlet property="scrollView" destination="tnf-Wn-jfJ" id="qSU-cZ-WjT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xeC-7c-sPc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -345,7 +472,7 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="53"/>
                                                                 <subviews>
                                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="swM-42-2YU" userLabel="Name Text Field" customClass="CustomTextField" customModule="OmnieCommerceAdmin" customModuleProvider="target">
-                                                                        <rect key="frame" x="8" y="30.5" width="367" height="19"/>
+                                                                        <rect key="frame" x="8" y="31" width="367" height="19"/>
                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                         <nil key="textColor"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -366,7 +493,7 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                             <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x1v-Ri-hv4" userLabel="Password Line View" customClass="CustomView" customModule="OmnieCommerceAdmin" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="52.5" width="375" height="53.5"/>
+                                                                <rect key="frame" x="0.0" y="53" width="375" height="53.5"/>
                                                                 <subviews>
                                                                     <textField opaque="NO" clipsSubviews="YES" tag="99" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="puu-bd-4T6" userLabel="Password Text Field" customClass="CustomTextField" customModule="OmnieCommerceAdmin" customModuleProvider="target">
                                                                         <rect key="frame" x="8" y="31.5" width="367" height="19"/>
@@ -390,7 +517,7 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="THC-Uc-Gbl" userLabel="Action Button View">
-                                                                <rect key="frame" x="0.0" y="106" width="375" height="93.5"/>
+                                                                <rect key="frame" x="0.0" y="106.5" width="375" height="93.5"/>
                                                                 <subviews>
                                                                     <button clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FFS-4c-Swg" userLabel="Sign In Button" customClass="CustomButton" customModule="OmnieCommerceAdmin" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="57.5" width="375" height="36"/>
@@ -414,10 +541,10 @@
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gby-PP-Y0W" userLabel="Texts View">
-                                                                <rect key="frame" x="0.0" y="213.5" width="375" height="93.5"/>
+                                                                <rect key="frame" x="0.0" y="214" width="375" height="93.5"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not yet registered?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TZp-21-ZpS" customClass="CustomLabel" customModule="OmnieCommerceAdmin" customModuleProvider="target">
-                                                                        <rect key="frame" x="4" y="22" width="102.5" height="30"/>
+                                                                        <rect key="frame" x="4" y="22.5" width="102.5" height="30"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -426,7 +553,7 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </label>
                                                                     <button opaque="NO" tag="99" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eRv-z0-W4a" customClass="CustomButton" customModule="OmnieCommerceAdmin" customModuleProvider="target">
-                                                                        <rect key="frame" x="114" y="22" width="261" height="30"/>
+                                                                        <rect key="frame" x="114" y="22.5" width="261" height="30"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="30" id="cmD-3W-FQj"/>
                                                                         </constraints>
@@ -439,7 +566,7 @@
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="99" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZqH-Ft-3CU" customClass="CustomButton" customModule="OmnieCommerceAdmin" customModuleProvider="target">
-                                                                        <rect key="frame" x="139.5" y="52" width="95" height="30"/>
+                                                                        <rect key="frame" x="139.5" y="52.5" width="95" height="30"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="30" id="e5X-IY-4iz"/>
                                                                         </constraints>
