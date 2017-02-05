@@ -20,10 +20,16 @@ protocol SignInShowViewControllerOutput {
     func doSomething(request: SignInShow.Something.Request)
 }
 
+enum AnimationDirection {
+    case FromLeftToRight
+    case FromRightToLeft
+}
+
 class SignInShowViewController: BaseViewController, SignInShowViewControllerInput {
     // MARK: - Properties
     var output: SignInShowViewControllerOutput!
     var router: SignInShowRouter!
+    var animationDirection: AnimationDirection?
     
     // Container childVC
     var signInContainerShowVC: SignInContainerShowViewController?
@@ -32,8 +38,14 @@ class SignInShowViewController: BaseViewController, SignInShowViewControllerInpu
     
     var activeViewController: BaseViewController? {
         didSet {
+            guard oldValue != nil else {
+                router.updateActiveViewController()
+                
+                return
+            }
+            
+            animationDirection = ((oldValue?.view.tag)! < (activeViewController?.view.tag)!) ? .FromRightToLeft : .FromLeftToRight
             router.removeInactiveViewController(inactiveViewController: oldValue)
-            router.updateActiveViewController()
         }
     }
 

@@ -50,24 +50,48 @@ class SignInShowRouter: SignInShowRouterInput {
     }
     
     // MARK: - UIContainerView
-    func removeInactiveViewController(inactiveViewController: UIViewController?) {
+    func removeInactiveViewController(inactiveViewController: BaseViewController?) {
         if let inactiveVC = inactiveViewController {
-            inactiveVC.willMove(toParentViewController: nil)
-            inactiveVC.view.removeFromSuperview()
-            inactiveVC.removeFromParentViewController()
+            UIView.animate(withDuration: 0.3, animations: {
+                inactiveVC.view.transform = CGAffineTransform(translationX: (self.viewController.animationDirection == .FromRightToLeft) ? -1000 : 1000, y: 0)
+            }, completion: { success in
+                inactiveVC.willMove(toParentViewController: nil)
+                inactiveVC.view.removeFromSuperview()
+                inactiveVC.removeFromParentViewController()
+                
+                self.updateActiveViewController()
+            })
         }
     }
     
     func updateActiveViewController() {
         if let activeVC = viewController.activeViewController {
-            viewController.addChildViewController(activeVC)
-            activeVC.view.frame = viewController.containerView.bounds
-            viewController.containerView.addSubview(activeVC.view)
-            activeVC.didMove(toParentViewController: viewController)
-            activeVC.didMove(toParentViewController: viewController)
+            if (self.viewController.animationDirection == nil) {
+                addActiveViewController(activeVC)
+            } else {
+                self.addActiveViewController(activeVC)
+                
+                UIView.animate(withDuration: 0.3, animations: {
+                    activeVC.view.transform = CGAffineTransform(translationX: (self.viewController.animationDirection == .FromRightToLeft) ? -1000 : 0, y: 0)
+                })
+            }
         }
     }
 
+    private func addActiveViewController(_ activeVC: BaseViewController) {
+        self.viewController.addChildViewController(activeVC)
+
+        if (self.viewController.animationDirection == nil) {
+            activeVC.view.frame = self.viewController.containerView.bounds
+        } else {
+            activeVC.view.frame = CGRect.init(origin: CGPoint.init(x: ((self.viewController.animationDirection == .FromRightToLeft) ? 1000 : -1000), y: 0), size: self.viewController.containerView.bounds.size)
+        }
+        
+        self.viewController.containerView.addSubview(activeVC.view)
+        activeVC.didMove(toParentViewController: self.viewController)
+        activeVC.didMove(toParentViewController: self.viewController)
+    }
+    
     func navigateToSomewhere() {
         // NOTE: Teach the router how to navigate to another scene. Some examples follow:
         // 1. Trigger a storyboard segue

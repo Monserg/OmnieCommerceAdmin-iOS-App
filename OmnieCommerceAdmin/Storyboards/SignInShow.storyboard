@@ -161,7 +161,7 @@
                         <viewControllerLayoutGuide type="top" id="fr8-IJ-EdQ"/>
                         <viewControllerLayoutGuide type="bottom" id="tbf-e7-QFd"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Vnu-gp-doq">
+                    <view key="view" tag="1" contentMode="scaleToFill" id="Vnu-gp-doq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -169,7 +169,7 @@
                                 <rect key="frame" x="67" y="269" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tgD-X3-l2h" userLabel="Send Button" customClass="CustomButton" customModule="OmnieCommerceAdmin" customModuleProvider="target">
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tgD-X3-l2h" userLabel="Send Button" customClass="CustomButton" customModule="OmnieCommerceAdmin" customModuleProvider="target">
                                         <rect key="frame" x="8" y="22" width="224" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -181,7 +181,7 @@
                                             <action selector="handlerSendButtonTap:" destination="OPf-sf-AUU" eventType="touchUpInside" id="RZS-zf-BCO"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1TZ-5k-21n" userLabel="Cancel Button" customClass="CustomButton" customModule="OmnieCommerceAdmin" customModuleProvider="target">
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1TZ-5k-21n" userLabel="Cancel Button" customClass="CustomButton" customModule="OmnieCommerceAdmin" customModuleProvider="target">
                                         <rect key="frame" x="8" y="75" width="224" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -197,7 +197,6 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Kf-zz-VKc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -212,7 +211,7 @@
                         <viewControllerLayoutGuide type="top" id="piZ-as-im0"/>
                         <viewControllerLayoutGuide type="bottom" id="Tbm-hk-5ez"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="mSZ-Io-FDD">
+                    <view key="view" tag="1" contentMode="scaleToFill" id="mSZ-Io-FDD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -512,7 +511,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="r0S-9A-Zgy" firstAttribute="leading" secondItem="w4h-dr-gZj" secondAttribute="leading" id="24F-Ke-PMp"/>
                             <constraint firstItem="x1v-Ri-hv4" firstAttribute="height" secondItem="w4h-dr-gZj" secondAttribute="height" multiplier="37:363" id="7Po-Cv-kEj"/>
