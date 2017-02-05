@@ -30,10 +30,10 @@ class SignInShowViewController: BaseViewController, SignInShowViewControllerInpu
     var signUpShowVC: SignUpShowViewController?
     var forgotPasswordShowVC: ForgotPasswordShowViewController?
     
-    private var activeViewController: BaseViewController? {
+    var activeViewController: BaseViewController? {
         didSet {
-            removeInactiveViewController(inactiveViewController: oldValue)
-            updateActiveViewController()
+            router.removeInactiveViewController(inactiveViewController: oldValue)
+            router.updateActiveViewController()
         }
     }
 
@@ -100,26 +100,6 @@ class SignInShowViewController: BaseViewController, SignInShowViewControllerInpu
         // nameTextField.text = viewModel.name
     }
     
-    
-    // MARK: - UIContainerView
-    func removeInactiveViewController(inactiveViewController: UIViewController?) {
-        if let inactiveVC = inactiveViewController {
-            inactiveVC.willMove(toParentViewController: nil)
-            inactiveVC.view.removeFromSuperview()
-            inactiveVC.removeFromParentViewController()
-        }
-    }
-    
-    func updateActiveViewController() {
-        if let activeVC = activeViewController {
-            addChildViewController(activeVC)
-            activeVC.view.frame = containerView.bounds
-            containerView.addSubview(activeVC.view)
-            activeVC.didMove(toParentViewController: self)
-            activeVC.didMove(toParentViewController: self)
-        }
-    }
-
     
     // MARK: - Gesture
     @IBAction func handlerTapGestureRecognizer(_ sender: UITapGestureRecognizer) {

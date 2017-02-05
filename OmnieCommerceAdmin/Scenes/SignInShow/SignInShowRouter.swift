@@ -22,6 +22,29 @@ class SignInShowRouter: SignInShowRouterInput {
     
     
     // MARK: - Custom Functions. Navigation
+    func navigateBetweenContainerSubviews() {
+        
+    }
+    
+    // MARK: - UIContainerView
+    func removeInactiveViewController(inactiveViewController: UIViewController?) {
+        if let inactiveVC = inactiveViewController {
+            inactiveVC.willMove(toParentViewController: nil)
+            inactiveVC.view.removeFromSuperview()
+            inactiveVC.removeFromParentViewController()
+        }
+    }
+    
+    func updateActiveViewController() {
+        if let activeVC = viewController.activeViewController {
+            viewController.addChildViewController(activeVC)
+            activeVC.view.frame = viewController.containerView.bounds
+            viewController.containerView.addSubview(activeVC.view)
+            activeVC.didMove(toParentViewController: viewController)
+            activeVC.didMove(toParentViewController: viewController)
+        }
+    }
+
     func navigateToSomewhere() {
         // NOTE: Teach the router how to navigate to another scene. Some examples follow:
         // 1. Trigger a storyboard segue
