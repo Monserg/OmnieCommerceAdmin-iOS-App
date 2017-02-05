@@ -23,7 +23,30 @@ class SignInShowRouter: SignInShowRouterInput {
     
     // MARK: - Custom Functions. Navigation
     func navigateBetweenContainerSubviews() {
+        // Apply Container childVC
+        viewController.signInContainerShowVC = UIStoryboard(name: "SignInShow", bundle: nil).instantiateViewController(withIdentifier: "SignInContainerShowVC") as? SignInContainerShowViewController
         
+        viewController.signInContainerShowVC?.handlerRegisterButtonCompletion = { _ in
+            self.viewController.signUpShowVC = UIStoryboard(name: "SignInShow", bundle: nil).instantiateViewController(withIdentifier: "SignUpShowVC") as? SignUpShowViewController
+            
+            self.viewController.signUpShowVC?.handlerCancelButtonCompletion = { _ in
+                self.viewController.activeViewController = self.viewController.signInContainerShowVC
+            }
+            
+            self.viewController.activeViewController = self.viewController.signUpShowVC
+        }
+        
+        viewController.signInContainerShowVC?.handlerForgotPasswordButtonCompletion = { _ in
+            self.viewController.forgotPasswordShowVC = UIStoryboard(name: "SignInShow", bundle: nil).instantiateViewController(withIdentifier: "ForgotPasswordShowVC") as? ForgotPasswordShowViewController
+            
+            self.viewController.forgotPasswordShowVC?.handlerCancelButtonCompletion = { _ in
+                self.viewController.activeViewController = self.viewController.signInContainerShowVC
+            }
+            
+            self.viewController.activeViewController = self.viewController.forgotPasswordShowVC
+        }
+        
+        viewController.activeViewController = viewController.signInContainerShowVC
     }
     
     // MARK: - UIContainerView

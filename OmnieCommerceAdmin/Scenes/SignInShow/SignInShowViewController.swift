@@ -66,30 +66,8 @@ class SignInShowViewController: BaseViewController, SignInShowViewControllerInpu
         hideNavigationBar()
         
         // Apply Container childVC
-        signInContainerShowVC = UIStoryboard(name: "SignInShow", bundle: nil).instantiateViewController(withIdentifier: "SignInContainerShowVC") as? SignInContainerShowViewController
-        
-        signInContainerShowVC?.handlerRegisterButtonCompletion = { _ in
-            self.signUpShowVC = UIStoryboard(name: "SignInShow", bundle: nil).instantiateViewController(withIdentifier: "SignUpShowVC") as? SignUpShowViewController
-            
-            self.signUpShowVC?.handlerCancelButtonCompletion = { _ in
-                self.activeViewController = self.signInContainerShowVC
-            }
-            
-            self.activeViewController = self.signUpShowVC
-        }
-        
-        signInContainerShowVC?.handlerForgotPasswordButtonCompletion = { _ in
-            self.forgotPasswordShowVC = UIStoryboard(name: "SignInShow", bundle: nil).instantiateViewController(withIdentifier: "ForgotPasswordShowVC") as? ForgotPasswordShowViewController
-            
-            self.forgotPasswordShowVC?.handlerCancelButtonCompletion = { _ in
-                self.activeViewController = self.signInContainerShowVC
-            }
-            
-            self.activeViewController = self.forgotPasswordShowVC
-        }
-        
-        activeViewController = signInContainerShowVC
-        
+        router.navigateBetweenContainerSubviews()
+                
         // Setup App background color theme
         view.applyBackgroundTheme()
     }
