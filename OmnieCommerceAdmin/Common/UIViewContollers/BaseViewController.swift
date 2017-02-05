@@ -15,7 +15,7 @@ class BaseViewController: UIViewController {
     var selectedRange: CGRect?
     var scrollViewBase = UIScrollView()
     var textFieldsArray = [CustomTextField]()
-    
+    var displaySize: CGSize = UIScreen.main.bounds.size
     
     // MARK: - Class Initialization
     override func awakeFromNib() {
@@ -111,6 +111,7 @@ class BaseViewController: UIViewController {
         print(object: "\(type(of: self)): \(#function) run. New size = \(size)")
         
         view.endEditing(true)
+        displaySize = size
     }
 }
 

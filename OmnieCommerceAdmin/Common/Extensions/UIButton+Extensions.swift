@@ -65,6 +65,9 @@ extension UIButton {
         case .TitleUbuntuLight12UndirlineVeryLightGray:
             setAttributedTitle(NSAttributedString(string: (titleLabel?.text?.localized())!, attributes: UIFont.ubuntuLight12UnderlineVeryLightGray), for: .normal)
         }
+        
+        setNeedsDisplay()
+        layoutIfNeeded()
     }
     
     func setBackgroundColor() {

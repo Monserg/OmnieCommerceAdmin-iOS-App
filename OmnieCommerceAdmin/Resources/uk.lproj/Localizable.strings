@@ -25,7 +25,7 @@
 // Labels
 "Welcome"                       =   "Вітаємо!";
 "Registration"                  =   "Реєстрація";
-"Forgot password"               =   "Забули пароль";
+"Forgot password"               =   "Забули пароль?";
 "Not yet registered?"           =   "Ще не зареєстровані?";
 "Enter code"                    =   "Введіть код";
 "Wrong Number or Email"         =   "* Неправильний номер або Email";
@@ -36,6 +36,8 @@
 "Name"                          =   "Ім'я";
 "Password"                      =   "Пароль";
 "Phone or Email"                =   "Телефон або Email";
+"Email"                         =   "Email";
+"Enter Code"                    =   "Введіть код з повідомлення";
 
 
 // Buttons

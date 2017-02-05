@@ -19,6 +19,7 @@ protocol SignInShowRouterInput {
 class SignInShowRouter: SignInShowRouterInput {
     // MARK: - Properties
     weak var viewController: SignInShowViewController!
+    var translationX: CGFloat?
     
     
     // MARK: - Custom Functions. Navigation
@@ -52,8 +53,10 @@ class SignInShowRouter: SignInShowRouterInput {
     // MARK: - UIContainerView
     func removeInactiveViewController(inactiveViewController: BaseViewController?) {
         if let inactiveVC = inactiveViewController {
-            UIView.animate(withDuration: 0.3, animations: {
-                inactiveVC.view.transform = CGAffineTransform(translationX: (self.viewController.animationDirection == .FromRightToLeft) ? -1000 : 1000, y: 0)
+            translationX = viewController.displaySize.width
+            
+            UIView.animate(withDuration: 0.2, animations: {
+                inactiveVC.view.transform = CGAffineTransform(translationX: (self.viewController.animationDirection == .FromRightToLeft) ? -self.translationX! : self.translationX!, y: 0)
             }, completion: { success in
                 inactiveVC.willMove(toParentViewController: nil)
                 inactiveVC.view.removeFromSuperview()
@@ -70,9 +73,10 @@ class SignInShowRouter: SignInShowRouterInput {
                 addActiveViewController(activeVC)
             } else {
                 self.addActiveViewController(activeVC)
+//                self.translationX = self.viewController.containerStackView.frame.minX - activeVC.
                 
-                UIView.animate(withDuration: 0.3, animations: {
-                    activeVC.view.transform = CGAffineTransform(translationX: (self.viewController.animationDirection == .FromRightToLeft) ? -1000 : 0, y: 0)
+                UIView.animate(withDuration: 0.2, animations: {
+                    activeVC.view.transform = CGAffineTransform(translationX: (self.viewController.animationDirection == .FromRightToLeft) ? -self.translationX! : 0, y: 0)
                 })
             }
         }
@@ -84,7 +88,7 @@ class SignInShowRouter: SignInShowRouterInput {
         if (self.viewController.animationDirection == nil) {
             activeVC.view.frame = self.viewController.containerView.bounds
         } else {
-            activeVC.view.frame = CGRect.init(origin: CGPoint.init(x: ((self.viewController.animationDirection == .FromRightToLeft) ? 1000 : -1000), y: 0), size: self.viewController.containerView.bounds.size)
+            activeVC.view.frame = CGRect.init(origin: CGPoint.init(x: ((self.viewController.animationDirection == .FromRightToLeft) ? translationX! : -translationX!), y: 0), size: self.viewController.containerView.bounds.size)
         }
         
         self.viewController.containerView.addSubview(activeVC.view)

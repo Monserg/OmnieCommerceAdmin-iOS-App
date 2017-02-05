@@ -51,6 +51,7 @@ class SignInShowViewController: BaseViewController, SignInShowViewControllerInpu
 
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var logoBackgroundView: UIView!
+    @IBOutlet weak var containerStackView: UIStackView!
 
     
     // MARK: - Class initialization
