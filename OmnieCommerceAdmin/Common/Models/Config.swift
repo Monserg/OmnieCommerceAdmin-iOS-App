@@ -18,6 +18,9 @@ enum ThemeDesign: String {
     case DarkForGuest   =   "DarkForGuest"
 }
 
+typealias HandlerRegisterButtonCompletion   =   (() -> ())
+typealias HandlerCancelButtonCompletion     =   (() -> ())
+
 struct Config {
     struct Constants {
         // FIXME: - DELETE AFTER TEST

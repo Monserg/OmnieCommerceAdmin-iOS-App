@@ -24,6 +24,7 @@ class SignUpShowViewController: BaseViewController, SignUpShowViewControllerInpu
     // MARK: - Properties
     var output: SignUpShowViewControllerOutput!
     var router: SignUpShowRouter!
+    var handlerCancelButtonCompletion: HandlerCancelButtonCompletion?
     
 
     // MARK: - Class initialization
@@ -60,9 +61,12 @@ class SignUpShowViewController: BaseViewController, SignUpShowViewControllerInpu
     
     
     // MARK: - Actions
+    @IBAction func handlerRegisterButtonTap(_ sender: CustomButton) {
+    }
+    
     @IBAction func handlerCancelButtonTap(_ sender: CustomButton) {
         print(object: "\(type(of: self)): \(#function) run.")
-        
-        _ = navigationController?.popToRootViewController(animated: true)
+
+        handlerCancelButtonCompletion!()
     }
 }

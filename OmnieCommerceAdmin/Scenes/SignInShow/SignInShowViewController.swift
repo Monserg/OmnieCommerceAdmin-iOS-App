@@ -27,6 +27,7 @@ class SignInShowViewController: BaseViewController, SignInShowViewControllerInpu
     
     // Container childVC
     var signInContainerShowVC: SignInContainerShowViewController?
+    var signUpShowVC: SignUpShowViewController?
     
     private var activeViewController: BaseViewController? {
         didSet {
@@ -64,9 +65,19 @@ class SignInShowViewController: BaseViewController, SignInShowViewControllerInpu
         hideNavigationBar()
         
         // Apply Container childVC
-        signInContainerShowVC       =   UIStoryboard(name: "SignInShow", bundle: nil).instantiateViewController(withIdentifier: "SignInContainerShowVC") as? SignInContainerShowViewController
+        signInContainerShowVC = UIStoryboard(name: "SignInShow", bundle: nil).instantiateViewController(withIdentifier: "SignInContainerShowVC") as? SignInContainerShowViewController
         
-        activeViewController        =   signInContainerShowVC
+        signInContainerShowVC?.handlerRegisterButtonCompletion = { _ in
+            self.signUpShowVC = UIStoryboard(name: "SignInShow", bundle: nil).instantiateViewController(withIdentifier: "SignUpShowVC") as? SignUpShowViewController
+            
+            self.signUpShowVC?.handlerCancelButtonCompletion = { _ in
+                self.activeViewController = self.signInContainerShowVC
+            }
+            
+            self.activeViewController = self.signUpShowVC
+        }
+        
+        activeViewController = signInContainerShowVC
         
         // Setup App background color theme
         view.applyBackgroundTheme()
