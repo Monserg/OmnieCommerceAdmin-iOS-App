@@ -50,7 +50,7 @@ class SignInShowViewController: BaseViewController, SignInShowViewControllerInpu
     }
 
     @IBOutlet weak var containerView: UIView!
-    @IBOutlet weak var logoImageView: UIView!
+    @IBOutlet weak var logoBackgroundView: UIView!
 
     
     // MARK: - Class initialization
@@ -83,6 +83,7 @@ class SignInShowViewController: BaseViewController, SignInShowViewControllerInpu
                 
         // Setup App background color theme
         view.applyBackgroundTheme()
+        logoBackgroundView.applyBackgroundTheme()
     }
     
     // Display logic

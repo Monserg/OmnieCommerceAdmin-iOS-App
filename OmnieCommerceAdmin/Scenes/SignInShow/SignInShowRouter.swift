@@ -52,7 +52,7 @@ class SignInShowRouter: SignInShowRouterInput {
     // MARK: - UIContainerView
     func removeInactiveViewController(inactiveViewController: BaseViewController?) {
         if let inactiveVC = inactiveViewController {
-            UIView.animate(withDuration: 1.3, animations: {
+            UIView.animate(withDuration: 0.3, animations: {
                 inactiveVC.view.transform = CGAffineTransform(translationX: (self.viewController.animationDirection == .FromRightToLeft) ? -1000 : 1000, y: 0)
             }, completion: { success in
                 inactiveVC.willMove(toParentViewController: nil)
@@ -88,8 +88,6 @@ class SignInShowRouter: SignInShowRouterInput {
         }
         
         self.viewController.containerView.addSubview(activeVC.view)
-        self.viewController.view.sendSubview(toBack: self.viewController.containerView)
-        self.viewController.view.bringSubview(toFront: self.viewController.logoImageView)
         activeVC.didMove(toParentViewController: self.viewController)
     }
     
