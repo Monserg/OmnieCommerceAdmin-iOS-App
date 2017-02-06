@@ -9,8 +9,9 @@
 import UIKit
 
 enum FieldStyle: String {
-    case Name = "Name"
-    case Password = "Password"
+    case Name       =   "Name"
+    case Email      =   "Email"
+    case Password   =   "Password"
 }
 
 @IBDesignable class CustomTextField: UITextField {
@@ -60,6 +61,10 @@ enum FieldStyle: String {
 
         // Set differences
         switch fieldStyle {
+        case .Email:
+            autocapitalizationType          =   .none
+            keyboardType                    =   .emailAddress
+            
         case .Password:
             autocapitalizationType          =   .none
             isSecureTextEntry               =   true

@@ -27,6 +27,9 @@ class SignUpShowViewController: BaseViewController, SignUpShowViewControllerInpu
     var handlerCancelButtonCompletion: HandlerCancelButtonCompletion?
     
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var nameTextField: CustomTextField!
+    @IBOutlet weak var emailTextField: CustomTextField!
+    @IBOutlet weak var passwordTextField: CustomTextField!
 
     
     // MARK: - Class initialization
@@ -51,6 +54,19 @@ class SignUpShowViewController: BaseViewController, SignUpShowViewControllerInpu
         let request = SignUpShow.Something.Request()
         output.doSomething(request: request)
         
+        // Delegates
+        nameTextField.delegate      =   self
+        emailTextField.delegate     =   self
+        passwordTextField.delegate  =   self
+        
+        // Add fields to array
+        textFieldsArray.append(nameTextField)
+        textFieldsArray.append(emailTextField)
+        textFieldsArray.append(passwordTextField)
+        
+        // Apply keyboard handler
+        scrollViewBase              =   scrollView
+
         // Setup App background color theme
         view.applyBackgroundTheme()
     }
@@ -64,11 +80,10 @@ class SignUpShowViewController: BaseViewController, SignUpShowViewControllerInpu
     
     // MARK: - Actions
     @IBAction func handlerRegisterButtonTap(_ sender: CustomButton) {
+        router.navigateToAppMainViewController()
     }
     
     @IBAction func handlerCancelButtonTap(_ sender: CustomButton) {
-        print(object: "\(type(of: self)): \(#function) run.")
-
         handlerCancelButtonCompletion!()
     }
 }

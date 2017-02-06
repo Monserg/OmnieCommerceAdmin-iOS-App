@@ -22,6 +22,10 @@ class SignUpShowRouter: SignUpShowRouterInput {
     
     
     // MARK: - Custom Functions. Navigation
+    func navigateToAppMainViewController() {
+        print(#function)
+    }
+    
     func navigateToSomewhere() {
         // NOTE: Teach the router how to navigate to another scene. Some examples follow:
         // 1. Trigger a storyboard segue
