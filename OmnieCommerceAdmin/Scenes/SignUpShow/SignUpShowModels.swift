@@ -12,7 +12,22 @@
 import UIKit
 
 // MARK: - Data models
-struct SignUpShow {
+struct SignUpShowModels {
+    // MARK: - UITextField
+    struct UpdateTextField {
+        struct Request {
+            let text: String
+        }
+        
+        struct Response {
+            let text: String
+        }
+        
+        struct ViewModel {
+            let text: String
+        }
+    }
+
     struct Something {
         struct Request {
         }

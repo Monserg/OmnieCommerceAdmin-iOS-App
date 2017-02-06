@@ -56,8 +56,9 @@ extension UIButton {
             layer.borderColor       =   UIColor(hexString: (Config.Constants.isAppThemesDark) ? "#5e6969" : "#9ec9c6", withAlpha: 1.0)?.cgColor
             backgroundColor         =   UIColor.clear
             titleLabel?.font        =   UIFont.ubuntuLight14
-            layer.cornerRadius      =   frame.size.height / 2
             borderWidth             =   1
+            layer.cornerRadius      =   bounds.size.height / 2 * ((bounds.size.width == bounds.size.height) ? 1 : 0.75)
+            clipsToBounds           =   true
             
         case .TitleUbuntuLight12VeryLightOrange:
             setAttributedTitle(NSAttributedString(string: (titleLabel?.text?.localized())!, attributes: UIFont.ubuntuLight12VeryLightOrange), for: .normal)
@@ -65,9 +66,6 @@ extension UIButton {
         case .TitleUbuntuLight12UndirlineVeryLightGray:
             setAttributedTitle(NSAttributedString(string: (titleLabel?.text?.localized())!, attributes: UIFont.ubuntuLight12UnderlineVeryLightGray), for: .normal)
         }
-        
-        setNeedsDisplay()
-        layoutIfNeeded()
     }
     
     func setBackgroundColor() {

@@ -13,11 +13,17 @@ import UIKit
 
 // MARK: - Input & Output protocols
 protocol SignUpShowPresenterInput {
-    func presentSomething(response: SignUpShow.Something.Response)
+    func presentUpdatedTextField(response: SignUpShowModels.UpdateTextField.Response)
+
+    // DEMO
+    func presentSomething(response: SignUpShowModels.Something.Response)
 }
 
 protocol SignUpShowPresenterOutput: class {
-    func displaySomething(viewModel: SignUpShow.Something.ViewModel)
+    func updateTextField(model: SignUpShowModels.UpdateTextField.ViewModel)
+   
+    // DEMO
+    func displaySomething(viewModel: SignUpShowModels.Something.ViewModel)
 }
 
 class SignUpShowPresenter: SignUpShowPresenterInput {
@@ -26,9 +32,16 @@ class SignUpShowPresenter: SignUpShowPresenterInput {
     
     
     // MARK: - Custom Functions. Presentation logic
-    func presentSomething(response: SignUpShow.Something.Response) {
+    func presentUpdatedTextField(response: SignUpShowModels.UpdateTextField.Response) {
+        let model = SignUpShowModels.UpdateTextField.ViewModel(text: response.text)
+        
+        output.updateTextField(model: model)
+    }
+
+    func presentSomething(response: SignUpShowModels.Something.Response) {
         // NOTE: Format the response from the Interactor and pass the result back to the View Controller
-        let viewModel = SignUpShow.Something.ViewModel()
+        let viewModel = SignUpShowModels.Something.ViewModel()
+        
         output.displaySomething(viewModel: viewModel)
     }
 }

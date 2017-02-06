@@ -13,24 +13,27 @@ import UIKit
 
 // MARK: - Input & Output protocols
 protocol SignUpShowViewControllerInput {
-    func displaySomething(viewModel: SignUpShow.Something.ViewModel)
+    func updateTextField(model: SignUpShowModels.UpdateTextField.ViewModel)
+
+    // DEMO
+    func displaySomething(viewModel: SignUpShowModels.Something.ViewModel)
 }
 
 protocol SignUpShowViewControllerOutput {
-    func doSomething(request: SignUpShow.Something.Request)
+    func updateTextField(request: SignUpShowModels.UpdateTextField.Request)
+
+    // DEMO
+    func doSomething(request: SignUpShowModels.Something.Request)
 }
 
-class SignUpShowViewController: BaseViewController, SignUpShowViewControllerInput {
+class SignUpShowViewController: BaseViewController {
     // MARK: - Properties
     var output: SignUpShowViewControllerOutput!
     var router: SignUpShowRouter!
     var handlerCancelButtonCompletion: HandlerCancelButtonCompletion?
     
     @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var nameTextField: CustomTextField!
-    @IBOutlet weak var emailTextField: CustomTextField!
-    @IBOutlet weak var passwordTextField: CustomTextField!
-
+    @IBOutlet var textFieldsCollection: [CustomTextField]!
     
     // MARK: - Class initialization
     override func awakeFromNib() {
@@ -51,28 +54,22 @@ class SignUpShowViewController: BaseViewController, SignUpShowViewControllerInpu
     // MARK: - Custom Functions
     func doInitialSetupOnLoad() {
         // NOTE: Ask the Interactor to do some work
-        let request = SignUpShow.Something.Request()
+        let request = SignUpShowModels.Something.Request()
         output.doSomething(request: request)
         
         // Delegates
-        nameTextField.delegate      =   self
-        emailTextField.delegate     =   self
-        passwordTextField.delegate  =   self
-        
-        // Add fields to array
-        textFieldsArray.append(nameTextField)
-        textFieldsArray.append(emailTextField)
-        textFieldsArray.append(passwordTextField)
+        textFieldsArray = textFieldsCollection
+        _ = textFieldsCollection.map{ $0.delegate = self }
         
         // Apply keyboard handler
-        scrollViewBase              =   scrollView
+        scrollViewBase = scrollView
 
         // Setup App background color theme
         view.applyBackgroundTheme()
     }
     
     // Display logic
-    func displaySomething(viewModel: SignUpShow.Something.ViewModel) {
+    func displaySomething(viewModel: SignUpShowModels.Something.ViewModel) {
         // NOTE: Display the result from the Presenter
         // nameTextField.text = viewModel.name
     }
@@ -86,4 +83,14 @@ class SignUpShowViewController: BaseViewController, SignUpShowViewControllerInpu
     @IBAction func handlerCancelButtonTap(_ sender: CustomButton) {
         handlerCancelButtonCompletion!()
     }
+}
+
+
+extension SignUpShowViewController: SignUpShowViewControllerInput {
+    func updateTextField(model: SignUpShowModels.UpdateTextField.ViewModel) {
+        print(object: "\(type(of: self)): \(#function) run in [line \(#line)]")
+
+//        nameTextField.text = model.text
+    }
+    
 }

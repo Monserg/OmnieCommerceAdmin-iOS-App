@@ -13,11 +13,17 @@ import UIKit
 
 // MARK: - Input & Output protocols
 protocol SignUpShowInteractorInput {
-    func doSomething(request: SignUpShow.Something.Request)
+    func updateTextField(request: SignUpShowModels.UpdateTextField.Request)
+
+    // DEMO
+    func doSomething(request: SignUpShowModels.Something.Request)
 }
 
 protocol SignUpShowInteractorOutput {
-    func presentSomething(response: SignUpShow.Something.Response)
+    func presentUpdatedTextField(response: SignUpShowModels.UpdateTextField.Response)
+
+    // DEMO
+    func presentSomething(response: SignUpShowModels.Something.Response)
 }
 
 class SignUpShowInteractor: SignUpShowInteractorInput {
@@ -27,13 +33,20 @@ class SignUpShowInteractor: SignUpShowInteractorInput {
     
     
     // MARK: - Custom Functions. Business logic
-    func doSomething(request: SignUpShow.Something.Request) {
+    func updateTextField(request: SignUpShowModels.UpdateTextField.Request) {
+        let response = SignUpShowModels.UpdateTextField.Response(text: request.text)
+        
+        output.presentUpdatedTextField(response: response)
+    }
+    
+    // DEMO
+    func doSomething(request: SignUpShowModels.Something.Request) {
         // NOTE: Create some Worker to do the work
         worker = SignUpShowWorker()
         worker.doSomeWork()
         
         // NOTE: Pass the result to the Presenter
-        let response = SignUpShow.Something.Response()
+        let response = SignUpShowModels.Something.Response()
         output.presentSomething(response: response)
     }
 }

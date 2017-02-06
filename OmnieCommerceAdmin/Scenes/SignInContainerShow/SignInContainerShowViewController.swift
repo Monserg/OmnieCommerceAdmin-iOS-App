@@ -44,7 +44,7 @@ class SignInContainerShowViewController: BaseViewController, SignInContainerShow
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        doInitialSetupOnLoad()
+        //doInitialSetupOnLoad()
     }
     
 
