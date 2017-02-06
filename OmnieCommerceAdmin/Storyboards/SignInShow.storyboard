@@ -355,8 +355,9 @@
                                                     <userDefinedRuntimeAttribute type="string" keyPath="viewDesign" value="SingleBottomVeryLightGrayLine"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fgm-nc-z32" userLabel="Password Strength View">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fgm-nc-z32" userLabel="Password Strength View" customClass="PasswordStrengthLevelView" customModule="OmnieCommerceAdmin" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="310" width="375" height="4"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="4" id="xYH-B9-rqv"/>
                                                 </constraints>
@@ -508,6 +509,7 @@
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
+                        <outlet property="passwordStrengthView" destination="Fgm-nc-z32" id="3Um-qB-N1K"/>
                         <outlet property="scrollView" destination="tnf-Wn-jfJ" id="qSU-cZ-WjT"/>
                         <outletCollection property="textFieldsCollection" destination="P9H-UK-mNC" collectionClass="NSMutableArray" id="hvw-Bv-8E2"/>
                         <outletCollection property="textFieldsCollection" destination="Afe-uC-W9p" collectionClass="NSMutableArray" id="rds-F2-3fB"/>

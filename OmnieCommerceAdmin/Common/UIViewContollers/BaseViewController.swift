@@ -138,13 +138,9 @@ extension BaseViewController: UIGestureRecognizerDelegate {
 
 // MARK: - UITextFieldDelegate
 extension BaseViewController: UITextFieldDelegate {
-//    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-////        if (textField.tag == 99) {
-////            handlerUpdateTextFieldCompletion!(textField.text! + string)
-////        }
-//        
-//        return true
-//    }
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        return true
+    }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         print(object: "\(type(of: self)): \(#function) run in [line \(#line)]")
@@ -164,8 +160,8 @@ extension BaseViewController: UITextFieldDelegate {
         print(object: "\(type(of: self)): \(#function) run in [line \(#line)]")
         
         if (textField.tag != 99) {
-            let indexCurrent    =   textFieldsArray.index(of: textField as! CustomTextField)!
-            let indexNext       =   textFieldsArray.index(after: indexCurrent)
+            let indexCurrent = textFieldsArray.index(of: textField as! CustomTextField)!
+            let indexNext = textFieldsArray.index(after: indexCurrent)
             
             textFieldsArray[indexNext].becomeFirstResponder()
         } else {

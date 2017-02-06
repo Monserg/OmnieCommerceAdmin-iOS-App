@@ -20,12 +20,12 @@ struct SignUpShowModels {
         }
         
         struct Response {
-            let password: String
+            let strengthLevel: PasswordStrengthLevel
             let isValid: Bool
         }
         
         struct ViewModel {
-            let password: String
+            let strengthLevel: PasswordStrengthLevel
             let isValid: Bool
         }
     }

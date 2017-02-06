@@ -23,13 +23,13 @@ typealias HandlerRegisterButtonCompletion       =   (() -> ())
 typealias HandlerForgotPasswordButtonCompletion =   (() -> ())
 typealias HandlerCancelButtonCompletion         =   (() -> ())
 
-typealias PasswordStrengthResult                =   (strength: String, isValid: Bool)
+typealias PasswordCheckResult                   =   (strengthLevel: PasswordStrengthLevel, isValid: Bool)
 
 struct Config {
     struct Constants {
         // FIXME: - DELETE AFTER TEST
         static let isUserGuest: Bool    =   true
-        static let isAppThemesDark      =   false
+        static let isAppThemesDark      =   true
     }
     
     

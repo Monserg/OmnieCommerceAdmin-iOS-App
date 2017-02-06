@@ -28,7 +28,7 @@ class SignUpShowPresenter: SignUpShowPresenterInput {
     
     // MARK: - Custom Functions. Presentation logic
     func preparePasswordTextFieldResultForShowFrom(responseModel: SignUpShowModels.PasswordTextField.Response) {
-        let viewModel = SignUpShowModels.PasswordTextField.ViewModel(password: responseModel.password, isValid: responseModel.isValid)
+        let viewModel = SignUpShowModels.PasswordTextField.ViewModel(strengthLevel: responseModel.strengthLevel, isValid: responseModel.isValid)
         
         viewController.showPasswordTextFieldCheckResult(viewModel: viewModel)
     }

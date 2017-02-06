@@ -26,8 +26,10 @@ class SignUpShowViewController: BaseViewController {
     var interactor: SignUpShowViewControllerOutput!
     var router: SignUpShowRouter!
     var handlerCancelButtonCompletion: HandlerCancelButtonCompletion?
+    var passwordCheckResult: PasswordCheckResult?
     
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var passwordStrengthView: PasswordStrengthLevelView!
     @IBOutlet var textFieldsCollection: [CustomTextField]!
     
     // MARK: - Class initialization
@@ -74,19 +76,32 @@ class SignUpShowViewController: BaseViewController {
 // MARK: - SignUpShowViewControllerInput
 extension SignUpShowViewController: SignUpShowViewControllerInput {
     func showPasswordTextFieldCheckResult(viewModel: SignUpShowModels.PasswordTextField.ViewModel) {
-        print(object: "OK")
+        passwordCheckResult?.strengthLevel = viewModel.strengthLevel
+        passwordCheckResult?.isValid = viewModel.isValid
+        
+        passwordStrengthView.passwordStrengthLevel = viewModel.strengthLevel
     }
 }
 
 
 // MARK: - UITextFieldDelegate
 extension SignUpShowViewController {
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+    override func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         // Interactor output
         if (textField.tag == 99) {
             let passwordRequest = SignUpShowModels.PasswordTextField.Request(password: textField.text! + string)
             
             interactor.validatePasswordTextFieldStrengthFrom(requestModel: passwordRequest)
+            passwordStrengthView.passwordString = (string.isEmpty && textField.text?.characters.count == 1) ? nil : (textField.text! + string)
+            passwordStrengthView.setNeedsDisplay()
+        }
+        
+        return true
+    }
+    
+    override func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if (textField.tag == 99) {
+            return (passwordCheckResult?.isValid)!
         }
         
         return true
