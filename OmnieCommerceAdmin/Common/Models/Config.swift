@@ -23,6 +23,8 @@ typealias HandlerRegisterButtonCompletion       =   (() -> ())
 typealias HandlerForgotPasswordButtonCompletion =   (() -> ())
 typealias HandlerCancelButtonCompletion         =   (() -> ())
 
+typealias PasswordStrengthResult                =   (strength: String, isValid: Bool)
+
 struct Config {
     struct Constants {
         // FIXME: - DELETE AFTER TEST

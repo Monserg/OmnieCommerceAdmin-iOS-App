@@ -14,28 +14,19 @@ import UIKit
 // MARK: - Data models
 struct SignUpShowModels {
     // MARK: - UITextField
-    struct UpdateTextField {
+    struct PasswordTextField {
         struct Request {
-            let text: String
+            let password: String
         }
         
         struct Response {
-            let text: String
+            let password: String
+            let isValid: Bool
         }
         
         struct ViewModel {
-            let text: String
-        }
-    }
-
-    struct Something {
-        struct Request {
-        }
-        
-        struct Response {
-        }
-        
-        struct ViewModel {
+            let password: String
+            let isValid: Bool
         }
     }
 }

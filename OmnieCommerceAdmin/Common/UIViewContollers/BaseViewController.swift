@@ -15,7 +15,9 @@ class BaseViewController: UIViewController {
     var selectedRange: CGRect?
     var scrollViewBase = UIScrollView()
     var textFieldsArray = [CustomTextField]()
+    
     var displaySize: CGSize = UIScreen.main.bounds.size
+    
     
     // MARK: - Class Initialization
     override func awakeFromNib() {
@@ -136,11 +138,13 @@ extension BaseViewController: UIGestureRecognizerDelegate {
 
 // MARK: - UITextFieldDelegate
 extension BaseViewController: UITextFieldDelegate {
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        print(object: "\(type(of: self)): \(#function) run in [line \(#line)]")
-        
-        return true
-    }
+//    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+////        if (textField.tag == 99) {
+////            handlerUpdateTextFieldCompletion!(textField.text! + string)
+////        }
+//        
+//        return true
+//    }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         print(object: "\(type(of: self)): \(#function) run in [line \(#line)]")

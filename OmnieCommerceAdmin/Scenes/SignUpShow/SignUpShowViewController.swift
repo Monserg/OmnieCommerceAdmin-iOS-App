@@ -11,24 +11,19 @@
 
 import UIKit
 
-// MARK: - Input & Output protocols
+// MARK: - Input protocols for Interactor
 protocol SignUpShowViewControllerInput {
-    func updateTextField(model: SignUpShowModels.UpdateTextField.ViewModel)
-
-    // DEMO
-    func displaySomething(viewModel: SignUpShowModels.Something.ViewModel)
+    func showPasswordTextFieldCheckResult(viewModel: SignUpShowModels.PasswordTextField.ViewModel)
 }
 
+// MARK: - Output protocols for current ViewController
 protocol SignUpShowViewControllerOutput {
-    func updateTextField(request: SignUpShowModels.UpdateTextField.Request)
-
-    // DEMO
-    func doSomething(request: SignUpShowModels.Something.Request)
+    func validatePasswordTextFieldStrengthFrom(requestModel: SignUpShowModels.PasswordTextField.Request)
 }
 
 class SignUpShowViewController: BaseViewController {
     // MARK: - Properties
-    var output: SignUpShowViewControllerOutput!
+    var interactor: SignUpShowViewControllerOutput!
     var router: SignUpShowRouter!
     var handlerCancelButtonCompletion: HandlerCancelButtonCompletion?
     
@@ -53,11 +48,7 @@ class SignUpShowViewController: BaseViewController {
 
     // MARK: - Custom Functions
     func doInitialSetupOnLoad() {
-        // NOTE: Ask the Interactor to do some work
-        let request = SignUpShowModels.Something.Request()
-        output.doSomething(request: request)
-        
-        // Delegates
+        // UITextFields
         textFieldsArray = textFieldsCollection
         _ = textFieldsCollection.map{ $0.delegate = self }
         
@@ -66,12 +57,6 @@ class SignUpShowViewController: BaseViewController {
 
         // Setup App background color theme
         view.applyBackgroundTheme()
-    }
-    
-    // Display logic
-    func displaySomething(viewModel: SignUpShowModels.Something.ViewModel) {
-        // NOTE: Display the result from the Presenter
-        // nameTextField.text = viewModel.name
     }
     
     
@@ -86,11 +71,25 @@ class SignUpShowViewController: BaseViewController {
 }
 
 
+// MARK: - SignUpShowViewControllerInput
 extension SignUpShowViewController: SignUpShowViewControllerInput {
-    func updateTextField(model: SignUpShowModels.UpdateTextField.ViewModel) {
-        print(object: "\(type(of: self)): \(#function) run in [line \(#line)]")
-
-//        nameTextField.text = model.text
+    func showPasswordTextFieldCheckResult(viewModel: SignUpShowModels.PasswordTextField.ViewModel) {
+        print(object: "OK")
     }
-    
 }
+
+
+// MARK: - UITextFieldDelegate
+extension SignUpShowViewController {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        // Interactor output
+        if (textField.tag == 99) {
+            let passwordRequest = SignUpShowModels.PasswordTextField.Request(password: textField.text! + string)
+            
+            interactor.validatePasswordTextFieldStrengthFrom(requestModel: passwordRequest)
+        }
+        
+        return true
+    }
+}
+

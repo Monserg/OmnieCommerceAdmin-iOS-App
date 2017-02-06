@@ -11,37 +11,25 @@
 
 import UIKit
 
-// MARK: - Input & Output protocols
+// MARK: - Input protocol for current Presenter
 protocol SignUpShowPresenterInput {
-    func presentUpdatedTextField(response: SignUpShowModels.UpdateTextField.Response)
-
-    // DEMO
-    func presentSomething(response: SignUpShowModels.Something.Response)
+    func preparePasswordTextFieldResultForShowFrom(responseModel: SignUpShowModels.PasswordTextField.Response)
 }
 
+// MARK: - Output protocol for ViewController
 protocol SignUpShowPresenterOutput: class {
-    func updateTextField(model: SignUpShowModels.UpdateTextField.ViewModel)
-   
-    // DEMO
-    func displaySomething(viewModel: SignUpShowModels.Something.ViewModel)
+    func showPasswordTextFieldCheckResult(viewModel: SignUpShowModels.PasswordTextField.ViewModel)
 }
 
 class SignUpShowPresenter: SignUpShowPresenterInput {
     // MARK: - Properties
-    weak var output: SignUpShowPresenterOutput!
+    weak var viewController: SignUpShowPresenterOutput!
     
     
     // MARK: - Custom Functions. Presentation logic
-    func presentUpdatedTextField(response: SignUpShowModels.UpdateTextField.Response) {
-        let model = SignUpShowModels.UpdateTextField.ViewModel(text: response.text)
+    func preparePasswordTextFieldResultForShowFrom(responseModel: SignUpShowModels.PasswordTextField.Response) {
+        let viewModel = SignUpShowModels.PasswordTextField.ViewModel(password: responseModel.password, isValid: responseModel.isValid)
         
-        output.updateTextField(model: model)
-    }
-
-    func presentSomething(response: SignUpShowModels.Something.Response) {
-        // NOTE: Format the response from the Interactor and pass the result back to the View Controller
-        let viewModel = SignUpShowModels.Something.ViewModel()
-        
-        output.displaySomething(viewModel: viewModel)
+        viewController.showPasswordTextFieldCheckResult(viewModel: viewModel)
     }
 }

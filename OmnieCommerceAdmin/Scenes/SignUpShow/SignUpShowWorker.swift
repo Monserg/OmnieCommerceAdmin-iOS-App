@@ -10,10 +10,32 @@
 //
 
 import UIKit
+import Navajo_Swift
 
 class SignUpShowWorker {
+    // MARK: - Properties
+    private var validator = NJOPasswordValidator.standardValidator
+
+    
     // MARK: - Custom Functions. Business Logic
-    func doSomeWork() {
-        // NOTE: Do the work
+    func checkPasswordStrength(_ password: String) -> PasswordStrengthResult {
+        return (Navajo.localizedString(for: Navajo.strength(of: password)), checkPasswordValidation(password))
+    }
+    
+    private func checkPasswordValidation(_ password: String) -> Bool {
+        let lengthRule = NJOLengthRule(min: 8, max: 24)
+        validator = NJOPasswordValidator(rules: [lengthRule])
+        
+        if let failingRules = validator.validate(password) {
+            var errorMessages: [String] =   []
+            
+            failingRules.forEach { rule in
+                errorMessages.append(rule.localizedErrorDescription)
+            }
+            
+            return false
+        } else {
+            return true
+        }
     }
 }

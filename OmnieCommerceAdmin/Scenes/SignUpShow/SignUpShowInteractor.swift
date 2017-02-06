@@ -11,42 +11,29 @@
 
 import UIKit
 
-// MARK: - Input & Output protocols
+// MARK: - Input protocol for current Interactor
 protocol SignUpShowInteractorInput {
-    func updateTextField(request: SignUpShowModels.UpdateTextField.Request)
-
-    // DEMO
-    func doSomething(request: SignUpShowModels.Something.Request)
+    func validatePasswordTextFieldStrengthFrom(requestModel: SignUpShowModels.PasswordTextField.Request)
 }
 
+// MARK: - Output protocols for Presenter
 protocol SignUpShowInteractorOutput {
-    func presentUpdatedTextField(response: SignUpShowModels.UpdateTextField.Response)
-
-    // DEMO
-    func presentSomething(response: SignUpShowModels.Something.Response)
+    func preparePasswordTextFieldResultForShowFrom(responseModel: SignUpShowModels.PasswordTextField.Response)
 }
 
 class SignUpShowInteractor: SignUpShowInteractorInput {
     // MARK: - Properties
-    var output: SignUpShowInteractorOutput!
+    var presenter: SignUpShowInteractorOutput!
     var worker: SignUpShowWorker!
     
     
     // MARK: - Custom Functions. Business logic
-    func updateTextField(request: SignUpShowModels.UpdateTextField.Request) {
-        let response = SignUpShowModels.UpdateTextField.Response(text: request.text)
-        
-        output.presentUpdatedTextField(response: response)
-    }
-    
-    // DEMO
-    func doSomething(request: SignUpShowModels.Something.Request) {
-        // NOTE: Create some Worker to do the work
+    func validatePasswordTextFieldStrengthFrom(requestModel: SignUpShowModels.PasswordTextField.Request) {
+        // Check password strength & validation
         worker = SignUpShowWorker()
-        worker.doSomeWork()
+        let passwordStrengthResult = worker.checkPasswordStrength(requestModel.password)
+        let responseModel = SignUpShowModels.PasswordTextField.Response(password: passwordStrengthResult.strength, isValid: passwordStrengthResult.isValid)
         
-        // NOTE: Pass the result to the Presenter
-        let response = SignUpShowModels.Something.Response()
-        output.presentSomething(response: response)
+        presenter.preparePasswordTextFieldResultForShowFrom(responseModel: responseModel)
     }
 }
