@@ -11,29 +11,30 @@
 
 import UIKit
 
-// MARK: - Input & Output protocols
+// MARK: - Input protocols for current Interactor
 protocol SignInContainerShowInteractorInput {
-    func doSomething(request: SignInContainerShow.Something.Request)
+    func doSomething(requestModel: SignInContainerShow.Something.Request)
 }
 
+// MARK: - Output protocols for Presenter
 protocol SignInContainerShowInteractorOutput {
-    func presentSomething(response: SignInContainerShow.Something.Response)
+    func presentSomething(responseModel: SignInContainerShow.Something.Response)
 }
 
 class SignInContainerShowInteractor: SignInContainerShowInteractorInput {
     // MARK: - Properties
-    var output: SignInContainerShowInteractorOutput!
+    var presenter: SignInContainerShowInteractorOutput!
     var worker: SignInContainerShowWorker!
     
     
     // MARK: - Custom Functions. Business logic
-    func doSomething(request: SignInContainerShow.Something.Request) {
+    func doSomething(requestModel: SignInContainerShow.Something.Request) {
         // NOTE: Create some Worker to do the work
         worker = SignInContainerShowWorker()
         worker.doSomeWork()
         
         // NOTE: Pass the result to the Presenter
-        let response = SignInContainerShow.Something.Response()
-        output.presentSomething(response: response)
+        let responseModel = SignInContainerShow.Something.Response()
+        presenter.presentSomething(responseModel: responseModel)
     }
 }

@@ -11,25 +11,25 @@
 
 import UIKit
 
-// MARK: - Input & Output protocols
+// MARK: - Input protocols for current ViewController
 protocol SignInContainerShowViewControllerInput {
     func displaySomething(viewModel: SignInContainerShow.Something.ViewModel)
 }
 
+// MARK: - Output protocols for Iterator
 protocol SignInContainerShowViewControllerOutput {
-    func doSomething(request: SignInContainerShow.Something.Request)
+    func doSomething(requestModel: SignInContainerShow.Something.Request)
 }
 
-class SignInContainerShowViewController: BaseViewController, SignInContainerShowViewControllerInput {
+class SignInContainerShowViewController: BaseViewController {
     // MARK: - Properties
-    var output: SignInContainerShowViewControllerOutput!
+    var interactor: SignInContainerShowViewControllerOutput!
     var router: SignInContainerShowRouter!
     var handlerRegisterButtonCompletion: HandlerRegisterButtonCompletion?
     var handlerForgotPasswordButtonCompletion: HandlerForgotPasswordButtonCompletion?
     
     @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var nameTextField: CustomTextField!
-    @IBOutlet weak var passwordTextField: CustomTextField!
+    @IBOutlet var textFieldsCollection: [CustomTextField]!
 
     
     // MARK: - Class initialization
@@ -44,35 +44,24 @@ class SignInContainerShowViewController: BaseViewController, SignInContainerShow
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //doInitialSetupOnLoad()
+        doInitialSetupOnLoad()
     }
     
 
     // MARK: - Custom Functions
     func doInitialSetupOnLoad() {
         // NOTE: Ask the Interactor to do some work
-        let request = SignInContainerShow.Something.Request()
-        output.doSomething(request: request)
+        let requestModel = SignInContainerShow.Something.Request()
+        interactor.doSomething(requestModel: requestModel)
         
         // Delegates
-        nameTextField.delegate      =   self
-        passwordTextField.delegate  =   self
-        
-        // Add fields to array
-        textFieldsArray.append(nameTextField)
-        textFieldsArray.append(passwordTextField)
+        textFieldsArray = textFieldsCollection
         
         // Apply keyboard handler
         scrollViewBase              =   scrollView
         
         // Setup App background color theme
         view.applyBackgroundTheme()
-    }
-    
-    // Display logic
-    func displaySomething(viewModel: SignInContainerShow.Something.ViewModel) {
-        // NOTE: Display the result from the Presenter
-        // nameTextField.text = viewModel.name
     }
     
     
@@ -88,4 +77,13 @@ class SignInContainerShowViewController: BaseViewController, SignInContainerShow
     @IBAction func handlerSignInButtonTap(_ sender: CustomButton) {
         print(object: "\(type(of: self)): \(#function) run. Sign In button tap.")
     }    
+}
+
+
+// MARK: - SignInContainerShowViewControllerInput
+extension SignInContainerShowViewController: SignInContainerShowViewControllerInput {
+    func displaySomething(viewModel: SignInContainerShow.Something.ViewModel) {
+        // NOTE: Display the result from the Presenter
+        // nameTextField.text = viewModel.name
+    }
 }

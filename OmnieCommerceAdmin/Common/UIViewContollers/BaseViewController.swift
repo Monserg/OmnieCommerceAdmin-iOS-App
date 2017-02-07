@@ -14,7 +14,13 @@ class BaseViewController: UIViewController {
     // MARK: - Properties
     var selectedRange: CGRect?
     var scrollViewBase = UIScrollView()
-    var textFieldsArray = [CustomTextField]()
+    var textFieldsArray = [CustomTextField]() {
+        willSet {
+            for textField in newValue {
+                textField.delegate = self
+            }
+        }
+    }
     
     var displaySize: CGSize = UIScreen.main.bounds.size
     

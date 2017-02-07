@@ -28,6 +28,8 @@
 "Forgot password"               =   "Забули пароль?";
 "Not yet registered?"           =   "Ще не зареєстровані?";
 "Enter code"                    =   "Введіть код";
+"Wrong Number"                  =   "* Неправильний номер";
+"Wrong Email"                   =   "* Неправильний Email";
 "Wrong Number or Email"         =   "* Неправильний номер або Email";
 "Invalid code"                  =   "* Невірний код. Спробуйте ще раз";
 

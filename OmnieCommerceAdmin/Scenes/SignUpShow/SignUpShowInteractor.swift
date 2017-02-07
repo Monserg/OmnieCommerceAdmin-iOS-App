@@ -31,9 +31,9 @@ class SignUpShowInteractor: SignUpShowInteractorInput {
     func validatePasswordTextFieldStrengthFrom(requestModel: SignUpShowModels.PasswordTextField.Request) {
         // Check password strength & validation
         worker = SignUpShowWorker()
-        let passwordStrengthResult = worker.checkPasswordStrength(requestModel.password)
-        let responseModel = SignUpShowModels.PasswordTextField.Response(strengthLevel: passwordStrengthResult.strengthLevel, isValid: passwordStrengthResult.isValid)
-        
-        presenter.preparePasswordTextFieldResultForShowFrom(responseModel: responseModel)
+//        let passwordStrengthResult = worker.checkPasswordStrength(requestModel.password)
+//        let responseModel = SignUpShowModels.PasswordTextField.Response(strengthLevel: passwordStrengthResult.strengthLevel!, isValid: passwordStrengthResult.isValid!)
+//        
+//        presenter.preparePasswordTextFieldResultForShowFrom(responseModel: responseModel)
     }
 }

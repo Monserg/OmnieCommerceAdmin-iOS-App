@@ -11,19 +11,11 @@ import UIKit
 class PasswordStrengthLevelView: UIView {
     // MARK: - Properties
     let lineWidth: CGFloat = 1.0
-    var passwordStrengthLevel: PasswordStrengthLevel?
-    var passwordString: String?
+    var passwordStrengthLevel: PasswordStrengthLevel = .None
     
     // MARK: - Class Functions
     override func draw(_ rect: CGRect) {
-        guard passwordStrengthLevel != nil && passwordString != nil else {
-            let oldPath = UIBezierPath()
-            oldPath.removeAllPoints()
-            
-            return
-        }
-        
-        switch passwordStrengthLevel! {
+        switch passwordStrengthLevel {
         case .Weak:
             // Draw level line
             let weakLevelLinePath = UIBezierPath()
@@ -76,6 +68,10 @@ class PasswordStrengthLevelView: UIView {
             let strongLevelLinePathColor = UIColor(hexString: (Config.Constants.isAppThemesDark) ? "#3f916d" : "157f51", withAlpha: 1.0)!
             strongLevelLinePathColor.setStroke()
             strongLevelLinePath.stroke()
+            
+        case .None:
+            let oldPath = UIBezierPath()
+            oldPath.removeAllPoints()
         }
     }
 }

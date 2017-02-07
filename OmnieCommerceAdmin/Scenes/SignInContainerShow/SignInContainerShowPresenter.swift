@@ -11,24 +11,26 @@
 
 import UIKit
 
-// MARK: - Input & Output protocols
+// MARK: - Input protocols for current Presenter
 protocol SignInContainerShowPresenterInput {
-    func presentSomething(response: SignInContainerShow.Something.Response)
+    func presentSomething(responseModel: SignInContainerShow.Something.Response)
 }
 
+// MARK: - Output protocols for ViewController
 protocol SignInContainerShowPresenterOutput: class {
     func displaySomething(viewModel: SignInContainerShow.Something.ViewModel)
 }
 
 class SignInContainerShowPresenter: SignInContainerShowPresenterInput {
     // MARK: - Properties
-    weak var output: SignInContainerShowPresenterOutput!
+    weak var viewController: SignInContainerShowPresenterOutput!
     
     
     // MARK: - Custom Functions. Presentation logic
-    func presentSomething(response: SignInContainerShow.Something.Response) {
+    func presentSomething(responseModel: SignInContainerShow.Something.Response) {
         // NOTE: Format the response from the Interactor and pass the result back to the View Controller
         let viewModel = SignInContainerShow.Something.ViewModel()
-        output.displaySomething(viewModel: viewModel)
+        
+        viewController.displaySomething(viewModel: viewModel)
     }
 }

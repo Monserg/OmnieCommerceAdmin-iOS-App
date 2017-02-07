@@ -28,6 +28,8 @@
 "Forgot password"               =   "Forgot Password?";
 "Not yet registered?"           =   "Not yet registered?";
 "Enter code"                    =   "Enter code";
+"Wrong Number"                  =   "* Wrong Number";
+"Wrong Email"                   =   "* Wrong Email";
 "Wrong Number or Email"         =   "* Wrong Number or Email";
 "Invalid code"                  =   "* Invalid code. Please try again";
 

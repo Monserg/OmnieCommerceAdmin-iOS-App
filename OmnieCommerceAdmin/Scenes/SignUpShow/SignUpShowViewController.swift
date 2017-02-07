@@ -26,11 +26,16 @@ class SignUpShowViewController: BaseViewController {
     var interactor: SignUpShowViewControllerOutput!
     var router: SignUpShowRouter!
     var handlerCancelButtonCompletion: HandlerCancelButtonCompletion?
-    var passwordCheckResult: PasswordCheckResult?
+    var passwordStrengthLevel: PasswordStrengthLevel = .None
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var passwordStrengthView: PasswordStrengthLevelView!
     @IBOutlet var textFieldsCollection: [CustomTextField]!
+    @IBOutlet weak var emailErrorMessageView: ErrorMessageView!
+    
+    @IBOutlet weak var emailErrorMessageHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var emailErrorMessageViewTopConstraint: NSLayoutConstraint!
+  
     
     // MARK: - Class initialization
     override func awakeFromNib() {
@@ -52,13 +57,16 @@ class SignUpShowViewController: BaseViewController {
     func doInitialSetupOnLoad() {
         // UITextFields
         textFieldsArray = textFieldsCollection
-        _ = textFieldsCollection.map{ $0.delegate = self }
         
         // Apply keyboard handler
         scrollViewBase = scrollView
 
         // Setup App background color theme
         view.applyBackgroundTheme()
+        
+        // Hide email error message view
+        emailErrorMessageHeightConstraint.constant = Config.Constants.errorMessageViewHeight
+        emailErrorMessageViewTopConstraint.constant = -Config.Constants.errorMessageViewHeight
     }
     
     
@@ -76,32 +84,81 @@ class SignUpShowViewController: BaseViewController {
 // MARK: - SignUpShowViewControllerInput
 extension SignUpShowViewController: SignUpShowViewControllerInput {
     func showPasswordTextFieldCheckResult(viewModel: SignUpShowModels.PasswordTextField.ViewModel) {
-        passwordCheckResult?.strengthLevel = viewModel.strengthLevel
-        passwordCheckResult?.isValid = viewModel.isValid
-        
-        passwordStrengthView.passwordStrengthLevel = viewModel.strengthLevel
+//        passwordCheckResult?.strengthLevel = viewModel.strengthLevel
+//        passwordCheckResult?.isValid = viewModel.isValid
+//        passwordStrengthView.passwordStrengthLevel = viewModel.strengthLevel
     }
 }
 
 
 // MARK: - UITextFieldDelegate
 extension SignUpShowViewController {
+    override func textFieldDidEndEditing(_ textField: UITextField) {
+        if (textField.tag == 1) {
+            if (!(textField as! CustomTextField).checkEmailValidation(textField.text!)) {
+                emailErrorMessageView.didShow(true, withConstraint: emailErrorMessageViewTopConstraint)
+            } else {
+                emailErrorMessageView.didShow(false, withConstraint: emailErrorMessageViewTopConstraint)
+            }
+        }
+    }
+    
     override func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        // Interactor output
+        if (textField.tag == 1) {
+            emailErrorMessageView.didShow(false, withConstraint: emailErrorMessageViewTopConstraint)
+        }
+        
         if (textField.tag == 99) {
-            let passwordRequest = SignUpShowModels.PasswordTextField.Request(password: textField.text! + string)
-            
-            interactor.validatePasswordTextFieldStrengthFrom(requestModel: passwordRequest)
-            passwordStrengthView.passwordString = (string.isEmpty && textField.text?.characters.count == 1) ? nil : (textField.text! + string)
+            passwordStrengthView.passwordStrengthLevel = (string.isEmpty && textField.text?.characters.count == 1) ? .None : (textField as! CustomTextField).checkPasswordStrength(textField.text! + string)
             passwordStrengthView.setNeedsDisplay()
+
+            
+            // Interactor output
+//            passwordStrengthView.passwordString = (string.isEmpty && textField.text?.characters.count == 1) ? .Z : (textField.text! + string)
+//            let passwordRequest = SignUpShowModels.PasswordTextField.Request(password: textField.text! + string)
+//            interactor.validatePasswordTextFieldStrengthFrom(requestModel: passwordRequest)
         }
         
         return true
     }
     
     override func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if (textField.tag == 1) {
+            if (!(textField as! CustomTextField).checkEmailValidation(textField.text!)) {
+                emailErrorMessageView.didShow(true, withConstraint: emailErrorMessageViewTopConstraint)
+                
+                return false
+            } else {
+                emailErrorMessageView.didShow(false, withConstraint: emailErrorMessageViewTopConstraint)
+            }
+        }
+        
         if (textField.tag == 99) {
-            return (passwordCheckResult?.isValid)!
+            if ((textField as! CustomTextField).checkPasswordValidation(textField.text!)) {
+                textField.resignFirstResponder()
+                
+                return true
+            } else {
+                return false
+            }
+        } else {
+            let indexCurrent = textFieldsArray.index(of: textField as! CustomTextField)!
+            let indexNext = textFieldsArray.index(after: indexCurrent)
+            
+            textFieldsArray[indexNext].becomeFirstResponder()
+        }
+
+        return true
+    }
+    
+    func textFieldShouldClear(_ textField: UITextField) -> Bool {
+        if (textField.tag == 1) {
+            emailErrorMessageView.didShow(false, withConstraint: emailErrorMessageViewTopConstraint)
+        }
+        
+        if (textField.tag == 99) {
+            passwordStrengthView.passwordStrengthLevel = .None
+            passwordStrengthView.setNeedsDisplay()
         }
         
         return true

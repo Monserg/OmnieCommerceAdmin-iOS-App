@@ -51,9 +51,9 @@ extension UIButton {
         
         switch buttonStyle {
         case .Border:
-            setTitleColor(UIColor(hexString: (Config.Constants.isAppThemesDark) ? "#5e6969" : "#9ec9c6", withAlpha: 1.0), for: .normal)
-            tintColor               =   UIColor(hexString: (Config.Constants.isAppThemesDark) ? "#5e6969" : "#9ec9c6", withAlpha: 1.0)
-            layer.borderColor       =   UIColor(hexString: (Config.Constants.isAppThemesDark) ? "#5e6969" : "#9ec9c6", withAlpha: 1.0)?.cgColor
+            setTitleColor(UIColor(hexString: (Config.Constants.isAppThemesDark) ? "#dedede" : "#dedede", withAlpha: 1.0), for: .normal)
+            tintColor               =   UIColor(hexString: (Config.Constants.isAppThemesDark) ? "#dedede" : "#dedede", withAlpha: 1.0)
+            layer.borderColor       =   UIColor(hexString: (Config.Constants.isAppThemesDark) ? "#dedede" : "#dedede", withAlpha: 1.0)?.cgColor
             backgroundColor         =   UIColor.clear
             titleLabel?.font        =   UIFont.ubuntuLight14
             borderWidth             =   1

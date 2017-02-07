@@ -34,7 +34,7 @@
                                         <rect key="frame" x="0.0" y="453" width="295" height="50"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="bQz-3z-D6s" userLabel="Social Buttons Stack View">
-                                                <rect key="frame" x="72" y="4" width="152" height="36"/>
+                                                <rect key="frame" x="71.5" y="4" width="152" height="36"/>
                                                 <subviews>
                                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uER-Ag-co8" userLabel="VK Button" customClass="CustomButton" customModule="OmnieCommerceAdmin" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="36" height="36"/>
@@ -259,13 +259,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4gf-8X-NcH" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="484"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="497.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bMd-pC-J8I" userLabel="Titile View">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="147"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Registration" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qSV-kW-Ngc" customClass="CustomLabel" customModule="OmnieCommerceAdmin" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="84.5" width="375" height="42.5"/>
+                                                        <rect key="frame" x="0.0" y="84" width="375" height="42.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -286,8 +286,8 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2LY-Jg-FBt" userLabel="Name Line View" customClass="CustomView" customModule="OmnieCommerceAdmin" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="147" width="375" height="54.5"/>
                                                 <subviews>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P9H-UK-mNC" customClass="CustomTextField" customModule="OmnieCommerceAdmin" customModuleProvider="target">
-                                                        <rect key="frame" x="8" y="32" width="367" height="19"/>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P9H-UK-mNC" userLabel="Name Text Field" customClass="CustomTextField" customModule="OmnieCommerceAdmin" customModuleProvider="target">
+                                                        <rect key="frame" x="8" y="31" width="367" height="19"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -307,11 +307,32 @@
                                                     <userDefinedRuntimeAttribute type="string" keyPath="viewDesign" value="SingleBottomVeryLightGrayLine"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TPF-cm-coI" userLabel="Email Line View" customClass="CustomView" customModule="OmnieCommerceAdmin" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dca-yH-4Wu" userLabel="Email Error Message View" customClass="ErrorMessageView" customModule="OmnieCommerceAdmin" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="255" width="375" height="14"/>
+                                                <subviews>
+                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wrong Email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1p0-aA-Wp7" userLabel="Wrong Email Message Label" customClass="CustomLabel" customModule="OmnieCommerceAdmin" customModuleProvider="target">
+                                                        <rect key="frame" x="8" y="0.0" width="359" height="13.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="labelStyle" value="UbuntuLightItalic12VerySoftRed"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="14" id="2CR-yG-6b9"/>
+                                                    <constraint firstItem="1p0-aA-Wp7" firstAttribute="leading" secondItem="Dca-yH-4Wu" secondAttribute="leading" constant="8" id="AH6-1i-PgJ"/>
+                                                    <constraint firstAttribute="trailing" secondItem="1p0-aA-Wp7" secondAttribute="trailing" constant="8" id="THG-OE-vBH"/>
+                                                    <constraint firstItem="1p0-aA-Wp7" firstAttribute="top" secondItem="Dca-yH-4Wu" secondAttribute="top" id="oyd-R5-qwY"/>
+                                                </constraints>
+                                            </view>
+                                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TPF-cm-coI" userLabel="Email Line View" customClass="CustomView" customModule="OmnieCommerceAdmin" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="201" width="375" height="54.5"/>
                                                 <subviews>
-                                                    <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Afe-uC-W9p" customClass="CustomTextField" customModule="OmnieCommerceAdmin" customModuleProvider="target">
-                                                        <rect key="frame" x="8" y="31" width="367" height="19"/>
+                                                    <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Afe-uC-W9p" userLabel="Email Text Field" customClass="CustomTextField" customModule="OmnieCommerceAdmin" customModuleProvider="target">
+                                                        <rect key="frame" x="8" y="32" width="367" height="19"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -332,10 +353,10 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xw8-zo-fdg" userLabel="Password Line View" customClass="CustomView" customModule="OmnieCommerceAdmin" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="256" width="375" height="54.5"/>
+                                                <rect key="frame" x="0.0" y="269.5" width="375" height="54.5"/>
                                                 <subviews>
-                                                    <textField opaque="NO" clipsSubviews="YES" tag="99" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hKY-ie-XOH" customClass="CustomTextField" customModule="OmnieCommerceAdmin" customModuleProvider="target">
-                                                        <rect key="frame" x="8" y="31.5" width="367" height="19"/>
+                                                    <textField opaque="NO" clipsSubviews="YES" tag="99" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hKY-ie-XOH" userLabel="Password Text Field" customClass="CustomTextField" customModule="OmnieCommerceAdmin" customModuleProvider="target">
+                                                        <rect key="frame" x="8" y="31" width="367" height="19"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -356,14 +377,14 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fgm-nc-z32" userLabel="Password Strength View" customClass="PasswordStrengthLevelView" customModule="OmnieCommerceAdmin" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="310" width="375" height="4"/>
+                                                <rect key="frame" x="0.0" y="324" width="375" height="4"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="4" id="xYH-B9-rqv"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uN9-KN-x7g" userLabel="Action Buttons View">
-                                                <rect key="frame" x="0.0" y="314" width="375" height="169.5"/>
+                                                <rect key="frame" x="0.0" y="328" width="375" height="169.5"/>
                                                 <subviews>
                                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WU9-QI-dnc" userLabel="Register Button" customClass="CustomButton" customModule="OmnieCommerceAdmin" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="48" width="375" height="53"/>
@@ -401,24 +422,27 @@
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstItem="Dca-yH-4Wu" firstAttribute="top" secondItem="TPF-cm-coI" secondAttribute="bottom" id="0jI-Zz-Zrr"/>
+                                            <constraint firstAttribute="trailing" secondItem="Dca-yH-4Wu" secondAttribute="trailing" id="21q-WD-1f4"/>
                                             <constraint firstItem="uN9-KN-x7g" firstAttribute="top" secondItem="Fgm-nc-z32" secondAttribute="bottom" id="3A7-Hb-JE4"/>
                                             <constraint firstItem="Fgm-nc-z32" firstAttribute="leading" secondItem="4gf-8X-NcH" secondAttribute="leading" id="4Rs-Ec-jdd"/>
                                             <constraint firstAttribute="trailing" secondItem="uN9-KN-x7g" secondAttribute="trailing" id="4hj-eu-eMl"/>
                                             <constraint firstItem="TPF-cm-coI" firstAttribute="top" secondItem="2LY-Jg-FBt" secondAttribute="bottom" id="53I-ag-7Th"/>
                                             <constraint firstAttribute="trailing" secondItem="Fgm-nc-z32" secondAttribute="trailing" id="8TA-RC-5u8"/>
+                                            <constraint firstItem="Dca-yH-4Wu" firstAttribute="leading" secondItem="4gf-8X-NcH" secondAttribute="leading" id="9cj-cA-Eqr"/>
                                             <constraint firstItem="2LY-Jg-FBt" firstAttribute="leading" secondItem="4gf-8X-NcH" secondAttribute="leading" id="9sg-Cz-O2r"/>
                                             <constraint firstAttribute="trailing" secondItem="TPF-cm-coI" secondAttribute="trailing" id="F0g-XR-VBI"/>
                                             <constraint firstItem="Fgm-nc-z32" firstAttribute="top" secondItem="Xw8-zo-fdg" secondAttribute="bottom" id="IGa-Xr-KYN"/>
                                             <constraint firstItem="Xw8-zo-fdg" firstAttribute="leading" secondItem="4gf-8X-NcH" secondAttribute="leading" id="Vd6-nf-UYx"/>
                                             <constraint firstItem="bMd-pC-J8I" firstAttribute="top" secondItem="4gf-8X-NcH" secondAttribute="top" id="a4m-cJ-8vf"/>
                                             <constraint firstItem="TPF-cm-coI" firstAttribute="leading" secondItem="4gf-8X-NcH" secondAttribute="leading" id="amo-qx-xtN"/>
+                                            <constraint firstItem="Xw8-zo-fdg" firstAttribute="top" secondItem="Dca-yH-4Wu" secondAttribute="bottom" id="dVq-jM-yNX"/>
                                             <constraint firstAttribute="trailing" secondItem="2LY-Jg-FBt" secondAttribute="trailing" id="itx-uI-VfC"/>
                                             <constraint firstItem="uN9-KN-x7g" firstAttribute="leading" secondItem="4gf-8X-NcH" secondAttribute="leading" id="kLJ-h2-KUv"/>
                                             <constraint firstItem="bMd-pC-J8I" firstAttribute="leading" secondItem="4gf-8X-NcH" secondAttribute="leading" id="lAD-bk-uyZ"/>
                                             <constraint firstAttribute="bottom" secondItem="uN9-KN-x7g" secondAttribute="bottom" id="mdH-Kd-IHY"/>
                                             <constraint firstAttribute="trailing" secondItem="Xw8-zo-fdg" secondAttribute="trailing" id="oCc-EO-zN0"/>
                                             <constraint firstAttribute="trailing" secondItem="bMd-pC-J8I" secondAttribute="trailing" id="pHc-UM-Bh0"/>
-                                            <constraint firstItem="Xw8-zo-fdg" firstAttribute="top" secondItem="TPF-cm-coI" secondAttribute="bottom" id="rEe-2N-wQd"/>
                                             <constraint firstAttribute="height" constant="500" id="zeO-XN-cg9"/>
                                             <constraint firstItem="2LY-Jg-FBt" firstAttribute="top" secondItem="bMd-pC-J8I" secondAttribute="bottom" id="zjo-Km-7CE"/>
                                         </constraints>
@@ -509,6 +533,9 @@
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
+                        <outlet property="emailErrorMessageHeightConstraint" destination="2CR-yG-6b9" id="6Wt-Fb-c54"/>
+                        <outlet property="emailErrorMessageView" destination="Dca-yH-4Wu" id="fFe-sB-dkw"/>
+                        <outlet property="emailErrorMessageViewTopConstraint" destination="0jI-Zz-Zrr" id="7iY-6C-zrC"/>
                         <outlet property="passwordStrengthView" destination="Fgm-nc-z32" id="3Um-qB-N1K"/>
                         <outlet property="scrollView" destination="tnf-Wn-jfJ" id="qSU-cZ-WjT"/>
                         <outletCollection property="textFieldsCollection" destination="P9H-UK-mNC" collectionClass="NSMutableArray" id="hvw-Bv-8E2"/>
@@ -567,11 +594,11 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eoE-MW-EyJ" userLabel="Content View">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="475.5"/>
                                                         <subviews>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Esj-u5-vXG" userLabel="Name Line View" customClass="CustomView" customModule="OmnieCommerceAdmin" customModuleProvider="target">
+                                                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Esj-u5-vXG" userLabel="Name Line View" customClass="CustomView" customModule="OmnieCommerceAdmin" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="54.5"/>
                                                                 <subviews>
                                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="swM-42-2YU" userLabel="Name Text Field" customClass="CustomTextField" customModule="OmnieCommerceAdmin" customModuleProvider="target">
-                                                                        <rect key="frame" x="8" y="31.5" width="367" height="19"/>
+                                                                        <rect key="frame" x="8" y="31" width="367" height="19"/>
                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                         <nil key="textColor"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -592,10 +619,10 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                             <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x1v-Ri-hv4" userLabel="Password Line View" customClass="CustomView" customModule="OmnieCommerceAdmin" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="54" width="375" height="54.5"/>
+                                                                <rect key="frame" x="0.0" y="54.5" width="375" height="54.5"/>
                                                                 <subviews>
                                                                     <textField opaque="NO" clipsSubviews="YES" tag="99" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="puu-bd-4T6" userLabel="Password Text Field" customClass="CustomTextField" customModule="OmnieCommerceAdmin" customModuleProvider="target">
-                                                                        <rect key="frame" x="8" y="32" width="367" height="19"/>
+                                                                        <rect key="frame" x="8" y="31.5" width="367" height="19"/>
                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                         <nil key="textColor"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -637,7 +664,7 @@
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gby-PP-Y0W" userLabel="Texts View">
-                                                                <rect key="frame" x="0.0" y="217.5" width="375" height="96"/>
+                                                                <rect key="frame" x="0.0" y="217" width="375" height="96"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not yet registered?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TZp-21-ZpS" customClass="CustomLabel" customModule="OmnieCommerceAdmin" customModuleProvider="target">
                                                                         <rect key="frame" x="4" y="23" width="102.5" height="30"/>
@@ -694,10 +721,10 @@
                                                             <constraint firstItem="THC-Uc-Gbl" firstAttribute="leading" secondItem="eoE-MW-EyJ" secondAttribute="leading" id="6JU-5q-8tn"/>
                                                             <constraint firstItem="Gby-PP-Y0W" firstAttribute="top" secondItem="THC-Uc-Gbl" secondAttribute="bottom" constant="13" id="CfZ-BW-RFu"/>
                                                             <constraint firstItem="Gby-PP-Y0W" firstAttribute="leading" secondItem="eoE-MW-EyJ" secondAttribute="leading" id="Jcy-TT-jLf"/>
+                                                            <constraint firstItem="x1v-Ri-hv4" firstAttribute="top" secondItem="Esj-u5-vXG" secondAttribute="bottom" id="aEn-8N-Wta"/>
                                                             <constraint firstAttribute="trailing" secondItem="x1v-Ri-hv4" secondAttribute="trailing" id="k14-lo-dcl"/>
                                                             <constraint firstItem="Esj-u5-vXG" firstAttribute="top" secondItem="eoE-MW-EyJ" secondAttribute="top" id="mSt-1k-tNU"/>
                                                             <constraint firstItem="THC-Uc-Gbl" firstAttribute="top" secondItem="x1v-Ri-hv4" secondAttribute="bottom" id="maA-xd-yxN"/>
-                                                            <constraint firstItem="x1v-Ri-hv4" firstAttribute="top" secondItem="Esj-u5-vXG" secondAttribute="bottom" id="nZS-2t-EBr"/>
                                                             <constraint firstAttribute="trailing" secondItem="Gby-PP-Y0W" secondAttribute="trailing" id="ngY-rK-I4I"/>
                                                             <constraint firstItem="x1v-Ri-hv4" firstAttribute="leading" secondItem="eoE-MW-EyJ" secondAttribute="leading" id="qei-p5-MEC"/>
                                                             <constraint firstItem="Esj-u5-vXG" firstAttribute="leading" secondItem="eoE-MW-EyJ" secondAttribute="leading" id="tBL-kL-6Va"/>
@@ -776,9 +803,9 @@
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
-                        <outlet property="nameTextField" destination="swM-42-2YU" id="leV-FB-Nxn"/>
-                        <outlet property="passwordTextField" destination="puu-bd-4T6" id="1hq-N8-M13"/>
                         <outlet property="scrollView" destination="cxl-lM-0aG" id="JBt-CI-SGc"/>
+                        <outletCollection property="textFieldsCollection" destination="swM-42-2YU" collectionClass="NSMutableArray" id="KGX-xO-hlV"/>
+                        <outletCollection property="textFieldsCollection" destination="puu-bd-4T6" collectionClass="NSMutableArray" id="AMy-jw-jjr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1nF-mV-KdW" userLabel="First Responder" sceneMemberID="firstResponder"/>

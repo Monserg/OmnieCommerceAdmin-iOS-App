@@ -18,18 +18,19 @@ enum ThemeDesign: String {
     case DarkForGuest   =   "DarkForGuest"
 }
 
-typealias HandlerSendButtonCompletion           =   (() -> ())
-typealias HandlerRegisterButtonCompletion       =   (() -> ())
-typealias HandlerForgotPasswordButtonCompletion =   (() -> ())
-typealias HandlerCancelButtonCompletion         =   (() -> ())
+typealias HandlerSendButtonCompletion               =   (() -> ())
+typealias HandlerRegisterButtonCompletion           =   (() -> ())
+typealias HandlerForgotPasswordButtonCompletion     =   (() -> ())
+typealias HandlerCancelButtonCompletion             =   (() -> ())
 
-typealias PasswordCheckResult                   =   (strengthLevel: PasswordStrengthLevel, isValid: Bool)
+//typealias PasswordCheckResult                   =   (strengthLevel: PasswordStrengthLevel, isValid: Bool)
 
 struct Config {
     struct Constants {
         // FIXME: - DELETE AFTER TEST
-        static let isUserGuest: Bool    =   true
-        static let isAppThemesDark      =   true
+        static let isUserGuest: Bool                =   true
+        static let isAppThemesDark                  =   true
+        static let errorMessageViewHeight: CGFloat  =   20
     }
     
     
