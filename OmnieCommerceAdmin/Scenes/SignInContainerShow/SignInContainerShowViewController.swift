@@ -11,12 +11,12 @@
 
 import UIKit
 
-// MARK: - Input protocols for current ViewController
+// MARK: - Input protocols for current ViewController component VIP-cicle
 protocol SignInContainerShowViewControllerInput {
     func displaySomething(viewModel: SignInContainerShow.Something.ViewModel)
 }
 
-// MARK: - Output protocols for Iterator
+// MARK: - Output protocols for Interactor component VIP-cicle
 protocol SignInContainerShowViewControllerOutput {
     func doSomething(requestModel: SignInContainerShow.Something.Request)
 }

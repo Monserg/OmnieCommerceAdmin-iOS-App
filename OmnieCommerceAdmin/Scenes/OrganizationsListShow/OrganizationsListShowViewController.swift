@@ -11,18 +11,19 @@
 
 import UIKit
 
-// MARK: - Input & Output protocols
+// MARK: - Input protocols for current ViewController component VIP-cicle
 protocol OrganizationsListShowViewControllerInput {
     func displaySomething(viewModel: OrganizationsListShow.Something.ViewModel)
 }
 
+// MARK: - Output protocols for Interactor component VIP-cicle
 protocol OrganizationsListShowViewControllerOutput {
     func doSomething(request: OrganizationsListShow.Something.Request)
 }
 
 class OrganizationsListShowViewController: UIViewController, OrganizationsListShowViewControllerInput {
     // MARK: - Properties
-    var output: OrganizationsListShowViewControllerOutput!
+    var interactor: OrganizationsListShowViewControllerOutput!
     var router: OrganizationsListShowRouter!
     
 
@@ -46,7 +47,7 @@ class OrganizationsListShowViewController: UIViewController, OrganizationsListSh
     func doInitialSetupOnLoad() {
         // NOTE: Ask the Interactor to do some work
         let request = OrganizationsListShow.Something.Request()
-        output.doSomething(request: request)
+        interactor.doSomething(request: request)
         
         // Setup App background color theme
         view.applyBackgroundTheme()

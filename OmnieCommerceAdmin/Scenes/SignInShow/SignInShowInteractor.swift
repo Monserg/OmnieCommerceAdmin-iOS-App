@@ -11,18 +11,19 @@
 
 import UIKit
 
-// MARK: - Input & Output protocols
+// MARK: - Input protocols for current Interactor component VIP-cicle
 protocol SignInShowInteractorInput {
     func doSomething(request: SignInShow.Something.Request)
 }
 
+// MARK: - Output protocols for Presenter component VIP-cicle
 protocol SignInShowInteractorOutput {
     func presentSomething(response: SignInShow.Something.Response)
 }
 
 class SignInShowInteractor: SignInShowInteractorInput {
     // MARK: - Properties
-    var output: SignInShowInteractorOutput!
+    var presenter: SignInShowInteractorOutput!
     var worker: SignInShowWorker!
     
     
@@ -34,6 +35,6 @@ class SignInShowInteractor: SignInShowInteractorInput {
         
         // NOTE: Pass the result to the Presenter
         let response = SignInShow.Something.Response()
-        output.presentSomething(response: response)
+        presenter.presentSomething(response: response)
     }
 }

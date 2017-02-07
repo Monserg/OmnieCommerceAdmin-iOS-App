@@ -25,7 +25,7 @@
 // Labels
 "Welcome"                       =   "Поздравляем!";
 "Registration"                  =   "Регистрация";
-"Forgot password"               =   "Забыли пароль?";
+"Forgot password"               =   "Забыли пароль";
 "Not yet registered?"           =   "Ещё не зарегистрированы?";
 "Enter code"                    =   "Введите код";
 "Wrong Number"                  =   "* Неправильный номер";

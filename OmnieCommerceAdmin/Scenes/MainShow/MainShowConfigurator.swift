@@ -39,12 +39,12 @@ class MainShowConfigurator {
         router.viewController = viewController
         
         let presenter = MainShowPresenter()
-        presenter.output = viewController
+        presenter.viewController = viewController
         
         let interactor = MainShowInteractor()
-        interactor.output = presenter
+        interactor.presenter = presenter
         
-        viewController.output = interactor
+        viewController.interactor = interactor
         viewController.router = router
     }
 }

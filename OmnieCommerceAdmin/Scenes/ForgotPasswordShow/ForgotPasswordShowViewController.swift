@@ -11,23 +11,26 @@
 
 import UIKit
 
-// MARK: - Input & Output protocols
+// MARK: - Input protocols for current ViewController component VIP-cicle
 protocol ForgotPasswordShowViewControllerInput {
     func displaySomething(viewModel: ForgotPasswordShow.Something.ViewModel)
 }
 
+// MARK: - Output protocols for Interactor component VIP-cicle
 protocol ForgotPasswordShowViewControllerOutput {
     func doSomething(request: ForgotPasswordShow.Something.Request)
 }
 
-class ForgotPasswordShowViewController: BaseViewController, ForgotPasswordShowViewControllerInput {
+class ForgotPasswordShowViewController: BaseViewController {
     // MARK: - Properties
-    var output: ForgotPasswordShowViewControllerOutput!
+    var interactor: ForgotPasswordShowViewControllerOutput!
     var router: ForgotPasswordShowRouter!
     var handlerSendButtonCompletion: HandlerSendButtonCompletion?
     var handlerCancelButtonCompletion: HandlerCancelButtonCompletion?
     
+    @IBOutlet weak var scrollView: UIScrollView!
 
+    
     // MARK: - Class initialization
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -48,16 +51,10 @@ class ForgotPasswordShowViewController: BaseViewController, ForgotPasswordShowVi
     func doInitialSetupOnLoad() {
         // NOTE: Ask the Interactor to do some work
         let request = ForgotPasswordShow.Something.Request()
-        output.doSomething(request: request)
+        interactor.doSomething(request: request)
 
         // Setup App background color theme
         view.applyBackgroundTheme()
-    }
-    
-    // Display logic
-    func displaySomething(viewModel: ForgotPasswordShow.Something.ViewModel) {
-        // NOTE: Display the result from the Presenter
-        // nameTextField.text = viewModel.name
     }
     
     
@@ -70,3 +67,13 @@ class ForgotPasswordShowViewController: BaseViewController, ForgotPasswordShowVi
         handlerCancelButtonCompletion!()
     }
 }
+
+
+// MARK: - ForgotPasswordShowViewControllerInput
+extension ForgotPasswordShowViewController: ForgotPasswordShowViewControllerInput {
+    func displaySomething(viewModel: ForgotPasswordShow.Something.ViewModel) {
+        // NOTE: Display the result from the Presenter
+        // nameTextField.text = viewModel.name
+    }
+}
+

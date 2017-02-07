@@ -11,24 +11,25 @@
 
 import UIKit
 
-// MARK: - Input & Output protocols
+// MARK: - Input protocols for current Presenter component VIP-cicle
 protocol MainShowPresenterInput {
     func presentSomething(response: MainShow.Something.Response)
 }
 
+// MARK: - Output protocols for ViewController component VIP-cicle
 protocol MainShowPresenterOutput: class {
     func displaySomething(viewModel: MainShow.Something.ViewModel)
 }
 
 class MainShowPresenter: MainShowPresenterInput {
     // MARK: - Properties
-    weak var output: MainShowPresenterOutput!
+    weak var viewController: MainShowPresenterOutput!
     
     
     // MARK: - Custom Functions. Presentation logic
     func presentSomething(response: MainShow.Something.Response) {
         // NOTE: Format the response from the Interactor and pass the result back to the View Controller
         let viewModel = MainShow.Something.ViewModel()
-        output.displaySomething(viewModel: viewModel)
+        viewController.displaySomething(viewModel: viewModel)
     }
 }

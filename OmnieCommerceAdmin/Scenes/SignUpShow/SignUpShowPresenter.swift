@@ -11,12 +11,12 @@
 
 import UIKit
 
-// MARK: - Input protocol for current Presenter
+// MARK: - Input protocols for current Presenter component VIP-cicle
 protocol SignUpShowPresenterInput {
     func preparePasswordTextFieldResultForShowFrom(responseModel: SignUpShowModels.PasswordTextField.Response)
 }
 
-// MARK: - Output protocol for ViewController
+// MARK: - Output protocols for ViewController component VIP-cicle
 protocol SignUpShowPresenterOutput: class {
     func showPasswordTextFieldCheckResult(viewModel: SignUpShowModels.PasswordTextField.ViewModel)
 }

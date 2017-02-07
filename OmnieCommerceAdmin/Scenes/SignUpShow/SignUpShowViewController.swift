@@ -11,12 +11,12 @@
 
 import UIKit
 
-// MARK: - Input protocols for Interactor
+// MARK: - Input protocols for current ViewController component VIP-cicle
 protocol SignUpShowViewControllerInput {
     func showPasswordTextFieldCheckResult(viewModel: SignUpShowModels.PasswordTextField.ViewModel)
 }
 
-// MARK: - Output protocols for current ViewController
+// MARK: - Output protocols for Interactor component VIP-cicle
 protocol SignUpShowViewControllerOutput {
     func validatePasswordTextFieldStrengthFrom(requestModel: SignUpShowModels.PasswordTextField.Request)
 }

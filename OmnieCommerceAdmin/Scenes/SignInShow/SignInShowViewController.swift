@@ -11,11 +11,12 @@
 
 import UIKit
 
-// MARK: - Input & Output protocols
+// MARK: - Input protocols for current ViewController component VIP-cicle
 protocol SignInShowViewControllerInput {
     func displaySomething(viewModel: SignInShow.Something.ViewModel)
 }
 
+// MARK: - Output protocols for Interactor component VIP-cicle
 protocol SignInShowViewControllerOutput {
     func doSomething(request: SignInShow.Something.Request)
 }
@@ -27,7 +28,7 @@ enum AnimationDirection {
 
 class SignInShowViewController: BaseViewController, SignInShowViewControllerInput {
     // MARK: - Properties
-    var output: SignInShowViewControllerOutput!
+    var interactor: SignInShowViewControllerOutput!
     var router: SignInShowRouter!
     var animationDirection: AnimationDirection?
     
@@ -74,7 +75,7 @@ class SignInShowViewController: BaseViewController, SignInShowViewControllerInpu
     func doInitialSetupOnLoad() {
         // NOTE: Ask the Interactor to do some work
         let request = SignInShow.Something.Request()
-        output.doSomething(request: request)
+        interactor.doSomething(request: request)
         
         // Hide navigation bar
         hideNavigationBar()

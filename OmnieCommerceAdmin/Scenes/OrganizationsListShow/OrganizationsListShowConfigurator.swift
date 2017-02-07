@@ -39,12 +39,12 @@ class OrganizationsListShowConfigurator {
         router.viewController = viewController
         
         let presenter = OrganizationsListShowPresenter()
-        presenter.output = viewController
+        presenter.viewController = viewController
         
         let interactor = OrganizationsListShowInteractor()
-        interactor.output = presenter
+        interactor.presenter = presenter
         
-        viewController.output = interactor
+        viewController.interactor = interactor
         viewController.router = router
     }
 }

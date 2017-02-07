@@ -11,18 +11,19 @@
 
 import UIKit
 
-// MARK: - Input & Output protocols
+// MARK: - Input protocols for current ViewController component VIP-cicle
 protocol MainShowViewControllerInput {
     func displaySomething(viewModel: MainShow.Something.ViewModel)
 }
 
+// MARK: - Output protocols for Interactor component VIP-cicle
 protocol MainShowViewControllerOutput {
     func doSomething(request: MainShow.Something.Request)
 }
 
 class MainShowViewController: UIViewController, MainShowViewControllerInput {
     // MARK: - Properties
-    var output: MainShowViewControllerOutput!
+    var interactor: MainShowViewControllerOutput!
     var router: MainShowRouter!
     
     @IBOutlet weak var guestView: UIView!
@@ -61,7 +62,7 @@ class MainShowViewController: UIViewController, MainShowViewControllerInput {
     func doInitialSetupOnLoad() {
         // NOTE: Ask the Interactor to do some work
         let request = MainShow.Something.Request()
-        output.doSomething(request: request)
+        interactor.doSomething(request: request)
         
         showBackground()
     }

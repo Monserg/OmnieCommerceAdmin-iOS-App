@@ -11,18 +11,19 @@
 
 import UIKit
 
-// MARK: - Input & Output protocols
+// MARK: - Input protocols for current Interactor component VIP-cicle
 protocol OrganizationsListShowInteractorInput {
     func doSomething(request: OrganizationsListShow.Something.Request)
 }
 
+// MARK: - Output protocols for Presenter component VIP-cicle
 protocol OrganizationsListShowInteractorOutput {
     func presentSomething(response: OrganizationsListShow.Something.Response)
 }
 
 class OrganizationsListShowInteractor: OrganizationsListShowInteractorInput {
     // MARK: - Properties
-    var output: OrganizationsListShowInteractorOutput!
+    var presenter: OrganizationsListShowInteractorOutput!
     var worker: OrganizationsListShowWorker!
     
     
@@ -34,6 +35,6 @@ class OrganizationsListShowInteractor: OrganizationsListShowInteractorInput {
         
         // NOTE: Pass the result to the Presenter
         let response = OrganizationsListShow.Something.Response()
-        output.presentSomething(response: response)
+        presenter.presentSomething(response: response)
     }
 }
