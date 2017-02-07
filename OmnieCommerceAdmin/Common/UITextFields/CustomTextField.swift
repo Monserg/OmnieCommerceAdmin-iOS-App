@@ -10,9 +10,10 @@ import UIKit
 import Navajo_Swift
 
 enum FieldStyle: String {
-    case Name       =   "Name"
-    case Email      =   "Email"
-    case Password   =   "Password"
+    case Name           =   "Name"
+    case Email          =   "Email"
+    case Password       =   "Password"
+    case PhoneEmail     =   "PhoneEmail"
 }
 
 enum PasswordStrengthLevel {
@@ -70,7 +71,7 @@ enum PasswordStrengthLevel {
 
         // Set differences
         switch fieldStyle {
-        case .Email:
+        case .Email, .PhoneEmail:
             autocapitalizationType          =   .none
             keyboardType                    =   .emailAddress
             

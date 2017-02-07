@@ -29,6 +29,10 @@ class ForgotPasswordShowViewController: BaseViewController {
     var handlerCancelButtonCompletion: HandlerCancelButtonCompletion?
     
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet var textFieldsCollection: [CustomTextField]!
+
+    @IBOutlet weak var phoneEmailErrorMessageHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var phoneEmailErrorMessageViewTopConstraint: NSLayoutConstraint!
 
     
     // MARK: - Class initialization
@@ -49,12 +53,18 @@ class ForgotPasswordShowViewController: BaseViewController {
 
     // MARK: - Custom Functions
     func doInitialSetupOnLoad() {
-        // NOTE: Ask the Interactor to do some work
-        let request = ForgotPasswordShow.Something.Request()
-        interactor.doSomething(request: request)
-
+        // UITextFields
+        textFieldsArray = textFieldsCollection
+        
+        // Apply keyboard handler
+        scrollViewBase = scrollView
+        
         // Setup App background color theme
         view.applyBackgroundTheme()
+        
+        // Hide email error message view
+        phoneEmailErrorMessageHeightConstraint.constant = Config.Constants.errorMessageViewHeight
+        phoneEmailErrorMessageViewTopConstraint.constant = -Config.Constants.errorMessageViewHeight
     }
     
     
