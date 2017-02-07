@@ -390,6 +390,7 @@
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="phoneEmailErrorMessageHeightConstraint" destination="W3k-aC-BFC" id="e5n-Fm-qSg"/>
+                        <outlet property="phoneEmailErrorMessageView" destination="Lci-Dn-mPm" id="BCM-Zn-zJs"/>
                         <outlet property="phoneEmailErrorMessageViewTopConstraint" destination="eHh-9D-Mzl" id="DQJ-if-pW3"/>
                         <outlet property="scrollView" destination="aiV-er-yKL" id="Enm-Tk-l8x"/>
                         <outletCollection property="textFieldsCollection" destination="fJG-PJ-vd9" collectionClass="NSMutableArray" id="rOH-oc-IDr"/>

@@ -30,6 +30,7 @@ class ForgotPasswordShowViewController: BaseViewController {
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet var textFieldsCollection: [CustomTextField]!
+    @IBOutlet weak var phoneEmailErrorMessageView: ErrorMessageView!
 
     @IBOutlet weak var phoneEmailErrorMessageHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var phoneEmailErrorMessageViewTopConstraint: NSLayoutConstraint!
@@ -87,3 +88,42 @@ extension ForgotPasswordShowViewController: ForgotPasswordShowViewControllerInpu
     }
 }
 
+
+// MARK: - UITextFieldDelegate
+extension ForgotPasswordShowViewController {
+    override func textFieldDidEndEditing(_ textField: UITextField) {
+        if (textField.tag == 1) {
+            if (!(textField as! CustomTextField).checkEmailValidation(textField.text!)) {
+                phoneEmailErrorMessageView.didShow(true, withConstraint: phoneEmailErrorMessageViewTopConstraint)
+            } else {
+                phoneEmailErrorMessageView.didShow(false, withConstraint: phoneEmailErrorMessageViewTopConstraint)
+            }
+        }
+    }
+    
+    override func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        phoneEmailErrorMessageView.didShow(false, withConstraint: phoneEmailErrorMessageViewTopConstraint)
+        
+        return true
+    }
+    
+    override func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if (!(textField as! CustomTextField).checkPhoneEmailValidation(textField.text!)) {
+            phoneEmailErrorMessageView.didShow(true, withConstraint: phoneEmailErrorMessageViewTopConstraint)
+            
+            return false
+        } else {
+            phoneEmailErrorMessageView.didShow(false, withConstraint: phoneEmailErrorMessageViewTopConstraint)
+            
+            textField.resignFirstResponder()
+        }
+        
+        return true
+    }
+    
+    func textFieldShouldClear(_ textField: UITextField) -> Bool {
+        phoneEmailErrorMessageView.didShow(false, withConstraint: phoneEmailErrorMessageViewTopConstraint)
+        
+        return true
+    }
+}
