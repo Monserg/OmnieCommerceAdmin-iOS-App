@@ -32,6 +32,7 @@
 "Wrong Email"                   =   "* Неправильный Email";
 "Wrong Number or Email"         =   "* Неправильный номер или Email";
 "Invalid code"                  =   "* Ошибочный код. Попытайтесь ще раз";
+"New password"                  =   "Новый пароль";
 
 
 // Fields
@@ -40,6 +41,7 @@
 "Phone or Email"                =   "Телефон или Email";
 "Email"                         =   "Email";
 "Enter Code"                    =   "Введите код из сообщения";
+"Repeat password"               =   "Повторить пароль";
 
 
 // Buttons
@@ -49,3 +51,5 @@
 "Cancel"                        =   "Отменить";
 "Send"                          =   "Отправить";
 "Do not get password?"          =   "Не получили пароль?";
+"Send again"                    =   "Отправить ещё раз";
+"Enter"                         =   "Войти";

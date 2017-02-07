@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="6uh-TR-iIl">
-    <device id="retina4_0" orientation="portrait">
+    <device id="retina4_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -20,21 +20,21 @@
                         <viewControllerLayoutGuide type="bottom" id="c0l-Pc-ARL"/>
                     </layoutGuides>
                     <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="7Lg-Ep-VFz">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="hRJ-Kv-iEv">
-                                <rect key="frame" x="40" y="144.5" width="240" height="423.5"/>
+                                <rect key="frame" x="290" y="0.0" width="337" height="375"/>
                                 <subviews>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bkf-2j-A4E">
-                                        <rect key="frame" x="0.0" y="0.0" width="240" height="373.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="337" height="325"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </containerView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OQ1-Mo-Zb1" userLabel="Social Buttons View">
-                                        <rect key="frame" x="0.0" y="373.5" width="240" height="50"/>
+                                        <rect key="frame" x="0.0" y="325" width="337" height="50"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="bQz-3z-D6s" userLabel="Social Buttons Stack View">
-                                                <rect key="frame" x="44" y="4" width="152" height="36"/>
+                                                <rect key="frame" x="92.5" y="9" width="152" height="36"/>
                                                 <subviews>
                                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uER-Ag-co8" userLabel="VK Button" customClass="CustomButton" customModule="OmnieCommerceAdmin" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="36" height="36"/>
@@ -85,11 +85,11 @@
                                 </subviews>
                             </stackView>
                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sZU-HY-1oB" userLabel="Logo Background View">
-                                <rect key="frame" x="0.0" y="32" width="320" height="112.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="270" height="375"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image-logo-horizontal" translatesAutoresizingMaskIntoConstraints="NO" id="msX-uK-raq">
-                                <rect key="frame" x="62" y="32" width="196" height="112.5"/>
+                                <rect key="frame" x="40" y="72.5" width="180" height="230"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="msX-uK-raq" secondAttribute="height" multiplier="230:132" id="BxN-u6-23T"/>
@@ -202,20 +202,20 @@
                         <viewControllerLayoutGuide type="bottom" id="tbf-e7-QFd"/>
                     </layoutGuides>
                     <view key="view" tag="1" contentMode="scaleToFill" id="Vnu-gp-doq">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aiV-er-yKL">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="511-VE-7wp" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="330"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="667" height="293"/>
                                         <subviews>
                                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uNo-Cz-bZW" userLabel="Title View">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="125.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="667" height="104"/>
                                                 <subviews>
                                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forgot password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S74-UP-jjo" userLabel="Forgot password Label" customClass="CustomLabel" customModule="OmnieCommerceAdmin" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="63" width="320" height="42.5"/>
+                                                        <rect key="frame" x="0.0" y="78.5" width="667" height="20.5"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
@@ -236,10 +236,10 @@
                                                 </constraints>
                                             </view>
                                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lci-Dn-mPm" userLabel="Error Message View" customClass="ErrorMessageView" customModule="OmnieCommerceAdmin" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="172" width="320" height="14"/>
+                                                <rect key="frame" x="0.0" y="146.5" width="667" height="14"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wrong Number or Email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2px-R8-mpC" customClass="CustomLabel" customModule="OmnieCommerceAdmin" customModuleProvider="target">
-                                                        <rect key="frame" x="8" y="0.0" width="304" height="13.5"/>
+                                                        <rect key="frame" x="8" y="0.0" width="651" height="20.5"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
@@ -258,10 +258,10 @@
                                                 </constraints>
                                             </view>
                                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G12-Nn-gVZ" userLabel="Phone Email Line View" customClass="CustomView" customModule="OmnieCommerceAdmin" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="125.5" width="320" height="46.5"/>
+                                                <rect key="frame" x="0.0" y="104" width="667" height="42.5"/>
                                                 <subviews>
                                                     <textField opaque="NO" clipsSubviews="YES" tag="99" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone or Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fJG-PJ-vd9" customClass="CustomTextField" customModule="OmnieCommerceAdmin" customModuleProvider="target">
-                                                        <rect key="frame" x="8" y="25.5" width="312" height="19"/>
+                                                        <rect key="frame" x="8" y="23.5" width="659" height="17"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -282,10 +282,10 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2lB-WY-Z9p" userLabel="Action Buttons View">
-                                                <rect key="frame" x="0.0" y="186" width="320" height="144"/>
+                                                <rect key="frame" x="0.0" y="160.5" width="667" height="132.5"/>
                                                 <subviews>
                                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tgD-X3-l2h" userLabel="Send Button" customClass="CustomButton" customModule="OmnieCommerceAdmin" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="38.5" width="320" height="45.5"/>
+                                                        <rect key="frame" x="0.0" y="34.5" width="667" height="41.5"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <state key="normal" title="Send"/>
                                                         <userDefinedRuntimeAttributes>
@@ -296,7 +296,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1TZ-5k-21n" userLabel="Cancel Button" customClass="CustomButton" customModule="OmnieCommerceAdmin" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="99" width="320" height="45"/>
+                                                        <rect key="frame" x="0.0" y="91" width="667" height="41.5"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <state key="normal" title="Cancel"/>
                                                         <userDefinedRuntimeAttributes>
@@ -409,20 +409,20 @@
                         <viewControllerLayoutGuide type="bottom" id="Tbm-hk-5ez"/>
                     </layoutGuides>
                     <view key="view" tag="1" contentMode="scaleToFill" id="mSZ-Io-FDD">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tnf-Wn-jfJ">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4gf-8X-NcH" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="426.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="667" height="382"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bMd-pC-J8I" userLabel="Titile View">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="125.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="667" height="104"/>
                                                 <subviews>
                                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Registration" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qSV-kW-Ngc" customClass="CustomLabel" customModule="OmnieCommerceAdmin" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="63" width="320" height="42.5"/>
+                                                        <rect key="frame" x="0.0" y="78.5" width="667" height="20.5"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
@@ -442,10 +442,10 @@
                                                 </constraints>
                                             </view>
                                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2LY-Jg-FBt" userLabel="Name Line View" customClass="CustomView" customModule="OmnieCommerceAdmin" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="125.5" width="320" height="46.5"/>
+                                                <rect key="frame" x="0.0" y="104" width="667" height="42.5"/>
                                                 <subviews>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P9H-UK-mNC" userLabel="Name Text Field" customClass="CustomTextField" customModule="OmnieCommerceAdmin" customModuleProvider="target">
-                                                        <rect key="frame" x="8" y="25" width="312" height="19"/>
+                                                        <rect key="frame" x="8" y="23" width="659" height="17"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -466,10 +466,10 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dca-yH-4Wu" userLabel="Email Error Message View" customClass="ErrorMessageView" customModule="OmnieCommerceAdmin" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="217" width="320" height="14"/>
+                                                <rect key="frame" x="0.0" y="188" width="667" height="14"/>
                                                 <subviews>
                                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wrong Email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1p0-aA-Wp7" userLabel="Wrong Email Message Label" customClass="CustomLabel" customModule="OmnieCommerceAdmin" customModuleProvider="target">
-                                                        <rect key="frame" x="8" y="0.0" width="304" height="13.5"/>
+                                                        <rect key="frame" x="8" y="0.0" width="651" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -487,10 +487,10 @@
                                                 </constraints>
                                             </view>
                                             <view opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TPF-cm-coI" userLabel="Email Line View" customClass="CustomView" customModule="OmnieCommerceAdmin" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="171.5" width="320" height="46"/>
+                                                <rect key="frame" x="0.0" y="146" width="667" height="42.5"/>
                                                 <subviews>
                                                     <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Afe-uC-W9p" userLabel="Email Text Field" customClass="CustomTextField" customModule="OmnieCommerceAdmin" customModuleProvider="target">
-                                                        <rect key="frame" x="8" y="25.5" width="312" height="19"/>
+                                                        <rect key="frame" x="8" y="24" width="659" height="17"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -511,10 +511,10 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xw8-zo-fdg" userLabel="Password Line View" customClass="CustomView" customModule="OmnieCommerceAdmin" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="231.5" width="320" height="46.5"/>
+                                                <rect key="frame" x="0.0" y="202.5" width="667" height="43"/>
                                                 <subviews>
                                                     <textField opaque="NO" clipsSubviews="YES" tag="99" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hKY-ie-XOH" userLabel="Password Text Field" customClass="CustomTextField" customModule="OmnieCommerceAdmin" customModuleProvider="target">
-                                                        <rect key="frame" x="8" y="26" width="312" height="19"/>
+                                                        <rect key="frame" x="8" y="24.5" width="659" height="17"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -535,17 +535,17 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fgm-nc-z32" userLabel="Password Strength View" customClass="PasswordStrengthLevelView" customModule="OmnieCommerceAdmin" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="278" width="320" height="4"/>
+                                                <rect key="frame" x="0.0" y="245.5" width="667" height="4"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="4" id="xYH-B9-rqv"/>
                                                 </constraints>
                                             </view>
                                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uN9-KN-x7g" userLabel="Action Buttons View">
-                                                <rect key="frame" x="0.0" y="282" width="320" height="144.5"/>
+                                                <rect key="frame" x="0.0" y="249.5" width="667" height="132.5"/>
                                                 <subviews>
                                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WU9-QI-dnc" userLabel="Register Button" customClass="CustomButton" customModule="OmnieCommerceAdmin" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="38.5" width="320" height="45"/>
+                                                        <rect key="frame" x="0.0" y="34" width="667" height="41.5"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <state key="normal" title="Register"/>
                                                         <userDefinedRuntimeAttributes>
@@ -556,7 +556,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eOR-1l-bfI" userLabel="Cancel Button" customClass="CustomButton" customModule="OmnieCommerceAdmin" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="98.5" width="320" height="45.5"/>
+                                                        <rect key="frame" x="0.0" y="90.5" width="667" height="41.5"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <state key="normal" title="Cancel"/>
                                                         <userDefinedRuntimeAttributes>
@@ -714,17 +714,17 @@
                         <viewControllerLayoutGuide type="bottom" id="0jX-V4-pUF"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="w4h-dr-gZj">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="r0S-9A-Zgy">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ARy-td-aPT" userLabel="Title View">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="163"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="667" height="92.5"/>
                                         <subviews>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kyb-Ck-2ZP" userLabel="Title Label" customClass="CustomLabel" customModule="OmnieCommerceAdmin" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="100.5" width="320" height="42.5"/>
+                                                <rect key="frame" x="0.0" y="67" width="667" height="20.5"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -745,19 +745,19 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gDZ-eL-fR8">
-                                        <rect key="frame" x="0.0" y="163" width="320" height="405"/>
+                                        <rect key="frame" x="0.0" y="92.5" width="667" height="282.5"/>
                                         <subviews>
                                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cxl-lM-0aG">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="405"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="667" height="282.5"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eoE-MW-EyJ" userLabel="Content View">
-                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="405"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="667" height="282.5"/>
                                                         <subviews>
                                                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Esj-u5-vXG" userLabel="Name Line View" customClass="CustomView" customModule="OmnieCommerceAdmin" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="320" height="46.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="667" height="42.5"/>
                                                                 <subviews>
                                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="swM-42-2YU" userLabel="Name Text Field" customClass="CustomTextField" customModule="OmnieCommerceAdmin" customModuleProvider="target">
-                                                                        <rect key="frame" x="8" y="25" width="312" height="19"/>
+                                                                        <rect key="frame" x="8" y="23" width="659" height="17"/>
                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                         <nil key="textColor"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -778,10 +778,10 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                             <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x1v-Ri-hv4" userLabel="Password Line View" customClass="CustomView" customModule="OmnieCommerceAdmin" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="46.5" width="320" height="46.5"/>
+                                                                <rect key="frame" x="0.0" y="42.5" width="667" height="42.5"/>
                                                                 <subviews>
                                                                     <textField opaque="NO" clipsSubviews="YES" tag="99" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="puu-bd-4T6" userLabel="Password Text Field" customClass="CustomTextField" customModule="OmnieCommerceAdmin" customModuleProvider="target">
-                                                                        <rect key="frame" x="8" y="25.5" width="312" height="19"/>
+                                                                        <rect key="frame" x="8" y="23.5" width="659" height="17"/>
                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                         <nil key="textColor"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -802,10 +802,10 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="THC-Uc-Gbl" userLabel="Action Button View">
-                                                                <rect key="frame" x="0.0" y="93" width="320" height="81.5"/>
+                                                                <rect key="frame" x="0.0" y="85" width="667" height="75"/>
                                                                 <subviews>
                                                                     <button autoresizesSubviews="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FFS-4c-Swg" userLabel="Sign In Button" customClass="CustomButton" customModule="OmnieCommerceAdmin" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="35.5" width="320" height="45.5"/>
+                                                                        <rect key="frame" x="0.0" y="33" width="667" height="41.5"/>
                                                                         <state key="normal" title="Sign In"/>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="string" keyPath="buttonStyle" value="Border"/>
@@ -823,10 +823,10 @@
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gby-PP-Y0W" userLabel="Texts View">
-                                                                <rect key="frame" x="0.0" y="187" width="320" height="81.5"/>
+                                                                <rect key="frame" x="0.0" y="172.5" width="667" height="75"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not yet registered?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TZp-21-ZpS" customClass="CustomLabel" customModule="OmnieCommerceAdmin" customModuleProvider="target">
-                                                                        <rect key="frame" x="4" y="15.5" width="102.5" height="30"/>
+                                                                        <rect key="frame" x="4" y="12.5" width="146" height="30"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -835,7 +835,7 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </label>
                                                                     <button opaque="NO" tag="99" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eRv-z0-W4a" customClass="CustomButton" customModule="OmnieCommerceAdmin" customModuleProvider="target">
-                                                                        <rect key="frame" x="114" y="15.5" width="206" height="30"/>
+                                                                        <rect key="frame" x="157.5" y="12" width="509.5" height="30"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="30" id="cmD-3W-FQj"/>
                                                                         </constraints>
@@ -848,7 +848,7 @@
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="99" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZqH-Ft-3CU" customClass="CustomButton" customModule="OmnieCommerceAdmin" customModuleProvider="target">
-                                                                        <rect key="frame" x="112.5" y="45.5" width="95" height="30"/>
+                                                                        <rect key="frame" x="261" y="42" width="145" height="30"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="30" id="e5X-IY-4iz"/>
                                                                         </constraints>
@@ -976,7 +976,7 @@
             <objects>
                 <navigationController storyboardIdentifier="SignInShowNC" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="6uh-TR-iIl" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="w6Z-de-2vo">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="w6Z-de-2vo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -998,7 +998,7 @@
                         <viewControllerLayoutGuide type="bottom" id="qkh-Rm-2c1"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="0yP-Rh-sPs">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>

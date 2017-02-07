@@ -32,6 +32,7 @@
 "Wrong Email"                   =   "* Wrong Email";
 "Wrong Number or Email"         =   "* Wrong Number or Email";
 "Invalid code"                  =   "* Invalid code. Please try again";
+"New password"                  =   "New Password";
 
 
 // Fields
@@ -40,6 +41,7 @@
 "Phone or Email"                =   "Phone or Email";
 "Email"                         =   "Email";
 "Enter Code"                    =   "Enter Code";
+"Repeat password"               =   "Repeat Password";
 
 
 // Buttons
@@ -49,3 +51,5 @@
 "Cancel"                        =   "Cancel";
 "Send"                          =   "Send";
 "Do not get password?"          =   "Do not get Password?";
+"Send again"                    =   "Send Again";
+"Enter"                         =   "Enter";

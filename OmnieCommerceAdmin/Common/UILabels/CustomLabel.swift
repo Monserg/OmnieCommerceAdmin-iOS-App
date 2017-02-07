@@ -20,4 +20,20 @@ import UIKit
         super.init(coder: aDecoder)
         
     }
+    
+    
+    // MARK: - Class Functions
+//    override func draw(_ rect: CGRect) {
+//        adjustsFontSizeToFitWidth = true
+//    }
+//    
+//    
+//    // MARK: - Custom Functions
+//    func setup() {
+//        NotificationCenter.default.addObserver(self, selector: #selector(applyDeviceRotation), name: .UIDeviceOrientationDidChange, object: nil)
+//    }
+//    
+//    func applyDeviceRotation() {
+//        setNeedsDisplay()
+//    }
 }
