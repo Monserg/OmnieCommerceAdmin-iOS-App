@@ -36,6 +36,7 @@ class SignInShowViewController: BaseViewController, SignInShowViewControllerInpu
     var signInContainerShowVC: SignInContainerShowViewController?
     var signUpShowVC: SignUpShowViewController?
     var forgotPasswordShowVC: ForgotPasswordShowViewController?
+    var enterCodeShowViewController: EnterCodeShowViewController?
     
     var activeViewController: BaseViewController? {
         didSet {
@@ -53,6 +54,7 @@ class SignInShowViewController: BaseViewController, SignInShowViewControllerInpu
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var logoBackgroundView: UIView!
     @IBOutlet weak var containerStackView: UIStackView!
+    @IBOutlet weak var socialButtonsView: UIView!
 
     
     // MARK: - Class initialization

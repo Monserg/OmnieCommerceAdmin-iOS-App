@@ -38,13 +38,39 @@ class SignInShowRouter: SignInShowRouterInput {
         }
         
         viewController.signInContainerShowVC?.handlerForgotPasswordButtonCompletion = { _ in
+            // Create ForgotPasswordViewController
             self.viewController.forgotPasswordShowVC = UIStoryboard(name: "SignInShow", bundle: nil).instantiateViewController(withIdentifier: "ForgotPasswordShowVC") as? ForgotPasswordShowViewController
             
+//            UIView.animate(withDuration: 0.0) {
+//                self.viewController.socialButtonsView.isHidden = true
+//            }
+            
+            // Send button handler
+            self.viewController.forgotPasswordShowVC?.handlerSendButtonCompletion = { _ in
+                // Create EnterCodeShowViewController
+                self.viewController.enterCodeShowViewController = UIStoryboard(name: "SignInShow", bundle: nil).instantiateViewController(withIdentifier: "EnterCodeShowVC") as? EnterCodeShowViewController
+                
+                // TODO: - ADD ENTER CODE ACTION BUTTONS HANDLERS
+                
+                self.viewController.activeViewController = self.viewController.enterCodeShowViewController
+            }
+            
+            // Cancel button handler
             self.viewController.forgotPasswordShowVC?.handlerCancelButtonCompletion = { _ in
                 self.viewController.activeViewController = self.viewController.signInContainerShowVC
+                
+                // Show social buttons view
+                UIView.animate(withDuration: 0.3) {
+                    self.viewController.socialButtonsView.isHidden = false
+                }
             }
             
             self.viewController.activeViewController = self.viewController.forgotPasswordShowVC
+            
+            // Hide social buttons view
+            UIView.animate(withDuration: 0.3) {
+                self.viewController.socialButtonsView.isHidden = true
+            }
         }
         
         viewController.activeViewController = viewController.signInContainerShowVC

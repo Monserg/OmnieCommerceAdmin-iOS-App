@@ -44,6 +44,13 @@
 		B1C320E01E44A46700D84BC3 /* ForgotPasswordShowWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C320D91E44A46700D84BC3 /* ForgotPasswordShowWorker.swift */; };
 		B1C320E61E44CBCD00D84BC3 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C320E51E44CBCD00D84BC3 /* CustomView.swift */; };
 		B1DB436D1E48D2D400D3DE77 /* PasswordStrengthLevelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DB436C1E48D2D400D3DE77 /* PasswordStrengthLevelView.swift */; };
+		B1E29E591E49F7910068B642 /* EnterCodeShowConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E29E521E49F7910068B642 /* EnterCodeShowConfigurator.swift */; };
+		B1E29E5A1E49F7910068B642 /* EnterCodeShowInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E29E531E49F7910068B642 /* EnterCodeShowInteractor.swift */; };
+		B1E29E5B1E49F7910068B642 /* EnterCodeShowModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E29E541E49F7910068B642 /* EnterCodeShowModels.swift */; };
+		B1E29E5C1E49F7910068B642 /* EnterCodeShowPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E29E551E49F7910068B642 /* EnterCodeShowPresenter.swift */; };
+		B1E29E5D1E49F7910068B642 /* EnterCodeShowRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E29E561E49F7910068B642 /* EnterCodeShowRouter.swift */; };
+		B1E29E5E1E49F7910068B642 /* EnterCodeShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E29E571E49F7910068B642 /* EnterCodeShowViewController.swift */; };
+		B1E29E5F1E49F7910068B642 /* EnterCodeShowWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E29E581E49F7910068B642 /* EnterCodeShowWorker.swift */; };
 		B1EADCCB1E436316006341D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EADCCA1E436316006341D2 /* AppDelegate.swift */; };
 		B1EADCD21E436316006341D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1EADCD11E436316006341D2 /* Assets.xcassets */; };
 		B1EADCEE1E4374C2006341D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1EADCEB1E4374C2006341D2 /* Main.storyboard */; };
@@ -138,6 +145,13 @@
 		B1C320D91E44A46700D84BC3 /* ForgotPasswordShowWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordShowWorker.swift; sourceTree = "<group>"; };
 		B1C320E51E44CBCD00D84BC3 /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		B1DB436C1E48D2D400D3DE77 /* PasswordStrengthLevelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordStrengthLevelView.swift; sourceTree = "<group>"; };
+		B1E29E521E49F7910068B642 /* EnterCodeShowConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnterCodeShowConfigurator.swift; sourceTree = "<group>"; };
+		B1E29E531E49F7910068B642 /* EnterCodeShowInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnterCodeShowInteractor.swift; sourceTree = "<group>"; };
+		B1E29E541E49F7910068B642 /* EnterCodeShowModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnterCodeShowModels.swift; sourceTree = "<group>"; };
+		B1E29E551E49F7910068B642 /* EnterCodeShowPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnterCodeShowPresenter.swift; sourceTree = "<group>"; };
+		B1E29E561E49F7910068B642 /* EnterCodeShowRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnterCodeShowRouter.swift; sourceTree = "<group>"; };
+		B1E29E571E49F7910068B642 /* EnterCodeShowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnterCodeShowViewController.swift; sourceTree = "<group>"; };
+		B1E29E581E49F7910068B642 /* EnterCodeShowWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnterCodeShowWorker.swift; sourceTree = "<group>"; };
 		B1EADCC71E436316006341D2 /* OmnieCommerceAdmin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OmnieCommerceAdmin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1EADCCA1E436316006341D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B1EADCD11E436316006341D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
@@ -316,6 +330,20 @@
 			path = ForgotPasswordShow;
 			sourceTree = "<group>";
 		};
+		B1E29E511E49F76C0068B642 /* EnterCodeShow */ = {
+			isa = PBXGroup;
+			children = (
+				B1E29E521E49F7910068B642 /* EnterCodeShowConfigurator.swift */,
+				B1E29E531E49F7910068B642 /* EnterCodeShowInteractor.swift */,
+				B1E29E541E49F7910068B642 /* EnterCodeShowModels.swift */,
+				B1E29E551E49F7910068B642 /* EnterCodeShowPresenter.swift */,
+				B1E29E561E49F7910068B642 /* EnterCodeShowRouter.swift */,
+				B1E29E571E49F7910068B642 /* EnterCodeShowViewController.swift */,
+				B1E29E581E49F7910068B642 /* EnterCodeShowWorker.swift */,
+			);
+			path = EnterCodeShow;
+			sourceTree = "<group>";
+		};
 		B1EADCBE1E436316006341D2 = {
 			isa = PBXGroup;
 			children = (
@@ -375,6 +403,7 @@
 		B1EADCDE1E437248006341D2 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				B1E29E511E49F76C0068B642 /* EnterCodeShow */,
 				B1C320D21E44A45900D84BC3 /* ForgotPasswordShow */,
 				B1EADD261E43906D006341D2 /* MainShow */,
 				B1FBB8D11E43D23100C02BC3 /* OrganizationsListShow */,
@@ -656,6 +685,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B1FBB8DC1E43D28F00C02BC3 /* OrganizationsListShowPresenter.swift in Sources */,
+				B1E29E5A1E49F7910068B642 /* EnterCodeShowInteractor.swift in Sources */,
 				B1C320CB1E44A43A00D84BC3 /* SignInShowConfigurator.swift in Sources */,
 				B1EADD311E4390A2006341D2 /* MainShowPresenter.swift in Sources */,
 				B1C320CE1E44A43A00D84BC3 /* SignInShowPresenter.swift in Sources */,
@@ -669,20 +699,24 @@
 				B1C320CC1E44A43A00D84BC3 /* SignInShowInteractor.swift in Sources */,
 				B1C320B81E44A3C400D84BC3 /* SignUpShowConfigurator.swift in Sources */,
 				B1C320B91E44A3C400D84BC3 /* SignUpShowInteractor.swift in Sources */,
+				B1E29E5C1E49F7910068B642 /* EnterCodeShowPresenter.swift in Sources */,
 				B1C320DD1E44A46700D84BC3 /* ForgotPasswordShowPresenter.swift in Sources */,
 				B1BD7B271E464CD700D8FA0A /* SignInContainerShowInteractor.swift in Sources */,
 				B1C320D01E44A43A00D84BC3 /* SignInShowViewController.swift in Sources */,
 				B1C320D11E44A43A00D84BC3 /* SignInShowWorker.swift in Sources */,
 				B1FBB89D1E43C57000C02BC3 /* String+Ext.swift in Sources */,
 				B1BD7B1C1E4634D100D8FA0A /* CustomStoriboardSegue.swift in Sources */,
+				B1E29E5D1E49F7910068B642 /* EnterCodeShowRouter.swift in Sources */,
 				B1C320E61E44CBCD00D84BC3 /* CustomView.swift in Sources */,
 				B1FBB8DB1E43D28F00C02BC3 /* OrganizationsListShowModels.swift in Sources */,
 				B1BD7AF91E45F64800D8FA0A /* BaseViewController.swift in Sources */,
+				B1E29E5F1E49F7910068B642 /* EnterCodeShowWorker.swift in Sources */,
 				B1533C2B1E49A8BC00418B96 /* ErrorMessageView.swift in Sources */,
 				B1EADD081E4386F2006341D2 /* Config.swift in Sources */,
 				B1EADD301E4390A2006341D2 /* MainShowModels.swift in Sources */,
 				B1EADD321E4390A2006341D2 /* MainShowRouter.swift in Sources */,
 				B1FBB89B1E43C50300C02BC3 /* UILabel+Extensions.swift in Sources */,
+				B1E29E5B1E49F7910068B642 /* EnterCodeShowModels.swift in Sources */,
 				B1C320CF1E44A43A00D84BC3 /* SignInShowRouter.swift in Sources */,
 				B1FBB8DE1E43D28F00C02BC3 /* OrganizationsListShowViewController.swift in Sources */,
 				B1EADD341E4390A2006341D2 /* MainShowWorker.swift in Sources */,
@@ -709,10 +743,12 @@
 				B18373A81E458AE200A2F36B /* CustomButton.swift in Sources */,
 				B1C320DA1E44A46700D84BC3 /* ForgotPasswordShowConfigurator.swift in Sources */,
 				B1FBB8961E43BF6500C02BC3 /* UIFont+Extensions.swift in Sources */,
+				B1E29E591E49F7910068B642 /* EnterCodeShowConfigurator.swift in Sources */,
 				B1C320CD1E44A43A00D84BC3 /* SignInShowModels.swift in Sources */,
 				B1EADD2E1E4390A2006341D2 /* MainShowConfigurator.swift in Sources */,
 				B137231D1E44E7DB001AE102 /* CustomTextField.swift in Sources */,
 				B1BD7B291E464CD700D8FA0A /* SignInContainerShowPresenter.swift in Sources */,
+				B1E29E5E1E49F7910068B642 /* EnterCodeShowViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
