@@ -42,10 +42,6 @@ class SignInShowRouter: SignInShowRouterInput {
             // Create ForgotPasswordViewController
             self.viewController.forgotPasswordShowVC = UIStoryboard(name: "SignInShow", bundle: nil).instantiateViewController(withIdentifier: "ForgotPasswordShowVC") as? ForgotPasswordShowViewController
             
-//            UIView.animate(withDuration: 0.0) {
-//                self.viewController.socialButtonsView.isHidden = true
-//            }
-            
             // ForgotPasswordShowVC: Send button handler
             self.viewController.forgotPasswordShowVC?.handlerSendButtonCompletion = { _ in
                 // Create EnterCodeShowViewController
@@ -54,22 +50,24 @@ class SignInShowRouter: SignInShowRouterInput {
                 // EnterCodeShowVC: Send button handler
                 self.viewController.enterCodeShowViewController?.handlerSendButtonCompletion = { _ in
                     // Create RepetitionPasswordShow scene
+                    self.viewController.repetitionPasswordShowViewController = UIStoryboard(name: "SignInShow", bundle: nil).instantiateViewController(withIdentifier: "RepetitionPasswordShowVC") as? RepetitionPasswordShowViewController
                     
-                }
-                
-                // EnterCodeShowVC: Send Again button handler
-                self.viewController.enterCodeShowViewController?.handlerSendAgainButtonCompletion = { _ in
-                    self.viewController.activeViewController = self.viewController.forgotPasswordShowVC
+                    // RepetitionPasswordShowVC: handler Send button
+                    self.viewController.repetitionPasswordShowViewController?.handlerSendButtonCompletion = { _ in
+                        print("OOOOOOOOKKKKKKKKK!!!!!!!")
+                    }
+                    
+                    // RepetitionPasswordShowVC: handler Cancel button
+                    self.viewController.repetitionPasswordShowViewController?.handlerCancelButtonCompletion = { _ in
+                        self.viewController.activeViewController = self.viewController.enterCodeShowViewController
+                    }
+                    
+                    self.viewController.activeViewController = self.viewController.repetitionPasswordShowViewController
                 }
                 
                 // EnterCodeShowVC: Cancel button handler
                 self.viewController.enterCodeShowViewController?.handlerCancelButtonCompletion = { _ in
-                    self.viewController.activeViewController = self.viewController.signInContainerShowVC
-                    
-                    // Show social buttons view
-                    UIView.animate(withDuration: 0.3) {
-                        self.viewController.socialButtonsView.isHidden = false
-                    }
+                    self.viewController.activeViewController = self.viewController.forgotPasswordShowVC
                 }
                 
                 self.viewController.activeViewController = self.viewController.enterCodeShowViewController
@@ -77,12 +75,7 @@ class SignInShowRouter: SignInShowRouterInput {
             
             // ForgotPasswordShowVC: Cancel button handler
             self.viewController.forgotPasswordShowVC?.handlerCancelButtonCompletion = { _ in
-                self.viewController.activeViewController = self.viewController.signInContainerShowVC
-                
-                // Show social buttons view
-                UIView.animate(withDuration: 0.3) {
-                    self.viewController.socialButtonsView.isHidden = false
-                }
+                self.didActiveViewControllerLoad()
             }
             
             self.viewController.activeViewController = self.viewController.forgotPasswordShowVC
@@ -95,6 +88,16 @@ class SignInShowRouter: SignInShowRouterInput {
         
         viewController.activeViewController = viewController.signInContainerShowVC
     }
+    
+    func didActiveViewControllerLoad() {
+        self.viewController.activeViewController = self.viewController.signInContainerShowVC
+        
+        // Show social buttons view
+        UIView.animate(withDuration: 0.3) {
+            self.viewController.socialButtonsView.isHidden = false
+        }
+    }
+    
     
     // MARK: - UIContainerView
     func removeInactiveViewController(inactiveViewController: BaseViewController?) {

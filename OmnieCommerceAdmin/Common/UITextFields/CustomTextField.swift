@@ -89,7 +89,7 @@ enum PasswordStrengthLevel {
             
         case .Code:
             autocapitalizationType          =   .none
-            keyboardType                    =   .numberPad
+            keyboardType                    =   .numbersAndPunctuation
             
         // Name
         default:

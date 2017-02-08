@@ -37,6 +37,7 @@ class SignInShowViewController: BaseViewController, SignInShowViewControllerInpu
     var signUpShowVC: SignUpShowViewController?
     var forgotPasswordShowVC: ForgotPasswordShowViewController?
     var enterCodeShowViewController: EnterCodeShowViewController?
+    var repetitionPasswordShowViewController: RepetitionPasswordShowViewController?
     
     var activeViewController: BaseViewController? {
         didSet {

@@ -25,13 +25,16 @@ class EnterCodeShowViewController: BaseViewController {
     // MARK: - Properties
     var interactor: EnterCodeShowViewControllerOutput!
     var router: EnterCodeShowRouter!
+    
+    var isInputCodeValid = false
+    
     var handlerSendButtonCompletion: HandlerSendButtonCompletion?
     var handlerCancelButtonCompletion: HandlerCancelButtonCompletion?
-    var handlerSendAgainButtonCompletion: HandlerSendAgainButtonCompletion?
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet var textFieldsCollection: [CustomTextField]!
     @IBOutlet weak var codeErrorMessageView: ErrorMessageView!
+    @IBOutlet weak var sendButton: CustomButton!
     
     @IBOutlet weak var codeErrorMessageViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var codeErrorMessageViewTopConstraint: NSLayoutConstraint!
@@ -86,7 +89,9 @@ class EnterCodeShowViewController: BaseViewController {
     }
     
     @IBAction func handlerSendAgainButtonTap(_ sender: CustomButton) {
-        handlerSendAgainButtonCompletion!()
+//        let requestModel = EnterCodeShowModels.Renew.RequestModel(email: <#T##String#>)
+//        interactor.validateInputCodeFrom(requestModel: requestModel)
+        
     }
     
     
@@ -101,7 +106,9 @@ class EnterCodeShowViewController: BaseViewController {
 extension EnterCodeShowViewController: EnterCodeShowViewControllerInput {
     func returnValidationResult(viewModel: EnterCodeShowModels.Code.ViewModel) {
         // Handler returned result from Presenter
-        if (viewModel.isValueValid) {
+        isInputCodeValid = viewModel.isValueValid
+        
+        if (isInputCodeValid) {
             handlerSendButtonCompletion!()
         } else {
             codeErrorMessageView.didShow(true, withConstraint: codeErrorMessageViewTopConstraint)
@@ -112,18 +119,32 @@ extension EnterCodeShowViewController: EnterCodeShowViewControllerInput {
 
 // MARK: - UITextFieldDelegate
 extension EnterCodeShowViewController {
-    override func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if (!(textField as! CustomTextField).checkPhoneEmailValidation(textField.text!)) {
-            codeErrorMessageView.didShow(true, withConstraint: codeErrorMessageViewTopConstraint)
-            
+    override func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        codeErrorMessageView.didShow(false, withConstraint: codeErrorMessageViewTopConstraint)
+        
+        if (string.isEmpty) {
+            return true
+        }
+        
+        guard Int(string) != nil else {
             return false
+        }
+        
+        if ((textField.text! + string).characters.count <= 4) {
+            return true
         } else {
-            codeErrorMessageView.didShow(false, withConstraint: codeErrorMessageViewTopConstraint)
-            
+            return false
+        }
+    }
+    
+    override func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        handlerSendButtonTap(sendButton)
+        
+        if (isInputCodeValid) {
             textField.resignFirstResponder()
         }
         
-        return true
+        return isInputCodeValid
     }
     
     func textFieldShouldClear(_ textField: UITextField) -> Bool {

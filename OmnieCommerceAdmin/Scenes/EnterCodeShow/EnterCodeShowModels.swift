@@ -26,4 +26,18 @@ struct EnterCodeShowModels {
             let isValueValid: Bool
         }
     }
+    
+    struct Renew {
+        struct RequestModel {
+            let email: String
+        }
+        
+        struct ResponseModel {
+            let success: Bool
+        }
+        
+        struct ViewModel {
+            let success: Bool
+        }
+    }
 }

@@ -71,7 +71,15 @@ class ForgotPasswordShowViewController: BaseViewController {
     
     // MARK: - Actions
     @IBAction func handlerSendButtonTap(_ sender: CustomButton) {
-        handlerSendButtonCompletion!()
+        let textField = textFieldsCollection.last!
+        
+        if (!textField.checkEmailValidation(textField.text!)) {
+            phoneEmailErrorMessageView.didShow(true, withConstraint: phoneEmailErrorMessageViewTopConstraint)
+
+            handlerSendButtonCompletion!()
+        } else {
+            phoneEmailErrorMessageView.didShow(false, withConstraint: phoneEmailErrorMessageViewTopConstraint)
+        }
     }
     
     @IBAction func handlerCancelButtonTap(_ sender: CustomButton) {
@@ -92,12 +100,10 @@ extension ForgotPasswordShowViewController: ForgotPasswordShowViewControllerInpu
 // MARK: - UITextFieldDelegate
 extension ForgotPasswordShowViewController {
     override func textFieldDidEndEditing(_ textField: UITextField) {
-        if (textField.tag == 1) {
-            if (!(textField as! CustomTextField).checkEmailValidation(textField.text!)) {
-                phoneEmailErrorMessageView.didShow(true, withConstraint: phoneEmailErrorMessageViewTopConstraint)
-            } else {
-                phoneEmailErrorMessageView.didShow(false, withConstraint: phoneEmailErrorMessageViewTopConstraint)
-            }
+        if (!(textField as! CustomTextField).checkEmailValidation(textField.text!)) {
+            phoneEmailErrorMessageView.didShow(true, withConstraint: phoneEmailErrorMessageViewTopConstraint)
+        } else {
+            phoneEmailErrorMessageView.didShow(false, withConstraint: phoneEmailErrorMessageViewTopConstraint)
         }
     }
     

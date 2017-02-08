@@ -19,7 +19,6 @@ enum ThemeDesign: String {
 }
 
 typealias HandlerSendButtonCompletion               =   (() -> ())
-typealias HandlerSendAgainButtonCompletion          =   (() -> ())
 typealias HandlerRegisterButtonCompletion           =   (() -> ())
 typealias HandlerForgotPasswordButtonCompletion     =   (() -> ())
 typealias HandlerCancelButtonCompletion             =   (() -> ())
