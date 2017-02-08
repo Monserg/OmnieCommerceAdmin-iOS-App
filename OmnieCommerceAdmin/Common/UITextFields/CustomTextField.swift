@@ -11,6 +11,7 @@ import Navajo_Swift
 
 enum FieldStyle: String {
     case Name           =   "Name"
+    case Code           =   "Code"
     case Email          =   "Email"
     case Password       =   "Password"
     case PhoneEmail     =   "PhoneEmail"
@@ -38,12 +39,19 @@ enum PasswordStrengthLevel {
         get { return nil }
     }
     
-    
+
     // MARK: - Class Functions
-    override func clearButtonRect(forBounds bounds: CGRect) -> CGRect {
-        let originalRect = super.clearButtonRect(forBounds: bounds)
+    override func layoutSubviews() {
+        super.layoutSubviews()
         
-        return CGRect.init(origin: CGPoint.init(x: originalRect.origin.x, y: originalRect.origin.y), size: originalRect.size)
+        // Set clear button image
+        for subview in subviews {
+            if (subview.isKind(of: UIButton.self)) {
+                let button = subview as! UIButton
+                button.setImage(button.image(for: .normal)?.withRenderingMode(.alwaysTemplate), for: .normal)
+                button.tintColor = UIColor.init(hexString: (Config.Constants.isAppThemesDark) ? "#5e6969" : "#9ec9c6", withAlpha: 1)
+            }
+        }
     }
     
     
@@ -78,6 +86,10 @@ enum PasswordStrengthLevel {
         case .Password:
             autocapitalizationType          =   .none
             isSecureTextEntry               =   true
+            
+        case .Code:
+            autocapitalizationType          =   .none
+            keyboardType                    =   .numberPad
             
         // Name
         default:

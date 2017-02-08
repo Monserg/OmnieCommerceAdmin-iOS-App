@@ -12,15 +12,6 @@ enum ButtonStyle: String {
     case Border                                     =   "Border"
     case TitleUbuntuLight12VeryLightOrange          =   "TitleUbuntuLight12VeryLightOrange"
     case TitleUbuntuLight12UndirlineVeryLightGray   =   "TitleUbuntuLight12UndirlineVeryLightGray"
-
-    //    case Social = "Social"
-    //    case Fill = "Fill"
-//    case Underline = "Underline"
-//    case UnderlineColor = "UnderlineColor"
-//    case DropDownList = "DropDownList"
-//    case MenuEvent = "MenuEvent"
-//    case Circular = "Circular"
-//    case ActionViewOrangeButton = "ActionViewOrangeButton"
 }
 
 extension UIButton {

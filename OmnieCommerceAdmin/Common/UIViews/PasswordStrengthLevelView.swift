@@ -23,7 +23,7 @@ class PasswordStrengthLevelView: UIView {
 
             weakLevelLinePath.move(to: CGPoint.init(x: bounds.minX, y: bounds.maxY))
             weakLevelLinePath.addLine(to: CGPoint.init(x: bounds.maxX / 3, y: bounds.maxY))
-            let weakLevelLinePathColor = UIColor(hexString: (Config.Constants.isAppThemesDark) ? "#ae5454" : "862d2d", withAlpha: 1.0)!
+            let weakLevelLinePathColor = UIColor(hexString: (Config.Constants.isAppThemesDark) ? "#ae5454" : "#ae5454", withAlpha: 1.0)!
             weakLevelLinePathColor.setStroke()
             weakLevelLinePath.stroke()
 
@@ -33,7 +33,7 @@ class PasswordStrengthLevelView: UIView {
 
             weakBackgroundLinePath.move(to: CGPoint.init(x: bounds.maxX / 3, y: bounds.maxY))
             weakBackgroundLinePath.addLine(to: CGPoint.init(x: bounds.maxX, y: bounds.maxY))
-            let weakBackgroundLinePathColor = UIColor(hexString: (Config.Constants.isAppThemesDark) ? "#5e6969" : "9ec9c6", withAlpha: 1.0)!
+            let weakBackgroundLinePathColor = UIColor(hexString: (Config.Constants.isAppThemesDark) ? "#5e6969" : "#5e6969", withAlpha: 1.0)!
             weakBackgroundLinePathColor.setStroke()
             weakBackgroundLinePath.stroke()
             
@@ -44,7 +44,7 @@ class PasswordStrengthLevelView: UIView {
 
             reasonableLevelLinePath.move(to: CGPoint.init(x: bounds.minX, y: bounds.maxY))
             reasonableLevelLinePath.addLine(to: CGPoint.init(x: bounds.maxX / 3 * 2, y: bounds.maxY))
-            let reasonableLevelLinePathColor = UIColor(hexString: (Config.Constants.isAppThemesDark) ? "#d7b278" : "d7b278", withAlpha: 1.0)!
+            let reasonableLevelLinePathColor = UIColor(hexString: (Config.Constants.isAppThemesDark) ? "#d7b278" : "#d7b278", withAlpha: 1.0)!
             reasonableLevelLinePathColor.setStroke()
             reasonableLevelLinePath.stroke()
 
@@ -54,7 +54,7 @@ class PasswordStrengthLevelView: UIView {
 
             weakBackgroundLinePath.move(to: CGPoint.init(x: bounds.maxX / 3 * 2, y: bounds.maxY))
             weakBackgroundLinePath.addLine(to: CGPoint.init(x: bounds.maxX, y: bounds.maxY))
-            let weakBackgroundLinePathColor = UIColor(hexString: (Config.Constants.isAppThemesDark) ? "#5e6969" : "9ec9c6lkj", withAlpha: 1.0)!
+            let weakBackgroundLinePathColor = UIColor(hexString: (Config.Constants.isAppThemesDark) ? "#5e6969" : "#5e6969", withAlpha: 1.0)!
             weakBackgroundLinePathColor.setStroke()
             weakBackgroundLinePath.stroke()
             
@@ -65,7 +65,7 @@ class PasswordStrengthLevelView: UIView {
 
             strongLevelLinePath.move(to: CGPoint.init(x: bounds.minX, y: bounds.maxY))
             strongLevelLinePath.addLine(to: CGPoint.init(x: bounds.maxX, y: bounds.maxY))
-            let strongLevelLinePathColor = UIColor(hexString: (Config.Constants.isAppThemesDark) ? "#3f916d" : "157f51", withAlpha: 1.0)!
+            let strongLevelLinePathColor = UIColor(hexString: (Config.Constants.isAppThemesDark) ? "#3f916d" : "#3f916d", withAlpha: 1.0)!
             strongLevelLinePathColor.setStroke()
             strongLevelLinePath.stroke()
             

@@ -13,12 +13,12 @@ import UIKit
 
 // MARK: - Input protocols for current Interactor component VIP-cicle
 protocol EnterCodeShowInteractorInput {
-    func doSomething(request: EnterCodeShow.Something.Request)
+    func validateInputCodeFrom(requestModel: EnterCodeShowModels.Code.RequestModel)
 }
 
 // MARK: - Output protocols for Presenter component VIP-cicle
 protocol EnterCodeShowInteractorOutput {
-    func presentSomething(response: EnterCodeShow.Something.Response)
+    func prepareValidationResultForShowFrom(responseModel: EnterCodeShowModels.Code.ResponseModel)
 }
 
 class EnterCodeShowInteractor: EnterCodeShowInteractorInput {
@@ -28,13 +28,14 @@ class EnterCodeShowInteractor: EnterCodeShowInteractorInput {
     
     
     // MARK: - Custom Functions. Business logic
-    func doSomething(request: EnterCodeShow.Something.Request) {
+    func validateInputCodeFrom(requestModel: EnterCodeShowModels.Code.RequestModel) {
         // NOTE: Create some Worker to do the work
         worker = EnterCodeShowWorker()
-        worker.doSomeWork()
+        let enterCode = worker.getEnterCode()
+        let isCodesEqual = worker.checkCodes(enterCode, andInputCode: requestModel.inputCode)
         
         // NOTE: Pass the result to the Presenter
-        let response = EnterCodeShow.Something.Response()
-        presenter.presentSomething(response: response)
+        let responseModel = EnterCodeShowModels.Code.ResponseModel(isValueValid: isCodesEqual)
+        presenter.prepareValidationResultForShowFrom(responseModel: responseModel)
     }
 }

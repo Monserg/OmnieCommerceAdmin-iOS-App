@@ -19,6 +19,7 @@ enum ThemeDesign: String {
 }
 
 typealias HandlerSendButtonCompletion               =   (() -> ())
+typealias HandlerSendAgainButtonCompletion          =   (() -> ())
 typealias HandlerRegisterButtonCompletion           =   (() -> ())
 typealias HandlerForgotPasswordButtonCompletion     =   (() -> ())
 typealias HandlerCancelButtonCompletion             =   (() -> ())
@@ -29,8 +30,8 @@ struct Config {
     struct Constants {
         // FIXME: - DELETE AFTER TEST
         static let isUserGuest: Bool                =   true
-        static let isAppThemesDark                  =   true
-        static let errorMessageViewHeight: CGFloat  =   20
+        static let isAppThemesDark                  =   false
+        static let errorMessageViewHeight: CGFloat  =   14
     }
     
     

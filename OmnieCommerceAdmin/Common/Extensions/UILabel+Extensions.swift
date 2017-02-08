@@ -30,23 +30,25 @@ extension UILabel {
     
     func setupWithStyle(_ labelStyle: LabelStyle) {
         text = text?.localized()
+        textAlignment       =   .center
         
         switch labelStyle {
         case .HelveticaNeueCyrLight15VeryLightGray:
-            font        =   UIFont.helveticaNeueCyrLight15
-            textColor   =   UIColor(hexString: (Config.Constants.isAppThemesDark) ? "#dedede" : "#dedede", withAlpha: 1.0)
+            font            =   UIFont.helveticaNeueCyrLight15
+            textColor       =   UIColor(hexString: (Config.Constants.isAppThemesDark) ? "#dedede" : "#dedede", withAlpha: 1.0)
             
         case .HelveticaNeueCyrThin47VeryLightGray:
-            font        =   UIFont.helveticaNeueCyrThin47
-            textColor   =   UIColor(hexString: (Config.Constants.isAppThemesDark) ? "#dedede" : "#dedede", withAlpha: 1.0)
+            font            =   UIFont.helveticaNeueCyrThin47
+            textColor       =   UIColor(hexString: (Config.Constants.isAppThemesDark) ? "#dedede" : "#dedede", withAlpha: 1.0)
             
         case .UbuntuLight12VeryLightGray:
-            font        =   UIFont.ubuntuLight12
-            textColor   =   UIColor(hexString: (Config.Constants.isAppThemesDark) ? "#dedede" : "#dedede", withAlpha: 1.0)
+            font            =   UIFont.ubuntuLight12
+            textColor       =   UIColor(hexString: (Config.Constants.isAppThemesDark) ? "#dedede" : "#dedede", withAlpha: 1.0)
             
         case .UbuntuLightItalic12VerySoftRed:
-            font        =   UIFont.ubuntuLightItalic12
-            textColor   =   UIColor(hexString: (Config.Constants.isAppThemesDark) ? "#dc8181" : "#8b0000", withAlpha: 1.0)
+            font            =   UIFont.ubuntuLightItalic12
+            textColor       =   UIColor(hexString: (Config.Constants.isAppThemesDark) ? "#dc8181" : "#8b0000", withAlpha: 1.0)
+            textAlignment   =   .left
         }
         
         self.adjustsFontSizeToFitWidth = true

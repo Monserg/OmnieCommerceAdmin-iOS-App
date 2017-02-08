@@ -13,18 +13,21 @@ import UIKit
 
 // MARK: - Input protocols for current ViewController component VIP-cicle
 protocol EnterCodeShowViewControllerInput {
-    func displaySomething(viewModel: EnterCodeShow.Something.ViewModel)
+    func returnValidationResult(viewModel: EnterCodeShowModels.Code.ViewModel)
 }
 
 // MARK: - Output protocols for Interactor component VIP-cicle
 protocol EnterCodeShowViewControllerOutput {
-    func doSomething(request: EnterCodeShow.Something.Request)
+    func validateInputCodeFrom(requestModel: EnterCodeShowModels.Code.RequestModel)
 }
 
 class EnterCodeShowViewController: BaseViewController {
     // MARK: - Properties
     var interactor: EnterCodeShowViewControllerOutput!
     var router: EnterCodeShowRouter!
+    var handlerSendButtonCompletion: HandlerSendButtonCompletion?
+    var handlerCancelButtonCompletion: HandlerCancelButtonCompletion?
+    var handlerSendAgainButtonCompletion: HandlerSendAgainButtonCompletion?
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet var textFieldsCollection: [CustomTextField]!
@@ -47,23 +50,85 @@ class EnterCodeShowViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        doSomethingOnLoad()
+        doInitialSetupOnLoad()
     }
     
 
     // MARK: - Custom Functions
-    func doSomethingOnLoad() {
-        // NOTE: Ask the Interactor to do some work
-        let request = EnterCodeShow.Something.Request()
-        interactor.doSomething(request: request)
+    func doInitialSetupOnLoad() {
+        // UITextFields
+        textFieldsArray = textFieldsCollection
+        
+        // Apply keyboard handler
+        scrollViewBase = scrollView
+        
+        // Setup App background color theme
+        view.applyBackgroundTheme()
+        
+        // Hide email error message view
+        codeErrorMessageViewHeightConstraint.constant = Config.Constants.errorMessageViewHeight
+        codeErrorMessageViewTopConstraint.constant = -Config.Constants.errorMessageViewHeight
+    }
+    
+    
+    // MARK: - Actions
+    @IBAction func handlerSendButtonTap(_ sender: CustomButton) {
+        guard let text = textFieldsCollection.last?.text else {
+            return
+        }
+        
+        let requestModel = EnterCodeShowModels.Code.RequestModel(inputCode: text)
+        interactor.validateInputCodeFrom(requestModel: requestModel)
+    }
+    
+    @IBAction func handlerCancelButtonTap(_ sender: CustomButton) {
+        handlerCancelButtonCompletion!()
+    }
+    
+    @IBAction func handlerSendAgainButtonTap(_ sender: CustomButton) {
+        handlerSendAgainButtonCompletion!()
+    }
+    
+    
+    // MARK: - Gesture
+    @IBAction func handlerTapGestureRecognizer(_ sender: UITapGestureRecognizer) {
+        view.endEditing(true)
     }
 }
 
 
 // MARK: - ForgotPasswordShowViewControllerInput
 extension EnterCodeShowViewController: EnterCodeShowViewControllerInput {
-    func displaySomething(viewModel: EnterCodeShow.Something.ViewModel) {
-        // NOTE: Display the result from the Presenter
-        // nameTextField.text = viewModel.name
+    func returnValidationResult(viewModel: EnterCodeShowModels.Code.ViewModel) {
+        // Handler returned result from Presenter
+        if (viewModel.isValueValid) {
+            handlerSendButtonCompletion!()
+        } else {
+            codeErrorMessageView.didShow(true, withConstraint: codeErrorMessageViewTopConstraint)
+        }
+    }
+}
+
+
+// MARK: - UITextFieldDelegate
+extension EnterCodeShowViewController {
+    override func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if (!(textField as! CustomTextField).checkPhoneEmailValidation(textField.text!)) {
+            codeErrorMessageView.didShow(true, withConstraint: codeErrorMessageViewTopConstraint)
+            
+            return false
+        } else {
+            codeErrorMessageView.didShow(false, withConstraint: codeErrorMessageViewTopConstraint)
+            
+            textField.resignFirstResponder()
+        }
+        
+        return true
+    }
+    
+    func textFieldShouldClear(_ textField: UITextField) -> Bool {
+        codeErrorMessageView.didShow(false, withConstraint: codeErrorMessageViewTopConstraint)
+        
+        return true
     }
 }
