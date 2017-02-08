@@ -19,7 +19,7 @@ protocol SignInShowRouterInput {
 class SignInShowRouter: SignInShowRouterInput {
     // MARK: - Properties
     weak var viewController: SignInShowViewController!
-    var translationX: CGFloat?
+    var containerStackViewPositionX: CGFloat?
     
     
     // MARK: - Custom Functions. Navigation
@@ -27,6 +27,12 @@ class SignInShowRouter: SignInShowRouterInput {
         // Apply Container childVC
         viewController.signInContainerShowVC = UIStoryboard(name: "SignInShow", bundle: nil).instantiateViewController(withIdentifier: "SignInContainerShowVC") as? SignInContainerShowViewController
         
+        // SignInContainerShowVC: SignIn button handler
+        viewController.signInContainerShowVC?.handlerSendButtonCompletion = { _ in
+            print("UUUUURRRRRAAAAAAAAAAA!!!!!!!")
+        }
+        
+        // SignInContainerShowVC: Register button handler
         viewController.signInContainerShowVC?.handlerRegisterButtonCompletion = { _ in
             self.viewController.signUpShowVC = UIStoryboard(name: "SignInShow", bundle: nil).instantiateViewController(withIdentifier: "SignUpShowVC") as? SignUpShowViewController
             
@@ -38,6 +44,7 @@ class SignInShowRouter: SignInShowRouterInput {
             self.viewController.activeViewController = self.viewController.signUpShowVC
         }
         
+        // SignInContainerShowVC: ForgotPassword button handler
         viewController.signInContainerShowVC?.handlerForgotPasswordButtonCompletion = { _ in
             // Create ForgotPasswordViewController
             self.viewController.forgotPasswordShowVC = UIStoryboard(name: "SignInShow", bundle: nil).instantiateViewController(withIdentifier: "ForgotPasswordShowVC") as? ForgotPasswordShowViewController
@@ -102,10 +109,8 @@ class SignInShowRouter: SignInShowRouterInput {
     // MARK: - UIContainerView
     func removeInactiveViewController(inactiveViewController: BaseViewController?) {
         if let inactiveVC = inactiveViewController {
-            translationX = viewController.displaySize.width
-            
             UIView.animate(withDuration: 0.2, animations: {
-                inactiveVC.view.transform = CGAffineTransform(translationX: (self.viewController.animationDirection == .FromRightToLeft) ? -self.translationX! : self.translationX!, y: 0)
+                inactiveVC.view.transform = CGAffineTransform(translationX: (self.viewController.animationDirection == .FromRightToLeft) ? -1000 : 1000, y: 0)
             }, completion: { success in
                 inactiveVC.willMove(toParentViewController: nil)
                 inactiveVC.view.removeFromSuperview()
@@ -122,10 +127,11 @@ class SignInShowRouter: SignInShowRouterInput {
                 addActiveViewController(activeVC)
             } else {
                 self.addActiveViewController(activeVC)
-//                self.translationX = self.viewController.containerStackView.frame.minX - activeVC.
+
+                containerStackViewPositionX = viewController.containerStackView.frame.minX
                 
                 UIView.animate(withDuration: 0.2, animations: {
-                    activeVC.view.transform = CGAffineTransform(translationX: (self.viewController.animationDirection == .FromRightToLeft) ? -self.translationX! : 0, y: 0)
+                    activeVC.view.transform = CGAffineTransform(translationX: (self.viewController.animationDirection == .FromRightToLeft) ? -1000 : 0, y: 0)
                 })
             }
         }
@@ -137,7 +143,7 @@ class SignInShowRouter: SignInShowRouterInput {
         if (self.viewController.animationDirection == nil) {
             activeVC.view.frame = self.viewController.containerView.bounds
         } else {
-            activeVC.view.frame = CGRect.init(origin: CGPoint.init(x: ((self.viewController.animationDirection == .FromRightToLeft) ? translationX! : -translationX!), y: 0), size: self.viewController.containerView.bounds.size)
+            activeVC.view.frame = CGRect.init(origin: CGPoint.init(x: ((self.viewController.animationDirection == .FromRightToLeft) ? 1000 : -1000), y: 0), size: self.viewController.containerView.bounds.size)
         }
         
         self.viewController.containerView.addSubview(activeVC.view)

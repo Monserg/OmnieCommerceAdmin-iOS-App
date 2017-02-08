@@ -13,18 +13,19 @@ import UIKit
 
 // MARK: - Input protocols for current ViewController component VIP-cicle
 protocol SignInContainerShowViewControllerInput {
-    func displaySomething(viewModel: SignInContainerShow.Something.ViewModel)
+    func displaySomething(viewModel: SignInContainerShowModels.User.ViewModel)
 }
 
 // MARK: - Output protocols for Interactor component VIP-cicle
 protocol SignInContainerShowViewControllerOutput {
-    func doSomething(requestModel: SignInContainerShow.Something.Request)
+    func didUserSignIn(requestModel: SignInContainerShowModels.User.RequestModel)
 }
 
 class SignInContainerShowViewController: BaseViewController {
     // MARK: - Properties
     var interactor: SignInContainerShowViewControllerOutput!
     var router: SignInContainerShowRouter!
+    var handlerSendButtonCompletion: HandlerSendButtonCompletion?
     var handlerRegisterButtonCompletion: HandlerRegisterButtonCompletion?
     var handlerForgotPasswordButtonCompletion: HandlerForgotPasswordButtonCompletion?
     
@@ -50,15 +51,11 @@ class SignInContainerShowViewController: BaseViewController {
 
     // MARK: - Custom Functions
     func doInitialSetupOnLoad() {
-        // NOTE: Ask the Interactor to do some work
-        let requestModel = SignInContainerShow.Something.Request()
-        interactor.doSomething(requestModel: requestModel)
-        
         // Delegates
         textFieldsArray = textFieldsCollection
         
         // Apply keyboard handler
-        scrollViewBase              =   scrollView
+        scrollViewBase = scrollView
         
         // Setup App background color theme
         view.applyBackgroundTheme()
@@ -75,15 +72,30 @@ class SignInContainerShowViewController: BaseViewController {
     }
     
     @IBAction func handlerSignInButtonTap(_ sender: CustomButton) {
-        print(object: "\(type(of: self)): \(#function) run. Sign In button tap.")
-    }    
+        // NOTE: Ask the Interactor to do some work
+        guard let name = textFieldsCollection.first?.text, let password = textFieldsCollection.last?.text, !(name.isEmpty), !(password.isEmpty) else {
+            // TODO: - ADD ALERT
+            showAlertView(withTitle: "Info".localized(), andMessage: "All fields can be...".localized())
+            
+            return
+        }
+        
+        let requestModel = SignInContainerShowModels.User.RequestModel(name: name, password: password)
+        interactor.didUserSignIn(requestModel: requestModel)
+    }
 }
 
 
 // MARK: - SignInContainerShowViewControllerInput
 extension SignInContainerShowViewController: SignInContainerShowViewControllerInput {
-    func displaySomething(viewModel: SignInContainerShow.Something.ViewModel) {
-        // NOTE: Display the result from the Presenter
-        // nameTextField.text = viewModel.name
+    func displaySomething(viewModel: SignInContainerShowModels.User.ViewModel) {
+        guard viewModel.result.error == nil else {
+            // TODO: - ADD ALERT
+            showAlertView(withTitle: "Error".localized(), andMessage: "This user not register...".localized())
+            
+            return
+        }
+        
+        handlerSendButtonCompletion!()
     }
 }

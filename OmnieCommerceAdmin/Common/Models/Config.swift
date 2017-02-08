@@ -23,6 +23,8 @@ typealias HandlerRegisterButtonCompletion           =   (() -> ())
 typealias HandlerForgotPasswordButtonCompletion     =   (() -> ())
 typealias HandlerCancelButtonCompletion             =   (() -> ())
 
+//typealias apiResponse                               =   (success: Bool, error: Error?)
+typealias apiResponse                               =   (success: Bool, error: String?)
 //typealias PasswordCheckResult                   =   (strengthLevel: PasswordStrengthLevel, isValid: Bool)
 
 struct Config {

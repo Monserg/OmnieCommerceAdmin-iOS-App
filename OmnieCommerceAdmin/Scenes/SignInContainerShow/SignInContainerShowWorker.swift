@@ -13,7 +13,9 @@ import UIKit
 
 class SignInContainerShowWorker {
     // MARK: - Custom Functions. Business Logic
-    func doSomeWork() {
+    func doSomeWork() -> apiResponse {
         // NOTE: Do the work
+        
+        return (true, "asdasdashg")
     }
 }

@@ -12,15 +12,19 @@
 import UIKit
 
 // MARK: - Data models
-struct SignInContainerShow {
-    struct Something {
-        struct Request {
+struct SignInContainerShowModels {
+    struct User {
+        struct RequestModel {
+            let name: String
+            let password: String
         }
         
-        struct Response {
+        struct ResponseModel {
+            let result: apiResponse
         }
         
         struct ViewModel {
+            let result: apiResponse
         }
     }
 }

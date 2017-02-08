@@ -13,12 +13,12 @@ import UIKit
 
 // MARK: - Input protocols for current Presenter component VIP-cicle
 protocol SignInShowPresenterInput {
-    func presentSomething(response: SignInShow.Something.Response)
+    func presentSomething(responseModel: SignInShowModels.User.ResponseModel)
 }
 
 // MARK: - Output protocols for ViewController component VIP-cicle
 protocol SignInShowPresenterOutput: class {
-    func displaySomething(viewModel: SignInShow.Something.ViewModel)
+    func displaySomething(viewModel: SignInShowModels.User.ViewModel)
 }
 
 class SignInShowPresenter: SignInShowPresenterInput {
@@ -27,9 +27,9 @@ class SignInShowPresenter: SignInShowPresenterInput {
     
     
     // MARK: - Custom Functions. Presentation logic
-    func presentSomething(response: SignInShow.Something.Response) {
+    func presentSomething(responseModel: SignInShowModels.User.ResponseModel) {
         // NOTE: Format the response from the Interactor and pass the result back to the View Controller
-        let viewModel = SignInShow.Something.ViewModel()
+        let viewModel = SignInShowModels.User.ViewModel(result: responseModel.result)
         viewController.displaySomething(viewModel: viewModel)
     }
 }

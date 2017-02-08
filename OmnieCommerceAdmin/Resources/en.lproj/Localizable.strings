@@ -54,3 +54,9 @@
 "Send again"                    =   "Send Again";
 "Enter"                         =   "Enter";
 "Submit"                        =   "Submit";
+"Ok"                            =   "Ok";
+
+
+// Alerts
+"Info"                          =   "Info";
+"Error"                         =   "Error";

@@ -13,12 +13,12 @@ import UIKit
 
 // MARK: - Input protocols for current ViewController component VIP-cicle
 protocol SignInShowViewControllerInput {
-    func displaySomething(viewModel: SignInShow.Something.ViewModel)
+    func displaySomething(viewModel: SignInShowModels.User.ViewModel)
 }
 
 // MARK: - Output protocols for Interactor component VIP-cicle
 protocol SignInShowViewControllerOutput {
-    func doSomething(request: SignInShow.Something.Request)
+    func didUserSignIn(requestModel: SignInShowModels.User.RequestModel)
 }
 
 enum AnimationDirection {
@@ -33,8 +33,8 @@ class SignInShowViewController: BaseViewController, SignInShowViewControllerInpu
     var animationDirection: AnimationDirection?
     
     // Container childVC
-    var signInContainerShowVC: SignInContainerShowViewController?
     var signUpShowVC: SignUpShowViewController?
+    var signInContainerShowVC: SignInContainerShowViewController?
     var forgotPasswordShowVC: ForgotPasswordShowViewController?
     var enterCodeShowViewController: EnterCodeShowViewController?
     var repetitionPasswordShowViewController: RepetitionPasswordShowViewController?
@@ -76,9 +76,8 @@ class SignInShowViewController: BaseViewController, SignInShowViewControllerInpu
 
     // MARK: - Custom Functions
     func doInitialSetupOnLoad() {
-        // NOTE: Ask the Interactor to do some work
-        let request = SignInShow.Something.Request()
-        interactor.doSomething(request: request)
+//        let requestModel = SignInShowModels.User.RequestModel()
+//        interactor.doSomething(request: requestModel)
         
         // Hide navigation bar
         hideNavigationBar()
@@ -92,7 +91,7 @@ class SignInShowViewController: BaseViewController, SignInShowViewControllerInpu
     }
     
     // Display logic
-    func displaySomething(viewModel: SignInShow.Something.ViewModel) {
+    func displaySomething(viewModel: SignInShowModels.User.ViewModel) {
         // NOTE: Display the result from the Presenter
         // nameTextField.text = viewModel.name
     }
