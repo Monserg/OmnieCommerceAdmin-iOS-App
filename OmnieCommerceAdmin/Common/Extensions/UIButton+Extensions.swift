@@ -10,6 +10,7 @@ import UIKit
 
 enum ButtonStyle: String {
     case Border                                     =   "Border"
+    case CircleFill                                 =   "CircleFill"
     case TitleUbuntuLight12VeryLightOrange          =   "TitleUbuntuLight12VeryLightOrange"
     case TitleUbuntuLight12UndirlineVeryLightGray   =   "TitleUbuntuLight12UndirlineVeryLightGray"
     case TitleUbuntuLight12UndirlineDarkCyan        =   "TitleUbuntuLight12UndirlineDarkCyan"
@@ -26,6 +27,11 @@ extension UIButton {
         get { return layer.borderWidth }
     }
     
+//    @IBInspectable var cornerRadius: CGFloat {
+//        set { layer.cornerRadius = frame.height / 2 }
+//        get { return layer.cornerRadius }
+//    }
+
     func setupWithStyleNamed(_ named: String?) {
         if let styleName = named, let buttonStyle = ButtonStyle(rawValue: styleName) {
             setupWithStyle(buttonStyle)
@@ -51,6 +57,11 @@ extension UIButton {
             borderWidth             =   1
             layer.cornerRadius      =   bounds.size.height / 2 * ((bounds.size.width == bounds.size.height) ? 1 : 0.75)
             clipsToBounds           =   true
+            
+        case .CircleFill:
+            layer.cornerRadius      =   frame.height / 2
+            setBackgroundImage(UIImage(named:"image-background-color-dark-cyan-normal.png")?.withRenderingMode(.alwaysOriginal), for: .normal)
+            setBackgroundImage(UIImage(named:"image-background-color-dark-cyan-highlighted.png")?.withRenderingMode(.alwaysOriginal), for: .highlighted)
             
         case .TitleUbuntuLight12VeryLightOrange:
             setAttributedTitle(NSAttributedString(string: (titleLabel?.text?.localized())!, attributes: UIFont.ubuntuLight12VeryLightOrange), for: .normal)
