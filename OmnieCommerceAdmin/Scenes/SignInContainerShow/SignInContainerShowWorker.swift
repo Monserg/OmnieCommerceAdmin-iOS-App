@@ -16,6 +16,6 @@ class SignInContainerShowWorker {
     func doSomeWork() -> apiResponse {
         // NOTE: Do the work
         
-        return (true, "asdasdashg")
+        return (true, nil)
     }
 }

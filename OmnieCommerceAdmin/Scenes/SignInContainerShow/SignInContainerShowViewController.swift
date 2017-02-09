@@ -55,10 +55,7 @@ class SignInContainerShowViewController: BaseViewController {
         textFieldsArray = textFieldsCollection
         
         // Apply keyboard handler
-        scrollViewBase = scrollView
-        
-        // Setup App background color theme
-        view.applyBackgroundTheme()
+        scrollViewBase = scrollView        
     }
     
     

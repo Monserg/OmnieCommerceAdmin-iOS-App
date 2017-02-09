@@ -30,7 +30,7 @@ typealias apiResponse                               =   (success: Bool, error: S
 struct Config {
     struct Constants {
         // FIXME: - DELETE AFTER TEST
-        static let isUserGuest: Bool                =   true
+        static let isUserGuest: Bool                =   false
         static let isAppThemesDark                  =   false
         static let errorMessageViewHeight: CGFloat  =   14
     }

@@ -61,9 +61,6 @@ class SignUpShowViewController: BaseViewController {
         // Apply keyboard handler
         scrollViewBase = scrollView
 
-        // Setup App background color theme
-        view.applyBackgroundTheme()
-        
         // Hide email error message view
         emailErrorMessageHeightConstraint.constant = Config.Constants.errorMessageViewHeight
         emailErrorMessageViewTopConstraint.constant = -Config.Constants.errorMessageViewHeight

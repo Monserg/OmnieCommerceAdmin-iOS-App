@@ -12,6 +12,7 @@ enum ButtonStyle: String {
     case Border                                     =   "Border"
     case TitleUbuntuLight12VeryLightOrange          =   "TitleUbuntuLight12VeryLightOrange"
     case TitleUbuntuLight12UndirlineVeryLightGray   =   "TitleUbuntuLight12UndirlineVeryLightGray"
+    case TitleUbuntuLight12UndirlineDarkCyan        =   "TitleUbuntuLight12UndirlineDarkCyan"
 }
 
 extension UIButton {
@@ -55,6 +56,9 @@ extension UIButton {
             setAttributedTitle(NSAttributedString(string: (titleLabel?.text?.localized())!, attributes: UIFont.ubuntuLight12VeryLightOrange), for: .normal)
             
         case .TitleUbuntuLight12UndirlineVeryLightGray:
+            setAttributedTitle(NSAttributedString(string: (titleLabel?.text?.localized())!, attributes: UIFont.ubuntuLight12UnderlineVeryLightGray), for: .normal)
+            
+        case .TitleUbuntuLight12UndirlineDarkCyan:
             setAttributedTitle(NSAttributedString(string: (titleLabel?.text?.localized())!, attributes: UIFont.ubuntuLight12UnderlineVeryLightGray), for: .normal)
         }
     }

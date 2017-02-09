@@ -60,9 +60,6 @@ class ForgotPasswordShowViewController: BaseViewController {
         // Apply keyboard handler
         scrollViewBase = scrollView
         
-        // Setup App background color theme
-        view.applyBackgroundTheme()
-        
         // Hide email error message view
         phoneEmailErrorMessageHeightConstraint.constant = Config.Constants.errorMessageViewHeight
         phoneEmailErrorMessageViewTopConstraint.constant = -Config.Constants.errorMessageViewHeight

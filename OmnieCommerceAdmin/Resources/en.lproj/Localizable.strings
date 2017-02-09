@@ -7,7 +7,7 @@
  */
 
 // Menu Items
-"My organization"               =   "My Organization";
+"My organizations"              =   "My Organizations";
 "Services"                      =   "Services";
 "Orders"                        =   "Orders";
 "Messages"                      =   "Messages";
@@ -33,6 +33,7 @@
 "Wrong Number or Email"         =   "* Wrong Number or Email";
 "Invalid code"                  =   "* Invalid code. Please try again";
 "New password"                  =   "New Password";
+"To add organization"           =   "To add organization press";
 
 
 // Fields
@@ -55,6 +56,7 @@
 "Enter"                         =   "Enter";
 "Submit"                        =   "Submit";
 "Ok"                            =   "Ok";
+"Here"                          =   "here";
 
 
 // Alerts

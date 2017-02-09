@@ -65,9 +65,6 @@ class EnterCodeShowViewController: BaseViewController {
         // Apply keyboard handler
         scrollViewBase = scrollView
         
-        // Setup App background color theme
-        view.applyBackgroundTheme()
-        
         // Hide email error message view
         codeErrorMessageViewHeightConstraint.constant = Config.Constants.errorMessageViewHeight
         codeErrorMessageViewTopConstraint.constant = -Config.Constants.errorMessageViewHeight

@@ -39,6 +39,9 @@ class BaseViewController: UIViewController {
         
         super.viewDidLoad()
         
+        // Setup App background color theme
+        view.applyBackgroundTheme()
+
         // Add Observers
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardAction), name: .UIKeyboardWillHide, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardAction), name: .UIKeyboardWillChangeFrame, object: nil)

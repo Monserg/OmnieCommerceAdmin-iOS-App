@@ -34,4 +34,24 @@ extension UIColor {
         
         return nil
     }
+    
+    open class var veryDarkGray: UIColor {
+        set {
+            self.veryDarkGray = UIColor(hexString: "#333333", withAlpha: 1.0)!
+        }
+        
+        get {
+            return UIColor(hexString: "#333333", withAlpha: 1.0)!
+        }
+    }
+    
+    open class var veryLightGray: UIColor {
+        set {
+            self.veryLightGray = UIColor(hexString: "#dedede", withAlpha: 1.0)!
+        }
+        
+        get {
+            return UIColor(hexString: "#dedede", withAlpha: 1.0)!
+        }
+    }
 }

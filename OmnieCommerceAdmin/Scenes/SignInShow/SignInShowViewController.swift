@@ -86,7 +86,6 @@ class SignInShowViewController: BaseViewController, SignInShowViewControllerInpu
         router.navigateBetweenContainerSubviews()
         
         // Setup App background color theme
-        view.applyBackgroundTheme()
         logoBackgroundView.applyBackgroundTheme()
     }
     

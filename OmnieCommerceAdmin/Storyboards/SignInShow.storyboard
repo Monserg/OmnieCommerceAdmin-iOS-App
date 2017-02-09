@@ -827,7 +827,7 @@
                                                                 <rect key="frame" x="0.0" y="217" width="375" height="95.5"/>
                                                                 <subviews>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Nb3-dm-1aq">
-                                                                        <rect key="frame" x="110" y="23" width="155.5" height="30"/>
+                                                                        <rect key="frame" x="110.5" y="23" width="155.5" height="30"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not yet registered?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TZp-21-ZpS" customClass="CustomLabel" customModule="OmnieCommerceAdmin" customModuleProvider="target">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="102.5" height="30"/>
@@ -984,7 +984,7 @@
             <objects>
                 <navigationController storyboardIdentifier="SignInShowNC" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="6uh-TR-iIl" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="w6Z-de-2vo">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="w6Z-de-2vo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1501,9 +1501,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="icon-facebook-normal" width="7" height="13"/>
-        <image name="icon-google-normal" width="13" height="13"/>
-        <image name="icon-vk-normal" width="18" height="10"/>
+        <image name="icon-facebook-normal" width="5" height="10"/>
+        <image name="icon-google-normal" width="10" height="10"/>
+        <image name="icon-vk-normal" width="14" height="8"/>
         <image name="image-logo-horizontal" width="113" height="148"/>
         <image name="image-logo-vertical" width="151" height="86"/>
     </resources>

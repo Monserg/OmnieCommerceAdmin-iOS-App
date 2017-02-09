@@ -21,7 +21,7 @@ protocol OrganizationsListShowViewControllerOutput {
     func doSomething(request: OrganizationsListShow.Something.Request)
 }
 
-class OrganizationsListShowViewController: UIViewController, OrganizationsListShowViewControllerInput {
+class OrganizationsListShowViewController: BaseViewController, OrganizationsListShowViewControllerInput {
     // MARK: - Properties
     var interactor: OrganizationsListShowViewControllerOutput!
     var router: OrganizationsListShowRouter!
@@ -45,13 +45,22 @@ class OrganizationsListShowViewController: UIViewController, OrganizationsListSh
 
     // MARK: - Custom Functions
     func doInitialSetupOnLoad() {
-        // NOTE: Ask the Interactor to do some work
-        let request = OrganizationsListShow.Something.Request()
-        interactor.doSomething(request: request)
+        // Add menu bar button
+        showNavigationBar()
+//        (navigationController as! BaseNavigationController).applyLocalizedtitle(withText: "My organizations")
+//        (navigationController as! BaseNavigationController).addLeftMenuBarButton(withImage: .Menu)
+
+//        let request = OrganizationsListShow.Something.Request()
+//        interactor.doSomething(request: request)
         
-        // Setup App background color theme
-        view.applyBackgroundTheme()
     }
+    
+    
+    // MARK: - Actions
+    @IBAction func handlerHereButtonTap(_ sender: CustomButton) {
+    }
+    
+    
     
     // Display logic
     func displaySomething(viewModel: OrganizationsListShow.Something.ViewModel) {
@@ -59,3 +68,47 @@ class OrganizationsListShowViewController: UIViewController, OrganizationsListSh
         // nameTextField.text = viewModel.name
     }
 }
+
+
+// MARK: - UITableViewDataSource
+extension OrganizationsListShowViewController: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cellIdentifier = "OrganizationCell"
+        var cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) //as UITableViewCell
+        
+        if cell == nil {
+            cell = UINib(nibName: cellIdentifier, bundle: nil).instantiate(withOwner: nil, options: nil).first as! UITableViewCell?
+        }
+        
+        return cell!
+    }
+}
+
+
+// MARK: - UITableViewDelegate
+extension OrganizationsListShowViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 44.0
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        
+    }
+}
+

@@ -61,9 +61,6 @@ class RepetitionPasswordShowViewController: BaseViewController {
         // Apply keyboard handler
         scrollViewBase = scrollView
         
-        // Setup App background color theme
-        view.applyBackgroundTheme()
-        
         // Hide email error message view
         repeatPasswordErrorMessageViewHeightConstraint.constant = Config.Constants.errorMessageViewHeight
         repeatPasswordErrorMessageViewTopConstraint.constant = -Config.Constants.errorMessageViewHeight

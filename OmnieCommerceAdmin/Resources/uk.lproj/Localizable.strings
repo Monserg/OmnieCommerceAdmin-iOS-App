@@ -7,7 +7,7 @@
  */
 
 // Menu Items
-"My organization"               =   "Мої організації";
+"My organizations"              =   "Мої організації";
 "Services"                      =   "Послуги";
 "Orders"                        =   "Замовлення";
 "Messages"                      =   "Повідомлення";
@@ -33,6 +33,7 @@
 "Wrong Number or Email"         =   "* Неправильний номер або Email";
 "Invalid code"                  =   "* Невірний код. Спробуйте ще раз";
 "New password"                  =   "Новий пароль";
+"To add organization"           =   "Щоб добавити організацію натисніть";
 
 
 // Fields
@@ -55,6 +56,7 @@
 "Enter"                         =   "Зайти";
 "Submit"                        =   "Підтвердити";
 "Ok"                            =   "Ok";
+"Here"                          =   "тут";
 
 
 // Alerts
