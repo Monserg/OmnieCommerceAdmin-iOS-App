@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="IAq-mB-24a">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Organization Add View Controller-->
+        <scene sceneID="WOT-Gn-eGP">
+            <objects>
+                <viewController storyboardIdentifier="OrganizationAddVC" id="IAq-mB-24a" customClass="OrganizationAddViewController" customModule="OmnieCommerceAdmin" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uh8-kE-Rym"/>
+                        <viewControllerLayoutGuide type="bottom" id="gUb-eW-ohr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zUp-SK-Z2O">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aZw-0D-peo" userLabel="Custom NavBar View" customClass="MainNavigationBarView" customModule="OmnieCommerceAdmin" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="ULb-81-1Qn">
+                                        <variation key="heightClass=compact-widthClass=compact" constant="32"/>
+                                        <variation key="heightClass=compact-widthClass=regular" constant="44"/>
+                                    </constraint>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="titleText" value="Add organization"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zt6-5v-jFK">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pa6-h7-sJM" userLabel="Content View">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Fl9-9Y-PDz">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                                <subviews>
+                                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dGL-RE-wiJ" userLabel="Organization View">
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="273"/>
+                                                        <subviews>
+                                                            <view clipsSubviews="YES" tag="99" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YWU-k0-nrw" userLabel="Background View">
+                                                                <rect key="frame" x="8" y="8" width="359" height="265"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </view>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstItem="YWU-k0-nrw" firstAttribute="top" secondItem="dGL-RE-wiJ" secondAttribute="top" constant="10" id="4nU-lU-WVM">
+                                                                <variation key="heightClass=regular-widthClass=compact" constant="8"/>
+                                                            </constraint>
+                                                            <constraint firstItem="YWU-k0-nrw" firstAttribute="leading" secondItem="dGL-RE-wiJ" secondAttribute="leading" constant="8" id="La7-JQ-2gY"/>
+                                                            <constraint firstAttribute="trailing" secondItem="YWU-k0-nrw" secondAttribute="trailing" constant="8" id="Mpf-PR-jMc"/>
+                                                            <constraint firstItem="YWU-k0-nrw" firstAttribute="centerX" secondItem="dGL-RE-wiJ" secondAttribute="centerX" id="iDX-rN-N4L"/>
+                                                            <constraint firstAttribute="bottom" secondItem="YWU-k0-nrw" secondAttribute="bottom" id="kmQ-FO-zsL"/>
+                                                        </constraints>
+                                                        <variation key="default">
+                                                            <mask key="constraints">
+                                                                <exclude reference="La7-JQ-2gY"/>
+                                                                <exclude reference="Mpf-PR-jMc"/>
+                                                            </mask>
+                                                        </variation>
+                                                        <variation key="heightClass=regular-widthClass=compact">
+                                                            <mask key="constraints">
+                                                                <include reference="La7-JQ-2gY"/>
+                                                                <include reference="Mpf-PR-jMc"/>
+                                                                <exclude reference="iDX-rN-N4L"/>
+                                                            </mask>
+                                                        </variation>
+                                                    </view>
+                                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FXG-pu-CZb" userLabel="Empty View">
+                                                        <rect key="frame" x="0.0" y="273" width="375" height="193"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    </view>
+                                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1lR-3m-qHE" userLabel="Action Buttons View">
+                                                        <rect key="frame" x="0.0" y="466" width="375" height="137"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="lBW-kq-ZeW" userLabel="Action Buttons Stack View">
+                                                                <rect key="frame" x="76.5" y="25" width="222" height="87"/>
+                                                                <subviews>
+                                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CdU-bs-WVQ" userLabel="Register Button" customClass="CustomButton" customModule="OmnieCommerceAdmin" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="222" height="36"/>
+                                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                                        <state key="normal" title="Registering" image="icon-ok-normal"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="buttonStyle" value="Border"/>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                        <connections>
+                                                                            <action selector="handlerRegisterButtonTap:" destination="IAq-mB-24a" eventType="touchUpInside" id="xw9-C1-po9"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cIa-dH-laP" userLabel="Cancel Button" customClass="CustomButton" customModule="OmnieCommerceAdmin" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="51" width="222" height="36"/>
+                                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                                        <state key="normal" title="Cancel" image="icon-cancel-normal"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="buttonStyle" value="Border"/>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                        <connections>
+                                                                            <action selector="handlerCancelButtonTap:" destination="IAq-mB-24a" eventType="touchUpInside" id="le2-DU-8Oc"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                </subviews>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                                <variation key="heightClass=compact-widthClass=compact" axis="horizontal"/>
+                                                                <variation key="heightClass=compact-widthClass=regular" axis="horizontal"/>
+                                                            </stackView>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstItem="lBW-kq-ZeW" firstAttribute="centerX" secondItem="1lR-3m-qHE" secondAttribute="centerX" id="C3A-cC-bNe"/>
+                                                            <constraint firstItem="lBW-kq-ZeW" firstAttribute="centerY" secondItem="1lR-3m-qHE" secondAttribute="centerY" id="anR-OC-OdH"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="Fl9-9Y-PDz" firstAttribute="leading" secondItem="Pa6-h7-sJM" secondAttribute="leading" id="Avk-ZN-J6i"/>
+                                            <constraint firstAttribute="trailing" secondItem="Fl9-9Y-PDz" secondAttribute="trailing" id="NG8-yw-JSZ"/>
+                                            <constraint firstAttribute="bottom" secondItem="Fl9-9Y-PDz" secondAttribute="bottom" id="dIa-Ku-MMY"/>
+                                            <constraint firstItem="Fl9-9Y-PDz" firstAttribute="top" secondItem="Pa6-h7-sJM" secondAttribute="top" id="j9O-G8-q03"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="Pa6-h7-sJM" firstAttribute="leading" secondItem="zt6-5v-jFK" secondAttribute="leading" id="5Vp-Zb-ssy"/>
+                                    <constraint firstItem="Pa6-h7-sJM" firstAttribute="top" secondItem="zt6-5v-jFK" secondAttribute="top" id="BUN-82-8vW"/>
+                                    <constraint firstAttribute="bottom" secondItem="Pa6-h7-sJM" secondAttribute="bottom" id="Ipm-BZ-y2x"/>
+                                    <constraint firstAttribute="trailing" secondItem="Pa6-h7-sJM" secondAttribute="trailing" id="th1-ud-QEF"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Pa6-h7-sJM" firstAttribute="width" secondItem="zUp-SK-Z2O" secondAttribute="width" id="3r6-UY-fUG"/>
+                            <constraint firstItem="YWU-k0-nrw" firstAttribute="width" secondItem="zUp-SK-Z2O" secondAttribute="width" multiplier="460:667" id="4tL-3E-tZB"/>
+                            <constraint firstItem="Pa6-h7-sJM" firstAttribute="height" secondItem="zUp-SK-Z2O" secondAttribute="height" multiplier="603:667" id="6ua-1n-BzW"/>
+                            <constraint firstItem="zt6-5v-jFK" firstAttribute="leading" secondItem="zUp-SK-Z2O" secondAttribute="leading" id="7eP-m5-aRg"/>
+                            <constraint firstItem="1lR-3m-qHE" firstAttribute="height" secondItem="zUp-SK-Z2O" secondAttribute="height" multiplier="137:667" id="Cv2-DE-A6n"/>
+                            <constraint firstAttribute="trailing" secondItem="aZw-0D-peo" secondAttribute="trailing" id="KDH-Wr-T3G"/>
+                            <constraint firstItem="1lR-3m-qHE" firstAttribute="height" secondItem="zUp-SK-Z2O" secondAttribute="height" multiplier="86:375" id="L7J-lv-CmS"/>
+                            <constraint firstItem="lBW-kq-ZeW" firstAttribute="width" secondItem="zUp-SK-Z2O" secondAttribute="width" id="MX1-dx-jDS"/>
+                            <constraint firstItem="lBW-kq-ZeW" firstAttribute="height" secondItem="zUp-SK-Z2O" secondAttribute="height" multiplier="87:667" id="Oeu-kd-hEa"/>
+                            <constraint firstAttribute="trailing" secondItem="zt6-5v-jFK" secondAttribute="trailing" id="RV7-iD-DBs"/>
+                            <constraint firstAttribute="bottom" secondItem="zt6-5v-jFK" secondAttribute="bottom" id="SeD-XS-d4m"/>
+                            <constraint firstItem="aZw-0D-peo" firstAttribute="top" secondItem="zUp-SK-Z2O" secondAttribute="top" id="TYs-iQ-W0f"/>
+                            <constraint firstItem="zt6-5v-jFK" firstAttribute="top" secondItem="aZw-0D-peo" secondAttribute="bottom" id="UBW-sq-uEl"/>
+                            <constraint firstItem="lBW-kq-ZeW" firstAttribute="height" secondItem="zUp-SK-Z2O" secondAttribute="height" multiplier="36:375" id="UBw-le-wd8"/>
+                            <constraint firstItem="aZw-0D-peo" firstAttribute="leading" secondItem="zUp-SK-Z2O" secondAttribute="leading" id="bLB-ng-86R"/>
+                            <constraint firstItem="dGL-RE-wiJ" firstAttribute="height" secondItem="zUp-SK-Z2O" secondAttribute="height" multiplier="273:375" id="cjO-ve-tLN"/>
+                            <constraint firstItem="dGL-RE-wiJ" firstAttribute="height" secondItem="zUp-SK-Z2O" secondAttribute="height" multiplier="273:667" id="hly-MO-7xz"/>
+                            <constraint firstItem="lBW-kq-ZeW" firstAttribute="width" secondItem="zUp-SK-Z2O" secondAttribute="width" multiplier="222:375" id="lRO-Io-4xq"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="hly-MO-7xz"/>
+                                <exclude reference="Cv2-DE-A6n"/>
+                                <exclude reference="Oeu-kd-hEa"/>
+                                <exclude reference="lRO-Io-4xq"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <exclude reference="cjO-ve-tLN"/>
+                                <include reference="hly-MO-7xz"/>
+                                <exclude reference="4tL-3E-tZB"/>
+                                <include reference="Cv2-DE-A6n"/>
+                                <exclude reference="L7J-lv-CmS"/>
+                                <exclude reference="MX1-dx-jDS"/>
+                                <include reference="Oeu-kd-hEa"/>
+                                <exclude reference="UBw-le-wd8"/>
+                                <include reference="lRO-Io-4xq"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="customNavigationBarView" destination="aZw-0D-peo" id="3tV-xQ-2EU"/>
+                        <outlet property="scrollView" destination="zt6-5v-jFK" id="YtR-MU-qtT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PQI-GO-1Ur" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="52" y="79.610194902548727"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="icon-cancel-normal" width="7" height="7"/>
+        <image name="icon-ok-normal" width="8" height="5"/>
+    </resources>
+</document>

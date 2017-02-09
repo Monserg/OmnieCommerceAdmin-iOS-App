@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainNavigationBarView" customModule="OmnieCommerceAdmin" customModuleProvider="target">
+            <connections>
+                <outlet property="leftButton" destination="eIa-dd-ON8" id="wpD-6g-drN"/>
+                <outlet property="titleLabel" destination="acI-Hl-qDm" id="da7-mW-U5F"/>
+                <outlet property="view" destination="iN0-l3-epB" id="GUJ-oM-5uA"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XQE-s5-vOU" userLabel="Content View">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My organizations" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="acI-Hl-qDm" userLabel="Title Label" customClass="CustomLabel" customModule="OmnieCommerceAdmin" customModuleProvider="target">
+                            <rect key="frame" x="133" y="25" width="109.5" height="14"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="labelStyle" value="HelveticaNeueCyrLight15VeryLightGray"/>
+                            </userDefinedRuntimeAttributes>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eIa-dd-ON8" userLabel="Left Button">
+                            <rect key="frame" x="8" y="10" width="44" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="44" id="DaU-vl-7Mw"/>
+                                <constraint firstAttribute="height" constant="44" id="S1U-h6-sWL"/>
+                            </constraints>
+                            <state key="normal" image="icon-navbar-menu-normal"/>
+                            <connections>
+                                <action selector="handlerLeftButtonTap:" destination="-1" eventType="touchUpInside" id="rLQ-UW-quB"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="acI-Hl-qDm" firstAttribute="centerX" secondItem="XQE-s5-vOU" secondAttribute="centerX" id="EGM-Sf-6NK"/>
+                        <constraint firstItem="eIa-dd-ON8" firstAttribute="leading" secondItem="XQE-s5-vOU" secondAttribute="leading" constant="8" id="fUu-FS-lt0"/>
+                        <constraint firstItem="eIa-dd-ON8" firstAttribute="centerY" secondItem="XQE-s5-vOU" secondAttribute="centerY" id="p9B-wz-L70"/>
+                        <constraint firstItem="acI-Hl-qDm" firstAttribute="centerY" secondItem="XQE-s5-vOU" secondAttribute="centerY" id="t0B-AH-MLl"/>
+                        <constraint firstItem="eIa-dd-ON8" firstAttribute="centerY" secondItem="XQE-s5-vOU" secondAttribute="centerY" multiplier="1.2" id="thg-SV-TQa"/>
+                        <constraint firstItem="acI-Hl-qDm" firstAttribute="centerY" secondItem="XQE-s5-vOU" secondAttribute="centerY" multiplier="1.2" id="yYm-AH-otE"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="thg-SV-TQa"/>
+                            <exclude reference="yYm-AH-otE"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=compact">
+                        <mask key="constraints">
+                            <exclude reference="p9B-wz-L70"/>
+                            <include reference="thg-SV-TQa"/>
+                            <exclude reference="t0B-AH-MLl"/>
+                            <include reference="yYm-AH-otE"/>
+                        </mask>
+                    </variation>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="XQE-s5-vOU" secondAttribute="trailing" id="59o-eF-UrE"/>
+                <constraint firstItem="XQE-s5-vOU" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="KZC-NJ-Flk"/>
+                <constraint firstAttribute="bottom" secondItem="XQE-s5-vOU" secondAttribute="bottom" id="ZF7-dH-2yg"/>
+                <constraint firstItem="XQE-s5-vOU" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="ubZ-gt-3UG"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icon-navbar-menu-normal" width="23" height="14"/>
+    </resources>
+</document>

@@ -21,12 +21,16 @@ protocol OrganizationsListShowViewControllerOutput {
     func doSomething(request: OrganizationsListShow.Something.Request)
 }
 
-class OrganizationsListShowViewController: BaseViewController, OrganizationsListShowViewControllerInput {
+class OrganizationsListShowViewController: BaseViewController {
     // MARK: - Properties
     var interactor: OrganizationsListShowViewControllerOutput!
     var router: OrganizationsListShowRouter!
     
+    @IBOutlet weak var customNavigationBarView: MainNavigationBarView!
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var emptyDataSourceView: UIView!
 
+    
     // MARK: - Class initialization
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -45,22 +49,20 @@ class OrganizationsListShowViewController: BaseViewController, OrganizationsList
 
     // MARK: - Custom Functions
     func doInitialSetupOnLoad() {
-        // Add menu bar button
-        showNavigationBar(withTitle: "My organizations")
-        self.title = titleText!
+        // Delegates
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        // Handler menu bar button
+        customNavigationBarView.handlerNavBarLeftButtonCompletion = { _ in
+            self.print(object: "Menu item taped!!!")
+        }
     }
     
     
     // MARK: - Actions
-    @IBAction func handlerHereButtonTap(_ sender: CustomButton) {
-    }
-    
-    
-    
-    // Display logic
-    func displaySomething(viewModel: OrganizationsListShow.Something.ViewModel) {
-        // NOTE: Display the result from the Presenter
-        // nameTextField.text = viewModel.name
+    @IBAction func handlerAddOrganizationButtonTap(_ sender: CustomButton) {
+        router.navigateToOrganizationAddViewController()
     }
 }
 
@@ -72,7 +74,10 @@ extension OrganizationsListShowViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        let dataSourceCount = 1
+        emptyDataSourceView.isHidden = (dataSourceCount == 0) ? false : true
+        
+        return dataSourceCount
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -88,10 +93,19 @@ extension OrganizationsListShowViewController: UITableViewDataSource {
 }
 
 
+// MARK: - OrganizationsListShowViewControllerInput
+extension OrganizationsListShowViewController: OrganizationsListShowViewControllerInput {
+    func displaySomething(viewModel: OrganizationsListShow.Something.ViewModel) {
+        // NOTE: Display the result from the Presenter
+        // nameTextField.text = viewModel.name
+    }
+}
+
+
 // MARK: - UITableViewDelegate
 extension OrganizationsListShowViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 44.0
+        return 64.0
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {

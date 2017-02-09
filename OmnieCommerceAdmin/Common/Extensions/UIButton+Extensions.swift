@@ -27,11 +27,6 @@ extension UIButton {
         get { return layer.borderWidth }
     }
     
-//    @IBInspectable var cornerRadius: CGFloat {
-//        set { layer.cornerRadius = frame.height / 2 }
-//        get { return layer.cornerRadius }
-//    }
-
     func setupWithStyleNamed(_ named: String?) {
         if let styleName = named, let buttonStyle = ButtonStyle(rawValue: styleName) {
             setupWithStyle(buttonStyle)
@@ -49,13 +44,32 @@ extension UIButton {
         
         switch buttonStyle {
         case .Border:
+            let themeDesign = Config().applyThemeDesign()
+
             setTitleColor(UIColor(hexString: (Config.Constants.isAppThemesDark) ? "#dedede" : "#dedede", withAlpha: 1.0), for: .normal)
             tintColor               =   UIColor(hexString: (Config.Constants.isAppThemesDark) ? "#dedede" : "#dedede", withAlpha: 1.0)
             layer.borderColor       =   UIColor(hexString: (Config.Constants.isAppThemesDark) ? "#dedede" : "#dedede", withAlpha: 1.0)?.cgColor
             backgroundColor         =   UIColor.clear
             titleLabel?.font        =   UIFont.ubuntuLight14
             borderWidth             =   1
-            layer.cornerRadius      =   bounds.size.height / 2 * ((bounds.size.width == bounds.size.height) ? 1 : 0.75)
+            layer.cornerRadius      =   bounds.size.height / 2 * ((bounds.size.width == bounds.size.height) ? 1 : 1.0)
+            
+            switch themeDesign {
+            case .LightForUser:
+                layer.borderColor   =   UIColor(hexString: "#009395", withAlpha: 1.0)?.cgColor
+                setTitleColor(UIColor(hexString: "#333333", withAlpha: 1.0), for: .normal)
+                
+                guard imageView?.image != nil else {
+                    return
+                }
+                
+                titleEdgeInsets     =   UIEdgeInsetsMake(0, -15, 0, 0)
+                imageEdgeInsets     =   UIEdgeInsetsMake(0, (titleLabel?.frame.maxX)!, 0, 0)
+                
+            default:
+                break
+            }
+
             clipsToBounds           =   true
             
         case .CircleFill:

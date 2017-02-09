@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--My organizations-->
+        <!--Organizations List Show View Controller-->
         <scene sceneID="2HD-n5-cgO">
             <objects>
                 <viewController storyboardIdentifier="OrganizationsListShowVC" id="mPM-eg-IYH" customClass="OrganizationsListShowViewController" customModule="OmnieCommerceAdmin" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,14 +18,27 @@
                         <viewControllerLayoutGuide type="bottom" id="wFy-lZ-9Q8"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="uWY-od-7g5">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3bW-Ci-rXX" userLabel="Custom NavBar View" customClass="MainNavigationBarView" customModule="OmnieCommerceAdmin" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="KvY-xg-hM4">
+                                        <variation key="heightClass=compact-widthClass=compact" constant="32"/>
+                                        <variation key="heightClass=compact-widthClass=regular" constant="44"/>
+                                    </constraint>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="titleText" value="My organizations"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cLS-cY-S0Z">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="YoC-yM-wVf" userLabel="Empty Data Source View">
-                                    <rect key="frame" x="0.0" y="72" width="375" height="128"/>
+                                    <rect key="frame" x="0.0" y="72" width="375" height="128.5"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="RVF-nH-6Oa">
@@ -49,6 +62,7 @@
                                                         <userDefinedRuntimeAttribute type="string" keyPath="buttonStyle" value="TitleUbuntuLight12UndirlineDarkCyan"/>
                                                     </userDefinedRuntimeAttributes>
                                                     <connections>
+                                                        <action selector="handlerAddOrganizationButtonTap:" destination="mPM-eg-IYH" eventType="touchUpInside" id="x3M-E8-WlW"/>
                                                         <action selector="handlerHereButtonTap:" destination="mPM-eg-IYH" eventType="touchUpInside" id="68n-BS-C4O"/>
                                                     </connections>
                                                 </button>
@@ -66,19 +80,28 @@
                                     </constraints>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="OrganizationCell" id="0Yc-1z-gGu">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="OrganizationCell" textLabel="4w1-87-5A9" style="IBUITableViewCellStyleDefault" id="0Yc-1z-gGu">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0Yc-1z-gGu" id="MOI-dm-3P0">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4w1-87-5A9">
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" clipsSubviews="YES" tag="99" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wFg-lT-WoP" userLabel="Add Button" customClass="CustomButton" customModule="OmnieCommerceAdmin" customModuleProvider="target">
-                                <rect key="frame" x="315" y="543" width="50" height="50"/>
+                                <rect key="frame" x="317" y="609" width="50" height="50"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="XRJ-jn-d7z"/>
@@ -88,32 +111,39 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="buttonStyle" value="CircleFill"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="handlerAddOrganizationButtonTap:" destination="mPM-eg-IYH" eventType="touchUpInside" id="TJR-KY-GCn"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="3bW-Ci-rXX" secondAttribute="trailing" id="2j9-CH-J0R"/>
+                            <constraint firstItem="3bW-Ci-rXX" firstAttribute="top" secondItem="uWY-od-7g5" secondAttribute="top" id="6BN-NP-GYo"/>
                             <constraint firstAttribute="bottom" secondItem="cLS-cY-S0Z" secondAttribute="bottom" id="AyO-32-QqD"/>
-                            <constraint firstItem="wFy-lZ-9Q8" firstAttribute="top" secondItem="wFg-lT-WoP" secondAttribute="bottom" constant="10" id="QkS-Xa-MJW"/>
+                            <constraint firstItem="3bW-Ci-rXX" firstAttribute="leading" secondItem="uWY-od-7g5" secondAttribute="leading" id="CW6-ER-r59"/>
+                            <constraint firstItem="wFy-lZ-9Q8" firstAttribute="top" secondItem="wFg-lT-WoP" secondAttribute="bottom" constant="8" id="QkS-Xa-MJW"/>
                             <constraint firstAttribute="trailing" secondItem="cLS-cY-S0Z" secondAttribute="trailing" id="cgi-F5-KRK"/>
+                            <constraint firstItem="cLS-cY-S0Z" firstAttribute="top" secondItem="3bW-Ci-rXX" secondAttribute="bottom" id="h2R-GP-ba8"/>
                             <constraint firstItem="cLS-cY-S0Z" firstAttribute="leading" secondItem="uWY-od-7g5" secondAttribute="leading" id="htM-oO-Qq6"/>
-                            <constraint firstAttribute="trailing" secondItem="wFg-lT-WoP" secondAttribute="trailing" constant="10" id="rU7-dI-aj8"/>
-                            <constraint firstItem="cLS-cY-S0Z" firstAttribute="top" secondItem="QOM-8h-dob" secondAttribute="bottom" id="rXG-Kk-Tq4"/>
+                            <constraint firstAttribute="trailing" secondItem="wFg-lT-WoP" secondAttribute="trailing" constant="8" id="rU7-dI-aj8"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="My organizations" id="s8K-sR-KyL">
-                        <barButtonItem key="leftBarButtonItem" image="icon-navbar-menu-normal" id="XRJ-46-d32">
-                            <color key="tintColor" red="0.0" green="0.57647058823529407" blue="0.58431372549019611" alpha="1" colorSpace="calibratedRGB"/>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="s8K-sR-KyL"/>
+                    <connections>
+                        <outlet property="customNavigationBarView" destination="3bW-Ci-rXX" id="Bdh-PA-tgM"/>
+                        <outlet property="emptyDataSourceView" destination="YoC-yM-wVf" id="7FI-7c-AXq"/>
+                        <outlet property="tableView" destination="cLS-cY-S0Z" id="xX4-Xi-1kh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AOp-za-WzR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1080.8" y="157.87106446776613"/>
         </scene>
-        <!--Base Navigation Controller-->
+        <!--Navigation Controller-->
         <scene sceneID="Mjo-Hn-5At">
             <objects>
-                <navigationController storyboardIdentifier="OrganizationsListNC" automaticallyAdjustsScrollViewInsets="NO" id="rao-N9-D5u" customClass="BaseNavigationController" customModule="OmnieCommerceAdmin" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="OrganizationsListNC" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="rao-N9-D5u" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="Hdy-nr-g7r">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -130,7 +160,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="icon-navbar-menu-normal" width="23" height="14"/>
         <image name="image-add-organization-normal" width="22" height="19"/>
     </resources>
 </document>

@@ -14,7 +14,6 @@ class BaseViewController: UIViewController {
     // MARK: - Properties
     var selectedRange: CGRect?
     var scrollViewBase = UIScrollView()
-    var titleText: String?
     
     var textFieldsArray = [CustomTextField]() {
         willSet {
@@ -88,8 +87,6 @@ class BaseViewController: UIViewController {
     func showNavigationBar(withTitle title: String) {
         if (navigationController?.isNavigationBarHidden == true) {
             navigationController?.isNavigationBarHidden = false
-        } else {
-            titleText = title.localized()
         }
     }
     

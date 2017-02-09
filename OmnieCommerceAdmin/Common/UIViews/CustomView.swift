@@ -31,6 +31,10 @@ enum ViewDesign: String {
     
     // MARK: - Class Functions
     override func draw(_ rect: CGRect) {
+        guard style != nil else {
+            return
+        }
+        
         switch style! {
         case .SingleBottomVeryLightGrayLine:
             let drawPath = UIBezierPath()

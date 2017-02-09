@@ -34,20 +34,25 @@
 "Invalid code"                  =   "* Invalid code. Please try again";
 "New password"                  =   "New Password";
 "To add organization"           =   "To add organization press";
+"Add organization"              =   "Add Organization";
 
 
 // Fields
 "Name"                          =   "Name";
 "Password"                      =   "Password";
+"Phone"                         =   "Phone";
 "Phone or Email"                =   "Phone or Email";
 "Email"                         =   "Email";
 "Enter Code"                    =   "Enter Code";
 "Repeat password"               =   "Repeat Password";
+"Address"                       =   "Address";
+"Address organization"          =   "Address Organization";
 
 
 // Buttons
 "Sign In"                       =   "Sign In";
 "Register"                      =   "Register";
+"Registering"                   =   "Register";
 "Forgot password?"              =   "Forgot Password?";
 "Cancel"                        =   "Cancel";
 "Send"                          =   "Send";
@@ -57,6 +62,7 @@
 "Submit"                        =   "Submit";
 "Ok"                            =   "Ok";
 "Here"                          =   "here";
+"Add"                           =   "Add";
 
 
 // Alerts

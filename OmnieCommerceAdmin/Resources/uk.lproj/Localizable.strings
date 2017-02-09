@@ -34,20 +34,25 @@
 "Invalid code"                  =   "* Невірний код. Спробуйте ще раз";
 "New password"                  =   "Новий пароль";
 "To add organization"           =   "Щоб добавити організацію натисніть";
+"Add organization"              =   "Додати організацію";
 
 
 // Fields
 "Name"                          =   "Ім'я";
 "Password"                      =   "Пароль";
+"Phone"                         =   "Телефон";
 "Phone or Email"                =   "Телефон або Email";
 "Email"                         =   "Email";
 "Enter Code"                    =   "Введіть код з повідомлення";
 "Repeat password"               =   "Повторити пароль";
+"Address"                       =   "Адреса";
+"Address organization"          =   "Адреса організації";
 
 
 // Buttons
 "Sign In"                       =   "Зайти";
 "Register"                      =   "Зареєструватись";
+"Registering"                   =   "Зареєструвати";
 "Forgot password?"              =   "Забули пароль?";
 "Cancel"                        =   "Відмінити";
 "Send"                          =   "Відправити";
@@ -57,8 +62,13 @@
 "Submit"                        =   "Підтвердити";
 "Ok"                            =   "Ok";
 "Here"                          =   "тут";
+"Add"                           =   "Додати";
 
 
 // Alerts
 "Info"                          =   "Інфо";
 "Error"                         =   "Помилка";
+
+
+
+

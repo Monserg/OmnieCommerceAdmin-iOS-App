@@ -22,6 +22,7 @@ typealias HandlerSendButtonCompletion               =   (() -> ())
 typealias HandlerRegisterButtonCompletion           =   (() -> ())
 typealias HandlerForgotPasswordButtonCompletion     =   (() -> ())
 typealias HandlerCancelButtonCompletion             =   (() -> ())
+typealias HandlerNavBarLeftButtonCompletion         =   (() -> ())
 
 //typealias apiResponse                               =   (success: Bool, error: Error?)
 typealias apiResponse                               =   (success: Bool, error: String?)
