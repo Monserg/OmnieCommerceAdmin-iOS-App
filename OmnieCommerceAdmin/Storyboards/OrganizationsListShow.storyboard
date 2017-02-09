@@ -100,7 +100,11 @@
                             <constraint firstItem="cLS-cY-S0Z" firstAttribute="top" secondItem="QOM-8h-dob" secondAttribute="bottom" id="rXG-Kk-Tq4"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="My organizations" id="s8K-sR-KyL"/>
+                    <navigationItem key="navigationItem" title="My organizations" id="s8K-sR-KyL">
+                        <barButtonItem key="leftBarButtonItem" image="icon-navbar-menu-normal" id="XRJ-46-d32">
+                            <color key="tintColor" red="0.0" green="0.57647058823529407" blue="0.58431372549019611" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AOp-za-WzR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -126,6 +130,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="icon-navbar-menu-normal" width="23" height="14"/>
         <image name="image-add-organization-normal" width="22" height="19"/>
     </resources>
 </document>

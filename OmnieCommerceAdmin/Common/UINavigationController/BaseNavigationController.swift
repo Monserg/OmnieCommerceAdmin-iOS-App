@@ -23,7 +23,7 @@ class BaseNavigationController: UINavigationController {
         statusBar.backgroundColor = UIColor(hexString: "#333333", withAlpha: 1.0)
 
         // Set navbar settings
-        UINavigationBar.appearance().tintColor = UIColor(hexString: "#333333", withAlpha: 1.0)
+        UINavigationBar.appearance().tintColor = UIColor(hexString: "#009395", withAlpha: 1.0)
         UINavigationBar.appearance().barTintColor = UIColor(hexString: "#333333", withAlpha: 1.0)
         UINavigationBar.appearance().isTranslucent = false
         UINavigationBar.appearance().clipsToBounds = true
@@ -37,12 +37,6 @@ class BaseNavigationController: UINavigationController {
     
     
     // MARK: - Custom Functions
-    func applyLocalizedtitle(withText text: String) {
-        self.title = "DDDD" //text.localized()
-//        self.navigationItem.title = NSLocalizedString(@"Refer a Friend", nil);
-
-    }
-    
     func addLeftMenuBarButton(withImage image: BarButtonImageStyle) {
         switch image {
         case .Menu:

@@ -48,12 +48,6 @@ class OrganizationsListShowViewController: BaseViewController, OrganizationsList
         // Add menu bar button
         showNavigationBar(withTitle: "My organizations")
         self.title = titleText!
-        
-//        (navigationController as! BaseNavigationController).addLeftMenuBarButton(withImage: .Menu)
-
-//        let request = OrganizationsListShow.Something.Request()
-//        interactor.doSomething(request: request)
-        
     }
     
     
