@@ -46,8 +46,9 @@ class OrganizationsListShowViewController: BaseViewController, OrganizationsList
     // MARK: - Custom Functions
     func doInitialSetupOnLoad() {
         // Add menu bar button
-        showNavigationBar()
-//        (navigationController as! BaseNavigationController).applyLocalizedtitle(withText: "My organizations")
+        showNavigationBar(withTitle: "My organizations")
+        self.title = titleText!
+        
 //        (navigationController as! BaseNavigationController).addLeftMenuBarButton(withImage: .Menu)
 
 //        let request = OrganizationsListShow.Something.Request()

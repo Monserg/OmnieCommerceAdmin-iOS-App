@@ -38,7 +38,9 @@ class BaseNavigationController: UINavigationController {
     
     // MARK: - Custom Functions
     func applyLocalizedtitle(withText text: String) {
-        navigationItem.title = text.localized()
+        self.title = "DDDD" //text.localized()
+//        self.navigationItem.title = NSLocalizedString(@"Refer a Friend", nil);
+
     }
     
     func addLeftMenuBarButton(withImage image: BarButtonImageStyle) {

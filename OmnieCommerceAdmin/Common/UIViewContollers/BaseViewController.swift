@@ -14,6 +14,8 @@ class BaseViewController: UIViewController {
     // MARK: - Properties
     var selectedRange: CGRect?
     var scrollViewBase = UIScrollView()
+    var titleText: String?
+    
     var textFieldsArray = [CustomTextField]() {
         willSet {
             for textField in newValue {
@@ -21,8 +23,6 @@ class BaseViewController: UIViewController {
             }
         }
     }
-    
-    var displaySize: CGSize = UIScreen.main.bounds.size
     
     
     // MARK: - Class Initialization
@@ -85,9 +85,11 @@ class BaseViewController: UIViewController {
         navigationController?.isNavigationBarHidden = true
     }
     
-    func showNavigationBar() {
+    func showNavigationBar(withTitle title: String) {
         if (navigationController?.isNavigationBarHidden == true) {
             navigationController?.isNavigationBarHidden = false
+        } else {
+            titleText = title.localized()
         }
     }
     
@@ -131,7 +133,6 @@ class BaseViewController: UIViewController {
         print(object: "\(type(of: self)): \(#function) run. New size = \(size)")
         
         view.endEditing(true)
-        displaySize = size
     }
 }
 
