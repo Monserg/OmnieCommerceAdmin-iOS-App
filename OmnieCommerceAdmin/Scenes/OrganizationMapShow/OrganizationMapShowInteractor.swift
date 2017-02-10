@@ -13,12 +13,12 @@ import UIKit
 
 // MARK: - Input protocols for current Interactor component VIP-cicle
 protocol OrganizationMapShowInteractorInput {
-    func doSomething(requestModel: OrganizationMapShowModels.Something.RequestModel)
+    func didLoadCurrentLocation(requestModel: OrganizationMapShowModels.Location.RequestModel)
 }
 
 // MARK: - Output protocols for Presenter component VIP-cicle
 protocol OrganizationMapShowInteractorOutput {
-    func presentSomething(responseModel: OrganizationMapShowModels.Something.ResponseModel)
+    func presentSomething(responseModel: OrganizationMapShowModels.Location.ResponseModel)
 }
 
 class OrganizationMapShowInteractor: OrganizationMapShowInteractorInput {
@@ -28,13 +28,13 @@ class OrganizationMapShowInteractor: OrganizationMapShowInteractorInput {
     
     
     // MARK: - Custom Functions. Business logic
-    func doSomething(requestModel: OrganizationMapShowModels.Something.RequestModel) {
+    func didLoadCurrentLocation(requestModel: OrganizationMapShowModels.Location.RequestModel) {
         // NOTE: Create some Worker to do the work
         worker = OrganizationMapShowWorker()
-        worker.doSomeWork()
+        worker.startCoreLocation()
         
         // NOTE: Pass the result to the Presenter
-        let responseModel = OrganizationMapShowModels.Something.ResponseModel()
+        let responseModel = OrganizationMapShowModels.Location.ResponseModel()
         presenter.presentSomething(responseModel: responseModel)
     }
 }

@@ -13,14 +13,20 @@ import UIKit
 
 // MARK: - Data models
 struct OrganizationMapShowModels {
-    struct Something {
+    struct Location {
         struct RequestModel {
+            let address: String?
         }
         
         struct ResponseModel {
+            //            let address: String?
+            //            let coordinate: CLLocationCoordinate2D?
+            //            let info: String?
         }
         
         struct ViewModel {
+            //            let address: String
+            //            let coordinate: CLLocationCoordinate2D
         }
     }
 }

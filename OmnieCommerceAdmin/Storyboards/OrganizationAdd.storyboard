@@ -173,7 +173,7 @@
                                                                             <view clipsSubviews="YES" tag="99" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yig-CM-hyu" userLabel="Phone View" customClass="CustomView" customModule="OmnieCommerceAdmin" customModuleProvider="target">
                                                                                 <rect key="frame" x="0.0" y="186" width="222" height="37"/>
                                                                                 <subviews>
-                                                                                    <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BE1-ix-8sj" userLabel="Phone Text Field" customClass="CustomTextField" customModule="OmnieCommerceAdmin" customModuleProvider="target">
+                                                                                    <textField opaque="NO" clipsSubviews="YES" tag="99" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BE1-ix-8sj" userLabel="Phone Text Field" customClass="CustomTextField" customModule="OmnieCommerceAdmin" customModuleProvider="target">
                                                                                         <rect key="frame" x="8" y="18" width="214" height="19"/>
                                                                                         <nil key="textColor"/>
                                                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -196,7 +196,7 @@
                                                                             <view clipsSubviews="YES" tag="99" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="utl-x0-jjN" userLabel="Address View" customClass="CustomView" customModule="OmnieCommerceAdmin" customModuleProvider="target">
                                                                                 <rect key="frame" x="0.0" y="237" width="222" height="37"/>
                                                                                 <subviews>
-                                                                                    <textField opaque="NO" clipsSubviews="YES" tag="99" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Address" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9kd-K1-j1H" userLabel="Address Text Field" customClass="CustomTextField" customModule="OmnieCommerceAdmin" customModuleProvider="target">
+                                                                                    <textField opaque="NO" clipsSubviews="YES" tag="99" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Address" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9kd-K1-j1H" userLabel="Address Text Field" customClass="CustomTextField" customModule="OmnieCommerceAdmin" customModuleProvider="target">
                                                                                         <rect key="frame" x="8" y="18" width="192" height="19"/>
                                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                                         <nil key="textColor"/>
@@ -403,15 +403,15 @@
                                 <exclude reference="hly-MO-7xz"/>
                                 <exclude reference="dPd-YK-wcV"/>
                                 <exclude reference="d4n-5P-EIg"/>
+                                <exclude reference="6MX-3T-fb3"/>
                                 <exclude reference="nS4-Mu-S9Z"/>
                                 <exclude reference="nwV-h5-EVd"/>
-                                <exclude reference="Cv2-DE-A6n"/>
-                                <exclude reference="6MX-3T-fb3"/>
                                 <exclude reference="dOH-ET-Ayi"/>
-                                <exclude reference="Oeu-kd-hEa"/>
-                                <exclude reference="lRO-Io-4xq"/>
                                 <exclude reference="7ad-jk-oyB"/>
                                 <exclude reference="lge-my-Qgq"/>
+                                <exclude reference="Cv2-DE-A6n"/>
+                                <exclude reference="Oeu-kd-hEa"/>
+                                <exclude reference="lRO-Io-4xq"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -425,24 +425,24 @@
                                 <include reference="dPd-YK-wcV"/>
                                 <exclude reference="1BX-M4-bLS"/>
                                 <include reference="d4n-5P-EIg"/>
+                                <include reference="6MX-3T-fb3"/>
+                                <exclude reference="MTa-IC-Zhr"/>
                                 <exclude reference="E4w-CW-YOa"/>
                                 <include reference="nS4-Mu-S9Z"/>
                                 <exclude reference="XHE-dx-9YP"/>
                                 <include reference="nwV-h5-EVd"/>
-                                <include reference="Cv2-DE-A6n"/>
-                                <exclude reference="L7J-lv-CmS"/>
-                                <include reference="6MX-3T-fb3"/>
-                                <exclude reference="MTa-IC-Zhr"/>
                                 <exclude reference="Rfr-Vg-mvU"/>
                                 <include reference="dOH-ET-Ayi"/>
-                                <exclude reference="MX1-dx-jDS"/>
-                                <include reference="Oeu-kd-hEa"/>
-                                <exclude reference="UBw-le-wd8"/>
-                                <include reference="lRO-Io-4xq"/>
                                 <include reference="7ad-jk-oyB"/>
                                 <exclude reference="uvE-E6-b0P"/>
                                 <exclude reference="cbv-9g-hQi"/>
                                 <include reference="lge-my-Qgq"/>
+                                <include reference="Cv2-DE-A6n"/>
+                                <exclude reference="L7J-lv-CmS"/>
+                                <exclude reference="MX1-dx-jDS"/>
+                                <include reference="Oeu-kd-hEa"/>
+                                <exclude reference="UBw-le-wd8"/>
+                                <include reference="lRO-Io-4xq"/>
                             </mask>
                         </variation>
                     </view>

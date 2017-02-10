@@ -20,6 +20,8 @@
 		B15732CC1E4DD78100685A46 /* OrganizationMapShowWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15732C51E4DD78100685A46 /* OrganizationMapShowWorker.swift */; };
 		B15732CE1E4DD7A100685A46 /* OrganizationMapShow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B15732CD1E4DD7A100685A46 /* OrganizationMapShow.storyboard */; };
 		B15732D01E4DD96D00685A46 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B15732CF1E4DD96D00685A46 /* MapKit.framework */; };
+		B15732D21E4DEABC00685A46 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15732D11E4DEABC00685A46 /* LocationViewController.swift */; };
+		B15732DE1E4E245D00685A46 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B15732DD1E4E245D00685A46 /* CoreLocation.framework */; };
 		B1576BB41E4C97170067020B /* MainNavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1576BB31E4C97170067020B /* MainNavigationBarView.swift */; };
 		B1576BB61E4C97210067020B /* MainNavigationBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1576BB51E4C97210067020B /* MainNavigationBarView.xib */; };
 		B1576BBF1E4CAB020067020B /* OrganizationAddConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1576BB81E4CAB020067020B /* OrganizationAddConfigurator.swift */; };
@@ -149,6 +151,9 @@
 		B15732C51E4DD78100685A46 /* OrganizationMapShowWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationMapShowWorker.swift; sourceTree = "<group>"; };
 		B15732CD1E4DD7A100685A46 /* OrganizationMapShow.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = OrganizationMapShow.storyboard; sourceTree = "<group>"; };
 		B15732CF1E4DD96D00685A46 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		B15732D11E4DEABC00685A46 /* LocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		B15732DB1E4DF62A00685A46 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B15732DD1E4E245D00685A46 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		B1576BB31E4C97170067020B /* MainNavigationBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNavigationBarView.swift; sourceTree = "<group>"; };
 		B1576BB51E4C97210067020B /* MainNavigationBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainNavigationBarView.xib; sourceTree = "<group>"; };
 		B1576BB81E4CAB020067020B /* OrganizationAddConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationAddConfigurator.swift; sourceTree = "<group>"; };
@@ -211,7 +216,6 @@
 		B1EADCC71E436316006341D2 /* OmnieCommerceAdmin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OmnieCommerceAdmin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1EADCCA1E436316006341D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B1EADCD11E436316006341D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
-		B1EADCE71E43732F006341D2 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B1EADCEC1E4374C2006341D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B1EADCF01E4374DA006341D2 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
 		B1EADCF21E4374E3006341D2 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Main.strings; sourceTree = "<group>"; };
@@ -274,6 +278,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B15732DE1E4E245D00685A46 /* CoreLocation.framework in Frameworks */,
 				B15732D01E4DD96D00685A46 /* MapKit.framework in Frameworks */,
 				CEB9B377E3609B58B2AB0EAF /* Pods_OmnieCommerceAdmin.framework in Frameworks */,
 			);
@@ -294,6 +299,7 @@
 		6C3DEC16B866523CFFCC2056 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B15732DD1E4E245D00685A46 /* CoreLocation.framework */,
 				B15732CF1E4DD96D00685A46 /* MapKit.framework */,
 				E1422BA451A52E370BFCE6B0 /* Pods_OmnieCommerceAdmin.framework */,
 			);
@@ -362,6 +368,7 @@
 			isa = PBXGroup;
 			children = (
 				B1BD7AF81E45F64800D8FA0A /* BaseViewController.swift */,
+				B15732D11E4DEABC00685A46 /* LocationViewController.swift */,
 			);
 			path = UIViewContollers;
 			sourceTree = "<group>";
@@ -530,8 +537,8 @@
 			isa = PBXGroup;
 			children = (
 				B1FBB89E1E43C75600C02BC3 /* Fonts */,
+				B15732DB1E4DF62A00685A46 /* Info.plist */,
 				B1EADCD11E436316006341D2 /* Assets.xcassets */,
-				B1EADCE71E43732F006341D2 /* Info.plist */,
 				B1EADCF71E437534006341D2 /* Localizable.strings */,
 			);
 			path = Resources;
@@ -860,6 +867,7 @@
 				B1C320BB1E44A3C400D84BC3 /* SignUpShowPresenter.swift in Sources */,
 				B1DB436D1E48D2D400D3DE77 /* PasswordStrengthLevelView.swift in Sources */,
 				B15732CB1E4DD78100685A46 /* OrganizationMapShowViewController.swift in Sources */,
+				B15732D21E4DEABC00685A46 /* LocationViewController.swift in Sources */,
 				B1EADD2F1E4390A2006341D2 /* MainShowInteractor.swift in Sources */,
 				B1BD7B261E464CD700D8FA0A /* SignInContainerShowConfigurator.swift in Sources */,
 				B1C320DB1E44A46700D84BC3 /* ForgotPasswordShowInteractor.swift in Sources */,
@@ -1020,7 +1028,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 2DS2B364WY;
-				INFOPLIST_FILE = OmnieCommerceAdmin/Resources/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/OmnieCommerceAdmin/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ua.com.omniesoft.OmnieCommerceAdmin;
@@ -1035,7 +1043,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 2DS2B364WY;
-				INFOPLIST_FILE = OmnieCommerceAdmin/Resources/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/OmnieCommerceAdmin/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ua.com.omniesoft.OmnieCommerceAdmin;

@@ -6,6 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,7 +19,7 @@
                         <viewControllerLayoutGuide type="top" id="NeO-L3-4Hi"/>
                         <viewControllerLayoutGuide type="bottom" id="vgo-gm-LMu"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="c5K-PP-cae">
+                    <view key="view" contentMode="scaleToFill" id="c5K-PP-cae" customClass="CustomView" customModule="OmnieCommerceAdmin" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -34,29 +36,176 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="titleText" value="Address organization"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Xlm-LZ-bNb">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="09v-Df-pvI">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                            </mapView>
+                                <subviews>
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xlm-LZ-bNb">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="558"/>
+                                    </mapView>
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="acf-xo-OLl" userLabel="Action Buttons View">
+                                        <rect key="frame" x="0.0" y="558" width="375" height="45"/>
+                                        <subviews>
+                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g1I-2N-WHg" userLabel="Content View">
+                                                <rect key="frame" x="51" y="4" width="273" height="36"/>
+                                                <subviews>
+                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xNu-BY-K4O" userLabel="Add Button" customClass="CustomButton" customModule="OmnieCommerceAdmin" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="222" height="36"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        <state key="normal" title="Add"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="buttonStyle" value="Border"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="handlerAddButtonTap:" destination="vFE-8k-W19" eventType="touchUpInside" id="9SQ-Fy-2VD"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hwD-84-6Dz" userLabel="Cancel Button" customClass="CustomButton" customModule="OmnieCommerceAdmin" customModuleProvider="target">
+                                                        <rect key="frame" x="237" y="0.0" width="36" height="36"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="hwD-84-6Dz" secondAttribute="height" multiplier="1:1" id="PFF-z8-lLn"/>
+                                                        </constraints>
+                                                        <state key="normal" image="icon-cancel-normal"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="buttonStyle" value="Border"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="handlerCancelButtonTap:" destination="vFE-8k-W19" eventType="touchUpInside" id="UiF-Cw-zDZ"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstItem="hwD-84-6Dz" firstAttribute="leading" secondItem="xNu-BY-K4O" secondAttribute="trailing" constant="15" id="3c7-Be-fAG"/>
+                                                    <constraint firstItem="xNu-BY-K4O" firstAttribute="leading" secondItem="g1I-2N-WHg" secondAttribute="leading" id="58F-Tt-Yrs"/>
+                                                    <constraint firstAttribute="bottom" secondItem="xNu-BY-K4O" secondAttribute="bottom" id="5AC-v4-yBa"/>
+                                                    <constraint firstItem="xNu-BY-K4O" firstAttribute="top" secondItem="g1I-2N-WHg" secondAttribute="top" id="HcL-H5-s6w"/>
+                                                    <constraint firstAttribute="bottom" secondItem="hwD-84-6Dz" secondAttribute="bottom" id="HqA-wm-9pr"/>
+                                                    <constraint firstAttribute="trailing" secondItem="hwD-84-6Dz" secondAttribute="trailing" id="Ipq-DD-GA4"/>
+                                                    <constraint firstItem="hwD-84-6Dz" firstAttribute="top" secondItem="g1I-2N-WHg" secondAttribute="top" id="Mjb-TJ-jEZ"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="g1I-2N-WHg" firstAttribute="centerX" secondItem="acf-xo-OLl" secondAttribute="centerX" id="5Cz-tx-cVx"/>
+                                            <constraint firstItem="g1I-2N-WHg" firstAttribute="centerY" secondItem="acf-xo-OLl" secondAttribute="centerY" id="BBK-ma-uvm"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="acf-xo-OLl" firstAttribute="height" secondItem="09v-Df-pvI" secondAttribute="height" multiplier="50:667" id="sJ9-t8-sgE"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="sJ9-t8-sgE"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="sJ9-t8-sgE"/>
+                                    </mask>
+                                </variation>
+                            </stackView>
+                            <view clipsSubviews="YES" tag="99" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Ox-xY-Bau" userLabel="Search View">
+                                <rect key="frame" x="15" y="79" width="345" height="33"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-search-normal" translatesAutoresizingMaskIntoConstraints="NO" id="vqr-cy-Phv" userLabel="Search Image View">
+                                        <rect key="frame" x="0.0" y="0.0" width="33" height="33"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="vqr-cy-Phv" secondAttribute="height" multiplier="1:1" id="N8x-9o-cIr"/>
+                                        </constraints>
+                                    </imageView>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Address" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VzJ-Sw-7Hh" userLabel="Search Text Field" customClass="CustomTextField" customModule="OmnieCommerceAdmin" customModuleProvider="target">
+                                        <rect key="frame" x="33" y="7" width="304" height="19"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="fieldStyle" value="Search"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="VzJ-Sw-7Hh" firstAttribute="leading" secondItem="vqr-cy-Phv" secondAttribute="trailing" id="IiL-z2-KCW"/>
+                                    <constraint firstItem="vqr-cy-Phv" firstAttribute="leading" secondItem="4Ox-xY-Bau" secondAttribute="leading" id="KZW-UX-9dP"/>
+                                    <constraint firstAttribute="trailing" secondItem="VzJ-Sw-7Hh" secondAttribute="trailing" constant="8" id="T6U-6B-a9o"/>
+                                    <constraint firstAttribute="bottom" secondItem="vqr-cy-Phv" secondAttribute="bottom" id="as7-W0-9gw"/>
+                                    <constraint firstItem="VzJ-Sw-7Hh" firstAttribute="centerY" secondItem="4Ox-xY-Bau" secondAttribute="centerY" id="i8w-VJ-1BI"/>
+                                    <constraint firstItem="vqr-cy-Phv" firstAttribute="centerY" secondItem="4Ox-xY-Bau" secondAttribute="centerY" id="l77-F5-FRb"/>
+                                    <constraint firstItem="vqr-cy-Phv" firstAttribute="top" secondItem="4Ox-xY-Bau" secondAttribute="top" id="rfh-xg-SOy"/>
+                                </constraints>
+                            </view>
+                            <activityIndicatorView hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Omv-m2-hDU">
+                                <rect key="frame" x="169.5" y="325" width="37" height="37"/>
+                                <color key="color" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="g1I-2N-WHg" firstAttribute="width" secondItem="c5K-PP-cae" secondAttribute="width" multiplier="273:667" id="3Ro-al-9vo"/>
+                            <constraint firstItem="g1I-2N-WHg" firstAttribute="width" secondItem="c5K-PP-cae" secondAttribute="width" multiplier="273:375" id="3Z2-IO-X5x"/>
+                            <constraint firstItem="4Ox-xY-Bau" firstAttribute="height" secondItem="c5K-PP-cae" secondAttribute="height" multiplier="33:375" id="6Rt-LI-334"/>
+                            <constraint firstAttribute="trailing" secondItem="09v-Df-pvI" secondAttribute="trailing" id="9AZ-gv-2lx"/>
+                            <constraint firstItem="acf-xo-OLl" firstAttribute="height" secondItem="c5K-PP-cae" secondAttribute="height" multiplier="50:375" id="9vd-Rz-lII"/>
+                            <constraint firstAttribute="bottom" secondItem="09v-Df-pvI" secondAttribute="bottom" id="DYG-KP-6Xo"/>
+                            <constraint firstItem="4Ox-xY-Bau" firstAttribute="width" secondItem="c5K-PP-cae" secondAttribute="width" multiplier="345:375" id="DmX-K8-SVI"/>
+                            <constraint firstItem="4Ox-xY-Bau" firstAttribute="top" secondItem="SPd-4p-7aC" secondAttribute="bottom" constant="10" id="EK7-GJ-kF4">
+                                <variation key="heightClass=regular-widthClass=compact" constant="15"/>
+                            </constraint>
+                            <constraint firstItem="4Ox-xY-Bau" firstAttribute="centerX" secondItem="c5K-PP-cae" secondAttribute="centerX" id="Eso-ds-uPm"/>
                             <constraint firstItem="SPd-4p-7aC" firstAttribute="leading" secondItem="c5K-PP-cae" secondAttribute="leading" id="G7I-qC-way"/>
                             <constraint firstItem="SPd-4p-7aC" firstAttribute="top" secondItem="c5K-PP-cae" secondAttribute="top" id="MKK-1P-TZT"/>
-                            <constraint firstAttribute="trailing" secondItem="Xlm-LZ-bNb" secondAttribute="trailing" id="fES-Qb-E5p"/>
-                            <constraint firstAttribute="bottom" secondItem="Xlm-LZ-bNb" secondAttribute="bottom" id="fmF-sl-U9w"/>
+                            <constraint firstItem="g1I-2N-WHg" firstAttribute="height" secondItem="c5K-PP-cae" secondAttribute="height" multiplier="36:375" id="OA8-39-V6g"/>
+                            <constraint firstItem="Omv-m2-hDU" firstAttribute="centerX" secondItem="Xlm-LZ-bNb" secondAttribute="centerX" id="QIn-e5-Pvv"/>
+                            <constraint firstItem="g1I-2N-WHg" firstAttribute="height" secondItem="c5K-PP-cae" secondAttribute="height" multiplier="36:667" id="drh-ye-bWc"/>
+                            <constraint firstItem="4Ox-xY-Bau" firstAttribute="width" secondItem="c5K-PP-cae" secondAttribute="width" multiplier="625:667" id="el3-m1-UQJ"/>
+                            <constraint firstItem="09v-Df-pvI" firstAttribute="top" secondItem="SPd-4p-7aC" secondAttribute="bottom" id="f9X-Rp-e5l"/>
                             <constraint firstAttribute="trailing" secondItem="SPd-4p-7aC" secondAttribute="trailing" id="gmN-do-Z65"/>
-                            <constraint firstItem="Xlm-LZ-bNb" firstAttribute="leading" secondItem="c5K-PP-cae" secondAttribute="leading" id="lUG-nZ-hKs"/>
-                            <constraint firstItem="Xlm-LZ-bNb" firstAttribute="top" secondItem="SPd-4p-7aC" secondAttribute="bottom" id="lUz-ik-enF"/>
+                            <constraint firstItem="Omv-m2-hDU" firstAttribute="centerY" secondItem="Xlm-LZ-bNb" secondAttribute="centerY" id="sDT-IW-hl9"/>
+                            <constraint firstItem="4Ox-xY-Bau" firstAttribute="height" secondItem="c5K-PP-cae" secondAttribute="height" multiplier="33:667" id="si1-G2-ozc"/>
+                            <constraint firstItem="09v-Df-pvI" firstAttribute="leading" secondItem="c5K-PP-cae" secondAttribute="leading" id="w3x-PP-e5B"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="DmX-K8-SVI"/>
+                                <exclude reference="si1-G2-ozc"/>
+                                <exclude reference="3Z2-IO-X5x"/>
+                                <exclude reference="drh-ye-bWc"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <exclude reference="6Rt-LI-334"/>
+                                <include reference="DmX-K8-SVI"/>
+                                <exclude reference="el3-m1-UQJ"/>
+                                <include reference="si1-G2-ozc"/>
+                                <exclude reference="9vd-Rz-lII"/>
+                                <exclude reference="3Ro-al-9vo"/>
+                                <include reference="3Z2-IO-X5x"/>
+                                <exclude reference="OA8-39-V6g"/>
+                                <include reference="drh-ye-bWc"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="customNavigationBarView" destination="SPd-4p-7aC" id="4jv-rp-RCK"/>
                         <outlet property="mapView" destination="Xlm-LZ-bNb" id="yWf-Mc-fSM"/>
+                        <outlet property="searchTextField" destination="VzJ-Sw-7Hh" id="fKl-IJ-QKF"/>
+                        <outlet property="spinner" destination="Omv-m2-hDU" id="I5h-yN-EAW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g5L-iT-tCA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="122" y="152"/>
+            <point key="canvasLocation" x="120.8" y="151.57421289355324"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icon-cancel-normal" width="7" height="7"/>
+        <image name="icon-search-normal" width="12" height="12"/>
+    </resources>
 </document>

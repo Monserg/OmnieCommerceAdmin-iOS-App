@@ -63,9 +63,10 @@
 "Submit"                        =   "Submit";
 "Ok"                            =   "Ok";
 "Here"                          =   "here";
-"Add"                           =   "Add";
+"Add"                           =   "Add +";
 
 
 // Alerts
 "Info"                          =   "Info";
 "Error"                         =   "Error";
+

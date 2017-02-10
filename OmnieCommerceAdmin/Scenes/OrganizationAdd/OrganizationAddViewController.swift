@@ -33,8 +33,6 @@ class OrganizationAddViewController: BaseViewController {
     @IBOutlet weak var emailErrorMessageView: ErrorMessageView!
     @IBOutlet weak var phoneErrorMessageView: ErrorMessageView!
 
-    
-    
     @IBOutlet weak var emailErrorMessageViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var emailErrorMessageViewTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var phoneErrorMessageViewHeightConstraint: NSLayoutConstraint!
@@ -58,11 +56,7 @@ class OrganizationAddViewController: BaseViewController {
     
 
     // MARK: - Custom Functions
-    func doInitialSetupOnLoad() {
-        // NOTE: Ask the Interactor to do some work
-        let requestModel = OrganizationAddModels.Something.RequestModel()
-        interactor.doSomething(requestModel: requestModel)
-        
+    func doInitialSetupOnLoad() {        
         // Set left bar button image
         customNavigationBarView.leftButton.setImage(UIImage.init(named: "icon-navbar-back-normal"), for: .normal)
         

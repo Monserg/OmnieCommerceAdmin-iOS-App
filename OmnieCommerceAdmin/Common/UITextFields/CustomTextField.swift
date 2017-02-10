@@ -14,6 +14,7 @@ enum FieldStyle: String {
     case Code           =   "Code"
     case Email          =   "Email"
     case Phone          =   "Phone"
+    case Search         =   "Search"
     case Address        =   "Address"
     case Password       =   "Password"
     case PhoneEmail     =   "PhoneEmail"
@@ -95,6 +96,10 @@ enum PasswordStrengthLevel {
         case .Code, .Phone:
             autocapitalizationType          =   .none
             keyboardType                    =   .numbersAndPunctuation
+            
+        case .Search:
+            autocapitalizationType          =   .none
+            returnKeyType                   =   .search
             
         // Name, Address
         default:

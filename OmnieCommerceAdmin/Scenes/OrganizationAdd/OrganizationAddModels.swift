@@ -10,6 +10,7 @@
 //
 
 import UIKit
+import MapKit
 
 // MARK: - Data models
 struct OrganizationAddModels {

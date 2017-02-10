@@ -10,10 +10,13 @@
 //
 
 import UIKit
+import MapKit
 
 class OrganizationMapShowWorker {
-    // MARK: - Custom Functions. Business Logic
-    func doSomeWork() {
-        // NOTE: Do the work
+    func startCoreLocation() {
+        let locationVC = LocationViewController()
+        locationVC.locationManager = CLLocationManager()
+       
+        locationVC.requestLocationAccess()
     }
 }
