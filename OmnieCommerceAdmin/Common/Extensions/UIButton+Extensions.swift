@@ -10,7 +10,8 @@ import UIKit
 
 enum ButtonStyle: String {
     case Border                                     =   "Border"
-    case CircleFill                                 =   "CircleFill"
+    case CircleFillDarkCyan                         =   "CircleFillDarkCyan"
+    case CircleFillVeryLightGray                    =   "CircleFillVeryLightGray"
     case TitleUbuntuLight12VeryLightOrange          =   "TitleUbuntuLight12VeryLightOrange"
     case TitleUbuntuLight12UndirlineVeryLightGray   =   "TitleUbuntuLight12UndirlineVeryLightGray"
     case TitleUbuntuLight12UndirlineDarkCyan        =   "TitleUbuntuLight12UndirlineDarkCyan"
@@ -59,12 +60,12 @@ extension UIButton {
                 layer.borderColor   =   UIColor(hexString: "#009395", withAlpha: 1.0)?.cgColor
                 setTitleColor(UIColor(hexString: "#333333", withAlpha: 1.0), for: .normal)
                 
-                guard imageView?.image != nil else {
+                guard imageView?.image != nil, titleLabel?.text != nil else {
                     return
                 }
                 
                 titleEdgeInsets     =   UIEdgeInsetsMake(0, -15, 0, 0)
-                imageEdgeInsets     =   UIEdgeInsetsMake(0, (titleLabel?.frame.maxX)!, 0, 0)
+                imageEdgeInsets     =   UIEdgeInsetsMake(0, (titleLabel?.frame.maxX)! + 8, 0, 0)
                 
             default:
                 break
@@ -72,10 +73,15 @@ extension UIButton {
 
             clipsToBounds           =   true
             
-        case .CircleFill:
+        case .CircleFillDarkCyan:
             layer.cornerRadius      =   frame.height / 2
-            setBackgroundImage(UIImage(named:"image-background-color-dark-cyan-normal.png")?.withRenderingMode(.alwaysOriginal), for: .normal)
-            setBackgroundImage(UIImage(named:"image-background-color-dark-cyan-highlighted.png")?.withRenderingMode(.alwaysOriginal), for: .highlighted)
+            setBackgroundImage(UIImage(named: "image-background-color-dark-cyan-normal.png")?.withRenderingMode(.alwaysOriginal), for: .normal)
+            setBackgroundImage(UIImage(named: "image-background-color-dark-cyan-highlighted.png")?.withRenderingMode(.alwaysOriginal), for: .highlighted)
+            
+        case .CircleFillVeryLightGray:
+            layer.cornerRadius      =   frame.height / 2
+            setBackgroundImage(UIImage(named:"image-background-color-very-light-gray-normal.png")?.withRenderingMode(.alwaysOriginal), for: .normal)
+            setBackgroundImage(UIImage(named:"image-background-color-very-light-gray-highlighted.png")?.withRenderingMode(.alwaysOriginal), for: .highlighted)
             
         case .TitleUbuntuLight12VeryLightOrange:
             setAttributedTitle(NSAttributedString(string: (titleLabel?.text?.localized())!, attributes: UIFont.ubuntuLight12VeryLightOrange), for: .normal)
@@ -93,16 +99,16 @@ extension UIButton {
         
         switch themeDesign {
         case .LightForUser:
-            setBackgroundImage(UIImage(named:"image-background-color-very-light-crey-normal.png")?.withRenderingMode(.alwaysOriginal), for: .normal)
-            setBackgroundImage(UIImage(named:"image-background-color-very-light-crey-highlighted.png")?.withRenderingMode(.alwaysOriginal), for: .highlighted)
+            setBackgroundImage(UIImage(named: "image-background-color-very-light-gray-normal.png")?.withRenderingMode(.alwaysOriginal), for: .normal)
+            setBackgroundImage(UIImage(named: "image-background-color-very-light-gray-highlighted.png")?.withRenderingMode(.alwaysOriginal), for: .highlighted)
             
         case .LightForGuest:
-            setBackgroundImage(UIImage(named:"image-background-color-dark-cyan-normal.png")?.withRenderingMode(.alwaysOriginal), for: .normal)
-            setBackgroundImage(UIImage(named:"image-background-color-dark-cyan-highlighted.png")?.withRenderingMode(.alwaysOriginal), for: .highlighted)
+            setBackgroundImage(UIImage(named: "image-background-color-dark-cyan-normal.png")?.withRenderingMode(.alwaysOriginal), for: .normal)
+            setBackgroundImage(UIImage(named: "image-background-color-dark-cyan-highlighted.png")?.withRenderingMode(.alwaysOriginal), for: .highlighted)
             
         case .DarkForGuest, .DarkForUser:
-            setBackgroundImage(UIImage(named:"image-background-color-black-normal.png")?.withRenderingMode(.alwaysOriginal), for: .normal)
-            setBackgroundImage(UIImage(named:"image-background-color-black-highlighted.png")?.withRenderingMode(.alwaysOriginal), for: .highlighted)
+            setBackgroundImage(UIImage(named: "image-background-color-black-normal.png")?.withRenderingMode(.alwaysOriginal), for: .normal)
+            setBackgroundImage(UIImage(named: "image-background-color-black-highlighted.png")?.withRenderingMode(.alwaysOriginal), for: .highlighted)
         }
     }
 }

@@ -43,7 +43,7 @@ enum ViewDesign: String {
             drawPath.addLine(to: CGPoint.init(x: bounds.maxX, y: bounds.maxY))
             
             drawPath.lineWidth = 1.0
-            let drawPathColor = UIColor(hexString: (Config.Constants.isAppThemesDark) ? "#5e6969" : "#9ec9c6", withAlpha: 1.0)!
+            let drawPathColor = UIColor(hexString: (Config.Constants.isAppThemesDark) ? "#5e6969" : ((Config.Constants.isUserGuest) ? "#9ec9c6" : "#e1e1e1"), withAlpha: 1.0)!
             drawPathColor.setStroke()
 
             drawPath.stroke()

@@ -30,6 +30,7 @@ class OrganizationAddViewController: BaseViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var customNavigationBarView: MainNavigationBarView!
 
+
     
     
     // MARK: - Class initialization
@@ -65,6 +66,9 @@ class OrganizationAddViewController: BaseViewController {
     
     
     // MARK: - Actions
+    @IBAction func handlerAvatarButtonTap(_ sender: UIButton) {
+    }
+    
     @IBAction func handlerRegisterButtonTap(_ sender: CustomButton) {
     }
     

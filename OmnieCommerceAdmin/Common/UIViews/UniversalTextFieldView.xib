@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UniversalTextFieldView" customModule="OmnieCommerceAdmin" customModuleProvider="target">
+            <connections>
+                <outlet property="contentViewHeightConstraint" destination="ZAg-ap-Vj0" id="ouF-JF-bvv"/>
+                <outlet property="customTextField" destination="WbE-rH-pLr" id="mO7-fx-UJZ"/>
+                <outlet property="errorMessageLabel" destination="c6m-Lj-aEl" id="lYU-xX-Q7L"/>
+                <outlet property="errorMessageView" destination="TdZ-be-G1T" id="LRr-dm-fGa"/>
+                <outlet property="passwordStrengthView" destination="M0x-Ue-4Ce" id="9eQ-JC-Imz"/>
+                <outlet property="passwordStrengthViewTopConstraint" destination="gb4-Iw-iGj" id="gid-iD-cqK"/>
+                <outlet property="view" destination="iN0-l3-epB" id="J9G-gJ-J2m"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wgV-HP-Nht" userLabel="Content View">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
+                    <subviews>
+                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Avr-bz-Hfx" userLabel="Line View" customClass="CustomView" customModule="OmnieCommerceAdmin" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="37"/>
+                            <subviews>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WbE-rH-pLr" customClass="CustomTextField" customModule="OmnieCommerceAdmin" customModuleProvider="target">
+                                    <rect key="frame" x="8" y="18.5" width="359" height="19"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <nil key="textColor"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="fieldStyle" value="Name"/>
+                                    </userDefinedRuntimeAttributes>
+                                </textField>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="WbE-rH-pLr" firstAttribute="centerY" secondItem="Avr-bz-Hfx" secondAttribute="centerY" multiplier="1.5" id="5C1-eB-KqP"/>
+                                <constraint firstAttribute="trailing" secondItem="WbE-rH-pLr" secondAttribute="trailing" constant="8" id="K7L-zh-pU3"/>
+                                <constraint firstAttribute="height" constant="37" id="jAc-GJ-h7b"/>
+                                <constraint firstItem="WbE-rH-pLr" firstAttribute="leading" secondItem="Avr-bz-Hfx" secondAttribute="leading" constant="8" id="pIG-xs-XIZ"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="viewDesign" value="SingleBottomVeryLightGrayLine"/>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M0x-Ue-4Ce" customClass="PasswordStrengthLevelView" customModule="OmnieCommerceAdmin" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="37" width="375" height="4"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="4" id="rH7-F0-lpe"/>
+                            </constraints>
+                        </view>
+                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TdZ-be-G1T" userLabel="Error Message View">
+                            <rect key="frame" x="0.0" y="41" width="375" height="14"/>
+                            <subviews>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Invalid code" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c6m-Lj-aEl" customClass="CustomLabel" customModule="OmnieCommerceAdmin" customModuleProvider="target">
+                                    <rect key="frame" x="8" y="0.0" width="359" height="13.5"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="labelStyle" value="UbuntuLightItalic12VerySoftRed"/>
+                                    </userDefinedRuntimeAttributes>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="c6m-Lj-aEl" firstAttribute="top" secondItem="TdZ-be-G1T" secondAttribute="top" id="DGc-7Q-6Vp"/>
+                                <constraint firstAttribute="height" priority="999" constant="14" id="cC7-LI-Zhb"/>
+                                <constraint firstItem="c6m-Lj-aEl" firstAttribute="leading" secondItem="TdZ-be-G1T" secondAttribute="leading" constant="8" id="naF-uB-tGr"/>
+                                <constraint firstAttribute="trailing" secondItem="c6m-Lj-aEl" secondAttribute="trailing" constant="8" id="r0h-TF-IIn"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="M0x-Ue-4Ce" firstAttribute="leading" secondItem="wgV-HP-Nht" secondAttribute="leading" id="CBx-CE-ZCr"/>
+                        <constraint firstAttribute="trailing" secondItem="Avr-bz-Hfx" secondAttribute="trailing" id="EAX-w1-xDr"/>
+                        <constraint firstAttribute="trailing" secondItem="TdZ-be-G1T" secondAttribute="trailing" id="GNl-yA-Wb4"/>
+                        <constraint firstAttribute="trailing" secondItem="M0x-Ue-4Ce" secondAttribute="trailing" id="Nue-pH-2cg"/>
+                        <constraint firstItem="Avr-bz-Hfx" firstAttribute="leading" secondItem="wgV-HP-Nht" secondAttribute="leading" id="YoD-CU-Snw"/>
+                        <constraint firstItem="Avr-bz-Hfx" firstAttribute="top" secondItem="wgV-HP-Nht" secondAttribute="top" id="ejH-93-jHu"/>
+                        <constraint firstItem="M0x-Ue-4Ce" firstAttribute="top" secondItem="Avr-bz-Hfx" secondAttribute="bottom" id="gb4-Iw-iGj"/>
+                        <constraint firstItem="TdZ-be-G1T" firstAttribute="top" secondItem="M0x-Ue-4Ce" secondAttribute="bottom" id="lOk-0l-0fJ"/>
+                        <constraint firstItem="TdZ-be-G1T" firstAttribute="leading" secondItem="wgV-HP-Nht" secondAttribute="leading" id="pV8-BK-qBi"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="wgV-HP-Nht" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="21Y-ZX-wfw"/>
+                <constraint firstItem="wgV-HP-Nht" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Cs6-47-eKd"/>
+                <constraint firstAttribute="bottom" secondItem="wgV-HP-Nht" secondAttribute="bottom" id="Rbd-p1-4nA"/>
+                <constraint firstItem="wgV-HP-Nht" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" id="ZAg-ap-Vj0"/>
+                <constraint firstAttribute="trailing" secondItem="wgV-HP-Nht" secondAttribute="trailing" id="dgf-yR-sJK"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="33.5" y="-230"/>
+        </view>
+    </objects>
+</document>

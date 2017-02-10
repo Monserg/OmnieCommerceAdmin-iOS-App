@@ -63,7 +63,6 @@
                                                     </userDefinedRuntimeAttributes>
                                                     <connections>
                                                         <action selector="handlerAddOrganizationButtonTap:" destination="mPM-eg-IYH" eventType="touchUpInside" id="x3M-E8-WlW"/>
-                                                        <action selector="handlerHereButtonTap:" destination="mPM-eg-IYH" eventType="touchUpInside" id="68n-BS-C4O"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -109,7 +108,7 @@
                                 </constraints>
                                 <state key="normal" image="image-add-organization-normal"/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="buttonStyle" value="CircleFill"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="buttonStyle" value="CircleFillDarkCyan"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="handlerAddOrganizationButtonTap:" destination="mPM-eg-IYH" eventType="touchUpInside" id="TJR-KY-GCn"/>

@@ -74,7 +74,7 @@ extension OrganizationsListShowViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let dataSourceCount = 1
+        let dataSourceCount = 0
         emptyDataSourceView.isHidden = (dataSourceCount == 0) ? false : true
         
         return dataSourceCount

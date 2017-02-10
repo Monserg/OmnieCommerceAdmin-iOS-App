@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		B137231D1E44E7DB001AE102 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B137231C1E44E7DB001AE102 /* CustomTextField.swift */; };
 		B1533C2B1E49A8BC00418B96 /* ErrorMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1533C2A1E49A8BC00418B96 /* ErrorMessageView.swift */; };
+		B15732BB1E4DA11500685A46 /* UniversalTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15732BA1E4DA11500685A46 /* UniversalTextFieldView.swift */; };
+		B15732BD1E4DA11C00685A46 /* UniversalTextFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B15732BC1E4DA11C00685A46 /* UniversalTextFieldView.xib */; };
 		B1576BB41E4C97170067020B /* MainNavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1576BB31E4C97170067020B /* MainNavigationBarView.swift */; };
 		B1576BB61E4C97210067020B /* MainNavigationBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1576BB51E4C97210067020B /* MainNavigationBarView.xib */; };
 		B1576BBF1E4CAB020067020B /* OrganizationAddConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1576BB81E4CAB020067020B /* OrganizationAddConfigurator.swift */; };
@@ -127,6 +129,8 @@
 		81B9D6299E9EC8CC0B95DFC7 /* Pods-OmnieCommerceAdmin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OmnieCommerceAdmin.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OmnieCommerceAdmin/Pods-OmnieCommerceAdmin.debug.xcconfig"; sourceTree = "<group>"; };
 		B137231C1E44E7DB001AE102 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		B1533C2A1E49A8BC00418B96 /* ErrorMessageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorMessageView.swift; sourceTree = "<group>"; };
+		B15732BA1E4DA11500685A46 /* UniversalTextFieldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversalTextFieldView.swift; sourceTree = "<group>"; };
+		B15732BC1E4DA11C00685A46 /* UniversalTextFieldView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UniversalTextFieldView.xib; sourceTree = "<group>"; };
 		B1576BB31E4C97170067020B /* MainNavigationBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNavigationBarView.swift; sourceTree = "<group>"; };
 		B1576BB51E4C97210067020B /* MainNavigationBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainNavigationBarView.xib; sourceTree = "<group>"; };
 		B1576BB81E4CAB020067020B /* OrganizationAddConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationAddConfigurator.swift; sourceTree = "<group>"; };
@@ -505,6 +509,8 @@
 				B1576BB31E4C97170067020B /* MainNavigationBarView.swift */,
 				B1576BB51E4C97210067020B /* MainNavigationBarView.xib */,
 				B1DB436C1E48D2D400D3DE77 /* PasswordStrengthLevelView.swift */,
+				B15732BA1E4DA11500685A46 /* UniversalTextFieldView.swift */,
+				B15732BC1E4DA11C00685A46 /* UniversalTextFieldView.xib */,
 			);
 			path = UIViews;
 			sourceTree = "<group>";
@@ -664,6 +670,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B1FBB8C41E43C75600C02BC3 /* helveticaneuecyr-thin.otf in Resources */,
+				B15732BD1E4DA11C00685A46 /* UniversalTextFieldView.xib in Resources */,
 				B1FBB8CE1E43C75600C02BC3 /* UBUNTU-M.TTF in Resources */,
 				B1FBB8CB1E43C75600C02BC3 /* UBUNTU-I.TTF in Resources */,
 				B1EADCF51E437534006341D2 /* Localizable.strings in Resources */,
@@ -781,6 +788,7 @@
 				B15BBB391E4B4F2700287505 /* RepetitionPasswordShowInteractor.swift in Sources */,
 				B1BD7B271E464CD700D8FA0A /* SignInContainerShowInteractor.swift in Sources */,
 				B1C320D01E44A43A00D84BC3 /* SignInShowViewController.swift in Sources */,
+				B15732BB1E4DA11500685A46 /* UniversalTextFieldView.swift in Sources */,
 				B1576BC11E4CAB020067020B /* OrganizationAddModels.swift in Sources */,
 				B1C320D11E44A43A00D84BC3 /* SignInShowWorker.swift in Sources */,
 				B1FBB89D1E43C57000C02BC3 /* String+Ext.swift in Sources */,
