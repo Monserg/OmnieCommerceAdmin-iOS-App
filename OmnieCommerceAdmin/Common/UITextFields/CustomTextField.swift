@@ -14,6 +14,7 @@ enum FieldStyle: String {
     case Code           =   "Code"
     case Email          =   "Email"
     case Phone          =   "Phone"
+    case Address        =   "Address"
     case Password       =   "Password"
     case PhoneEmail     =   "PhoneEmail"
 }
@@ -29,11 +30,14 @@ enum PasswordStrengthLevel {
     // MARK: - Properties
     var attributedPlaceholderString: NSAttributedString!
     private var validator = NJOPasswordValidator.standardValidator
+    var fieldDesign: FieldStyle?
 
     @IBInspectable var fieldStyle: String? {
         set {
-            if let styleName = newValue, let fieldStyle = FieldStyle(rawValue: styleName) {
-                setupWithStyle(fieldStyle)
+            if let styleName = newValue {
+                self.fieldDesign = FieldStyle(rawValue: styleName)
+                
+                setupWithStyle()
             }
         }
         
@@ -50,7 +54,11 @@ enum PasswordStrengthLevel {
             if (subview.isKind(of: UIButton.self)) {
                 let button = subview as! UIButton
                 button.setImage(button.image(for: .normal)?.withRenderingMode(.alwaysTemplate), for: .normal)
-                button.tintColor = UIColor.init(hexString: (Config.Constants.isAppThemesDark) ? "#5e6969" : "#9ec9c6", withAlpha: 1)
+                button.tintColor = UIColor.init(hexString: (Config.Constants.isAppThemesDark) ? "#5e6969" : (Config.Constants.isUserGuest) ? "#9ec9c6" : "#a6a6a6", withAlpha: 1)
+                
+                if (fieldDesign == .Address) {
+                    button.frame = CGRect.init(origin: CGPoint.init(x: button.frame.origin.x - 22, y: button.frame.origin.y), size: button.frame.size)
+                }
             }
         }
     }
@@ -58,7 +66,7 @@ enum PasswordStrengthLevel {
     
     // MARK: - Custom Functions
     // tag = 99: self is last with Return keyboard button
-    func setupWithStyle(_ fieldStyle: FieldStyle) {
+    private func setupWithStyle() {
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.firstLineHeadIndent  =   0
         
@@ -79,7 +87,7 @@ enum PasswordStrengthLevel {
         attributedPlaceholder = NSAttributedString(string: (placeholder?.localized())!, attributes: [NSFontAttributeName: UIFont.ubuntuLightItalic12, NSForegroundColorAttributeName: (Config.Constants.isAppThemesDark) ? (UIColor(hexString: "#5e6969", withAlpha: 1.0))! : (UIColor(hexString: (Config.Constants.isUserGuest) ? "#9ec9c6" : "#a6a6a6", withAlpha: 1.0))!, NSKernAttributeName: 0.0, NSParagraphStyleAttributeName: paragraphStyle])
 
         // Set differences
-        switch fieldStyle {
+        switch self.fieldDesign! {
         case .Email, .PhoneEmail:
             autocapitalizationType          =   .none
             keyboardType                    =   .emailAddress
@@ -92,7 +100,7 @@ enum PasswordStrengthLevel {
             autocapitalizationType          =   .none
             keyboardType                    =   .numbersAndPunctuation
             
-        // Name
+        // Name, Address
         default:
             break
         }

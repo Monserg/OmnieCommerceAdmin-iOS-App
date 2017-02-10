@@ -123,7 +123,7 @@ extension EnterCodeShowViewController {
             return true
         }
         
-        guard Int(string) != nil else {
+        guard Int(string) != nil || ((textField.text?.isEmpty)! && string == "+") else {
             return false
         }
         
