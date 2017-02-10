@@ -54,11 +54,7 @@ enum PasswordStrengthLevel {
             if (subview.isKind(of: UIButton.self)) {
                 let button = subview as! UIButton
                 button.setImage(button.image(for: .normal)?.withRenderingMode(.alwaysTemplate), for: .normal)
-                button.tintColor = UIColor.init(hexString: (Config.Constants.isAppThemesDark) ? "#5e6969" : (Config.Constants.isUserGuest) ? "#9ec9c6" : "#a6a6a6", withAlpha: 1)
-                
-                if (fieldDesign == .Address) {
-                    button.frame = CGRect.init(origin: CGPoint.init(x: button.frame.origin.x - 22, y: button.frame.origin.y), size: button.frame.size)
-                }
+                button.tintColor = UIColor.init(hexString: (Config.Constants.isAppThemesDark) ? "#5e6969" : (Config.Constants.isUserGuest) ? "#9ec9c6" : "#a6a6a6", withAlpha: 1)                
             }
         }
     }

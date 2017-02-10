@@ -89,6 +89,9 @@ class OrganizationAddViewController: BaseViewController {
     @IBAction func handlerAvatarButtonTap(_ sender: UIButton) {
     }
     
+    @IBAction func handlerLocationButtonTap(_ sender: CustomButton) {
+    }
+    
     @IBAction func handlerRegisterButtonTap(_ sender: CustomButton) {
     }
     
