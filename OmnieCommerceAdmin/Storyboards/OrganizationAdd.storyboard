@@ -78,39 +78,144 @@
                                                                                     <constraint firstItem="i7v-Lf-K6j" firstAttribute="centerY" secondItem="YAp-Ep-55a" secondAttribute="centerY" id="GXk-s1-zaS"/>
                                                                                 </constraints>
                                                                             </view>
-                                                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h1m-Bo-wVb" userLabel="Name View">
+                                                                            <view clipsSubviews="YES" tag="99" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h1m-Bo-wVb" userLabel="Organization Name View" customClass="CustomView" customModule="OmnieCommerceAdmin" customModuleProvider="target">
                                                                                 <rect key="frame" x="0.0" y="98" width="222" height="37"/>
-                                                                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                                <subviews>
+                                                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Organization Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7VR-Da-7qF" userLabel="Organization Name Text Field" customClass="CustomTextField" customModule="OmnieCommerceAdmin" customModuleProvider="target">
+                                                                                        <rect key="frame" x="8" y="18" width="206" height="19"/>
+                                                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                                                        <nil key="textColor"/>
+                                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                                        <textInputTraits key="textInputTraits"/>
+                                                                                        <userDefinedRuntimeAttributes>
+                                                                                            <userDefinedRuntimeAttribute type="string" keyPath="fieldStyle" value="Name"/>
+                                                                                        </userDefinedRuntimeAttributes>
+                                                                                    </textField>
+                                                                                </subviews>
+                                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="trailing" secondItem="7VR-Da-7qF" secondAttribute="trailing" constant="8" id="0LK-ay-g7j"/>
+                                                                                    <constraint firstItem="7VR-Da-7qF" firstAttribute="centerY" secondItem="h1m-Bo-wVb" secondAttribute="centerY" multiplier="1.5" id="9zv-S5-Iaz"/>
+                                                                                    <constraint firstItem="7VR-Da-7qF" firstAttribute="leading" secondItem="h1m-Bo-wVb" secondAttribute="leading" constant="8" id="MWa-YV-mMO"/>
+                                                                                </constraints>
                                                                                 <userDefinedRuntimeAttributes>
-                                                                                    <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="Name"/>
-                                                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholderText" value="Organization Name"/>
+                                                                                    <userDefinedRuntimeAttribute type="string" keyPath="viewDesign" value="SingleBottomVeryLightGrayLine"/>
                                                                                 </userDefinedRuntimeAttributes>
                                                                             </view>
-                                                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UkU-Vg-xrb" userLabel="Email Error View">
+                                                                            <view clipsSubviews="YES" tag="99" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UkU-Vg-xrb" userLabel="Email Error View" customClass="ErrorMessageView" customModule="OmnieCommerceAdmin" customModuleProvider="target">
                                                                                 <rect key="frame" x="0.0" y="172" width="222" height="14"/>
+                                                                                <subviews>
+                                                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wrong Email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="89Z-c9-Kkt" customClass="CustomLabel" customModule="OmnieCommerceAdmin" customModuleProvider="target">
+                                                                                        <rect key="frame" x="8" y="0.0" width="206" height="13.5"/>
+                                                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                                        <nil key="textColor"/>
+                                                                                        <nil key="highlightedColor"/>
+                                                                                        <userDefinedRuntimeAttributes>
+                                                                                            <userDefinedRuntimeAttribute type="string" keyPath="labelStyle" value="UbuntuLightItalic12VerySoftRed"/>
+                                                                                        </userDefinedRuntimeAttributes>
+                                                                                    </label>
+                                                                                </subviews>
                                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                                 <constraints>
+                                                                                    <constraint firstAttribute="trailing" secondItem="89Z-c9-Kkt" secondAttribute="trailing" constant="8" id="BQi-Vz-Wrb"/>
+                                                                                    <constraint firstItem="89Z-c9-Kkt" firstAttribute="top" secondItem="UkU-Vg-xrb" secondAttribute="top" id="Q9x-kn-XuT"/>
+                                                                                    <constraint firstItem="89Z-c9-Kkt" firstAttribute="leading" secondItem="UkU-Vg-xrb" secondAttribute="leading" constant="8" id="RQl-QU-Kle"/>
                                                                                     <constraint firstAttribute="height" constant="14" id="Ucq-7G-sxK"/>
                                                                                 </constraints>
                                                                             </view>
-                                                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h5v-pf-qR5" userLabel="Email View">
+                                                                            <view clipsSubviews="YES" tag="99" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h5v-pf-qR5" userLabel="Email View" customClass="CustomView" customModule="OmnieCommerceAdmin" customModuleProvider="target">
                                                                                 <rect key="frame" x="0.0" y="135" width="222" height="37"/>
-                                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                                            </view>
-                                                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="amq-sV-S70" userLabel="Phone Error View">
-                                                                                <rect key="frame" x="0.0" y="223" width="222" height="14"/>
+                                                                                <subviews>
+                                                                                    <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pIW-yu-Tbm" userLabel="Email Text Field" customClass="CustomTextField" customModule="OmnieCommerceAdmin" customModuleProvider="target">
+                                                                                        <rect key="frame" x="8" y="18" width="206" height="19"/>
+                                                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                                                        <nil key="textColor"/>
+                                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                                        <textInputTraits key="textInputTraits"/>
+                                                                                        <userDefinedRuntimeAttributes>
+                                                                                            <userDefinedRuntimeAttribute type="string" keyPath="fieldStyle" value="Email"/>
+                                                                                        </userDefinedRuntimeAttributes>
+                                                                                    </textField>
+                                                                                </subviews>
                                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                                 <constraints>
+                                                                                    <constraint firstAttribute="trailing" secondItem="pIW-yu-Tbm" secondAttribute="trailing" constant="8" id="62a-uu-cJC"/>
+                                                                                    <constraint firstItem="pIW-yu-Tbm" firstAttribute="leading" secondItem="h5v-pf-qR5" secondAttribute="leading" constant="8" id="rRd-WS-CJD"/>
+                                                                                    <constraint firstItem="pIW-yu-Tbm" firstAttribute="centerY" secondItem="h5v-pf-qR5" secondAttribute="centerY" multiplier="1.5" id="vk5-Fy-KFj"/>
+                                                                                </constraints>
+                                                                                <userDefinedRuntimeAttributes>
+                                                                                    <userDefinedRuntimeAttribute type="string" keyPath="viewDesign" value="SingleBottomVeryLightGrayLine"/>
+                                                                                </userDefinedRuntimeAttributes>
+                                                                            </view>
+                                                                            <view clipsSubviews="YES" tag="99" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="amq-sV-S70" userLabel="Phone Error View" customClass="ErrorMessageView" customModule="OmnieCommerceAdmin" customModuleProvider="target">
+                                                                                <rect key="frame" x="0.0" y="223" width="222" height="14"/>
+                                                                                <subviews>
+                                                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wrong Number" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bn9-Ts-gcj" customClass="CustomLabel" customModule="OmnieCommerceAdmin" customModuleProvider="target">
+                                                                                        <rect key="frame" x="8" y="0.0" width="206" height="13.5"/>
+                                                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                                        <nil key="textColor"/>
+                                                                                        <nil key="highlightedColor"/>
+                                                                                        <userDefinedRuntimeAttributes>
+                                                                                            <userDefinedRuntimeAttribute type="string" keyPath="labelStyle" value="UbuntuLightItalic12VerySoftRed"/>
+                                                                                        </userDefinedRuntimeAttributes>
+                                                                                    </label>
+                                                                                </subviews>
+                                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                                <constraints>
+                                                                                    <constraint firstItem="bn9-Ts-gcj" firstAttribute="top" secondItem="amq-sV-S70" secondAttribute="top" id="DLo-uW-F6O"/>
+                                                                                    <constraint firstAttribute="trailing" secondItem="bn9-Ts-gcj" secondAttribute="trailing" constant="8" id="QUA-qK-enf"/>
+                                                                                    <constraint firstItem="bn9-Ts-gcj" firstAttribute="leading" secondItem="amq-sV-S70" secondAttribute="leading" constant="8" id="kFl-rd-1sG"/>
                                                                                     <constraint firstAttribute="height" constant="14" id="teU-Q0-Ty4"/>
                                                                                 </constraints>
                                                                             </view>
-                                                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yig-CM-hyu" userLabel="Phone View">
+                                                                            <view clipsSubviews="YES" tag="99" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yig-CM-hyu" userLabel="Phone View" customClass="CustomView" customModule="OmnieCommerceAdmin" customModuleProvider="target">
                                                                                 <rect key="frame" x="0.0" y="186" width="222" height="37"/>
+                                                                                <subviews>
+                                                                                    <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BE1-ix-8sj" userLabel="Phone Text Field" customClass="CustomTextField" customModule="OmnieCommerceAdmin" customModuleProvider="target">
+                                                                                        <rect key="frame" x="8" y="18" width="206" height="19"/>
+                                                                                        <nil key="textColor"/>
+                                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                                        <textInputTraits key="textInputTraits"/>
+                                                                                        <userDefinedRuntimeAttributes>
+                                                                                            <userDefinedRuntimeAttribute type="string" keyPath="fieldStyle" value="Phone"/>
+                                                                                        </userDefinedRuntimeAttributes>
+                                                                                    </textField>
+                                                                                </subviews>
                                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                                <constraints>
+                                                                                    <constraint firstItem="BE1-ix-8sj" firstAttribute="centerY" secondItem="Yig-CM-hyu" secondAttribute="centerY" multiplier="1.5" id="3vh-Sc-UQW"/>
+                                                                                    <constraint firstItem="BE1-ix-8sj" firstAttribute="leading" secondItem="Yig-CM-hyu" secondAttribute="leading" constant="8" id="b6V-SY-GmV"/>
+                                                                                    <constraint firstAttribute="trailing" secondItem="BE1-ix-8sj" secondAttribute="trailing" constant="8" id="gPd-jV-DIp"/>
+                                                                                </constraints>
+                                                                                <userDefinedRuntimeAttributes>
+                                                                                    <userDefinedRuntimeAttribute type="string" keyPath="viewDesign" value="SingleBottomVeryLightGrayLine"/>
+                                                                                </userDefinedRuntimeAttributes>
                                                                             </view>
-                                                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="utl-x0-jjN" userLabel="Address View">
-                                                                                <rect key="frame" x="0.0" y="237" width="222" height="667"/>
+                                                                            <view clipsSubviews="YES" tag="99" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="utl-x0-jjN" userLabel="Address View" customClass="CustomView" customModule="OmnieCommerceAdmin" customModuleProvider="target">
+                                                                                <rect key="frame" x="0.0" y="237" width="222" height="37"/>
+                                                                                <subviews>
+                                                                                    <textField opaque="NO" clipsSubviews="YES" tag="99" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Address" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9kd-K1-j1H" userLabel="Address Text Field" customClass="CustomTextField" customModule="OmnieCommerceAdmin" customModuleProvider="target">
+                                                                                        <rect key="frame" x="8" y="18.5" width="206" height="19"/>
+                                                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                                                        <nil key="textColor"/>
+                                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                                        <textInputTraits key="textInputTraits"/>
+                                                                                        <userDefinedRuntimeAttributes>
+                                                                                            <userDefinedRuntimeAttribute type="string" keyPath="fieldStyle" value="Name"/>
+                                                                                        </userDefinedRuntimeAttributes>
+                                                                                    </textField>
+                                                                                </subviews>
                                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                                <constraints>
+                                                                                    <constraint firstItem="9kd-K1-j1H" firstAttribute="centerY" secondItem="utl-x0-jjN" secondAttribute="centerY" multiplier="1.5" id="LR2-zi-ve7"/>
+                                                                                    <constraint firstItem="9kd-K1-j1H" firstAttribute="leading" secondItem="utl-x0-jjN" secondAttribute="leading" constant="8" id="iPA-a6-VUi"/>
+                                                                                    <constraint firstAttribute="trailing" secondItem="9kd-K1-j1H" secondAttribute="trailing" constant="8" id="lAx-Ja-fmv"/>
+                                                                                </constraints>
+                                                                                <userDefinedRuntimeAttributes>
+                                                                                    <userDefinedRuntimeAttribute type="string" keyPath="viewDesign" value="SingleBottomVeryLightGrayLine"/>
+                                                                                </userDefinedRuntimeAttributes>
                                                                             </view>
                                                                         </subviews>
                                                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -245,7 +350,7 @@
                             <constraint firstItem="YWU-k0-nrw" firstAttribute="width" secondItem="zUp-SK-Z2O" secondAttribute="width" multiplier="460:667" id="4tL-3E-tZB"/>
                             <constraint firstItem="i7v-Lf-K6j" firstAttribute="height" secondItem="zUp-SK-Z2O" secondAttribute="height" multiplier="70:667" id="6MX-3T-fb3"/>
                             <constraint firstItem="Pa6-h7-sJM" firstAttribute="height" secondItem="zUp-SK-Z2O" secondAttribute="height" multiplier="603:667" id="6ua-1n-BzW"/>
-                            <constraint firstItem="utl-x0-jjN" firstAttribute="height" secondItem="zUp-SK-Z2O" secondAttribute="height" id="7ad-jk-oyB"/>
+                            <constraint firstItem="utl-x0-jjN" firstAttribute="height" secondItem="zUp-SK-Z2O" secondAttribute="height" multiplier="37:667" id="7ad-jk-oyB"/>
                             <constraint firstItem="zt6-5v-jFK" firstAttribute="leading" secondItem="zUp-SK-Z2O" secondAttribute="leading" id="7eP-m5-aRg"/>
                             <constraint firstItem="1lR-3m-qHE" firstAttribute="height" secondItem="zUp-SK-Z2O" secondAttribute="height" multiplier="137:667" id="Cv2-DE-A6n"/>
                             <constraint firstItem="h1m-Bo-wVb" firstAttribute="height" secondItem="zUp-SK-Z2O" secondAttribute="height" multiplier="37:375" id="E4w-CW-YOa"/>
@@ -322,7 +427,17 @@
                     </view>
                     <connections>
                         <outlet property="customNavigationBarView" destination="aZw-0D-peo" id="3tV-xQ-2EU"/>
+                        <outlet property="emailErrorErrorMessageViewTopConstraint" destination="r3r-Y8-GE6" id="Ncd-Yj-UsE"/>
+                        <outlet property="emailErrorMessageView" destination="UkU-Vg-xrb" id="2BD-56-Lra"/>
+                        <outlet property="emailErrorMessageViewHeightConstraint" destination="Ucq-7G-sxK" id="46b-z8-s1z"/>
+                        <outlet property="phoneErrorErrorMessageViewTopConstraint" destination="ef9-Fn-HuK" id="YR1-KC-Sqk"/>
+                        <outlet property="phoneErrorMessageView" destination="amq-sV-S70" id="5dw-xm-hYj"/>
+                        <outlet property="phoneErrorMessageViewHeightConstraint" destination="teU-Q0-Ty4" id="1T1-lf-Yke"/>
                         <outlet property="scrollView" destination="zt6-5v-jFK" id="YtR-MU-qtT"/>
+                        <outletCollection property="textFieldsCollection" destination="7VR-Da-7qF" collectionClass="NSMutableArray" id="6mT-UF-jNc"/>
+                        <outletCollection property="textFieldsCollection" destination="pIW-yu-Tbm" collectionClass="NSMutableArray" id="O3d-pr-AkF"/>
+                        <outletCollection property="textFieldsCollection" destination="BE1-ix-8sj" collectionClass="NSMutableArray" id="I6F-mE-Neg"/>
+                        <outletCollection property="textFieldsCollection" destination="9kd-K1-j1H" collectionClass="NSMutableArray" id="85n-Ck-ABY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PQI-GO-1Ur" userLabel="First Responder" sceneMemberID="firstResponder"/>

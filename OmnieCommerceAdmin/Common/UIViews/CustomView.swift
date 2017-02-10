@@ -20,7 +20,11 @@ enum ViewDesign: String {
         set {
             if let designName = newValue, let viewDesign = ViewDesign(rawValue: designName) {
                 style = viewDesign
-                applyBackgroundTheme()
+                
+                if (tag != 99) {
+                    applyBackgroundTheme()
+                }
+                
                 setNeedsDisplay()
             }
         }

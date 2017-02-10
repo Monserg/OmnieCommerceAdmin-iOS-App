@@ -29,8 +29,16 @@ class OrganizationAddViewController: BaseViewController {
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var customNavigationBarView: MainNavigationBarView!
+    @IBOutlet var textFieldsCollection: [CustomTextField]!
+    @IBOutlet weak var emailErrorMessageView: ErrorMessageView!
+    @IBOutlet weak var phoneErrorMessageView: ErrorMessageView!
 
-
+    
+    
+    @IBOutlet weak var emailErrorMessageViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var emailErrorErrorMessageViewTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var phoneErrorMessageViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var phoneErrorErrorMessageViewTopConstraint: NSLayoutConstraint!
     
     
     // MARK: - Class initialization
@@ -58,6 +66,18 @@ class OrganizationAddViewController: BaseViewController {
         // Set left bar button image
         customNavigationBarView.leftButton.setImage(UIImage.init(named: "icon-navbar-back-normal"), for: .normal)
         
+        // UITextFields
+        textFieldsArray = textFieldsCollection
+        
+        // Apply keyboard handler
+        scrollViewBase = scrollView
+
+        // Hide email & phone error message views
+        emailErrorMessageViewHeightConstraint.constant = Config.Constants.errorMessageViewHeight
+        emailErrorErrorMessageViewTopConstraint.constant = -Config.Constants.errorMessageViewHeight
+        phoneErrorMessageViewHeightConstraint.constant = Config.Constants.errorMessageViewHeight
+        phoneErrorErrorMessageViewTopConstraint.constant = -Config.Constants.errorMessageViewHeight
+
         // Handler left bar button
         customNavigationBarView.handlerNavBarLeftButtonCompletion = { _ in
             _ = self.navigationController?.popViewController(animated: true)
