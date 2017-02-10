@@ -72,11 +72,11 @@ enum PasswordStrengthLevel {
         isSecureTextEntry                   =   false
         clearButtonMode                     =   .whileEditing
         font                                =   UIFont.ubuntuLight12
-        textColor                           =   (Config.Constants.isAppThemesDark) ? (UIColor(hexString: "#dedede", withAlpha: 1.0)) : (UIColor(hexString: "#dedede", withAlpha: 1.0))
-        tintColor                           =   (Config.Constants.isAppThemesDark) ? (UIColor(hexString: "#dedede", withAlpha: 1.0)) : (UIColor(hexString: "#dedede", withAlpha: 1.0))
+        textColor                           =   (Config.Constants.isAppThemesDark) ? (UIColor(hexString: "#dedede", withAlpha: 1.0)) : (UIColor(hexString: (Config.Constants.isUserGuest) ? "#dedede" : "#333333", withAlpha: 1.0))
+        tintColor                           =   (Config.Constants.isAppThemesDark) ? (UIColor(hexString: "#dedede", withAlpha: 1.0)) : (UIColor(hexString: (Config.Constants.isUserGuest) ? "#dedede" : "#333333", withAlpha: 1.0))
 
         // Placeholder design
-        attributedPlaceholder = NSAttributedString(string: (placeholder?.localized())!, attributes: [NSFontAttributeName: UIFont.ubuntuLightItalic12, NSForegroundColorAttributeName: (Config.Constants.isAppThemesDark) ? (UIColor(hexString: "#5e6969", withAlpha: 1.0))! : (UIColor(hexString: "#9ec9c6", withAlpha: 1.0))!, NSKernAttributeName: 0.0, NSParagraphStyleAttributeName: paragraphStyle])
+        attributedPlaceholder = NSAttributedString(string: (placeholder?.localized())!, attributes: [NSFontAttributeName: UIFont.ubuntuLightItalic12, NSForegroundColorAttributeName: (Config.Constants.isAppThemesDark) ? (UIColor(hexString: "#5e6969", withAlpha: 1.0))! : (UIColor(hexString: (Config.Constants.isUserGuest) ? "#9ec9c6" : "#a6a6a6", withAlpha: 1.0))!, NSKernAttributeName: 0.0, NSParagraphStyleAttributeName: paragraphStyle])
 
         // Set differences
         switch fieldStyle {

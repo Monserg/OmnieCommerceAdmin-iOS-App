@@ -82,7 +82,7 @@
                                                                                 <rect key="frame" x="0.0" y="98" width="222" height="37"/>
                                                                                 <subviews>
                                                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Organization Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7VR-Da-7qF" userLabel="Organization Name Text Field" customClass="CustomTextField" customModule="OmnieCommerceAdmin" customModuleProvider="target">
-                                                                                        <rect key="frame" x="8" y="18" width="206" height="19"/>
+                                                                                        <rect key="frame" x="8" y="18" width="214" height="19"/>
                                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                                         <nil key="textColor"/>
                                                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -94,7 +94,7 @@
                                                                                 </subviews>
                                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                                 <constraints>
-                                                                                    <constraint firstAttribute="trailing" secondItem="7VR-Da-7qF" secondAttribute="trailing" constant="8" id="0LK-ay-g7j"/>
+                                                                                    <constraint firstAttribute="trailing" secondItem="7VR-Da-7qF" secondAttribute="trailing" id="0LK-ay-g7j"/>
                                                                                     <constraint firstItem="7VR-Da-7qF" firstAttribute="centerY" secondItem="h1m-Bo-wVb" secondAttribute="centerY" multiplier="1.5" id="9zv-S5-Iaz"/>
                                                                                     <constraint firstItem="7VR-Da-7qF" firstAttribute="leading" secondItem="h1m-Bo-wVb" secondAttribute="leading" constant="8" id="MWa-YV-mMO"/>
                                                                                 </constraints>
@@ -128,7 +128,7 @@
                                                                                 <rect key="frame" x="0.0" y="135" width="222" height="37"/>
                                                                                 <subviews>
                                                                                     <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pIW-yu-Tbm" userLabel="Email Text Field" customClass="CustomTextField" customModule="OmnieCommerceAdmin" customModuleProvider="target">
-                                                                                        <rect key="frame" x="8" y="18" width="206" height="19"/>
+                                                                                        <rect key="frame" x="8" y="18" width="214" height="19"/>
                                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                                         <nil key="textColor"/>
                                                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -140,7 +140,7 @@
                                                                                 </subviews>
                                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                                 <constraints>
-                                                                                    <constraint firstAttribute="trailing" secondItem="pIW-yu-Tbm" secondAttribute="trailing" constant="8" id="62a-uu-cJC"/>
+                                                                                    <constraint firstAttribute="trailing" secondItem="pIW-yu-Tbm" secondAttribute="trailing" id="62a-uu-cJC"/>
                                                                                     <constraint firstItem="pIW-yu-Tbm" firstAttribute="leading" secondItem="h5v-pf-qR5" secondAttribute="leading" constant="8" id="rRd-WS-CJD"/>
                                                                                     <constraint firstItem="pIW-yu-Tbm" firstAttribute="centerY" secondItem="h5v-pf-qR5" secondAttribute="centerY" multiplier="1.5" id="vk5-Fy-KFj"/>
                                                                                 </constraints>
@@ -174,7 +174,7 @@
                                                                                 <rect key="frame" x="0.0" y="186" width="222" height="37"/>
                                                                                 <subviews>
                                                                                     <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BE1-ix-8sj" userLabel="Phone Text Field" customClass="CustomTextField" customModule="OmnieCommerceAdmin" customModuleProvider="target">
-                                                                                        <rect key="frame" x="8" y="18" width="206" height="19"/>
+                                                                                        <rect key="frame" x="8" y="18" width="214" height="19"/>
                                                                                         <nil key="textColor"/>
                                                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                                         <textInputTraits key="textInputTraits"/>
@@ -187,7 +187,7 @@
                                                                                 <constraints>
                                                                                     <constraint firstItem="BE1-ix-8sj" firstAttribute="centerY" secondItem="Yig-CM-hyu" secondAttribute="centerY" multiplier="1.5" id="3vh-Sc-UQW"/>
                                                                                     <constraint firstItem="BE1-ix-8sj" firstAttribute="leading" secondItem="Yig-CM-hyu" secondAttribute="leading" constant="8" id="b6V-SY-GmV"/>
-                                                                                    <constraint firstAttribute="trailing" secondItem="BE1-ix-8sj" secondAttribute="trailing" constant="8" id="gPd-jV-DIp"/>
+                                                                                    <constraint firstAttribute="trailing" secondItem="BE1-ix-8sj" secondAttribute="trailing" id="gPd-jV-DIp"/>
                                                                                 </constraints>
                                                                                 <userDefinedRuntimeAttributes>
                                                                                     <userDefinedRuntimeAttribute type="string" keyPath="viewDesign" value="SingleBottomVeryLightGrayLine"/>
@@ -197,7 +197,7 @@
                                                                                 <rect key="frame" x="0.0" y="237" width="222" height="37"/>
                                                                                 <subviews>
                                                                                     <textField opaque="NO" clipsSubviews="YES" tag="99" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Address" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9kd-K1-j1H" userLabel="Address Text Field" customClass="CustomTextField" customModule="OmnieCommerceAdmin" customModuleProvider="target">
-                                                                                        <rect key="frame" x="8" y="18.5" width="206" height="19"/>
+                                                                                        <rect key="frame" x="8" y="18.5" width="214" height="19"/>
                                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                                         <nil key="textColor"/>
                                                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -211,7 +211,7 @@
                                                                                 <constraints>
                                                                                     <constraint firstItem="9kd-K1-j1H" firstAttribute="centerY" secondItem="utl-x0-jjN" secondAttribute="centerY" multiplier="1.5" id="LR2-zi-ve7"/>
                                                                                     <constraint firstItem="9kd-K1-j1H" firstAttribute="leading" secondItem="utl-x0-jjN" secondAttribute="leading" constant="8" id="iPA-a6-VUi"/>
-                                                                                    <constraint firstAttribute="trailing" secondItem="9kd-K1-j1H" secondAttribute="trailing" constant="8" id="lAx-Ja-fmv"/>
+                                                                                    <constraint firstAttribute="trailing" secondItem="9kd-K1-j1H" secondAttribute="trailing" id="lAx-Ja-fmv"/>
                                                                                 </constraints>
                                                                                 <userDefinedRuntimeAttributes>
                                                                                     <userDefinedRuntimeAttribute type="string" keyPath="viewDesign" value="SingleBottomVeryLightGrayLine"/>
