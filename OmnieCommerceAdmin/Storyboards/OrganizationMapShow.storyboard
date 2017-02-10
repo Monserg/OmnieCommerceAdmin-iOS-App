@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vFE-8k-W19">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Organization Map Show View Controller-->
+        <scene sceneID="Ucx-nG-YRo">
+            <objects>
+                <viewController storyboardIdentifier="OrganizationMapShowVC" id="vFE-8k-W19" customClass="OrganizationMapShowViewController" customModule="OmnieCommerceAdmin" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NeO-L3-4Hi"/>
+                        <viewControllerLayoutGuide type="bottom" id="vgo-gm-LMu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="c5K-PP-cae">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SPd-4p-7aC" customClass="MainNavigationBarView" customModule="OmnieCommerceAdmin" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="yc2-hu-BGM">
+                                        <variation key="heightClass=compact-widthClass=compact" constant="32"/>
+                                        <variation key="heightClass=compact-widthClass=regular" constant="44"/>
+                                    </constraint>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="titleText" value="Address organization"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Xlm-LZ-bNb">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="SPd-4p-7aC" firstAttribute="leading" secondItem="c5K-PP-cae" secondAttribute="leading" id="G7I-qC-way"/>
+                            <constraint firstItem="SPd-4p-7aC" firstAttribute="top" secondItem="c5K-PP-cae" secondAttribute="top" id="MKK-1P-TZT"/>
+                            <constraint firstAttribute="trailing" secondItem="Xlm-LZ-bNb" secondAttribute="trailing" id="fES-Qb-E5p"/>
+                            <constraint firstAttribute="bottom" secondItem="Xlm-LZ-bNb" secondAttribute="bottom" id="fmF-sl-U9w"/>
+                            <constraint firstAttribute="trailing" secondItem="SPd-4p-7aC" secondAttribute="trailing" id="gmN-do-Z65"/>
+                            <constraint firstItem="Xlm-LZ-bNb" firstAttribute="leading" secondItem="c5K-PP-cae" secondAttribute="leading" id="lUG-nZ-hKs"/>
+                            <constraint firstItem="Xlm-LZ-bNb" firstAttribute="top" secondItem="SPd-4p-7aC" secondAttribute="bottom" id="lUz-ik-enF"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="customNavigationBarView" destination="SPd-4p-7aC" id="4jv-rp-RCK"/>
+                        <outlet property="mapView" destination="Xlm-LZ-bNb" id="yWf-Mc-fSM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g5L-iT-tCA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="122" y="152"/>
+        </scene>
+    </scenes>
+</document>

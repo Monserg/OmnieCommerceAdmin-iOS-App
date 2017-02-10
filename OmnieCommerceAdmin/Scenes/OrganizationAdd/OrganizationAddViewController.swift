@@ -90,6 +90,7 @@ class OrganizationAddViewController: BaseViewController {
     }
     
     @IBAction func handlerLocationButtonTap(_ sender: CustomButton) {
+        router.navigateToMap()
     }
     
     @IBAction func handlerRegisterButtonTap(_ sender: CustomButton) {

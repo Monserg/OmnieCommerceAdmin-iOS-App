@@ -18,6 +18,8 @@
 		B15732CA1E4DD78100685A46 /* OrganizationMapShowRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15732C31E4DD78100685A46 /* OrganizationMapShowRouter.swift */; };
 		B15732CB1E4DD78100685A46 /* OrganizationMapShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15732C41E4DD78100685A46 /* OrganizationMapShowViewController.swift */; };
 		B15732CC1E4DD78100685A46 /* OrganizationMapShowWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15732C51E4DD78100685A46 /* OrganizationMapShowWorker.swift */; };
+		B15732CE1E4DD7A100685A46 /* OrganizationMapShow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B15732CD1E4DD7A100685A46 /* OrganizationMapShow.storyboard */; };
+		B15732D01E4DD96D00685A46 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B15732CF1E4DD96D00685A46 /* MapKit.framework */; };
 		B1576BB41E4C97170067020B /* MainNavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1576BB31E4C97170067020B /* MainNavigationBarView.swift */; };
 		B1576BB61E4C97210067020B /* MainNavigationBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1576BB51E4C97210067020B /* MainNavigationBarView.xib */; };
 		B1576BBF1E4CAB020067020B /* OrganizationAddConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1576BB81E4CAB020067020B /* OrganizationAddConfigurator.swift */; };
@@ -145,6 +147,8 @@
 		B15732C31E4DD78100685A46 /* OrganizationMapShowRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationMapShowRouter.swift; sourceTree = "<group>"; };
 		B15732C41E4DD78100685A46 /* OrganizationMapShowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationMapShowViewController.swift; sourceTree = "<group>"; };
 		B15732C51E4DD78100685A46 /* OrganizationMapShowWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationMapShowWorker.swift; sourceTree = "<group>"; };
+		B15732CD1E4DD7A100685A46 /* OrganizationMapShow.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = OrganizationMapShow.storyboard; sourceTree = "<group>"; };
+		B15732CF1E4DD96D00685A46 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		B1576BB31E4C97170067020B /* MainNavigationBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNavigationBarView.swift; sourceTree = "<group>"; };
 		B1576BB51E4C97210067020B /* MainNavigationBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainNavigationBarView.xib; sourceTree = "<group>"; };
 		B1576BB81E4CAB020067020B /* OrganizationAddConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationAddConfigurator.swift; sourceTree = "<group>"; };
@@ -270,6 +274,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B15732D01E4DD96D00685A46 /* MapKit.framework in Frameworks */,
 				CEB9B377E3609B58B2AB0EAF /* Pods_OmnieCommerceAdmin.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -289,6 +294,7 @@
 		6C3DEC16B866523CFFCC2056 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B15732CF1E4DD96D00685A46 /* MapKit.framework */,
 				E1422BA451A52E370BFCE6B0 /* Pods_OmnieCommerceAdmin.framework */,
 			);
 			name = Frameworks;
@@ -474,6 +480,7 @@
 			children = (
 				B1EADCEB1E4374C2006341D2 /* Main.storyboard */,
 				B1576BC61E4CAB120067020B /* OrganizationAdd.storyboard */,
+				B15732CD1E4DD7A100685A46 /* OrganizationMapShow.storyboard */,
 				B1FBB8E01E43D29E00C02BC3 /* OrganizationsListShow.storyboard */,
 				B1C320C11E44A41700D84BC3 /* SignInShow.storyboard */,
 			);
@@ -670,6 +677,11 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 2DS2B364WY;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -709,6 +721,7 @@
 				B1576BB61E4C97210067020B /* MainNavigationBarView.xib in Resources */,
 				B1FBB8B91E43C75600C02BC3 /* helveticaneuecyr-blackitalic.otf in Resources */,
 				B1FBB8CA1E43C75600C02BC3 /* UBUNTU-C.TTF in Resources */,
+				B15732CE1E4DD7A100685A46 /* OrganizationMapShow.storyboard in Resources */,
 				B1FBB8CF1E43C75600C02BC3 /* UBUNTU-MI.TTF in Resources */,
 				B1FBB8BC1E43C75600C02BC3 /* helveticaneuecyr-heavy.otf in Resources */,
 				B1EADCEE1E4374C2006341D2 /* Main.storyboard in Resources */,

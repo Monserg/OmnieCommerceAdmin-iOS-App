@@ -24,9 +24,9 @@ class OrganizationAddRouter: OrganizationAddRouterInput {
     // MARK: - Custom Functions. Navigation
     func navigateToMap() {
          let storyboard = UIStoryboard(name: "OrganizationMapShow", bundle: nil)
-         let organizationMapShowVC = storyboard.instantiateViewController(withIdentifier: "OrganizationMapShowVC") as! SomeWhereViewController
+         let organizationMapShowVC = storyboard.instantiateViewController(withIdentifier: "OrganizationMapShowVC") as! OrganizationMapShowViewController
         
-        viewController.navigationController?.pushViewController(someWhereViewController, animated: true)
+        viewController.navigationController?.pushViewController(organizationMapShowVC, animated: true)
     }
     
     // Communication

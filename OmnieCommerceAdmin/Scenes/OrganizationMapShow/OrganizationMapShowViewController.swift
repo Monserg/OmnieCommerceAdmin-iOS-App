@@ -10,6 +10,7 @@
 //
 
 import UIKit
+import MapKit
 
 // MARK: - Input protocols for current ViewController component VIP-cicle
 protocol OrganizationMapShowViewControllerInput {
@@ -26,6 +27,8 @@ class OrganizationMapShowViewController: UIViewController {
     var interactor: OrganizationMapShowViewControllerOutput!
     var router: OrganizationMapShowRouter!
     
+    @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var customNavigationBarView: MainNavigationBarView!
 
     // MARK: - Class initialization
     override func awakeFromNib() {
@@ -45,9 +48,17 @@ class OrganizationMapShowViewController: UIViewController {
 
     // MARK: - Custom Functions
     func doSomethingOnLoad() {
-        // NOTE: Ask the Interactor to do some work
-        let requestModel = OrganizationMapShowModels.Something.RequestModel()
-        interactor.doSomething(requestModel: requestModel)
+//        // NOTE: Ask the Interactor to do some work
+//        let requestModel = OrganizationMapShowModels.Something.RequestModel()
+//        interactor.doSomething(requestModel: requestModel)
+        
+        // Set left bar button image
+        customNavigationBarView.leftButton.setImage(UIImage.init(named: "icon-navbar-back-normal"), for: .normal)
+        
+        // Handler left bar button
+        customNavigationBarView.handlerNavBarLeftButtonCompletion = { _ in
+            _ = self.navigationController?.popViewController(animated: true)
+        }
     }
 }
 
