@@ -139,7 +139,7 @@ class OrganizationMapShowViewController: BaseViewController {
     // MARK: - Gestures
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         pointTouchOnMapView = touches.first?.location(in: mapView)
-        annotation.coordinate = mapView.convert((pointTouchOnMapView)!, toCoordinateFrom: mapView)
+//        annotation.coordinate = mapView.convert((pointTouchOnMapView)!, toCoordinateFrom: mapView)
     }
 }
 
@@ -147,8 +147,8 @@ class OrganizationMapShowViewController: BaseViewController {
 // MARK: - ForgotPasswordShowViewControllerInput
 extension OrganizationMapShowViewController: OrganizationMapShowViewControllerInput {
     func didShowLocation(viewModel: OrganizationMapShowModels.Location.ViewModel) {
-        didShowLocationOnMapViewCenter(coordinate: viewModel.resultLocation?.coordinate)
         didAddAnnotation(placemark: viewModel.resultLocation?.placemark)
+        didShowLocationOnMapViewCenter(coordinate: viewModel.resultLocation?.coordinate)
     }
     
     func didDismissViewController(viewModel: OrganizationMapShowModels.Location.ViewModel) {
@@ -166,21 +166,18 @@ extension OrganizationMapShowViewController: MKMapViewDelegate {
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        let identifier = "MyPin"
-        var annotationView: MKPinAnnotationView? = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKPinAnnotationView
+        let identifier = "CustomPin"
+        var pinAnnotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
         
-        if annotationView == nil {
-            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
-            annotationView?.canShowCallout = true
+        if (pinAnnotationView != nil) {
+            pinAnnotationView?.annotation = annotation
+        } else {
+            pinAnnotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            pinAnnotationView?.image = UIImage(named: "icon-location-normal")
+            pinAnnotationView?.frame.size = CGSize.init(width: 50, height: 50)
         }
         
-        let leftIconView = UIImageView(frame: CGRect.init(x: 0, y: 0, width: 44, height: 33))
-        leftIconView.image = UIImage(named: "image-space")
-        annotationView?.leftCalloutAccessoryView = leftIconView
-        annotationView?.image = UIImage(named: "icon-pin-normal")
-        annotationView?.isDraggable = true
-        
-        return annotationView
+        return pinAnnotationView
     }
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
