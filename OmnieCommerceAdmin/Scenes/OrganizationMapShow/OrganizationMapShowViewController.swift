@@ -14,12 +14,14 @@ import MapKit
 
 // MARK: - Input protocols for current ViewController component VIP-cicle
 protocol OrganizationMapShowViewControllerInput {
-    func displaySomething(viewModel: OrganizationMapShowModels.Location.ViewModel)
+    func displaySomething(viewModel: OrganizationMapShowModels.Forward.ViewModel)
+    func didDismissViewController(viewModel: OrganizationMapShowModels.Common.ViewModel)
 }
 
 // MARK: - Output protocols for Interactor component VIP-cicle
 protocol OrganizationMapShowViewControllerOutput {
-    func didLoadCurrentLocation(requestModel: OrganizationMapShowModels.Location.RequestModel)
+    func didLoadUserLocation(requestModel: OrganizationMapShowModels.Forward.RequestModel)
+    func didStopUpdateLocation(requestModel: OrganizationMapShowModels.Common.RequestModel)
 }
 
 class OrganizationMapShowViewController: BaseViewController {
@@ -27,7 +29,7 @@ class OrganizationMapShowViewController: BaseViewController {
     var interactor: OrganizationMapShowViewControllerOutput!
     var router: OrganizationMapShowRouter!
     
-    private var locationManager: CLLocationManager?
+//    private var locationManager: CLLocationManager?
 
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var searchTextField: CustomTextField!
@@ -51,9 +53,8 @@ class OrganizationMapShowViewController: BaseViewController {
     }
     
     override func viewDidDisappear(_ animated: Bool) {
-        mapView.showsUserLocation = false
-        locationManager!.stopUpdatingLocation()
-        locationManager = nil
+        let commonRequestModel = OrganizationMapShowModels.Common.RequestModel()
+        interactor.didStopUpdateLocation(requestModel: commonRequestModel)
 
         super.viewDidDisappear(true)
     }
@@ -67,14 +68,14 @@ class OrganizationMapShowViewController: BaseViewController {
 //        let requestModel = OrganizationMapShowModels.Location.RequestModel(address: searchTextField.text)
 //        interactor.didLoadCurrentLocation(requestModel: requestModel)
 
-        locationManager = CLLocationManager()
-        locationManager!.delegate = self
-        locationManager!.requestWhenInUseAuthorization()
-        
-        if CLLocationManager.locationServicesEnabled() {
-            locationManager!.desiredAccuracy = kCLLocationAccuracyHundredMeters
-            locationManager!.requestLocation()
-        }
+//        locationManager = CLLocationManager()
+//        locationManager!.delegate = self
+//        locationManager!.requestWhenInUseAuthorization()
+//        
+//        if CLLocationManager.locationServicesEnabled() {
+//            locationManager!.desiredAccuracy = kCLLocationAccuracyHundredMeters
+//            locationManager!.requestLocation()
+//        }
 
         
         mapView.delegate = self
@@ -95,36 +96,38 @@ class OrganizationMapShowViewController: BaseViewController {
     }
     
     
-    // MAP
-    func didCenterOnCurrentPosition(_ mapView: MKMapView, withLocation location: CLLocation) {
-        var region = MKCoordinateRegion()
-        region.center = location.coordinate
-        
-        var span = MKCoordinateSpan()
-        span.latitudeDelta = 0.05
-        span.longitudeDelta = 0.05
-        region.span = span
-        
-        mapView.setRegion(region, animated: true)
-    }
+//    // MAP
+//    func didCenterOnCurrentPosition(_ mapView: MKMapView, withLocation location: CLLocation) {
+//        var region = MKCoordinateRegion()
+//        region.center = location.coordinate
+//        
+//        var span = MKCoordinateSpan()
+//        span.latitudeDelta = 0.05
+//        span.longitudeDelta = 0.05
+//        region.span = span
+//        
+//        mapView.setRegion(region, animated: true)
+//    }
 }
 
 
 // MARK: - ForgotPasswordShowViewControllerInput
 extension OrganizationMapShowViewController: OrganizationMapShowViewControllerInput {
-    func displaySomething(viewModel: OrganizationMapShowModels.Location.ViewModel) {
+    func displaySomething(viewModel: OrganizationMapShowModels.Forward.ViewModel) {
         // NOTE: Display the result from the Presenter
         // nameTextField.text = viewModel.name
+    }
+    
+    func didDismissViewController(viewModel: OrganizationMapShowModels.Common.ViewModel) {
+        mapView.showsUserLocation = false
     }
 }
 
 
+// MARK: - MKMapViewDelegate
 extension OrganizationMapShowViewController: MKMapViewDelegate {
     func mapViewWillStartLoadingMap(_ mapView: MKMapView) {
         spinner.startAnimating()
-    }
-    
-    func mapViewDidFinishLoadingMap(_ mapView: MKMapView) {
     }
     
     func mapViewDidFinishRenderingMap(_ mapView: MKMapView, fullyRendered: Bool) {
@@ -136,32 +139,34 @@ extension OrganizationMapShowViewController: MKMapViewDelegate {
 
 
 // MARK: - CLLocationManagerDelegate
-extension OrganizationMapShowViewController: CLLocationManagerDelegate {
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        didCenterOnCurrentPosition(mapView, withLocation: locations.last!)
-
-//        CLGeocoder().reverseGeocodeLocation(locations.last!, completionHandler: {(placemarks:[CLPlacemark]?, error:NSError?) -> Void in
-//            if let placemarks = placemarks {
-//                let placemark = placemarks[0]
-//                
+//extension OrganizationMapShowViewController: CLLocationManagerDelegate {
+//    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+//        didCenterOnCurrentPosition(mapView, withLocation: locations.last!)
+//
+//        CLGeocoder().reverseGeocodeLocation(locations.last!) { placemarks, error in
+//            guard placemarks != nil else {
+//                return
 //            }
-//            } as! CLGeocodeCompletionHandler)
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print(object: error)
-    }
-    
-    //
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        switch status {
-        case .authorizedWhenInUse, . authorizedAlways:
-            mapView?.showsUserLocation = true
-            
-        default:
-            showAlertView(withTitle: "Info", andMessage: "Please go into Settings and give this app authorization to your location.")
-        }
-    }
-}
+//            
+//            let placemark = placemarks![0]
+//        }
+//        
+//    }
+//    
+//    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+//        print(object: error)
+//    }
+//    
+//    //
+//    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+//        switch status {
+//        case .authorizedWhenInUse, . authorizedAlways:
+//            mapView?.showsUserLocation = true
+//            
+//        default:
+//            showAlertView(withTitle: "Info", andMessage: "Please go into Settings and give this app authorization to your location.")
+//        }
+//    }
+//}
 
 

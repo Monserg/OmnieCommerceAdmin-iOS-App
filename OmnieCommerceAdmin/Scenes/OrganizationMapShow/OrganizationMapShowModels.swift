@@ -10,15 +10,17 @@
 //
 
 import UIKit
+import MapKit
 
 // MARK: - Data models
 struct OrganizationMapShowModels {
-    struct Location {
+    struct Forward {
         struct RequestModel {
             let address: String?
         }
         
         struct ResponseModel {
+//            let placemark: CLPlacemark
             //            let address: String?
             //            let coordinate: CLLocationCoordinate2D?
             //            let info: String?
@@ -27,6 +29,35 @@ struct OrganizationMapShowModels {
         struct ViewModel {
             //            let address: String
             //            let coordinate: CLLocationCoordinate2D
+        }
+    }
+
+    struct Reverse {
+        struct RequestModel {
+            let address: String?
+        }
+        
+        struct ResponseModel {
+            //            let placemark: CLPlacemark
+            //            let address: String?
+            //            let coordinate: CLLocationCoordinate2D?
+            //            let info: String?
+        }
+        
+        struct ViewModel {
+            //            let address: String
+            //            let coordinate: CLLocationCoordinate2D
+        }
+    }
+
+    struct Common {
+        struct RequestModel {
+        }
+        
+        struct ResponseModel {
+        }
+        
+        struct ViewModel {
         }
     }
 }

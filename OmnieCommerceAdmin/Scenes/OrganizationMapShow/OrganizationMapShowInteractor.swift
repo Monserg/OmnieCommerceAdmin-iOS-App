@@ -13,12 +13,14 @@ import UIKit
 
 // MARK: - Input protocols for current Interactor component VIP-cicle
 protocol OrganizationMapShowInteractorInput {
-    func didLoadCurrentLocation(requestModel: OrganizationMapShowModels.Location.RequestModel)
+    func didLoadUserLocation(requestModel: OrganizationMapShowModels.Forward.RequestModel)
+    func didStopUpdateLocation(requestModel: OrganizationMapShowModels.Common.RequestModel)
 }
 
 // MARK: - Output protocols for Presenter component VIP-cicle
 protocol OrganizationMapShowInteractorOutput {
-    func presentSomething(responseModel: OrganizationMapShowModels.Location.ResponseModel)
+    func presentSomething(responseModel: OrganizationMapShowModels.Forward.ResponseModel)
+    func didPrepareToDismissViewController(responseModel: OrganizationMapShowModels.Common.ResponseModel)
 }
 
 class OrganizationMapShowInteractor: OrganizationMapShowInteractorInput {
@@ -28,13 +30,21 @@ class OrganizationMapShowInteractor: OrganizationMapShowInteractorInput {
     
     
     // MARK: - Custom Functions. Business logic
-    func didLoadCurrentLocation(requestModel: OrganizationMapShowModels.Location.RequestModel) {
-        // NOTE: Create some Worker to do the work
+    func didLoadUserLocation(requestModel: OrganizationMapShowModels.Forward.RequestModel) {
         worker = OrganizationMapShowWorker()
         worker.startCoreLocation()
         
         // NOTE: Pass the result to the Presenter
-        let responseModel = OrganizationMapShowModels.Location.ResponseModel()
+        let responseModel = OrganizationMapShowModels.Forward.ResponseModel()
         presenter.presentSomething(responseModel: responseModel)
+    }
+    
+    func didStopUpdateLocation(requestModel: OrganizationMapShowModels.Common.RequestModel) {
+        worker = OrganizationMapShowWorker()
+        worker.stopCoreLocation()
+        
+        // NOTE: Pass the result to the Presenter
+        let responseModel = OrganizationMapShowModels.Common.ResponseModel()
+        presenter.didPrepareToDismissViewController(responseModel: responseModel)
     }
 }

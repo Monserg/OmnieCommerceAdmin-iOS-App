@@ -13,12 +13,14 @@ import UIKit
 
 // MARK: - Input protocols for current Presenter component VIP-cicle
 protocol OrganizationMapShowPresenterInput {
-    func presentSomething(responseModel: OrganizationMapShowModels.Location.ResponseModel)
+    func presentSomething(responseModel: OrganizationMapShowModels.Forward.ResponseModel)
+    func didPrepareToDismissViewController(responseModel: OrganizationMapShowModels.Common.ResponseModel)
 }
 
 // MARK: - Output protocols for ViewController component VIP-cicle
 protocol OrganizationMapShowPresenterOutput: class {
-    func displaySomething(viewModel: OrganizationMapShowModels.Location.ViewModel)
+    func displaySomething(viewModel: OrganizationMapShowModels.Forward.ViewModel)
+    func didDismissViewController(viewModel: OrganizationMapShowModels.Common.ViewModel)
 }
 
 class OrganizationMapShowPresenter: OrganizationMapShowPresenterInput {
@@ -27,9 +29,14 @@ class OrganizationMapShowPresenter: OrganizationMapShowPresenterInput {
     
     
     // MARK: - Custom Functions. Presentation logic
-    func presentSomething(responseModel: OrganizationMapShowModels.Location.ResponseModel) {
+    func presentSomething(responseModel: OrganizationMapShowModels.Forward.ResponseModel) {
         // NOTE: Format the response from the Interactor and pass the result back to the View Controller
-        let viewModel = OrganizationMapShowModels.Location.ViewModel()
+        let viewModel = OrganizationMapShowModels.Forward.ViewModel()
         viewController.displaySomething(viewModel: viewModel)
+    }
+    
+    func didPrepareToDismissViewController(responseModel: OrganizationMapShowModels.Common.ResponseModel) {
+        let viewModel = OrganizationMapShowModels.Common.ViewModel()
+        viewController.didDismissViewController(viewModel: viewModel)
     }
 }

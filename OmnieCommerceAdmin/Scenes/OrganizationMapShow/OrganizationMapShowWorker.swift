@@ -15,8 +15,14 @@ import MapKit
 class OrganizationMapShowWorker {
     func startCoreLocation() {
         let locationVC = LocationViewController()
-        locationVC.locationManager = CLLocationManager()
+//        locationVC.locationManager = CLLocationManager()
        
-        locationVC.requestLocationAccess()
+//        locationVC.requestLocationAccess()
+    }
+    
+    func stopCoreLocation() {
+        let locationVC = LocationViewController()
+        
+        locationVC.stopCoreLocation()
     }
 }
