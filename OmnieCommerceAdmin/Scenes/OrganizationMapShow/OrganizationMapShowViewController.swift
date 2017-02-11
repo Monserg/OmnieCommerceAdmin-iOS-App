@@ -14,14 +14,14 @@ import MapKit
 
 // MARK: - Input protocols for current ViewController component VIP-cicle
 protocol OrganizationMapShowViewControllerInput {
-    func displaySomething(viewModel: OrganizationMapShowModels.Forward.ViewModel)
-    func didDismissViewController(viewModel: OrganizationMapShowModels.Common.ViewModel)
+    func didShowUserLocation(viewModel: OrganizationMapShowModels.Location.ViewModel)
+//    func didDismissViewController(viewModel: OrganizationMapShowModels.Location.ViewModel)
 }
 
 // MARK: - Output protocols for Interactor component VIP-cicle
 protocol OrganizationMapShowViewControllerOutput {
-    func didLoadUserLocation(requestModel: OrganizationMapShowModels.Forward.RequestModel)
-    func didStopUpdateLocation(requestModel: OrganizationMapShowModels.Common.RequestModel)
+    func didLoadUserLocation(requestModel: OrganizationMapShowModels.Location.RequestModel)
+    func didStopUpdateLocation(requestModel: OrganizationMapShowModels.Location.RequestModel)
 }
 
 class OrganizationMapShowViewController: BaseViewController {
@@ -31,7 +31,14 @@ class OrganizationMapShowViewController: BaseViewController {
     
 //    private var locationManager: CLLocationManager?
 
-    @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var mapView: MKMapView! {
+        didSet {
+            // Delegates
+            mapView.delegate = self
+            mapView.showsUserLocation = true
+        }
+    }
+    
     @IBOutlet weak var searchTextField: CustomTextField!
     @IBOutlet weak var customNavigationBarView: MainNavigationBarView!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
@@ -49,24 +56,26 @@ class OrganizationMapShowViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        doSomethingOnLoad()
+        doInitialSetupOnLoad()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
-        let commonRequestModel = OrganizationMapShowModels.Common.RequestModel()
-        interactor.didStopUpdateLocation(requestModel: commonRequestModel)
+        // Stop GeoLocation manager
+        let locationRequestModel = OrganizationMapShowModels.Location.RequestModel(searchLocation: SearchLocation(nil, nil))
+        interactor.didStopUpdateLocation(requestModel: locationRequestModel)
 
         super.viewDidDisappear(true)
     }
     
     
     // MARK: - Custom Functions
-    func doSomethingOnLoad() {
+    func doInitialSetupOnLoad() {
         // Set left bar button image
         customNavigationBarView.leftButton.setImage(UIImage.init(named: "icon-navbar-back-normal"), for: .normal)
         
-//        let requestModel = OrganizationMapShowModels.Location.RequestModel(address: searchTextField.text)
-//        interactor.didLoadCurrentLocation(requestModel: requestModel)
+        // Start GeoLocation manager with current user position
+        let requestModel = OrganizationMapShowModels.Location.RequestModel(searchLocation: SearchLocation(nil, nil))
+        interactor.didLoadUserLocation(requestModel: requestModel)
 
 //        locationManager = CLLocationManager()
 //        locationManager!.delegate = self
@@ -77,8 +86,6 @@ class OrganizationMapShowViewController: BaseViewController {
 //            locationManager!.requestLocation()
 //        }
 
-        
-        mapView.delegate = self
 
         // Handler left bar button
         customNavigationBarView.handlerNavBarLeftButtonCompletion = { _ in
@@ -86,6 +93,19 @@ class OrganizationMapShowViewController: BaseViewController {
         }
     }
     
+    // Centered map view
+    private func didCenterOnCurrentPosition(_ mapView: MKMapView, withLocation location: CLLocation) {
+        var region = MKCoordinateRegion()
+        region.center = location.coordinate
+        
+        var span = MKCoordinateSpan()
+        span.latitudeDelta = 0.05
+        span.longitudeDelta = 0.05
+        region.span = span
+        
+        mapView.setRegion(region, animated: true)
+    }
+
     
     // MARK: - Actions
     @IBAction func handlerAddButtonTap(_ sender: CustomButton) {
@@ -96,29 +116,34 @@ class OrganizationMapShowViewController: BaseViewController {
     }
     
     
-//    // MAP
-//    func didCenterOnCurrentPosition(_ mapView: MKMapView, withLocation location: CLLocation) {
-//        var region = MKCoordinateRegion()
-//        region.center = location.coordinate
-//        
-//        var span = MKCoordinateSpan()
-//        span.latitudeDelta = 0.05
-//        span.longitudeDelta = 0.05
-//        region.span = span
-//        
-//        mapView.setRegion(region, animated: true)
-//    }
+    // MAP
+    func didShowLocationOnMapViewCenter(coordinate: CLLocationCoordinate2D?) {
+        guard coordinate != nil else {
+            return
+        }
+        
+        var region = MKCoordinateRegion()
+        region.center = coordinate!
+        
+        var span = MKCoordinateSpan()
+        span.latitudeDelta = 0.05
+        span.longitudeDelta = 0.05
+        region.span = span
+        
+        mapView.setRegion(region, animated: true)
+    }
 }
 
 
 // MARK: - ForgotPasswordShowViewControllerInput
 extension OrganizationMapShowViewController: OrganizationMapShowViewControllerInput {
-    func displaySomething(viewModel: OrganizationMapShowModels.Forward.ViewModel) {
-        // NOTE: Display the result from the Presenter
-        // nameTextField.text = viewModel.name
+    func didShowUserLocation(viewModel: OrganizationMapShowModels.Location.ViewModel) {
+        didShowLocationOnMapViewCenter(coordinate: viewModel.resultLocation?.coordinate)
+
+        spinner.stopAnimating()
     }
     
-    func didDismissViewController(viewModel: OrganizationMapShowModels.Common.ViewModel) {
+    func didDismissViewController(viewModel: OrganizationMapShowModels.Location.ViewModel) {
         mapView.showsUserLocation = false
     }
 }

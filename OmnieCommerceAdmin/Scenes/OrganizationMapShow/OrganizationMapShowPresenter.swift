@@ -13,14 +13,14 @@ import UIKit
 
 // MARK: - Input protocols for current Presenter component VIP-cicle
 protocol OrganizationMapShowPresenterInput {
-    func presentSomething(responseModel: OrganizationMapShowModels.Forward.ResponseModel)
-    func didPrepareToDismissViewController(responseModel: OrganizationMapShowModels.Common.ResponseModel)
+    func didPrepareToShowUserLocation(responseModel: OrganizationMapShowModels.Location.ResponseModel)
+    func didPrepareToDismissViewController(responseModel: OrganizationMapShowModels.Location.ResponseModel)
 }
 
 // MARK: - Output protocols for ViewController component VIP-cicle
 protocol OrganizationMapShowPresenterOutput: class {
-    func displaySomething(viewModel: OrganizationMapShowModels.Forward.ViewModel)
-    func didDismissViewController(viewModel: OrganizationMapShowModels.Common.ViewModel)
+    func didShowUserLocation(viewModel: OrganizationMapShowModels.Location.ViewModel)
+    func didDismissViewController(viewModel: OrganizationMapShowModels.Location.ViewModel)
 }
 
 class OrganizationMapShowPresenter: OrganizationMapShowPresenterInput {
@@ -29,14 +29,14 @@ class OrganizationMapShowPresenter: OrganizationMapShowPresenterInput {
     
     
     // MARK: - Custom Functions. Presentation logic
-    func presentSomething(responseModel: OrganizationMapShowModels.Forward.ResponseModel) {
+    func didPrepareToShowUserLocation(responseModel: OrganizationMapShowModels.Location.ResponseModel) {
         // NOTE: Format the response from the Interactor and pass the result back to the View Controller
-        let viewModel = OrganizationMapShowModels.Forward.ViewModel()
-        viewController.displaySomething(viewModel: viewModel)
+        let viewModel = OrganizationMapShowModels.Location.ViewModel(resultLocation: responseModel.resultLocation)
+        viewController.didShowUserLocation(viewModel: viewModel)
     }
     
-    func didPrepareToDismissViewController(responseModel: OrganizationMapShowModels.Common.ResponseModel) {
-        let viewModel = OrganizationMapShowModels.Common.ViewModel()
+    func didPrepareToDismissViewController(responseModel: OrganizationMapShowModels.Location.ResponseModel) {
+        let viewModel = OrganizationMapShowModels.Location.ViewModel(resultLocation: nil)
         viewController.didDismissViewController(viewModel: viewModel)
     }
 }

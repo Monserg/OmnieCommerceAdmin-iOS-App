@@ -10,6 +10,7 @@
 //
 
 import UIKit
+import MapKit
 
 enum ThemeDesign: String {
     case LightForUser   =   "LightForUser"
@@ -23,10 +24,11 @@ typealias HandlerRegisterButtonCompletion           =   (() -> ())
 typealias HandlerForgotPasswordButtonCompletion     =   (() -> ())
 typealias HandlerCancelButtonCompletion             =   (() -> ())
 typealias HandlerNavBarLeftButtonCompletion         =   (() -> ())
+typealias HandlerLocationCompletion                 =   ((_ resultLocation: ResultLocation?) -> ())
 
-//typealias apiResponse                               =   (success: Bool, error: Error?)
 typealias apiResponse                               =   (success: Bool, error: String?)
-//typealias PasswordCheckResult                   =   (strengthLevel: PasswordStrengthLevel, isValid: Bool)
+typealias ResultLocation                            =   (placemark: CLPlacemark?, coordinate: CLLocationCoordinate2D?)
+typealias SearchLocation                            =   (mapPoint: CGPoint?, address: String?)
 
 struct Config {
     struct Constants {

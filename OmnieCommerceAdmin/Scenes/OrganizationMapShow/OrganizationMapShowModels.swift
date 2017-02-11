@@ -14,50 +14,17 @@ import MapKit
 
 // MARK: - Data models
 struct OrganizationMapShowModels {
-    struct Forward {
+    struct Location {
         struct RequestModel {
-            let address: String?
+            let searchLocation: SearchLocation?
         }
         
         struct ResponseModel {
-//            let placemark: CLPlacemark
-            //            let address: String?
-            //            let coordinate: CLLocationCoordinate2D?
-            //            let info: String?
+            let resultLocation: ResultLocation?
         }
         
         struct ViewModel {
-            //            let address: String
-            //            let coordinate: CLLocationCoordinate2D
-        }
-    }
-
-    struct Reverse {
-        struct RequestModel {
-            let address: String?
-        }
-        
-        struct ResponseModel {
-            //            let placemark: CLPlacemark
-            //            let address: String?
-            //            let coordinate: CLLocationCoordinate2D?
-            //            let info: String?
-        }
-        
-        struct ViewModel {
-            //            let address: String
-            //            let coordinate: CLLocationCoordinate2D
-        }
-    }
-
-    struct Common {
-        struct RequestModel {
-        }
-        
-        struct ResponseModel {
-        }
-        
-        struct ViewModel {
+            let resultLocation: ResultLocation?
         }
     }
 }

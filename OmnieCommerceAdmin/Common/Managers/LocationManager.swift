@@ -13,13 +13,13 @@ import CoreLocation
 class LocationManager: BaseViewController {
     // MARK: - Properties
     private var locationManager: CLLocationManager?
+    var handlerLocationCompletion: HandlerLocationCompletion?
+    var searchLocation: SearchLocation?
     
     
     // MARK: - Class Functions
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        startCoreLocation()
     }
     
     override func didReceiveMemoryWarning() {
@@ -29,7 +29,9 @@ class LocationManager: BaseViewController {
     
     
     // MARK: - Custom Functions
-    func startCoreLocation() {
+    func startCoreLocation(withSearchLocation searchLocation: SearchLocation?) {
+        self.searchLocation = searchLocation
+        
         locationManager = CLLocationManager()
         locationManager!.delegate = self
         locationManager!.requestWhenInUseAuthorization()
@@ -38,23 +40,13 @@ class LocationManager: BaseViewController {
             locationManager!.desiredAccuracy = kCLLocationAccuracyHundredMeters
             locationManager!.requestLocation()
         }
+//        
+//        locationManager?.startUpdatingLocation()
     }
     
     func stopCoreLocation() {
-        locationManager!.stopUpdatingLocation()
+        locationManager?.stopUpdatingLocation()
         locationManager = nil
-    }
-    
-    private func didCenterOnCurrentPosition(_ mapView: MKMapView, withLocation location: CLLocation) {
-        var region = MKCoordinateRegion()
-        region.center = location.coordinate
-        
-        var span = MKCoordinateSpan()
-        span.latitudeDelta = 0.05
-        span.longitudeDelta = 0.05
-        region.span = span
-        
-        mapView.setRegion(region, animated: true)
     }
 }
 
@@ -62,30 +54,51 @@ class LocationManager: BaseViewController {
 // MARK: - CLLocationManagerDelegate
 extension LocationManager: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        didCenterOnCurrentPosition(mapView, withLocation: locations.last!)
+//        didCenterOnCurrentPosition(mapView, withLocation: locations.last!)
         
-        CLGeocoder().reverseGeocodeLocation(locations.last!) { placemarks, error in
-            guard placemarks != nil else {
-                return
-            }
-            
-            let placemark = placemarks![0]
+        guard searchLocation != nil else {
+            return
         }
         
+        // Geocoding current user location
+        if (searchLocation?.address == nil) {
+            CLGeocoder().reverseGeocodeLocation(locations.last!) { placemarks, error in
+                guard placemarks != nil else {
+                    self.handlerLocationCompletion!(ResultLocation(nil, nil))
+
+                    return
+                }
+                
+                let placemark = placemarks![0]
+                self.handlerLocationCompletion!(ResultLocation(placemark, locations.last!.coordinate))
+            }
+        }
+        
+        // Geocoding point on map
+
+        // Geocoding string address
+        else if (searchLocation?.mapPoint != nil) {
+            CLGeocoder().geocodeAddressString((searchLocation?.address!)!, completionHandler: { placemarks, error in
+                guard placemarks != nil else {
+                    self.handlerLocationCompletion!(ResultLocation(nil, nil))
+                    
+                    return
+                }
+                
+                let placemark = placemarks![0]
+                self.handlerLocationCompletion!(ResultLocation(placemark, locations.last!.coordinate))
+            })
+        }
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print(object: error)
+        showAlertView(withTitle: "Error".localized(), andMessage: error.localizedDescription)
     }
     
-    //
+    // Check Authorization status
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        switch status {
-        case .authorizedWhenInUse, . authorizedAlways:
-            mapView?.showsUserLocation = true
-            
-        default:
-            showAlertView(withTitle: "Info", andMessage: "Please go into Settings and give this app authorization to your location.")
+        if (status != .authorizedAlways || status != .authorizedWhenInUse) {
+            showAlertView(withTitle: "Info".localized(), andMessage: "Location authorization error".localized())
         }
     }
 }
