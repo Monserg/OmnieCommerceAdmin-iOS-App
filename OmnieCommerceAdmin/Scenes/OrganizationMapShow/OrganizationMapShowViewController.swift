@@ -177,22 +177,15 @@ extension OrganizationMapShowViewController: MKMapViewDelegate {
             pinAnnotationView?.frame.size = CGSize.init(width: 50, height: 50)
         }
         
+        pinAnnotationView?.canShowCallout = true
+
         return pinAnnotationView
     }
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         view.canShowCallout = true
-        let lat = view.annotation?.coordinate.latitude
-        let long = view.annotation?.coordinate.longitude
-        
-        print(object: "Clic pin lat \(lat) long \(long)")
-
     }
     
-    func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
-        view.canShowCallout = false
-    }
-
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, didChange newState: MKAnnotationViewDragState, fromOldState oldState: MKAnnotationViewDragState) {
         switch newState {
         case .starting:
