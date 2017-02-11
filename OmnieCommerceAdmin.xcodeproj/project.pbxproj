@@ -73,6 +73,7 @@
 		B1C320E01E44A46700D84BC3 /* ForgotPasswordShowWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C320D91E44A46700D84BC3 /* ForgotPasswordShowWorker.swift */; };
 		B1C320E61E44CBCD00D84BC3 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C320E51E44CBCD00D84BC3 /* CustomView.swift */; };
 		B1CF2F321E4EAE2300DF5CA0 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1CF2F311E4EAE2300DF5CA0 /* LocationManager.swift */; };
+		B1CF2F351E4F01D200DF5CA0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B1CF2F371E4F01D200DF5CA0 /* InfoPlist.strings */; };
 		B1DB436D1E48D2D400D3DE77 /* PasswordStrengthLevelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DB436C1E48D2D400D3DE77 /* PasswordStrengthLevelView.swift */; };
 		B1E29E591E49F7910068B642 /* EnterCodeShowConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E29E521E49F7910068B642 /* EnterCodeShowConfigurator.swift */; };
 		B1E29E5A1E49F7910068B642 /* EnterCodeShowInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E29E531E49F7910068B642 /* EnterCodeShowInteractor.swift */; };
@@ -205,6 +206,10 @@
 		B1C320D91E44A46700D84BC3 /* ForgotPasswordShowWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordShowWorker.swift; sourceTree = "<group>"; };
 		B1C320E51E44CBCD00D84BC3 /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		B1CF2F311E4EAE2300DF5CA0 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		B1CF2F361E4F01D200DF5CA0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B1CF2F381E4F01D300DF5CA0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B1CF2F391E4F01D400DF5CA0 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B1CF2F3A1E4F01D500DF5CA0 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B1DB436C1E48D2D400D3DE77 /* PasswordStrengthLevelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordStrengthLevelView.swift; sourceTree = "<group>"; };
 		B1E29E521E49F7910068B642 /* EnterCodeShowConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnterCodeShowConfigurator.swift; sourceTree = "<group>"; };
 		B1E29E531E49F7910068B642 /* EnterCodeShowInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnterCodeShowInteractor.swift; sourceTree = "<group>"; };
@@ -548,6 +553,7 @@
 				B15732DB1E4DF62A00685A46 /* Info.plist */,
 				B1EADCD11E436316006341D2 /* Assets.xcassets */,
 				B1EADCF71E437534006341D2 /* Localizable.strings */,
+				B1CF2F371E4F01D200DF5CA0 /* InfoPlist.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -754,6 +760,7 @@
 				B1FBB8BE1E43C75600C02BC3 /* helveticaneuecyr-italic.otf in Resources */,
 				B1FBB8C31E43C75600C02BC3 /* helveticaneuecyr-roman.otf in Resources */,
 				B1FBB8D01E43C75600C02BC3 /* UBUNTU-R.TTF in Resources */,
+				B1CF2F351E4F01D200DF5CA0 /* InfoPlist.strings in Resources */,
 				B1FBB8B81E43C75600C02BC3 /* helveticaneuecyr-black.otf in Resources */,
 				B1FBB8C21E43C75600C02BC3 /* helveticaneuecyr-mediumitaicl.otf in Resources */,
 				B1FBB8BD1E43C75600C02BC3 /* helveticaneuecyr-heavyitalic.otf in Resources */,
@@ -912,6 +919,17 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		B1CF2F371E4F01D200DF5CA0 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B1CF2F361E4F01D200DF5CA0 /* Base */,
+				B1CF2F381E4F01D300DF5CA0 /* en */,
+				B1CF2F391E4F01D400DF5CA0 /* ru */,
+				B1CF2F3A1E4F01D500DF5CA0 /* uk */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		B1EADCEB1E4374C2006341D2 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
