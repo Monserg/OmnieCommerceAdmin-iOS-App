@@ -14,13 +14,12 @@ import MapKit
 
 // MARK: - Input protocols for current ViewController component VIP-cicle
 protocol OrganizationMapShowViewControllerInput {
-    func didShowUserLocation(viewModel: OrganizationMapShowModels.Location.ViewModel)
-//    func didDismissViewController(viewModel: OrganizationMapShowModels.Location.ViewModel)
+    func didShowLocation(viewModel: OrganizationMapShowModels.Location.ViewModel)
 }
 
 // MARK: - Output protocols for Interactor component VIP-cicle
 protocol OrganizationMapShowViewControllerOutput {
-    func didLoadUserLocation(requestModel: OrganizationMapShowModels.Location.RequestModel)
+    func didLoadLocation(requestModel: OrganizationMapShowModels.Location.RequestModel)
     func didStopUpdateLocation(requestModel: OrganizationMapShowModels.Location.RequestModel)
 }
 
@@ -28,18 +27,26 @@ class OrganizationMapShowViewController: BaseViewController {
     // MARK: - Properties
     var interactor: OrganizationMapShowViewControllerOutput!
     var router: OrganizationMapShowRouter!
-    
-//    private var locationManager: CLLocationManager?
 
+    private let locationManager = LocationManager()
+    let annotation = MKPointAnnotation()
+    var organizationName: String?
+    var pointTouchOnMapView: CGPoint?
+    
     @IBOutlet weak var mapView: MKMapView! {
         didSet {
             // Delegates
             mapView.delegate = self
-            mapView.showsUserLocation = true
         }
     }
     
-    @IBOutlet weak var searchTextField: CustomTextField!
+    @IBOutlet weak var searchTextField: CustomTextField! {
+        didSet{
+            // Delegates
+            searchTextField.delegate = self
+        }
+    }
+    
     @IBOutlet weak var customNavigationBarView: MainNavigationBarView!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
 
@@ -61,7 +68,7 @@ class OrganizationMapShowViewController: BaseViewController {
     
     override func viewDidDisappear(_ animated: Bool) {
         // Stop GeoLocation manager
-        let locationRequestModel = OrganizationMapShowModels.Location.RequestModel(searchLocation: SearchLocation(nil, nil))
+        let locationRequestModel = OrganizationMapShowModels.Location.RequestModel(locationManager: locationManager, searchLocation: SearchLocation(nil, nil))
         interactor.didStopUpdateLocation(requestModel: locationRequestModel)
 
         super.viewDidDisappear(true)
@@ -74,49 +81,23 @@ class OrganizationMapShowViewController: BaseViewController {
         customNavigationBarView.leftButton.setImage(UIImage.init(named: "icon-navbar-back-normal"), for: .normal)
         
         // Start GeoLocation manager with current user position
-        let requestModel = OrganizationMapShowModels.Location.RequestModel(searchLocation: SearchLocation(nil, nil))
-        interactor.didLoadUserLocation(requestModel: requestModel)
-
-//        locationManager = CLLocationManager()
-//        locationManager!.delegate = self
-//        locationManager!.requestWhenInUseAuthorization()
-//        
-//        if CLLocationManager.locationServicesEnabled() {
-//            locationManager!.desiredAccuracy = kCLLocationAccuracyHundredMeters
-//            locationManager!.requestLocation()
-//        }
-
-
+        didStartGeocoding()
+        
         // Handler left bar button
         customNavigationBarView.handlerNavBarLeftButtonCompletion = { _ in
             _ = self.navigationController?.popViewController(animated: true)
         }
     }
     
-    // Centered map view
-    private func didCenterOnCurrentPosition(_ mapView: MKMapView, withLocation location: CLLocation) {
-        var region = MKCoordinateRegion()
-        region.center = location.coordinate
+    // Geocoding
+    func didStartGeocoding() {
+        spinner.startAnimating()
         
-        var span = MKCoordinateSpan()
-        span.latitudeDelta = 0.05
-        span.longitudeDelta = 0.05
-        region.span = span
-        
-        mapView.setRegion(region, animated: true)
-    }
-
-    
-    // MARK: - Actions
-    @IBAction func handlerAddButtonTap(_ sender: CustomButton) {
+        let requestModel = OrganizationMapShowModels.Location.RequestModel(locationManager: locationManager, searchLocation: SearchLocation(nil, searchTextField.text))
+        interactor.didLoadLocation(requestModel: requestModel)
     }
     
-    @IBAction func handlerCancelButtonTap(_ sender: CustomButton) {
-        _ = self.navigationController?.popViewController(animated: true)
-    }
-    
-    
-    // MAP
+    // Centering map
     func didShowLocationOnMapViewCenter(coordinate: CLLocationCoordinate2D?) {
         guard coordinate != nil else {
             return
@@ -132,15 +113,42 @@ class OrganizationMapShowViewController: BaseViewController {
         
         mapView.setRegion(region, animated: true)
     }
+
+    func didAddAnnotation(placemark: CLPlacemark?) {
+        guard placemark != nil else {
+            return
+        }
+
+        mapView.addAnnotations(mapView.selectedAnnotations)
+        
+        annotation.title = organizationName ?? "Enter organization name".localized()
+        annotation.coordinate = (placemark!.location?.coordinate)!
+        mapView.showAnnotations([annotation], animated: true)
+        mapView.selectAnnotation(annotation, animated: true)
+    }
+    
+    // MARK: - Actions
+    @IBAction func handlerAddButtonTap(_ sender: CustomButton) {
+    }
+    
+    @IBAction func handlerCancelButtonTap(_ sender: CustomButton) {
+        _ = self.navigationController?.popViewController(animated: true)
+    }
+    
+    
+    // MARK: - Gestures
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        pointTouchOnMapView = touches.first?.location(in: mapView)
+        annotation.coordinate = mapView.convert((pointTouchOnMapView)!, toCoordinateFrom: mapView)
+    }
 }
 
 
 // MARK: - ForgotPasswordShowViewControllerInput
 extension OrganizationMapShowViewController: OrganizationMapShowViewControllerInput {
-    func didShowUserLocation(viewModel: OrganizationMapShowModels.Location.ViewModel) {
+    func didShowLocation(viewModel: OrganizationMapShowModels.Location.ViewModel) {
         didShowLocationOnMapViewCenter(coordinate: viewModel.resultLocation?.coordinate)
-
-        spinner.stopAnimating()
+        didAddAnnotation(placemark: viewModel.resultLocation?.placemark)
     }
     
     func didDismissViewController(viewModel: OrganizationMapShowModels.Location.ViewModel) {
@@ -151,47 +159,87 @@ extension OrganizationMapShowViewController: OrganizationMapShowViewControllerIn
 
 // MARK: - MKMapViewDelegate
 extension OrganizationMapShowViewController: MKMapViewDelegate {
-    func mapViewWillStartLoadingMap(_ mapView: MKMapView) {
-        spinner.startAnimating()
-    }
-    
     func mapViewDidFinishRenderingMap(_ mapView: MKMapView, fullyRendered: Bool) {
         if (fullyRendered) {
             spinner.stopAnimating()
         }
     }
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        let identifier = "MyPin"
+        var annotationView: MKPinAnnotationView? = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKPinAnnotationView
+        
+        if annotationView == nil {
+            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            annotationView?.canShowCallout = true
+        }
+        
+        let leftIconView = UIImageView(frame: CGRect.init(x: 0, y: 0, width: 44, height: 33))
+        leftIconView.image = UIImage(named: "image-space")
+        annotationView?.leftCalloutAccessoryView = leftIconView
+        annotationView?.image = UIImage(named: "icon-pin-normal")
+        annotationView?.isDraggable = true
+        
+        return annotationView
+    }
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        view.canShowCallout = true
+        let lat = view.annotation?.coordinate.latitude
+        let long = view.annotation?.coordinate.longitude
+        
+        print(object: "Clic pin lat \(lat) long \(long)")
+
+    }
+    
+    func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
+        view.canShowCallout = false
+    }
+
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, didChange newState: MKAnnotationViewDragState, fromOldState oldState: MKAnnotationViewDragState) {
+        switch newState {
+        case .starting:
+            view.dragState = .dragging
+        
+        case .ending, .canceling:
+            view.dragState = .none
+            let lat = view.annotation?.coordinate.latitude
+            let long = view.annotation?.coordinate.longitude
+            
+            print(object: "Finish pin lat \(lat) long \(long)")
+        
+        default:
+            break
+        }
+    }
 }
 
 
-// MARK: - CLLocationManagerDelegate
-//extension OrganizationMapShowViewController: CLLocationManagerDelegate {
-//    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-//        didCenterOnCurrentPosition(mapView, withLocation: locations.last!)
-//
-//        CLGeocoder().reverseGeocodeLocation(locations.last!) { placemarks, error in
-//            guard placemarks != nil else {
-//                return
-//            }
-//            
-//            let placemark = placemarks![0]
-//        }
-//        
-//    }
-//    
-//    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-//        print(object: error)
-//    }
-//    
-//    //
-//    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-//        switch status {
-//        case .authorizedWhenInUse, . authorizedAlways:
-//            mapView?.showsUserLocation = true
-//            
-//        default:
-//            showAlertView(withTitle: "Info", andMessage: "Please go into Settings and give this app authorization to your location.")
-//        }
-//    }
-//}
-
+// MARK: - UITextFieldDelegate
+extension OrganizationMapShowViewController {
+    // Clear button tap
+    func textFieldShouldClear(_ textField: UITextField) -> Bool {
+        return true;
+    }
+    
+    // Hide keyboard
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        return true;
+    }
+    
+    // TextField editing
+    override func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        return true;
+    }
+    
+    // Return button tap
+    override func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder();
+        
+        // Start GeoLocation manager with string address
+        didStartGeocoding()
+        
+        return true;
+    }
+}
 

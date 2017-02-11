@@ -25,6 +25,7 @@ class OrganizationAddRouter: OrganizationAddRouterInput {
     func navigateToMap() {
         let storyboard = UIStoryboard(name: "OrganizationMapShow", bundle: nil)
         let organizationMapShowVC = storyboard.instantiateViewController(withIdentifier: "OrganizationMapShowVC") as! OrganizationMapShowViewController
+        organizationMapShowVC.organizationName = viewController.textFieldsCollection.first?.text
         
         viewController.navigationController?.pushViewController(organizationMapShowVC, animated: true)
     }

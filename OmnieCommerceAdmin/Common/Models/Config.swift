@@ -28,7 +28,7 @@ typealias HandlerLocationCompletion                 =   ((_ resultLocation: Resu
 
 typealias apiResponse                               =   (success: Bool, error: String?)
 typealias ResultLocation                            =   (placemark: CLPlacemark?, coordinate: CLLocationCoordinate2D?)
-typealias SearchLocation                            =   (mapPoint: CGPoint?, address: String?)
+typealias SearchLocation                            =   (coordinates: CLLocationCoordinate2D?, address: String?)
 
 struct Config {
     struct Constants {

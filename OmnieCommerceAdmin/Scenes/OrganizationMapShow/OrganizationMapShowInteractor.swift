@@ -13,13 +13,13 @@ import UIKit
 
 // MARK: - Input protocols for current Interactor component VIP-cicle
 protocol OrganizationMapShowInteractorInput {
-    func didLoadUserLocation(requestModel: OrganizationMapShowModels.Location.RequestModel)
+    func didLoadLocation(requestModel: OrganizationMapShowModels.Location.RequestModel)
     func didStopUpdateLocation(requestModel: OrganizationMapShowModels.Location.RequestModel)
 }
 
 // MARK: - Output protocols for Presenter component VIP-cicle
 protocol OrganizationMapShowInteractorOutput {
-    func didPrepareToShowUserLocation(responseModel: OrganizationMapShowModels.Location.ResponseModel)
+    func didPrepareToShowLocation(responseModel: OrganizationMapShowModels.Location.ResponseModel)
     func didPrepareToDismissViewController(responseModel: OrganizationMapShowModels.Location.ResponseModel)
 }
 
@@ -27,25 +27,22 @@ class OrganizationMapShowInteractor: OrganizationMapShowInteractorInput {
     // MARK: - Properties
     var presenter: OrganizationMapShowInteractorOutput!
     var worker: OrganizationMapShowWorker!
-    private let locationManager = LocationManager()
     
     
     // MARK: - Custom Functions. Business logic
-    func didLoadUserLocation(requestModel: OrganizationMapShowModels.Location.RequestModel) {
+    func didLoadLocation(requestModel: OrganizationMapShowModels.Location.RequestModel) {
+        requestModel.locationManager.startCoreLocation(withSearchLocation: requestModel.searchLocation)
         
-        locationManager.startCoreLocation(withSearchLocation: requestModel.searchLocation)
-        
-        return locationManager.handlerLocationCompletion = { resultLocation in
+        return requestModel.locationManager.handlerLocationCompletion = { resultLocation in
             let responseModel = OrganizationMapShowModels.Location.ResponseModel(resultLocation: resultLocation)
-            self.presenter.didPrepareToShowUserLocation(responseModel: responseModel)
+            self.presenter.didPrepareToShowLocation(responseModel: responseModel)
         }
     }
     
     func didStopUpdateLocation(requestModel: OrganizationMapShowModels.Location.RequestModel) {
         worker = OrganizationMapShowWorker()
-        worker.stopCoreLocation()
+        requestModel.locationManager.stopCoreLocation()
         
-        // NOTE: Pass the result to the Presenter
         let responseModel = OrganizationMapShowModels.Location.ResponseModel(resultLocation: nil)
         presenter.didPrepareToDismissViewController(responseModel: responseModel)
     }

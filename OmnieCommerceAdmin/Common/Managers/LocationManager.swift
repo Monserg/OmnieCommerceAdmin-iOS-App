@@ -40,8 +40,6 @@ class LocationManager: BaseViewController {
             locationManager!.desiredAccuracy = kCLLocationAccuracyHundredMeters
             locationManager!.requestLocation()
         }
-//        
-//        locationManager?.startUpdatingLocation()
     }
     
     func stopCoreLocation() {
@@ -54,15 +52,15 @@ class LocationManager: BaseViewController {
 // MARK: - CLLocationManagerDelegate
 extension LocationManager: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-//        didCenterOnCurrentPosition(mapView, withLocation: locations.last!)
-        
         guard searchLocation != nil else {
             return
         }
         
-        // Geocoding current user location
-        if (searchLocation?.address == nil) {
-            CLGeocoder().reverseGeocodeLocation(locations.last!) { placemarks, error in
+        // Geocoding current or stated location
+        if (searchLocation?.address?.isEmpty)! {
+            let location = (searchLocation?.coordinates != nil) ? CLLocation.init(latitude: (searchLocation?.coordinates!.latitude)!, longitude: (searchLocation?.coordinates!.longitude)!) : locations.last!
+
+            CLGeocoder().reverseGeocodeLocation(location) { placemarks, error in
                 guard placemarks != nil else {
                     self.handlerLocationCompletion!(ResultLocation(nil, nil))
 
@@ -74,10 +72,8 @@ extension LocationManager: CLLocationManagerDelegate {
             }
         }
         
-        // Geocoding point on map
-
         // Geocoding string address
-        else if (searchLocation?.mapPoint != nil) {
+        else {
             CLGeocoder().geocodeAddressString((searchLocation?.address!)!, completionHandler: { placemarks, error in
                 guard placemarks != nil else {
                     self.handlerLocationCompletion!(ResultLocation(nil, nil))

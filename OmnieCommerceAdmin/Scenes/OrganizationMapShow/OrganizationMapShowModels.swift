@@ -16,6 +16,7 @@ import MapKit
 struct OrganizationMapShowModels {
     struct Location {
         struct RequestModel {
+            let locationManager: LocationManager
             let searchLocation: SearchLocation?
         }
         

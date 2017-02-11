@@ -13,21 +13,4 @@ import UIKit
 import MapKit
 
 class OrganizationMapShowWorker {
-    func startCoreLocation(withSearchLocation searchLocation: SearchLocation?) /* -> ResultLocation?*/ {
-        let locationManager = LocationManager()
-        
-        locationManager.startCoreLocation(withSearchLocation: searchLocation)
-        
-        return locationManager.handlerLocationCompletion = { result in
-//            return result
-        }
-        
-        //return nil
-    }
-    
-    func stopCoreLocation() {
-        let locationManager = LocationManager()
-        
-        locationManager.stopCoreLocation()
-    }
 }
