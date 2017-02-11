@@ -82,7 +82,7 @@
                                                                                 <rect key="frame" x="0.0" y="98" width="222" height="37"/>
                                                                                 <subviews>
                                                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Organization Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7VR-Da-7qF" userLabel="Organization Name Text Field" customClass="CustomTextField" customModule="OmnieCommerceAdmin" customModuleProvider="target">
-                                                                                        <rect key="frame" x="8" y="18" width="214" height="19"/>
+                                                                                        <rect key="frame" x="8" y="19" width="214" height="17"/>
                                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                                         <nil key="textColor"/>
                                                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -106,7 +106,7 @@
                                                                                 <rect key="frame" x="0.0" y="172" width="222" height="14"/>
                                                                                 <subviews>
                                                                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wrong Email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="89Z-c9-Kkt" customClass="CustomLabel" customModule="OmnieCommerceAdmin" customModuleProvider="target">
-                                                                                        <rect key="frame" x="8" y="0.0" width="206" height="13.5"/>
+                                                                                        <rect key="frame" x="8" y="0.0" width="206" height="20.5"/>
                                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                                         <nil key="textColor"/>
@@ -128,7 +128,7 @@
                                                                                 <rect key="frame" x="0.0" y="135" width="222" height="37"/>
                                                                                 <subviews>
                                                                                     <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pIW-yu-Tbm" userLabel="Email Text Field" customClass="CustomTextField" customModule="OmnieCommerceAdmin" customModuleProvider="target">
-                                                                                        <rect key="frame" x="8" y="18" width="214" height="19"/>
+                                                                                        <rect key="frame" x="8" y="19" width="214" height="17"/>
                                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                                         <nil key="textColor"/>
                                                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -152,7 +152,7 @@
                                                                                 <rect key="frame" x="0.0" y="223" width="222" height="14"/>
                                                                                 <subviews>
                                                                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wrong Number" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bn9-Ts-gcj" customClass="CustomLabel" customModule="OmnieCommerceAdmin" customModuleProvider="target">
-                                                                                        <rect key="frame" x="8" y="0.0" width="206" height="13.5"/>
+                                                                                        <rect key="frame" x="8" y="0.0" width="206" height="20.5"/>
                                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                                         <nil key="textColor"/>
@@ -174,7 +174,7 @@
                                                                                 <rect key="frame" x="0.0" y="186" width="222" height="37"/>
                                                                                 <subviews>
                                                                                     <textField opaque="NO" clipsSubviews="YES" tag="99" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BE1-ix-8sj" userLabel="Phone Text Field" customClass="CustomTextField" customModule="OmnieCommerceAdmin" customModuleProvider="target">
-                                                                                        <rect key="frame" x="8" y="18" width="214" height="19"/>
+                                                                                        <rect key="frame" x="8" y="19" width="214" height="17"/>
                                                                                         <nil key="textColor"/>
                                                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                                         <textInputTraits key="textInputTraits"/>
@@ -197,7 +197,7 @@
                                                                                 <rect key="frame" x="0.0" y="237" width="222" height="37"/>
                                                                                 <subviews>
                                                                                     <textField opaque="NO" clipsSubviews="YES" tag="99" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Address" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9kd-K1-j1H" userLabel="Address Text Field" customClass="CustomTextField" customModule="OmnieCommerceAdmin" customModuleProvider="target">
-                                                                                        <rect key="frame" x="8" y="18" width="192" height="19"/>
+                                                                                        <rect key="frame" x="8" y="19" width="192" height="17"/>
                                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                                         <nil key="textColor"/>
                                                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -451,6 +451,7 @@
                         <outlet property="emailErrorMessageView" destination="UkU-Vg-xrb" id="2BD-56-Lra"/>
                         <outlet property="emailErrorMessageViewHeightConstraint" destination="Ucq-7G-sxK" id="46b-z8-s1z"/>
                         <outlet property="emailErrorMessageViewTopConstraint" destination="r3r-Y8-GE6" id="Afz-T4-Kon"/>
+                        <outlet property="organizationAvatarButton" destination="i7v-Lf-K6j" id="kKb-cQ-bDX"/>
                         <outlet property="phoneErrorMessageView" destination="amq-sV-S70" id="5dw-xm-hYj"/>
                         <outlet property="phoneErrorMessageViewHeightConstraint" destination="teU-Q0-Ty4" id="1T1-lf-Yke"/>
                         <outlet property="phoneErrorMessageViewTopConstraint" destination="ef9-Fn-HuK" id="kJ8-9z-wCE"/>

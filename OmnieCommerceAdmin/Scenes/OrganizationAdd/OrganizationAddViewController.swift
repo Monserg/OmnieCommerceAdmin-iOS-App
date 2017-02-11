@@ -13,18 +13,20 @@ import UIKit
 
 // MARK: - Input protocols for current ViewController component VIP-cicle
 protocol OrganizationAddViewControllerInput {
-    func displaySomething(viewModel: OrganizationAddModels.Something.ViewModel)
+    func didShowOrganizationAvatarImage(viewModel: OrganizationAddModels.Info.ViewModel)
 }
 
 // MARK: - Output protocols for Interactor component VIP-cicle
 protocol OrganizationAddViewControllerOutput {
-    func doSomething(requestModel: OrganizationAddModels.Something.RequestModel)
+    func didLoadOrganizationAvatarImage(requestModel: OrganizationAddModels.Info.RequestModel)
 }
 
 class OrganizationAddViewController: BaseViewController {
     // MARK: - Properties
     var interactor: OrganizationAddViewControllerOutput!
     var router: OrganizationAddRouter!
+    private var mediaManager: MediaManager!
+
 //    var leftButtonImage: UIImage!
     
     @IBOutlet weak var scrollView: UIScrollView!
@@ -32,6 +34,7 @@ class OrganizationAddViewController: BaseViewController {
     @IBOutlet var textFieldsCollection: [CustomTextField]!
     @IBOutlet weak var emailErrorMessageView: ErrorMessageView!
     @IBOutlet weak var phoneErrorMessageView: ErrorMessageView!
+    @IBOutlet weak var organizationAvatarButton: CustomButton!
 
     @IBOutlet weak var emailErrorMessageViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var emailErrorMessageViewTopConstraint: NSLayoutConstraint!
@@ -81,6 +84,27 @@ class OrganizationAddViewController: BaseViewController {
     
     // MARK: - Actions
     @IBAction func handlerAvatarButtonTap(_ sender: UIButton) {
+        mediaManager = MediaManager()
+        mediaManager.didLoadImagePickerController()
+        
+        // Handler selected image
+        mediaManager.handlerImagePickerControllerCompletion = { imageFromAlbum in
+//            let infoRequestModel = OrganizationAddModels.Info.RequestModel()
+//            self.interactor.didLoadOrganizationAvatarImage(requestModel: infoRequestModel)
+            
+            UIView.animate(withDuration: 0.5) {
+                self.organizationAvatarButton.setImage(imageFromAlbum, for: .normal)
+            }
+
+            self.dismiss(animated: true, completion: nil)
+        }
+        
+        // Handler cancel button
+        mediaManager.handlerCancelButtonCompletion = { _ in
+            self.dismiss(animated: true, completion: nil)
+        }
+        
+        present(mediaManager.imagePicker!, animated: true, completion: nil)
     }
     
     @IBAction func handlerLocationButtonTap(_ sender: CustomButton) {
@@ -98,9 +122,10 @@ class OrganizationAddViewController: BaseViewController {
 
 // MARK: - OrganizationAddViewControllerInput
 extension OrganizationAddViewController: OrganizationAddViewControllerInput {
-    func displaySomething(viewModel: OrganizationAddModels.Something.ViewModel) {
-        // NOTE: Display the result from the Presenter
-        // nameTextField.text = viewModel.name
+    func didShowOrganizationAvatarImage(viewModel: OrganizationAddModels.Info.ViewModel) {
+//        UIView.animate(withDuration: 0.5) { 
+//            self.organizationAvatarButton.setImage(viewModel.avatarImage ?? UIImage.init(named: "icon-empty-organization-normal"), for: .normal)
+//        }
     }
 }
 

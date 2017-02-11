@@ -13,12 +13,12 @@ import UIKit
 
 // MARK: - Input protocols for current Interactor component VIP-cicle
 protocol OrganizationAddInteractorInput {
-    func doSomething(requestModel: OrganizationAddModels.Something.RequestModel)
+    func didLoadOrganizationAvatarImage(requestModel: OrganizationAddModels.Info.RequestModel)
 }
 
 // MARK: - Output protocols for Presenter component VIP-cicle
 protocol OrganizationAddInteractorOutput {
-    func presentSomething(responseModel: OrganizationAddModels.Something.ResponseModel)
+    func prepareToShowOrganizationAvatarImage(responseModel: OrganizationAddModels.Info.ResponseModel)
 }
 
 class OrganizationAddInteractor: OrganizationAddInteractorInput {
@@ -28,13 +28,13 @@ class OrganizationAddInteractor: OrganizationAddInteractorInput {
     
     
     // MARK: - Custom Functions. Business logic
-    func doSomething(requestModel: OrganizationAddModels.Something.RequestModel) {
+    func didLoadOrganizationAvatarImage(requestModel: OrganizationAddModels.Info.RequestModel) {
         // NOTE: Create some Worker to do the work
         worker = OrganizationAddWorker()
         worker.doSomeWork()
         
         // NOTE: Pass the result to the Presenter
-        let responseModel = OrganizationAddModels.Something.ResponseModel()
-        presenter.presentSomething(responseModel: responseModel)
+        let infoResponseModel = OrganizationAddModels.Info.ResponseModel(originalImage: nil)
+        presenter.prepareToShowOrganizationAvatarImage(responseModel: infoResponseModel)
     }
 }

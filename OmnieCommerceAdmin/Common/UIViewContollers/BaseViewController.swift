@@ -187,3 +187,15 @@ extension BaseViewController: UITextFieldDelegate {
         return true
     }
 }
+
+
+// MARK: - UINavigationControllerDelegate
+extension MediaManager: UINavigationControllerDelegate {
+    func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
+        UIApplication.shared.statusBarStyle = .lightContent
+        UINavigationBar.appearance().barTintColor = UIColor.veryDarkGray
+        UINavigationBar.appearance().tintColor = UIColor.veryLightGray
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.veryLightGray]
+        UINavigationBar.appearance().isTranslucent = false
+    }
+}

@@ -14,14 +14,16 @@ import MapKit
 
 // MARK: - Data models
 struct OrganizationAddModels {
-    struct Something {
+    struct Info {
         struct RequestModel {
         }
         
         struct ResponseModel {
+            let originalImage: UIImage?
         }
         
         struct ViewModel {
+            let avatarImage: UIImage?
         }
     }
 }
