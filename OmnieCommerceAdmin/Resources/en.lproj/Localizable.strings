@@ -71,4 +71,5 @@
 "Info"                          =   "Info";
 "Error"                         =   "Error";
 "Location authorization error"  =   "Please go into Settings and give this app authorization to your location";
+"Camera is not available"       =   "Camera is not available";
 

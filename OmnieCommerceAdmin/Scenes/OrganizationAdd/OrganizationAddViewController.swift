@@ -84,16 +84,15 @@ class OrganizationAddViewController: BaseViewController {
     
     // MARK: - Actions
     @IBAction func handlerAvatarButtonTap(_ sender: UIButton) {
-        mediaManager = MediaManager()
+        mediaManager = MediaManager(withImagePickerType: .Album)
         mediaManager.didLoadImagePickerController()
         
         // Handler selected image
         mediaManager.handlerImagePickerControllerCompletion = { imageFromAlbum in
-//            let infoRequestModel = OrganizationAddModels.Info.RequestModel()
-//            self.interactor.didLoadOrganizationAvatarImage(requestModel: infoRequestModel)
+            let avatarImage = imageFromAlbum.af_imageAspectScaled(toFill: self.organizationAvatarButton.frame.size)
             
             UIView.animate(withDuration: 0.5) {
-                self.organizationAvatarButton.setImage(imageFromAlbum, for: .normal)
+                self.organizationAvatarButton.setImage(avatarImage, for: .normal)
             }
 
             self.dismiss(animated: true, completion: nil)

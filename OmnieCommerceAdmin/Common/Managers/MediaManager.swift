@@ -8,13 +8,31 @@
 
 import UIKit
 
+enum ImagePickerType {
+    case Album
+    case Camera
+}
+
 class MediaManager: BaseViewController {
     // MARK: - Properties
+    var imagePickerType: ImagePickerType
     var imagePicker: UIImagePickerController?
     var handlerImagePickerControllerCompletion: HandlerImagePickerControllerCompletion?
     var handlerCancelButtonCompletion: HandlerCancelButtonCompletion?
     
     
+    // MARK: - Class Initialization
+    init(withImagePickerType imagePickerType: ImagePickerType) {
+        self.imagePickerType = imagePickerType
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+
     // MARK: - Class Functions
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,11 +48,23 @@ class MediaManager: BaseViewController {
     
     // MARK: - Custom Functions
     func didLoadImagePickerController() {
-        if (UIImagePickerController.isSourceTypeAvailable(.photoLibrary)) {
-            imagePicker = UIImagePickerController()
-            imagePicker?.sourceType = .photoLibrary
-            imagePicker?.allowsEditing = true
-            imagePicker?.delegate = self
+        imagePicker = UIImagePickerController()
+        imagePicker?.allowsEditing = true
+        imagePicker?.delegate = self
+
+        switch imagePickerType {
+        case .Album:
+            if (UIImagePickerController.isSourceTypeAvailable(.photoLibrary)) {
+                imagePicker?.sourceType = .photoLibrary
+            }
+
+        case .Camera:
+            if UIImagePickerController.isSourceTypeAvailable(.camera) {
+                imagePicker?.sourceType = .camera
+                imagePicker?.allowsEditing = false
+            } else {
+                showAlertView(withTitle: "Error".localized(), andMessage: "Camera is not available".localized())
+            }
         }
     }
 }

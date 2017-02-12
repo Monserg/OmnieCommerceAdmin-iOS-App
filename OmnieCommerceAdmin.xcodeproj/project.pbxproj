@@ -72,6 +72,7 @@
 		B1C320DF1E44A46700D84BC3 /* ForgotPasswordShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C320D81E44A46700D84BC3 /* ForgotPasswordShowViewController.swift */; };
 		B1C320E01E44A46700D84BC3 /* ForgotPasswordShowWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C320D91E44A46700D84BC3 /* ForgotPasswordShowWorker.swift */; };
 		B1C320E61E44CBCD00D84BC3 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C320E51E44CBCD00D84BC3 /* CustomView.swift */; };
+		B1CAF3A61E50298900BBBDEB /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1CAF3A51E50298900BBBDEB /* UIImage+Extensions.swift */; };
 		B1CF2F321E4EAE2300DF5CA0 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1CF2F311E4EAE2300DF5CA0 /* LocationManager.swift */; };
 		B1CF2F351E4F01D200DF5CA0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B1CF2F371E4F01D200DF5CA0 /* InfoPlist.strings */; };
 		B1CF2F3C1E4F882000DF5CA0 /* MediaManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1CF2F3B1E4F882000DF5CA0 /* MediaManager.swift */; };
@@ -206,6 +207,7 @@
 		B1C320D81E44A46700D84BC3 /* ForgotPasswordShowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordShowViewController.swift; sourceTree = "<group>"; };
 		B1C320D91E44A46700D84BC3 /* ForgotPasswordShowWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordShowWorker.swift; sourceTree = "<group>"; };
 		B1C320E51E44CBCD00D84BC3 /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
+		B1CAF3A51E50298900BBBDEB /* UIImage+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		B1CF2F311E4EAE2300DF5CA0 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		B1CF2F361E4F01D200DF5CA0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B1CF2F381E4F01D300DF5CA0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -606,6 +608,7 @@
 				B1FBB8951E43BF6500C02BC3 /* UIFont+Extensions.swift */,
 				B1FBB89A1E43C50300C02BC3 /* UILabel+Extensions.swift */,
 				B1FBB8911E43B99000C02BC3 /* UIView+Extensions.swift */,
+				B1CAF3A51E50298900BBBDEB /* UIImage+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -837,6 +840,7 @@
 				B1EADD311E4390A2006341D2 /* MainShowPresenter.swift in Sources */,
 				B1C320CE1E44A43A00D84BC3 /* SignInShowPresenter.swift in Sources */,
 				B15BBB3E1E4B4F2700287505 /* RepetitionPasswordShowWorker.swift in Sources */,
+				B1CAF3A61E50298900BBBDEB /* UIImage+Extensions.swift in Sources */,
 				B1EADCCB1E436316006341D2 /* AppDelegate.swift in Sources */,
 				B1FBB8DF1E43D28F00C02BC3 /* OrganizationsListShowWorker.swift in Sources */,
 				B1FBB8DA1E43D28F00C02BC3 /* OrganizationsListShowInteractor.swift in Sources */,
