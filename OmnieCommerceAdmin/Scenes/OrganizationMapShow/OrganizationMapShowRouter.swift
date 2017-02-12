@@ -43,8 +43,8 @@ class OrganizationMapShowRouter: OrganizationMapShowRouterInput {
     func didPassDataToOrganizationAddShowScene(passData data: PointAnnotation) {
         let storyboard = UIStoryboard(name: "OrganizationAdd", bundle: nil)
         let organizationAddShowViewController = storyboard.instantiateViewController(withIdentifier: "OrganizationAddVC") as! OrganizationAddViewController
-        
-        organizationAddShowViewController.pointAnnotation = data
+
+        organizationAddShowViewController.pointAnnotation.didUpdate(fromPointAnnotation: data)
     }
     
     func passDataToNextScene(segue: UIStoryboardSegue) {

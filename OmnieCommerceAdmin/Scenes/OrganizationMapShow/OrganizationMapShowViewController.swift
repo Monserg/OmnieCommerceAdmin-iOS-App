@@ -27,12 +27,16 @@ class OrganizationMapShowViewController: BaseViewController {
     // MARK: - Properties
     var interactor: OrganizationMapShowViewControllerOutput!
     var router: OrganizationMapShowRouter!
-
+    
     private let locationManager = LocationManager()
     var pointTouchOnMapView: CGPoint?
 
+    var handlerLocationAddButtonCompletion: HandlerLocationAddButtonCompletion?
+    var handlerCancelButtonCompletion: HandlerCancelButtonCompletion?
+    
     // Route data
     var pointAnnotation = PointAnnotation()
+    var pointAnnotationOld = PointAnnotation()
     
     @IBOutlet weak var mapView: MKMapView! {
         didSet {
@@ -68,9 +72,6 @@ class OrganizationMapShowViewController: BaseViewController {
     }
     
     override func viewDidDisappear(_ animated: Bool) {
-        // Pass route data to previuos scene
-        router.didPassDataToOrganizationAddShowScene(passData: pointAnnotation)
-        
         // Stop GeoLocation manager
         let locationRequestModel = OrganizationMapShowModels.Location.RequestModel(locationManager: locationManager, searchLocation: SearchLocation(nil, nil))
         interactor.didStopUpdateLocation(requestModel: locationRequestModel)
@@ -84,12 +85,19 @@ class OrganizationMapShowViewController: BaseViewController {
         // Set left bar button image
         customNavigationBarView.leftButton.setImage(UIImage.init(named: "icon-navbar-back-normal"), for: .normal)
         
+        // Customize map view
+        mapView.showsScale = true
+        mapView.showsCompass = true
+        
+        // Create new point annotation
+        pointAnnotation.didUpdate(fromPointAnnotation: pointAnnotationOld)
+        
         // Start GeoLocation manager with current user position
         didStartGeocoding()
         
         // Handler left bar button
         customNavigationBarView.handlerNavBarLeftButtonCompletion = { _ in
-            _ = self.navigationController?.popViewController(animated: true)
+            self.handlerCancelButtonCompletion!()
         }
     }
     
@@ -103,19 +111,13 @@ class OrganizationMapShowViewController: BaseViewController {
     
     // Centering map
     func didShowLocationOnMapViewCenter(coordinate: CLLocationCoordinate2D?) {
-        guard coordinate != nil else {
+        guard let regionCoordinate = coordinate else {
             return
         }
         
-        var region = MKCoordinateRegion()
-        region.center = coordinate!
+//        mapView.setRegion(MKCoordinateRegionMakeWithDistance(regionCoordinate, 9900000, 9000000), animated: true)
         
-        var span = MKCoordinateSpan()
-        span.latitudeDelta = 0.05
-        span.longitudeDelta = 0.05
-        region.span = span
-        
-        mapView.setRegion(region, animated: true)
+        mapView.setRegion(MKCoordinateRegionMake(regionCoordinate, MKCoordinateSpanMake(0.003, 0.003)), animated: true)
     }
 
     func didAddAnnotation(placemark: CLPlacemark?) {
@@ -125,16 +127,37 @@ class OrganizationMapShowViewController: BaseViewController {
 
         mapView.addAnnotations(mapView.selectedAnnotations)
         
-        mapView.showAnnotations([pointAnnotation], animated: true)
-        mapView.selectAnnotation(pointAnnotation, animated: true)
+        didShowLocationOnMapViewCenter(coordinate: placemark?.location?.coordinate)
+
+        mapView.showAnnotations([pointAnnotation.annotation], animated: true)
+        mapView.selectAnnotation(pointAnnotation.annotation, animated: true)
+        
+        if (pointAnnotation.isRegionChange) {
+            spinner.stopAnimating()
+            pointAnnotation.isRegionChange = false
+        }
     }
+    
+    // Remove annotation to new location
+    func didMoveAnnotation(toLocation coordinate: CLLocationCoordinate2D) {
+        UIView.animate(withDuration: 0.5, animations: {
+            self.pointAnnotation.coordinate = coordinate
+        }, completion: { success in
+            self.pointAnnotation.coordinate = coordinate
+            self.didShowLocationOnMapViewCenter(coordinate: coordinate)
+            
+            self.didStartGeocoding()
+        })
+    }
+    
     
     // MARK: - Actions
     @IBAction func handlerAddButtonTap(_ sender: CustomButton) {
+        handlerLocationAddButtonCompletion!(pointAnnotation)
     }
     
     @IBAction func handlerCancelButtonTap(_ sender: CustomButton) {
-        _ = self.navigationController?.popViewController(animated: true)
+        handlerCancelButtonCompletion!()
     }
     
     
@@ -142,7 +165,17 @@ class OrganizationMapShowViewController: BaseViewController {
     @IBAction func handlerLongGestureRecognizer(_ sender: UILongPressGestureRecognizer) {
         if sender.state == .began {
             pointTouchOnMapView = sender.location(in: mapView)
-            pointAnnotation.coordinate = mapView.convert((pointTouchOnMapView)!, toCoordinateFrom: mapView)
+            let newCoordinate = mapView.convert((pointTouchOnMapView)!, toCoordinateFrom: mapView)
+            
+            didMoveAnnotation(toLocation: newCoordinate)
+            
+//            UIView.animate(withDuration: 0.5, animations: { 
+//                self.pointAnnotation.coordinate = newCoordinate
+//            }, completion: { success in
+//                self.didShowLocationOnMapViewCenter(coordinate: newCoordinate)
+//                
+//                self.didStartGeocoding()
+//            })
         }
     }
 }
@@ -153,9 +186,9 @@ extension OrganizationMapShowViewController: OrganizationMapShowViewControllerIn
     func didShowLocation(viewModel: OrganizationMapShowModels.Location.ViewModel) {
         self.pointAnnotation.coordinate = (viewModel.resultLocation?.coordinate!)!
         self.pointAnnotation.subtitle = viewModel.resultLocation?.address
+        self.pointAnnotation.didUpdateAnnotation()
         
         didAddAnnotation(placemark: viewModel.resultLocation?.placemark)
-        didShowLocationOnMapViewCenter(coordinate: viewModel.resultLocation?.coordinate)
     }
     
     func didDismissViewController(viewModel: OrganizationMapShowModels.Location.ViewModel) {
@@ -185,6 +218,7 @@ extension OrganizationMapShowViewController: MKMapViewDelegate {
         }
         
         pinAnnotationView?.canShowCallout = true
+        pinAnnotationView?.isDraggable = true
 
         // Add organization image
         let leftIconView = UIImageView(frame: CGRect.init(x: 0, y: 0, width: 44, height: 33))
@@ -207,22 +241,24 @@ extension OrganizationMapShowViewController: MKMapViewDelegate {
         view.canShowCallout = true
     }
     
-//    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, didChange newState: MKAnnotationViewDragState, fromOldState oldState: MKAnnotationViewDragState) {
-//        switch newState {
-//        case .starting:
-//            view.dragState = .dragging
-//        
-//        case .ending, .canceling:
-//            view.dragState = .none
-//            let latitude = view.annotation?.coordinate.latitude
-//            let longitude = view.annotation?.coordinate.longitude
-//            
-//            print(object: "Finish pin lat \(latitude) long \(longitude)")
-//        
-//        default:
-//            break
-//        }
-//    }
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, didChange newState: MKAnnotationViewDragState, fromOldState oldState: MKAnnotationViewDragState) {
+        switch newState {
+        case .starting:
+            view.dragState = .dragging
+            
+        case .ending, .canceling:
+            view.dragState = .none
+            didMoveAnnotation(toLocation: mapView.convert(view.center, toCoordinateFrom: mapView))
+        
+        default:
+            break
+        }
+    }
+    
+    func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+        pointAnnotation.isRegionChange = true
+        print(object: "region")
+    }
 }
 
 
@@ -249,6 +285,7 @@ extension OrganizationMapShowViewController {
         
         // Start GeoLocation manager with string address
         didStartGeocoding()
+        textField.text = nil
         
         return true;
     }

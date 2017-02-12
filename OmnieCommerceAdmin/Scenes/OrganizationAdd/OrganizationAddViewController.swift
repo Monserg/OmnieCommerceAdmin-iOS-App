@@ -25,6 +25,7 @@ class OrganizationAddViewController: BaseViewController {
     // MARK: - Properties
     var interactor: OrganizationAddViewControllerOutput!
     var router: OrganizationAddRouter!
+    
     private var mediaManager: MediaManager!
 
     // Route data
@@ -116,6 +117,8 @@ class OrganizationAddViewController: BaseViewController {
     
     @IBAction func handlerLocationButtonTap(_ sender: CustomButton) {
         view.endEditing(true)
+        
+        pointAnnotation.didUpdateAnnotation()
         router.navigateToMap()
     }
     

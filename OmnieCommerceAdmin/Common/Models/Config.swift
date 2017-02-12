@@ -26,6 +26,7 @@ typealias HandlerCancelButtonCompletion             =   (() -> ())
 typealias HandlerNavBarLeftButtonCompletion         =   (() -> ())
 typealias HandlerLocationCompletion                 =   ((_ placemark: CLPlacemark?) -> ())
 typealias HandlerImagePickerControllerCompletion    =   ((_ originalImage: UIImage) -> ())
+typealias HandlerLocationAddButtonCompletion        =   ((_ pointAnnotation: PointAnnotation) -> ())
 
 typealias ResponseAPI                               =   (success: Bool, error: String?)
 typealias ResultLocation                            =   (placemark: CLPlacemark?, coordinate: CLLocationCoordinate2D?, address: String?)

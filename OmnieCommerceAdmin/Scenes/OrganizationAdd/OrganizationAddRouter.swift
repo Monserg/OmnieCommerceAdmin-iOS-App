@@ -25,9 +25,21 @@ class OrganizationAddRouter: OrganizationAddRouterInput {
     func navigateToMap() {
         let storyboard = UIStoryboard(name: "OrganizationMapShow", bundle: nil)
         let organizationMapShowVC = storyboard.instantiateViewController(withIdentifier: "OrganizationMapShowVC") as! OrganizationMapShowViewController
-        organizationMapShowVC.pointAnnotation = viewController.pointAnnotation
+        organizationMapShowVC.pointAnnotationOld.didUpdate(fromPointAnnotation: viewController.pointAnnotation)
         
         viewController.navigationController?.pushViewController(organizationMapShowVC, animated: true)
+        
+        // Handler Add button tap
+        organizationMapShowVC.handlerLocationAddButtonCompletion = { pointAnnotation in
+            self.viewController.pointAnnotation = pointAnnotation
+            
+            _ = self.viewController.navigationController?.popViewController(animated: true)
+        }
+        
+        // Handler Cancel button tap
+        organizationMapShowVC.handlerCancelButtonCompletion = { _ in
+            _ = self.viewController.navigationController?.popViewController(animated: true)
+        }
     }
     
     // Communication
