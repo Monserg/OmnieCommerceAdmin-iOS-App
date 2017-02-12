@@ -73,6 +73,7 @@
 		B1C320E01E44A46700D84BC3 /* ForgotPasswordShowWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C320D91E44A46700D84BC3 /* ForgotPasswordShowWorker.swift */; };
 		B1C320E61E44CBCD00D84BC3 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C320E51E44CBCD00D84BC3 /* CustomView.swift */; };
 		B1CAF3A61E50298900BBBDEB /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1CAF3A51E50298900BBBDEB /* UIImage+Extensions.swift */; };
+		B1CAF3AC1E505E8800BBBDEB /* PointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1CAF3AB1E505E8800BBBDEB /* PointAnnotation.swift */; };
 		B1CF2F321E4EAE2300DF5CA0 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1CF2F311E4EAE2300DF5CA0 /* LocationManager.swift */; };
 		B1CF2F351E4F01D200DF5CA0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B1CF2F371E4F01D200DF5CA0 /* InfoPlist.strings */; };
 		B1CF2F3C1E4F882000DF5CA0 /* MediaManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1CF2F3B1E4F882000DF5CA0 /* MediaManager.swift */; };
@@ -208,6 +209,7 @@
 		B1C320D91E44A46700D84BC3 /* ForgotPasswordShowWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordShowWorker.swift; sourceTree = "<group>"; };
 		B1C320E51E44CBCD00D84BC3 /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		B1CAF3A51E50298900BBBDEB /* UIImage+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
+		B1CAF3AB1E505E8800BBBDEB /* PointAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointAnnotation.swift; sourceTree = "<group>"; };
 		B1CF2F311E4EAE2300DF5CA0 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		B1CF2F361E4F01D200DF5CA0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B1CF2F381E4F01D300DF5CA0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -326,6 +328,7 @@
 		B15732BE1E4DD76200685A46 /* OrganizationMapShow */ = {
 			isa = PBXGroup;
 			children = (
+				B1CAF3AA1E505E5400BBBDEB /* Models */,
 				B15732BF1E4DD78100685A46 /* OrganizationMapShowConfigurator.swift */,
 				B15732C01E4DD78100685A46 /* OrganizationMapShowInteractor.swift */,
 				B15732C11E4DD78100685A46 /* OrganizationMapShowModels.swift */,
@@ -443,6 +446,14 @@
 				B1C320D91E44A46700D84BC3 /* ForgotPasswordShowWorker.swift */,
 			);
 			path = ForgotPasswordShow;
+			sourceTree = "<group>";
+		};
+		B1CAF3AA1E505E5400BBBDEB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B1CAF3AB1E505E8800BBBDEB /* PointAnnotation.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		B1CF2F301E4EADFA00DF5CA0 /* Managers */ = {
@@ -895,6 +906,7 @@
 				B1C320DB1E44A46700D84BC3 /* ForgotPasswordShowInteractor.swift in Sources */,
 				B1CF2F321E4EAE2300DF5CA0 /* LocationManager.swift in Sources */,
 				B1C320DC1E44A46700D84BC3 /* ForgotPasswordShowModels.swift in Sources */,
+				B1CAF3AC1E505E8800BBBDEB /* PointAnnotation.swift in Sources */,
 				B1FBB8D91E43D28F00C02BC3 /* OrganizationsListShowConfigurator.swift in Sources */,
 				B18373AA1E458B0800A2F36B /* UIButton+Extensions.swift in Sources */,
 				B1C320E01E44A46700D84BC3 /* ForgotPasswordShowWorker.swift in Sources */,

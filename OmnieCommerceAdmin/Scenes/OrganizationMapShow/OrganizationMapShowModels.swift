@@ -21,7 +21,7 @@ struct OrganizationMapShowModels {
         }
         
         struct ResponseModel {
-            let resultLocation: ResultLocation?
+            let placemark: CLPlacemark?
         }
         
         struct ViewModel {

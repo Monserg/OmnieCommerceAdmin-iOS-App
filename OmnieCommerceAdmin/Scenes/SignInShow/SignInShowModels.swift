@@ -20,11 +20,11 @@ struct SignInShowModels {
         }
         
         struct ResponseModel {
-            let result: apiResponse
+            let result: ResponseAPI
         }
         
         struct ViewModel {
-            let result: apiResponse
+            let result: ResponseAPI
         }
     }
 }

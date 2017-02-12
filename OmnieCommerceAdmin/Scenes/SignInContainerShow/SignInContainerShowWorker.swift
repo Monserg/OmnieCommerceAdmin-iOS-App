@@ -13,7 +13,7 @@ import UIKit
 
 class SignInContainerShowWorker {
     // MARK: - Custom Functions. Business Logic
-    func doSomeWork() -> apiResponse {
+    func doSomeWork() -> ResponseAPI {
         // NOTE: Do the work
         
         return (true, nil)

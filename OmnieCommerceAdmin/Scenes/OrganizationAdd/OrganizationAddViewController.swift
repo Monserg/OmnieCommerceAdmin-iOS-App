@@ -27,7 +27,8 @@ class OrganizationAddViewController: BaseViewController {
     var router: OrganizationAddRouter!
     private var mediaManager: MediaManager!
 
-//    var leftButtonImage: UIImage!
+    // Route data
+    var pointAnnotation = PointAnnotation()
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var customNavigationBarView: MainNavigationBarView!
@@ -56,8 +57,14 @@ class OrganizationAddViewController: BaseViewController {
         
         doInitialSetupOnLoad()
     }
-    
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        textFieldsCollection.last?.text = pointAnnotation.subtitle
+    }
+
+    
     // MARK: - Custom Functions
     func doInitialSetupOnLoad() {        
         // Set left bar button image
@@ -92,6 +99,7 @@ class OrganizationAddViewController: BaseViewController {
             let avatarImage = imageFromAlbum.af_imageAspectScaled(toFill: self.organizationAvatarButton.frame.size)
             
             UIView.animate(withDuration: 0.5) {
+                self.pointAnnotation.image = avatarImage
                 self.organizationAvatarButton.setImage(avatarImage, for: .normal)
             }
 
@@ -107,6 +115,7 @@ class OrganizationAddViewController: BaseViewController {
     }
     
     @IBAction func handlerLocationButtonTap(_ sender: CustomButton) {
+        view.endEditing(true)
         router.navigateToMap()
     }
     
@@ -137,6 +146,11 @@ extension OrganizationAddViewController {
     
     // // TextField resign first responder
     override func textFieldDidEndEditing(_ textField: UITextField) {
+        // Name
+        if (textField.tag == 0) {
+            pointAnnotation.title = textField.text
+        }
+        
         // Email
         if (textField.tag == 1) {
             if (!(textField as! CustomTextField).checkEmailValidation(textField.text!)) {

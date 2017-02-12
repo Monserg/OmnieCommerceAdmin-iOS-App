@@ -24,11 +24,11 @@ typealias HandlerRegisterButtonCompletion           =   (() -> ())
 typealias HandlerForgotPasswordButtonCompletion     =   (() -> ())
 typealias HandlerCancelButtonCompletion             =   (() -> ())
 typealias HandlerNavBarLeftButtonCompletion         =   (() -> ())
-typealias HandlerLocationCompletion                 =   ((_ resultLocation: ResultLocation?) -> ())
+typealias HandlerLocationCompletion                 =   ((_ placemark: CLPlacemark?) -> ())
 typealias HandlerImagePickerControllerCompletion    =   ((_ originalImage: UIImage) -> ())
 
-typealias apiResponse                               =   (success: Bool, error: String?)
-typealias ResultLocation                            =   (placemark: CLPlacemark?, coordinate: CLLocationCoordinate2D?)
+typealias ResponseAPI                               =   (success: Bool, error: String?)
+typealias ResultLocation                            =   (placemark: CLPlacemark?, coordinate: CLLocationCoordinate2D?, address: String?)
 typealias SearchLocation                            =   (coordinates: CLLocationCoordinate2D?, address: String?)
 
 struct Config {

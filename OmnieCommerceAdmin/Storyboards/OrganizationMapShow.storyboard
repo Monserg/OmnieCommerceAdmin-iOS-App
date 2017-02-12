@@ -41,6 +41,9 @@
                                 <subviews>
                                     <mapView clipsSubviews="YES" contentMode="scaleToFill" mapType="standard" showsScale="YES" showsTraffic="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xlm-LZ-bNb">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="558"/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="eah-IJ-Beu" appends="YES" id="jDb-i4-WHR"/>
+                                        </connections>
                                     </mapView>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="acf-xo-OLl" userLabel="Action Buttons View">
                                         <rect key="frame" x="0.0" y="558" width="375" height="45"/>
@@ -201,6 +204,12 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g5L-iT-tCA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="2" id="eah-IJ-Beu">
+                    <connections>
+                        <action selector="handlerLongGestureRecognizer:" destination="vFE-8k-W19" id="66n-oE-0cf"/>
+                        <outlet property="delegate" destination="vFE-8k-W19" id="MZf-mZ-IOD"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="120.8" y="151.57421289355324"/>
         </scene>

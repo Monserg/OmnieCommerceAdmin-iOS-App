@@ -30,8 +30,14 @@ class OrganizationMapShowPresenter: OrganizationMapShowPresenterInput {
     
     // MARK: - Custom Functions. Presentation logic
     func didPrepareToShowLocation(responseModel: OrganizationMapShowModels.Location.ResponseModel) {
-        // NOTE: Format the response from the Interactor and pass the result back to the View Controller
-        let viewModel = OrganizationMapShowModels.Location.ViewModel(resultLocation: responseModel.resultLocation)
+        var placeString: String?
+        
+        if let lines: Array<String> = responseModel.placemark?.addressDictionary?["FormattedAddressLines"] as? Array<String> {
+            placeString = lines.joined(separator: ", ")
+        }
+
+        let resultLocation = ResultLocation(responseModel.placemark, responseModel.placemark?.location?.coordinate, placeString)
+        let viewModel = OrganizationMapShowModels.Location.ViewModel(resultLocation: resultLocation)
         viewController.didShowLocation(viewModel: viewModel)
     }
     

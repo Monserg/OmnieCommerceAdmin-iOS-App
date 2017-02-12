@@ -33,8 +33,8 @@ class OrganizationMapShowInteractor: OrganizationMapShowInteractorInput {
     func didLoadLocation(requestModel: OrganizationMapShowModels.Location.RequestModel) {
         requestModel.locationManager.startCoreLocation(withSearchLocation: requestModel.searchLocation)
         
-        return requestModel.locationManager.handlerLocationCompletion = { resultLocation in
-            let responseModel = OrganizationMapShowModels.Location.ResponseModel(resultLocation: resultLocation)
+        return requestModel.locationManager.handlerLocationCompletion = { placemark in
+            let responseModel = OrganizationMapShowModels.Location.ResponseModel(placemark: placemark)
             self.presenter.didPrepareToShowLocation(responseModel: responseModel)
         }
     }
@@ -43,7 +43,7 @@ class OrganizationMapShowInteractor: OrganizationMapShowInteractorInput {
         worker = OrganizationMapShowWorker()
         requestModel.locationManager.stopCoreLocation()
         
-        let responseModel = OrganizationMapShowModels.Location.ResponseModel(resultLocation: nil)
+        let responseModel = OrganizationMapShowModels.Location.ResponseModel(placemark: nil)
         presenter.didPrepareToDismissViewController(responseModel: responseModel)
     }
 }

@@ -62,13 +62,13 @@ extension LocationManager: CLLocationManagerDelegate {
 
             CLGeocoder().reverseGeocodeLocation(location) { placemarks, error in
                 guard placemarks != nil else {
-                    self.handlerLocationCompletion!(ResultLocation(nil, nil))
+                    self.handlerLocationCompletion!(nil)
 
                     return
                 }
                 
                 let placemark = placemarks![0]
-                self.handlerLocationCompletion!(ResultLocation(placemark, locations.last!.coordinate))
+                self.handlerLocationCompletion!(placemark)
             }
         }
         
@@ -76,13 +76,13 @@ extension LocationManager: CLLocationManagerDelegate {
         else {
             CLGeocoder().geocodeAddressString((searchLocation?.address!)!, completionHandler: { placemarks, error in
                 guard placemarks != nil else {
-                    self.handlerLocationCompletion!(ResultLocation(nil, nil))
+                    self.handlerLocationCompletion!(nil)
                     
                     return
                 }
                 
                 let placemark = placemarks![0]
-                self.handlerLocationCompletion!(ResultLocation(placemark, locations.last!.coordinate))
+                self.handlerLocationCompletion!(placemark)
             })
         }
     }

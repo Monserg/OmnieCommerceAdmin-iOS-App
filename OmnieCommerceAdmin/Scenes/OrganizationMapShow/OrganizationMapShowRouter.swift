@@ -40,6 +40,13 @@ class OrganizationMapShowRouter: OrganizationMapShowRouterInput {
     }
     
     // Communication
+    func didPassDataToOrganizationAddShowScene(passData data: PointAnnotation) {
+        let storyboard = UIStoryboard(name: "OrganizationAdd", bundle: nil)
+        let organizationAddShowViewController = storyboard.instantiateViewController(withIdentifier: "OrganizationAddVC") as! OrganizationAddViewController
+        
+        organizationAddShowViewController.pointAnnotation = data
+    }
+    
     func passDataToNextScene(segue: UIStoryboardSegue) {
         // NOTE: Teach the router which scenes it can communicate with
         if segue.identifier == "ShowSomewhereScene" {

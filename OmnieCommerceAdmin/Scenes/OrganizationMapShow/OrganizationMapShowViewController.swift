@@ -29,9 +29,10 @@ class OrganizationMapShowViewController: BaseViewController {
     var router: OrganizationMapShowRouter!
 
     private let locationManager = LocationManager()
-    let annotation = MKPointAnnotation()
-    var organizationName: String?
     var pointTouchOnMapView: CGPoint?
+
+    // Route data
+    var pointAnnotation = PointAnnotation()
     
     @IBOutlet weak var mapView: MKMapView! {
         didSet {
@@ -67,6 +68,9 @@ class OrganizationMapShowViewController: BaseViewController {
     }
     
     override func viewDidDisappear(_ animated: Bool) {
+        // Pass route data to previuos scene
+        router.didPassDataToOrganizationAddShowScene(passData: pointAnnotation)
+        
         // Stop GeoLocation manager
         let locationRequestModel = OrganizationMapShowModels.Location.RequestModel(locationManager: locationManager, searchLocation: SearchLocation(nil, nil))
         interactor.didStopUpdateLocation(requestModel: locationRequestModel)
@@ -93,7 +97,7 @@ class OrganizationMapShowViewController: BaseViewController {
     func didStartGeocoding() {
         spinner.startAnimating()
         
-        let requestModel = OrganizationMapShowModels.Location.RequestModel(locationManager: locationManager, searchLocation: SearchLocation(nil, searchTextField.text))
+        let requestModel = OrganizationMapShowModels.Location.RequestModel(locationManager: locationManager, searchLocation: SearchLocation(pointAnnotation.coordinate, searchTextField.text))
         interactor.didLoadLocation(requestModel: requestModel)
     }
     
@@ -121,10 +125,8 @@ class OrganizationMapShowViewController: BaseViewController {
 
         mapView.addAnnotations(mapView.selectedAnnotations)
         
-        annotation.title = organizationName ?? "Enter organization name".localized()
-        annotation.coordinate = (placemark!.location?.coordinate)!
-        mapView.showAnnotations([annotation], animated: true)
-        mapView.selectAnnotation(annotation, animated: true)
+        mapView.showAnnotations([pointAnnotation], animated: true)
+        mapView.selectAnnotation(pointAnnotation, animated: true)
     }
     
     // MARK: - Actions
@@ -137,9 +139,11 @@ class OrganizationMapShowViewController: BaseViewController {
     
     
     // MARK: - Gestures
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        pointTouchOnMapView = touches.first?.location(in: mapView)
-//        annotation.coordinate = mapView.convert((pointTouchOnMapView)!, toCoordinateFrom: mapView)
+    @IBAction func handlerLongGestureRecognizer(_ sender: UILongPressGestureRecognizer) {
+        if sender.state == .began {
+            pointTouchOnMapView = sender.location(in: mapView)
+            pointAnnotation.coordinate = mapView.convert((pointTouchOnMapView)!, toCoordinateFrom: mapView)
+        }
     }
 }
 
@@ -147,6 +151,9 @@ class OrganizationMapShowViewController: BaseViewController {
 // MARK: - ForgotPasswordShowViewControllerInput
 extension OrganizationMapShowViewController: OrganizationMapShowViewControllerInput {
     func didShowLocation(viewModel: OrganizationMapShowModels.Location.ViewModel) {
+        self.pointAnnotation.coordinate = (viewModel.resultLocation?.coordinate!)!
+        self.pointAnnotation.subtitle = viewModel.resultLocation?.address
+        
         didAddAnnotation(placemark: viewModel.resultLocation?.placemark)
         didShowLocationOnMapViewCenter(coordinate: viewModel.resultLocation?.coordinate)
     }
@@ -179,6 +186,20 @@ extension OrganizationMapShowViewController: MKMapViewDelegate {
         
         pinAnnotationView?.canShowCallout = true
 
+        // Add organization image
+        let leftIconView = UIImageView(frame: CGRect.init(x: 0, y: 0, width: 44, height: 33))
+
+        guard let avatar = pointAnnotation.image else {
+            leftIconView.image = UIImage(named: "icon-empty-organization-normal")
+            leftIconView.backgroundColor = UIColor.veryLightGray
+            pinAnnotationView?.leftCalloutAccessoryView = leftIconView
+            
+            return pinAnnotationView
+        }
+        
+        leftIconView.image = avatar
+        pinAnnotationView?.leftCalloutAccessoryView = leftIconView
+        
         return pinAnnotationView
     }
     
@@ -186,22 +207,22 @@ extension OrganizationMapShowViewController: MKMapViewDelegate {
         view.canShowCallout = true
     }
     
-    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, didChange newState: MKAnnotationViewDragState, fromOldState oldState: MKAnnotationViewDragState) {
-        switch newState {
-        case .starting:
-            view.dragState = .dragging
-        
-        case .ending, .canceling:
-            view.dragState = .none
-            let lat = view.annotation?.coordinate.latitude
-            let long = view.annotation?.coordinate.longitude
-            
-            print(object: "Finish pin lat \(lat) long \(long)")
-        
-        default:
-            break
-        }
-    }
+//    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, didChange newState: MKAnnotationViewDragState, fromOldState oldState: MKAnnotationViewDragState) {
+//        switch newState {
+//        case .starting:
+//            view.dragState = .dragging
+//        
+//        case .ending, .canceling:
+//            view.dragState = .none
+//            let latitude = view.annotation?.coordinate.latitude
+//            let longitude = view.annotation?.coordinate.longitude
+//            
+//            print(object: "Finish pin lat \(latitude) long \(longitude)")
+//        
+//        default:
+//            break
+//        }
+//    }
 }
 
 
