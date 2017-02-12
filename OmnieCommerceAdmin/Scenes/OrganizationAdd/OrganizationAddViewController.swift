@@ -118,7 +118,10 @@ class OrganizationAddViewController: BaseViewController {
     @IBAction func handlerLocationButtonTap(_ sender: CustomButton) {
         view.endEditing(true)
         
-        pointAnnotation.didUpdateAnnotation()
+        pointAnnotation.title = textFieldsCollection.first?.text
+        pointAnnotation.image = organizationAvatarButton.imageView?.image
+
+//        pointAnnotation.didUpdateAnnotation()
         router.navigateToMap()
     }
     

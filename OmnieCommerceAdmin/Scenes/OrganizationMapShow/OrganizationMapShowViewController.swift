@@ -29,6 +29,7 @@ class OrganizationMapShowViewController: BaseViewController {
     var router: OrganizationMapShowRouter!
     
     private let locationManager = LocationManager()
+    var pinAnnotationView: MKAnnotationView!
     var pointTouchOnMapView: CGPoint?
 
     var handlerLocationAddButtonCompletion: HandlerLocationAddButtonCompletion?
@@ -36,7 +37,6 @@ class OrganizationMapShowViewController: BaseViewController {
     
     // Route data
     var pointAnnotation = PointAnnotation()
-    var pointAnnotationOld = PointAnnotation()
     
     @IBOutlet weak var mapView: MKMapView! {
         didSet {
@@ -89,9 +89,6 @@ class OrganizationMapShowViewController: BaseViewController {
         mapView.showsScale = true
         mapView.showsCompass = true
         
-        // Create new point annotation
-        pointAnnotation.didUpdate(fromPointAnnotation: pointAnnotationOld)
-        
         // Start GeoLocation manager with current user position
         didStartGeocoding()
         
@@ -115,8 +112,6 @@ class OrganizationMapShowViewController: BaseViewController {
             return
         }
         
-//        mapView.setRegion(MKCoordinateRegionMakeWithDistance(regionCoordinate, 9900000, 9000000), animated: true)
-        
         mapView.setRegion(MKCoordinateRegionMake(regionCoordinate, MKCoordinateSpanMake(0.003, 0.003)), animated: true)
     }
 
@@ -127,10 +122,9 @@ class OrganizationMapShowViewController: BaseViewController {
 
         mapView.addAnnotations(mapView.selectedAnnotations)
         
-        didShowLocationOnMapViewCenter(coordinate: placemark?.location?.coordinate)
-
         mapView.showAnnotations([pointAnnotation.annotation], animated: true)
         mapView.selectAnnotation(pointAnnotation.annotation, animated: true)
+        didShowLocationOnMapViewCenter(coordinate: placemark?.location?.coordinate)
         
         if (pointAnnotation.isRegionChange) {
             spinner.stopAnimating()
@@ -143,7 +137,6 @@ class OrganizationMapShowViewController: BaseViewController {
         UIView.animate(withDuration: 0.5, animations: {
             self.pointAnnotation.coordinate = coordinate
         }, completion: { success in
-            self.pointAnnotation.coordinate = coordinate
             self.didShowLocationOnMapViewCenter(coordinate: coordinate)
             
             self.didStartGeocoding()
@@ -164,18 +157,12 @@ class OrganizationMapShowViewController: BaseViewController {
     // MARK: - Gestures
     @IBAction func handlerLongGestureRecognizer(_ sender: UILongPressGestureRecognizer) {
         if sender.state == .began {
+            pinAnnotationView.canShowCallout = false
+
             pointTouchOnMapView = sender.location(in: mapView)
             let newCoordinate = mapView.convert((pointTouchOnMapView)!, toCoordinateFrom: mapView)
             
             didMoveAnnotation(toLocation: newCoordinate)
-            
-//            UIView.animate(withDuration: 0.5, animations: { 
-//                self.pointAnnotation.coordinate = newCoordinate
-//            }, completion: { success in
-//                self.didShowLocationOnMapViewCenter(coordinate: newCoordinate)
-//                
-//                self.didStartGeocoding()
-//            })
         }
     }
 }
@@ -184,10 +171,7 @@ class OrganizationMapShowViewController: BaseViewController {
 // MARK: - ForgotPasswordShowViewControllerInput
 extension OrganizationMapShowViewController: OrganizationMapShowViewControllerInput {
     func didShowLocation(viewModel: OrganizationMapShowModels.Location.ViewModel) {
-        self.pointAnnotation.coordinate = (viewModel.resultLocation?.coordinate!)!
-        self.pointAnnotation.subtitle = viewModel.resultLocation?.address
-        self.pointAnnotation.didUpdateAnnotation()
-        
+        self.pointAnnotation.didUpdate(fromViewModel: viewModel.resultLocation!)
         didAddAnnotation(placemark: viewModel.resultLocation?.placemark)
     }
     
@@ -207,7 +191,8 @@ extension OrganizationMapShowViewController: MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         let identifier = "CustomPin"
-        var pinAnnotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
+        pinAnnotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
+        pinAnnotationView?.frame.origin = CGPoint.init(x: mapView.bounds.midX, y: -5250)
         
         if (pinAnnotationView != nil) {
             pinAnnotationView?.annotation = annotation
@@ -217,7 +202,7 @@ extension OrganizationMapShowViewController: MKMapViewDelegate {
             pinAnnotationView?.frame.size = CGSize.init(width: 50, height: 50)
         }
         
-        pinAnnotationView?.canShowCallout = true
+        pinAnnotationView?.canShowCallout = false
         pinAnnotationView?.isDraggable = true
 
         // Add organization image
@@ -233,7 +218,7 @@ extension OrganizationMapShowViewController: MKMapViewDelegate {
         
         leftIconView.image = avatar
         pinAnnotationView?.leftCalloutAccessoryView = leftIconView
-        
+      
         return pinAnnotationView
     }
     
@@ -248,6 +233,8 @@ extension OrganizationMapShowViewController: MKMapViewDelegate {
             
         case .ending, .canceling:
             view.dragState = .none
+            pinAnnotationView.canShowCallout = false
+
             didMoveAnnotation(toLocation: mapView.convert(view.center, toCoordinateFrom: mapView))
         
         default:
@@ -290,4 +277,3 @@ extension OrganizationMapShowViewController {
         return true;
     }
 }
-
