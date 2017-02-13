@@ -144,7 +144,7 @@
             <objects>
                 <navigationController storyboardIdentifier="OrganizationsListNC" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="rao-N9-D5u" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Hdy-nr-g7r">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="Hdy-nr-g7r">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

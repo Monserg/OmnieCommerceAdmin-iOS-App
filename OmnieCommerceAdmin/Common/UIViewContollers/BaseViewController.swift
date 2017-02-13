@@ -15,6 +15,7 @@ class BaseViewController: UIViewController {
     var selectedRange: CGRect?
     var scrollViewBase = UIScrollView()
     var navigationBarView: MainNavigationBarView?
+    var blackOutView: UIView?
     
     var haveMenuItem = false {
         didSet {
@@ -129,6 +130,9 @@ class BaseViewController: UIViewController {
                 
                 view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
                 navigationBarView!.leftButton.addTarget(revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: .touchUpInside)
+                
+                // Delegate
+                revealViewController().delegate = self
             }
         }
     }
@@ -224,12 +228,46 @@ extension BaseViewController: UITextFieldDelegate {
 
 
 // MARK: - UINavigationControllerDelegate
-extension MediaManager: UINavigationControllerDelegate {
+extension BaseViewController: UINavigationControllerDelegate {
     func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
         UIApplication.shared.statusBarStyle = .lightContent
         UINavigationBar.appearance().barTintColor = UIColor.veryDarkGray
         UINavigationBar.appearance().tintColor = UIColor.veryLightGray
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.veryLightGray]
         UINavigationBar.appearance().isTranslucent = false
+    }
+}
+
+
+// MARK: - SWRevealViewControllerDelegate
+extension BaseViewController: SWRevealViewControllerDelegate {
+    func revealController(_ revealController: SWRevealViewController!, willMoveTo position: FrontViewPosition) {
+        switch position {
+        case .right, .rightMost, .rightMostRemoved:
+            // Create blackOutView
+            blackOutView = UIView.init() //(frame: CGRect.init(x: 0, y: (navigationBarView?.frame.maxY)!, width: view.frame.width, height: view.frame.height - (navigationBarView?.frame.maxY)!))
+            blackOutView!.backgroundColor = UIColor.init(hexString: "#000000", withAlpha: 0.2)
+            blackOutView!.translatesAutoresizingMaskIntoConstraints = false
+
+            view.addSubview(blackOutView!)
+
+            // Add constraints
+            let topConstraint       =   NSLayoutConstraint(item: blackOutView!, attribute: .top, relatedBy: .equal,
+                                                           toItem: navigationBarView!, attribute: .bottom, multiplier: 1.0, constant: 0.0)
+            
+            let leftConstraint      =   NSLayoutConstraint(item: blackOutView!, attribute: .left , relatedBy: .equal,
+                                                           toItem: view, attribute: .left, multiplier: 1.0, constant: 0.0)
+            
+            let bottomConstraint    =   NSLayoutConstraint(item: blackOutView!, attribute: .bottom, relatedBy: .equal,
+                                                           toItem: view, attribute: .bottom, multiplier: 1.0, constant: 0.0)
+            
+            let rightConstraint     =   NSLayoutConstraint(item: blackOutView!, attribute: .right , relatedBy: .equal,
+                                                           toItem: view, attribute: .right, multiplier: 1.0, constant: 0.0)
+            
+            view.addConstraints([topConstraint, leftConstraint, bottomConstraint, rightConstraint])
+            
+        default:
+            blackOutView!.removeFromSuperview()
+        }
     }
 }
