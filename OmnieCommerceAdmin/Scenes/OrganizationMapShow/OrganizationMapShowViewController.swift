@@ -29,7 +29,7 @@ class OrganizationMapShowViewController: BaseViewController {
     var router: OrganizationMapShowRouter!
     
     private let locationManager = LocationManager()
-    var pinAnnotationView: MKAnnotationView!
+    var pinAnnotationView: MKPinAnnotationView! //MKAnnotationView!
     var pointTouchOnMapView: CGPoint?
 
     var handlerLocationAddButtonCompletion: HandlerLocationAddButtonCompletion?
@@ -190,16 +190,18 @@ extension OrganizationMapShowViewController: MKMapViewDelegate {
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        let identifier = "CustomPin"
-        pinAnnotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
-        pinAnnotationView?.frame.origin = CGPoint.init(x: mapView.bounds.midX, y: -5250)
+        let identifier = "pin" //"CustomPin"
+        pinAnnotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKPinAnnotationView
+//        pinAnnotationView?.frame.origin = CGPoint.init(x: mapView.bounds.midX, y: -5250)
         
         if (pinAnnotationView != nil) {
             pinAnnotationView?.annotation = annotation
         } else {
-            pinAnnotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: identifier)
-            pinAnnotationView?.image = UIImage(named: "icon-location-normal")
-            pinAnnotationView?.frame.size = CGSize.init(width: 50, height: 50)
+            pinAnnotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            pinAnnotationView.pinTintColor = UIColor.init(hexString: "#009395", withAlpha: 1.0)
+            
+            // pinAnnotationView?.image = UIImage(named: "icon-location-normal")
+            // pinAnnotationView?.frame.size = CGSize.init(width: 50, height: 50)
         }
         
         pinAnnotationView?.canShowCallout = false
