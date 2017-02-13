@@ -104,18 +104,24 @@ extension SlideMenuShowViewController: UITableViewDelegate {
         return 35.0
     }
     
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return CGFloat.leastNormalMagnitude
+    }
+    
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return (section == items.sections.count - 1) ? 0.0 : 25.0
+        return 25.0
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let footerView = UIView.init(frame: CGRect.init(origin: CGPoint.zero, size: CGSize.init(width: tableView.frame.width, height: 25.0)))
         footerView.backgroundColor = UIColor.clear
         
-        let lineView = UIView.init(frame: CGRect.init(origin: CGPoint.init(x: 0, y: 25.0 / 2), size: CGSize.init(width: tableView.frame.width, height: 1.0)))
-        lineView.backgroundColor = UIColor.init(hexString: "#3b3b3b", withAlpha: 1.0)
-        
-        footerView.addSubview(lineView)
+        if (section != items.sections.count - 1) {
+            let lineView = UIView.init(frame: CGRect.init(origin: CGPoint.init(x: 0, y: 25.0 / 2), size: CGSize.init(width: tableView.frame.width, height: 1.0)))
+            lineView.backgroundColor = UIColor.init(hexString: "#3b3b3b", withAlpha: 1.0)
+            
+            footerView.addSubview(lineView)
+        }
         
         return footerView
     }
@@ -125,7 +131,7 @@ extension SlideMenuShowViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {

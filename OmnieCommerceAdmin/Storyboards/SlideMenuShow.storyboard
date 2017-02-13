@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="h1r-zi-EdL">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AZe-4k-Xhu">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -24,14 +24,26 @@
                         <viewControllerLayoutGuide type="bottom" id="lVA-Jw-8bg"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="O15-w6-4k8">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <segue destination="h1r-zi-EdL" kind="custom" identifier="sw_rear" customClass="SWRevealViewControllerSegueSetController" id="CxT-ob-7Bm"/>
+                        <segue destination="bWw-Nb-Gr2" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="aDx-z1-7zf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h8S-Ix-a6x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2" y="-41"/>
+        </scene>
+        <!--OrganizationsListShowVC-->
+        <scene sceneID="4tB-Ps-2Am">
+            <objects>
+                <viewControllerPlaceholder storyboardName="OrganizationsListShow" referencedIdentifier="OrganizationsListShowVC" id="bWw-Nb-Gr2" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="odK-hq-9DR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="617" y="-143"/>
         </scene>
         <!--Slide Menu Show View Controller-->
         <scene sceneID="UIr-tO-jmI">
@@ -42,25 +54,25 @@
                         <viewControllerLayoutGuide type="bottom" id="iWb-EA-xRp"/>
                     </layoutGuides>
                     <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="FbK-BH-lQn">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iMP-1l-lmX" userLabel="Content View">
-                                <rect key="frame" x="0.0" y="0.0" width="295" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8QM-tP-Bbl" userLabel="Organization View">
-                                        <rect key="frame" x="0.0" y="0.0" width="295" height="213"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="182"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="35" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fVa-KB-rXG">
-                                        <rect key="frame" x="0.0" y="213" width="295" height="454"/>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="35" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="fVa-KB-rXG">
+                                        <rect key="frame" x="0.0" y="182" width="320" height="386"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MenuCell" id="QuL-Jf-A2K" customClass="MenuViewCell" customModule="OmnieCommerceAdmin" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="28" width="295" height="35"/>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MenuCell" id="QuL-Jf-A2K" customClass="MenuViewCell" customModule="OmnieCommerceAdmin" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="56" width="320" height="35"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QuL-Jf-A2K" id="GjR-CE-Kc6">
-                                                    <rect key="frame" x="0.0" y="0.0" width="295" height="35"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="35"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FCX-Ql-cSh" userLabel="Icon Image View">
@@ -72,7 +84,7 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4lg-4N-C8r" userLabel="Title Label" customClass="CustomLabel" customModule="OmnieCommerceAdmin" customModuleProvider="target">
-                                                            <rect key="frame" x="62" y="17.5" width="183" height="0.0"/>
+                                                            <rect key="frame" x="62" y="17" width="208" height="0.0"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -81,7 +93,7 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </label>
                                                         <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FWX-qd-G7J" userLabel="New Push Count Button">
-                                                            <rect key="frame" x="253" y="0.0" width="34" height="34"/>
+                                                            <rect key="frame" x="278" y="0.0" width="34" height="34"/>
                                                             <color key="backgroundColor" red="1" green="0.84313725490196079" blue="0.42352941176470588" alpha="1" colorSpace="calibratedRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="34" id="QEj-7Q-IAJ"/>
@@ -134,25 +146,21 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="8QM-tP-Bbl" firstAttribute="height" secondItem="FbK-BH-lQn" secondAttribute="height" multiplier="213:667" id="47f-rh-IE2"/>
+                            <constraint firstAttribute="trailing" secondItem="iMP-1l-lmX" secondAttribute="trailing" id="EHA-iX-eH8"/>
                             <constraint firstItem="iMP-1l-lmX" firstAttribute="leading" secondItem="FbK-BH-lQn" secondAttribute="leading" id="Fhl-aj-cIV"/>
                             <constraint firstItem="iWb-EA-xRp" firstAttribute="top" secondItem="iMP-1l-lmX" secondAttribute="bottom" id="G66-gd-cG2"/>
                             <constraint firstItem="iMP-1l-lmX" firstAttribute="top" secondItem="FbK-BH-lQn" secondAttribute="top" id="ecK-jd-Z0B"/>
-                            <constraint firstItem="iMP-1l-lmX" firstAttribute="width" secondItem="FbK-BH-lQn" secondAttribute="width" multiplier="295:667" id="jsH-Rk-9J5"/>
                             <constraint firstItem="8QM-tP-Bbl" firstAttribute="height" secondItem="FbK-BH-lQn" secondAttribute="height" multiplier="213:375" id="oqs-qb-Bax"/>
-                            <constraint firstItem="iMP-1l-lmX" firstAttribute="width" secondItem="FbK-BH-lQn" secondAttribute="width" multiplier="295:375" id="yo1-qN-Snc"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="47f-rh-IE2"/>
-                                <exclude reference="yo1-qN-Snc"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="constraints">
                                 <include reference="47f-rh-IE2"/>
                                 <exclude reference="oqs-qb-Bax"/>
-                                <exclude reference="jsH-Rk-9J5"/>
-                                <include reference="yo1-qN-Snc"/>
                             </mask>
                         </variation>
                     </view>
@@ -162,7 +170,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yKD-TP-2Fi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="913" y="-42"/>
+            <point key="canvasLocation" x="1137" y="-42"/>
         </scene>
     </scenes>
 </document>

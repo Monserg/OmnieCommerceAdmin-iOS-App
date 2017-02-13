@@ -42,10 +42,10 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="RVF-nH-6Oa">
-                                            <rect key="frame" x="88.5" y="40" width="198" height="44"/>
+                                            <rect key="frame" x="115.5" y="40" width="144" height="44"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To add organization" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NkG-aU-in2" customClass="CustomLabel" customModule="OmnieCommerceAdmin" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="151" height="44"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="106" height="44"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -55,7 +55,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <button opaque="NO" clipsSubviews="YES" tag="99" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7vl-WM-zRy" userLabel="Action Button" customClass="CustomButton" customModule="OmnieCommerceAdmin" customModuleProvider="target">
-                                                    <rect key="frame" x="159" y="0.0" width="39" height="44"/>
+                                                    <rect key="frame" x="114" y="0.0" width="30" height="44"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <state key="normal" title="Here"/>
                                                     <userDefinedRuntimeAttributes>

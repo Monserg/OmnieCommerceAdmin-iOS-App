@@ -54,4 +54,14 @@ extension UIColor {
             return UIColor(hexString: "#dedede", withAlpha: 1.0)!
         }
     }
+    
+    open class var veryDarkGrayishBlue38: UIColor {
+        set {
+            self.veryDarkGrayishBlue38 = UIColor(hexString: "#38444e", withAlpha: 0.38)!
+        }
+        
+        get {
+            return UIColor(hexString: "#38444e", withAlpha: 0.38)!
+        }
+    }
 }

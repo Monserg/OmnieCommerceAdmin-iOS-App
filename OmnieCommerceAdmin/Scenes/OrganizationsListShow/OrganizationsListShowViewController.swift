@@ -27,8 +27,15 @@ class OrganizationsListShowViewController: BaseViewController {
     var router: OrganizationsListShowRouter!
     
     @IBOutlet weak var customNavigationBarView: MainNavigationBarView!
-    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var emptyDataSourceView: UIView!
+
+    @IBOutlet weak var tableView: UITableView! {
+        didSet {
+            // Delegates
+            tableView.delegate = self
+            tableView.dataSource = self
+        }
+    }
 
     
     // MARK: - Class initialization
@@ -49,9 +56,8 @@ class OrganizationsListShowViewController: BaseViewController {
 
     // MARK: - Custom Functions
     func doInitialSetupOnLoad() {
-        // Delegates
-        tableView.delegate = self
-        tableView.dataSource = self
+        // Menu item scene
+        haveMenuItem = true
         
         // Handler menu bar button
         customNavigationBarView.handlerNavBarLeftButtonCompletion = { _ in
