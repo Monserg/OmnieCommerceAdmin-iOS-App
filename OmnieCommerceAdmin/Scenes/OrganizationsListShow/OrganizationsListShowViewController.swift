@@ -56,7 +56,8 @@ class OrganizationsListShowViewController: BaseViewController {
 
     // MARK: - Custom Functions
     func doInitialSetupOnLoad() {
-        // Menu item scene
+        // Settings BaseViewController
+        navigationBarView = customNavigationBarView
         haveMenuItem = true
         
         // Handler menu bar button

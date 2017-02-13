@@ -14,6 +14,7 @@ class BaseViewController: UIViewController {
     // MARK: - Properties
     var selectedRange: CGRect?
     var scrollViewBase = UIScrollView()
+    var navigationBarView: MainNavigationBarView?
     
     var haveMenuItem = false {
         didSet {
@@ -109,7 +110,7 @@ class BaseViewController: UIViewController {
         if (haveMenuItem) {
             // Add Slide Menu actions
             if revealViewController() != nil {
-                // Sidebar is width 296
+                // Sidebar is width 295
                 revealViewController().rearViewRevealWidth = 295
                 
                 revealViewController().rearViewRevealDisplacement = 198
@@ -123,10 +124,11 @@ class BaseViewController: UIViewController {
                 revealViewController().toggleAnimationType = .easeOut
                 
                 // More shadow
-                revealViewController().frontViewShadowRadius = 5
-                revealViewController().frontViewShadowColor = UIColor.init(hexString: "#bdbdbd", withAlpha: 1.0)
+                revealViewController().frontViewShadowRadius = 0
+                revealViewController().frontViewShadowColor = UIColor.init(hexString: "#000000", withAlpha: 1.0)
                 
                 view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+                navigationBarView!.leftButton.addTarget(revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: .touchUpInside)
             }
         }
     }
