@@ -122,8 +122,8 @@ class OrganizationMapShowViewController: BaseViewController {
 
         mapView.addAnnotations(mapView.selectedAnnotations)
         
-        mapView.showAnnotations([pointAnnotation.annotation], animated: true)
-        mapView.selectAnnotation(pointAnnotation.annotation, animated: true)
+        mapView.showAnnotations([pointAnnotation], animated: true)
+        mapView.selectAnnotation(pointAnnotation, animated: true)
         didShowLocationOnMapViewCenter(coordinate: placemark?.location?.coordinate)
         
         if (pointAnnotation.isRegionChange) {

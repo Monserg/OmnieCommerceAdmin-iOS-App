@@ -120,8 +120,6 @@ class OrganizationAddViewController: BaseViewController {
         
         pointAnnotation.title = textFieldsCollection.first?.text
         pointAnnotation.image = organizationAvatarButton.imageView?.image
-
-//        pointAnnotation.didUpdateAnnotation()
         router.navigateToMap()
     }
     
@@ -260,4 +258,3 @@ extension OrganizationAddViewController {
         return true
     }
 }
-
