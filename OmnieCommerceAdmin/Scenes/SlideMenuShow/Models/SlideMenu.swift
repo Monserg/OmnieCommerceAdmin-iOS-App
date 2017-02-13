@@ -23,10 +23,10 @@ struct SlideMenu {
         
         
         // MARK: - Functions
-        mutating func didCreate() {
-            var sectionRows = Array<SlideMenu.Item>()
-            
+        init() {
             for i in 0...3 {
+                var sectionRows = Array<SlideMenu.Item>()
+
                 switch i {
                 case 0:
                     let organizations   =   SlideMenu.Item.init(title: "Organizations".localized(), imageName: "icon-menu-organizations-normal", newPushCount: nil, isColor: false)

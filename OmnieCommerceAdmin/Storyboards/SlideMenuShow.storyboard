@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="h1r-zi-EdL">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="UBUNTU-R.TTF">
+            <string>Ubuntu-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Reveal View Controller-->
         <scene sceneID="tJT-4T-ScL">
@@ -22,27 +28,137 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <connections>
-                        <segue destination="h1r-zi-EdL" kind="custom" identifier="sw_rear" customClass="SWRevealViewControllerSegueSetController" id="oGo-bp-ZhK"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h8S-Ix-a6x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2" y="-41"/>
         </scene>
-        <!--View Controller-->
+        <!--Slide Menu Show View Controller-->
         <scene sceneID="UIr-tO-jmI">
             <objects>
-                <viewController id="h1r-zi-EdL" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SlideMenuShowVC" id="h1r-zi-EdL" customClass="SlideMenuShowViewController" customModule="OmnieCommerceAdmin" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Wsn-j9-Xrh"/>
                         <viewControllerLayoutGuide type="bottom" id="iWb-EA-xRp"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="FbK-BH-lQn">
+                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="FbK-BH-lQn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iMP-1l-lmX" userLabel="Content View">
+                                <rect key="frame" x="0.0" y="0.0" width="295" height="667"/>
+                                <subviews>
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8QM-tP-Bbl" userLabel="Organization View">
+                                        <rect key="frame" x="0.0" y="0.0" width="295" height="213"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="35" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fVa-KB-rXG">
+                                        <rect key="frame" x="0.0" y="213" width="295" height="454"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MenuCell" id="QuL-Jf-A2K" customClass="MenuViewCell" customModule="OmnieCommerceAdmin" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="295" height="35"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QuL-Jf-A2K" id="GjR-CE-Kc6">
+                                                    <rect key="frame" x="0.0" y="0.0" width="295" height="35"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FCX-Ql-cSh" userLabel="Icon Image View">
+                                                            <rect key="frame" x="8" y="0.0" width="34" height="34"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="34" id="ePJ-dP-rHG"/>
+                                                                <constraint firstAttribute="height" constant="34" id="pck-T6-Jdp"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4lg-4N-C8r" userLabel="Title Label" customClass="CustomLabel" customModule="OmnieCommerceAdmin" customModuleProvider="target">
+                                                            <rect key="frame" x="62" y="17.5" width="183" height="0.0"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="string" keyPath="labelStyle" value="UbuntuLight12VeryLightGray"/>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </label>
+                                                        <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FWX-qd-G7J" userLabel="New Push Count Button">
+                                                            <rect key="frame" x="253" y="0.0" width="34" height="34"/>
+                                                            <color key="backgroundColor" red="1" green="0.84313725490196079" blue="0.42352941176470588" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="34" id="QEj-7Q-IAJ"/>
+                                                                <constraint firstAttribute="width" constant="34" id="WcG-mR-MPp"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="Ubuntu-Regular" family="Ubuntu" pointSize="17"/>
+                                                            <state key="normal" title="23">
+                                                                <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </state>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                    <integer key="value" value="17"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </button>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstItem="FWX-qd-G7J" firstAttribute="leading" secondItem="4lg-4N-C8r" secondAttribute="trailing" constant="8" id="3DG-sa-Dtg"/>
+                                                        <constraint firstItem="FCX-Ql-cSh" firstAttribute="centerY" secondItem="GjR-CE-Kc6" secondAttribute="centerY" id="FwH-U1-Sf4"/>
+                                                        <constraint firstItem="4lg-4N-C8r" firstAttribute="centerY" secondItem="GjR-CE-Kc6" secondAttribute="centerY" id="LGY-2A-ejo"/>
+                                                        <constraint firstItem="FWX-qd-G7J" firstAttribute="centerY" secondItem="GjR-CE-Kc6" secondAttribute="centerY" id="iGP-x6-wPD"/>
+                                                        <constraint firstAttribute="trailing" secondItem="FWX-qd-G7J" secondAttribute="trailing" constant="8" id="tb7-9H-siF"/>
+                                                        <constraint firstItem="4lg-4N-C8r" firstAttribute="leading" secondItem="FCX-Ql-cSh" secondAttribute="trailing" constant="20" id="ucu-Wt-FXq"/>
+                                                        <constraint firstItem="FCX-Ql-cSh" firstAttribute="leading" secondItem="GjR-CE-Kc6" secondAttribute="leading" constant="8" id="zad-AF-fT6"/>
+                                                    </constraints>
+                                                </tableViewCellContentView>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <connections>
+                                                    <outlet property="iconView" destination="FCX-Ql-cSh" id="980-31-MC8"/>
+                                                    <outlet property="pushCountButton" destination="FWX-qd-G7J" id="ykF-IQ-Wlk"/>
+                                                    <outlet property="title" destination="4lg-4N-C8r" id="ESB-b8-XRT"/>
+                                                </connections>
+                                            </tableViewCell>
+                                        </prototypes>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="fVa-KB-rXG" secondAttribute="trailing" id="5fn-LL-hNF"/>
+                                    <constraint firstItem="fVa-KB-rXG" firstAttribute="top" secondItem="8QM-tP-Bbl" secondAttribute="bottom" id="8Zg-og-j9f"/>
+                                    <constraint firstItem="fVa-KB-rXG" firstAttribute="leading" secondItem="iMP-1l-lmX" secondAttribute="leading" id="8wC-yw-yOU"/>
+                                    <constraint firstAttribute="bottom" secondItem="fVa-KB-rXG" secondAttribute="bottom" id="GCx-so-XgH"/>
+                                    <constraint firstAttribute="trailing" secondItem="8QM-tP-Bbl" secondAttribute="trailing" id="MVE-8L-ytK"/>
+                                    <constraint firstItem="8QM-tP-Bbl" firstAttribute="top" secondItem="iMP-1l-lmX" secondAttribute="top" id="kZn-XU-s5i"/>
+                                    <constraint firstItem="8QM-tP-Bbl" firstAttribute="leading" secondItem="iMP-1l-lmX" secondAttribute="leading" id="oGZ-SZ-Xjq"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8QM-tP-Bbl" firstAttribute="height" secondItem="FbK-BH-lQn" secondAttribute="height" multiplier="213:667" id="47f-rh-IE2"/>
+                            <constraint firstItem="iMP-1l-lmX" firstAttribute="leading" secondItem="FbK-BH-lQn" secondAttribute="leading" id="Fhl-aj-cIV"/>
+                            <constraint firstItem="iWb-EA-xRp" firstAttribute="top" secondItem="iMP-1l-lmX" secondAttribute="bottom" id="G66-gd-cG2"/>
+                            <constraint firstItem="iMP-1l-lmX" firstAttribute="top" secondItem="FbK-BH-lQn" secondAttribute="top" id="ecK-jd-Z0B"/>
+                            <constraint firstItem="iMP-1l-lmX" firstAttribute="width" secondItem="FbK-BH-lQn" secondAttribute="width" multiplier="295:667" id="jsH-Rk-9J5"/>
+                            <constraint firstItem="8QM-tP-Bbl" firstAttribute="height" secondItem="FbK-BH-lQn" secondAttribute="height" multiplier="213:375" id="oqs-qb-Bax"/>
+                            <constraint firstItem="iMP-1l-lmX" firstAttribute="width" secondItem="FbK-BH-lQn" secondAttribute="width" multiplier="295:375" id="yo1-qN-Snc"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="47f-rh-IE2"/>
+                                <exclude reference="yo1-qN-Snc"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="47f-rh-IE2"/>
+                                <exclude reference="oqs-qb-Bax"/>
+                                <exclude reference="jsH-Rk-9J5"/>
+                                <include reference="yo1-qN-Snc"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="fVa-KB-rXG" id="ZxA-0e-y8P"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yKD-TP-2Fi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

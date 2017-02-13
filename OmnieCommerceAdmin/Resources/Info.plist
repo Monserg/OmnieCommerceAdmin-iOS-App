@@ -2,10 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Would Like to Access Your Photos</string>
-	<key>NSCameraUsageDescription</key>
-	<string>Would Like to Access the Camera</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDocumentTypes</key>
@@ -26,8 +22,12 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>Would Like to Access the Camera</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Location Privacy Message</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Would Like to Access Your Photos</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>helveticaneuecyr-black.otf</string>
@@ -57,9 +57,9 @@
 		<string>UBUNTU-R.TTF</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
-	<string>Main</string>
+	<string>SlideMenuShow</string>
 	<key>UIMainStoryboardFile</key>
-	<string>OrganizationsListShow</string>
+	<string>SlideMenuShow</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

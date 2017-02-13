@@ -26,7 +26,16 @@ class SlideMenuShowViewController: UIViewController {
     var interactor: SlideMenuShowViewControllerOutput!
     var router: SlideMenuShowRouter!
     
+    var items = SlideMenu.Items()
+    
+    @IBOutlet weak var tableView: UITableView! {
+        didSet {
+            tableView.delegate = self
+            tableView.dataSource = self
+        }
+    }
 
+    
     // MARK: - Class initialization
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -39,12 +48,18 @@ class SlideMenuShowViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        doSomethingOnLoad()
+        doInitialSetupOnLoad()
     }
     
 
     // MARK: - Custom Functions
-    func doSomethingOnLoad() {
+    func doInitialSetupOnLoad() {
+        view.backgroundColor = UIColor.init(hexString: "#262626", withAlpha: 1.0)
+
+        // Create data source
+        items = SlideMenu.Items.init()
+        
+        
         // NOTE: Ask the Interactor to do some work
         let requestModel = SlideMenuShowModels.Something.RequestModel()
         interactor.doSomething(requestModel: requestModel)
@@ -57,5 +72,47 @@ extension SlideMenuShowViewController: SlideMenuShowViewControllerInput {
     func displaySomething(viewModel: SlideMenuShowModels.Something.ViewModel) {
         // NOTE: Display the result from the Presenter
         // nameTextField.text = viewModel.name
+    }
+}
+
+
+// MARK: - UITableViewDataSource
+extension SlideMenuShowViewController: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return items.sections.count
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return items.sections[section].count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cellIdentifier = "MenuCell"
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as! MenuViewCell
+        
+        cell.didSetup(fromItem: items.sections[indexPath.section][indexPath.row])
+        
+        return cell
+    }
+}
+
+
+
+// MARK: - UITableViewDelegate
+extension SlideMenuShowViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 44.0
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        
     }
 }

@@ -39,6 +39,7 @@
 		B15BBB3D1E4B4F2700287505 /* RepetitionPasswordShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15BBB361E4B4F2700287505 /* RepetitionPasswordShowViewController.swift */; };
 		B15BBB3E1E4B4F2700287505 /* RepetitionPasswordShowWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15BBB371E4B4F2700287505 /* RepetitionPasswordShowWorker.swift */; };
 		B16E8A7E1E51A57B00385CCB /* SlideMenuShow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B16E8A7D1E51A57B00385CCB /* SlideMenuShow.storyboard */; };
+		B16E8A801E51B7FC00385CCB /* MenuViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16E8A7F1E51B7FC00385CCB /* MenuViewCell.swift */; };
 		B18373A81E458AE200A2F36B /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18373A71E458AE200A2F36B /* CustomButton.swift */; };
 		B18373AA1E458B0800A2F36B /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18373A91E458B0800A2F36B /* UIButton+Extensions.swift */; };
 		B18DF0D71E5167EB00C9FBB3 /* SlideMenuShowConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18DF0D01E5167EB00C9FBB3 /* SlideMenuShowConfigurator.swift */; };
@@ -184,6 +185,7 @@
 		B15BBB361E4B4F2700287505 /* RepetitionPasswordShowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepetitionPasswordShowViewController.swift; sourceTree = "<group>"; };
 		B15BBB371E4B4F2700287505 /* RepetitionPasswordShowWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepetitionPasswordShowWorker.swift; sourceTree = "<group>"; };
 		B16E8A7D1E51A57B00385CCB /* SlideMenuShow.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SlideMenuShow.storyboard; sourceTree = "<group>"; };
+		B16E8A7F1E51B7FC00385CCB /* MenuViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewCell.swift; sourceTree = "<group>"; };
 		B18373A71E458AE200A2F36B /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		B18373A91E458B0800A2F36B /* UIButton+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
 		B18DF0D01E5167EB00C9FBB3 /* SlideMenuShowConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideMenuShowConfigurator.swift; sourceTree = "<group>"; };
@@ -413,6 +415,7 @@
 			isa = PBXGroup;
 			children = (
 				B18DF0E11E516C1600C9FBB3 /* SlideMenu.swift */,
+				B16E8A7F1E51B7FC00385CCB /* MenuViewCell.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -967,6 +970,7 @@
 				B1FBB8941E43BA9700C02BC3 /* UIColor+Extensions.swift in Sources */,
 				B1C320BC1E44A3C400D84BC3 /* SignUpShowRouter.swift in Sources */,
 				B1BD7B2A1E464CD700D8FA0A /* SignInContainerShowRouter.swift in Sources */,
+				B16E8A801E51B7FC00385CCB /* MenuViewCell.swift in Sources */,
 				B1C320BD1E44A3C400D84BC3 /* SignUpShowViewController.swift in Sources */,
 				B1BD7B281E464CD700D8FA0A /* SignInContainerShowModels.swift in Sources */,
 				B15BBB3D1E4B4F2700287505 /* RepetitionPasswordShowViewController.swift in Sources */,

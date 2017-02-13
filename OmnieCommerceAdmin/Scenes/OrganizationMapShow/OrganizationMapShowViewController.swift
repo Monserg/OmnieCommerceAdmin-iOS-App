@@ -29,7 +29,7 @@ class OrganizationMapShowViewController: BaseViewController {
     var router: OrganizationMapShowRouter!
     
     private let locationManager = LocationManager()
-    var pinAnnotationView: MKPinAnnotationView! //MKAnnotationView!
+    var pinAnnotationView: MKPinAnnotationView! // MKAnnotationView! (for custom pin)
     var pointTouchOnMapView: CGPoint?
 
     var handlerLocationAddButtonCompletion: HandlerLocationAddButtonCompletion?
@@ -192,7 +192,6 @@ extension OrganizationMapShowViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         let identifier = "pin" //"CustomPin"
         pinAnnotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKPinAnnotationView
-//        pinAnnotationView?.frame.origin = CGPoint.init(x: mapView.bounds.midX, y: -5250)
         
         if (pinAnnotationView != nil) {
             pinAnnotationView?.annotation = annotation
