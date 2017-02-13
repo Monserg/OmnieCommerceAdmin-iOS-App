@@ -7,7 +7,7 @@
  */
 
 // Menu Items
-"My organizations"              =   "Мои организации";
+"Organizations"                 =   "Мои организации";
 "Services"                      =   "Услуги";
 "Orders"                        =   "Заказы";
 "Messages"                      =   "Сообщения";
@@ -15,7 +15,7 @@
 "Management Resources"          =   "Управление персоналом";
 "Statistics"                    =   "Статистика";
 "Discounts"                     =   "Скидки";
-"My office"                     =   "Мой кабинет";
+"Personal Page"                 =   "Мой кабинет";
 "Settings"                      =   "Настройки";
 "Help"                          =   "Справка";
 "OmnieSoft"                     =   "OmnieSoft";

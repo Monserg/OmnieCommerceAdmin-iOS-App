@@ -7,7 +7,7 @@
  */
 
 // Menu Items
-"My organizations"              =   "My Organizations";
+"Organizations"                 =   "My Organizations";
 "Services"                      =   "Services";
 "Orders"                        =   "Orders";
 "Messages"                      =   "Messages";
@@ -15,7 +15,7 @@
 "Management Resources"          =   "Management Resources";
 "Statistics"                    =   "Statistics";
 "Discounts"                     =   "Discounts";
-"My office"                     =   "My Office";
+"Personal Page"                 =   "Personal Page";
 "Settings"                      =   "Settings";
 "Help"                          =   "Help";
 "OmnieSoft"                     =   "OmnieSoft";

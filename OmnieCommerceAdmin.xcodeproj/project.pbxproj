@@ -40,6 +40,14 @@
 		B15BBB3E1E4B4F2700287505 /* RepetitionPasswordShowWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15BBB371E4B4F2700287505 /* RepetitionPasswordShowWorker.swift */; };
 		B18373A81E458AE200A2F36B /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18373A71E458AE200A2F36B /* CustomButton.swift */; };
 		B18373AA1E458B0800A2F36B /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18373A91E458B0800A2F36B /* UIButton+Extensions.swift */; };
+		B18DF0D71E5167EB00C9FBB3 /* SlideMenuShowConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18DF0D01E5167EB00C9FBB3 /* SlideMenuShowConfigurator.swift */; };
+		B18DF0D81E5167EB00C9FBB3 /* SlideMenuShowInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18DF0D11E5167EB00C9FBB3 /* SlideMenuShowInteractor.swift */; };
+		B18DF0D91E5167EB00C9FBB3 /* SlideMenuShowModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18DF0D21E5167EB00C9FBB3 /* SlideMenuShowModels.swift */; };
+		B18DF0DA1E5167EB00C9FBB3 /* SlideMenuShowPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18DF0D31E5167EB00C9FBB3 /* SlideMenuShowPresenter.swift */; };
+		B18DF0DB1E5167EB00C9FBB3 /* SlideMenuShowRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18DF0D41E5167EB00C9FBB3 /* SlideMenuShowRouter.swift */; };
+		B18DF0DC1E5167EB00C9FBB3 /* SlideMenuShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18DF0D51E5167EB00C9FBB3 /* SlideMenuShowViewController.swift */; };
+		B18DF0DD1E5167EB00C9FBB3 /* SlideMenuShowWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18DF0D61E5167EB00C9FBB3 /* SlideMenuShowWorker.swift */; };
+		B18DF0E21E516C1600C9FBB3 /* SlideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18DF0E11E516C1600C9FBB3 /* SlideMenu.swift */; };
 		B1BD7AF91E45F64800D8FA0A /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BD7AF81E45F64800D8FA0A /* BaseViewController.swift */; };
 		B1BD7B1C1E4634D100D8FA0A /* CustomStoriboardSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BD7B1B1E4634D100D8FA0A /* CustomStoriboardSegue.swift */; };
 		B1BD7B261E464CD700D8FA0A /* SignInContainerShowConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BD7B1F1E464CD700D8FA0A /* SignInContainerShowConfigurator.swift */; };
@@ -176,6 +184,14 @@
 		B15BBB371E4B4F2700287505 /* RepetitionPasswordShowWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepetitionPasswordShowWorker.swift; sourceTree = "<group>"; };
 		B18373A71E458AE200A2F36B /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		B18373A91E458B0800A2F36B /* UIButton+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
+		B18DF0D01E5167EB00C9FBB3 /* SlideMenuShowConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideMenuShowConfigurator.swift; sourceTree = "<group>"; };
+		B18DF0D11E5167EB00C9FBB3 /* SlideMenuShowInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideMenuShowInteractor.swift; sourceTree = "<group>"; };
+		B18DF0D21E5167EB00C9FBB3 /* SlideMenuShowModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideMenuShowModels.swift; sourceTree = "<group>"; };
+		B18DF0D31E5167EB00C9FBB3 /* SlideMenuShowPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideMenuShowPresenter.swift; sourceTree = "<group>"; };
+		B18DF0D41E5167EB00C9FBB3 /* SlideMenuShowRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideMenuShowRouter.swift; sourceTree = "<group>"; };
+		B18DF0D51E5167EB00C9FBB3 /* SlideMenuShowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideMenuShowViewController.swift; sourceTree = "<group>"; };
+		B18DF0D61E5167EB00C9FBB3 /* SlideMenuShowWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideMenuShowWorker.swift; sourceTree = "<group>"; };
+		B18DF0E11E516C1600C9FBB3 /* SlideMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideMenu.swift; sourceTree = "<group>"; };
 		B1BD7AF81E45F64800D8FA0A /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		B1BD7B1B1E4634D100D8FA0A /* CustomStoriboardSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomStoriboardSegue.swift; sourceTree = "<group>"; };
 		B1BD7B1F1E464CD700D8FA0A /* SignInContainerShowConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInContainerShowConfigurator.swift; sourceTree = "<group>"; };
@@ -376,6 +392,29 @@
 			path = UIButtons;
 			sourceTree = "<group>";
 		};
+		B18DF0CF1E5167C800C9FBB3 /* SlideMenuShow */ = {
+			isa = PBXGroup;
+			children = (
+				B18DF0DE1E5167F000C9FBB3 /* Models */,
+				B18DF0D01E5167EB00C9FBB3 /* SlideMenuShowConfigurator.swift */,
+				B18DF0D11E5167EB00C9FBB3 /* SlideMenuShowInteractor.swift */,
+				B18DF0D21E5167EB00C9FBB3 /* SlideMenuShowModels.swift */,
+				B18DF0D31E5167EB00C9FBB3 /* SlideMenuShowPresenter.swift */,
+				B18DF0D41E5167EB00C9FBB3 /* SlideMenuShowRouter.swift */,
+				B18DF0D51E5167EB00C9FBB3 /* SlideMenuShowViewController.swift */,
+				B18DF0D61E5167EB00C9FBB3 /* SlideMenuShowWorker.swift */,
+			);
+			path = SlideMenuShow;
+			sourceTree = "<group>";
+		};
+		B18DF0DE1E5167F000C9FBB3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B18DF0E11E516C1600C9FBB3 /* SlideMenu.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		B1BD7AF71E45F61F00D8FA0A /* UIViewContollers */ = {
 			isa = PBXGroup;
 			children = (
@@ -551,6 +590,7 @@
 				B1BD7B1E1E464CA500D8FA0A /* SignInContainerShow */,
 				B1C320C31E44A41E00D84BC3 /* SignInShow */,
 				B1C320B01E44A3AA00D84BC3 /* SignUpShow */,
+				B18DF0CF1E5167C800C9FBB3 /* SlideMenuShow */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -850,9 +890,11 @@
 				B1C320CB1E44A43A00D84BC3 /* SignInShowConfigurator.swift in Sources */,
 				B1EADD311E4390A2006341D2 /* MainShowPresenter.swift in Sources */,
 				B1C320CE1E44A43A00D84BC3 /* SignInShowPresenter.swift in Sources */,
+				B18DF0E21E516C1600C9FBB3 /* SlideMenu.swift in Sources */,
 				B15BBB3E1E4B4F2700287505 /* RepetitionPasswordShowWorker.swift in Sources */,
 				B1CAF3A61E50298900BBBDEB /* UIImage+Extensions.swift in Sources */,
 				B1EADCCB1E436316006341D2 /* AppDelegate.swift in Sources */,
+				B18DF0DC1E5167EB00C9FBB3 /* SlideMenuShowViewController.swift in Sources */,
 				B1FBB8DF1E43D28F00C02BC3 /* OrganizationsListShowWorker.swift in Sources */,
 				B1FBB8DA1E43D28F00C02BC3 /* OrganizationsListShowInteractor.swift in Sources */,
 				B1FBB8921E43B99000C02BC3 /* UIView+Extensions.swift in Sources */,
@@ -860,6 +902,7 @@
 				B1576BC51E4CAB020067020B /* OrganizationAddWorker.swift in Sources */,
 				B1BD7B2C1E464CD700D8FA0A /* SignInContainerShowWorker.swift in Sources */,
 				B1C320DE1E44A46700D84BC3 /* ForgotPasswordShowRouter.swift in Sources */,
+				B18DF0D91E5167EB00C9FBB3 /* SlideMenuShowModels.swift in Sources */,
 				B1C320DF1E44A46700D84BC3 /* ForgotPasswordShowViewController.swift in Sources */,
 				B1C320CC1E44A43A00D84BC3 /* SignInShowInteractor.swift in Sources */,
 				B1C320B81E44A3C400D84BC3 /* SignUpShowConfigurator.swift in Sources */,
@@ -874,6 +917,7 @@
 				B15732BB1E4DA11500685A46 /* UniversalTextFieldView.swift in Sources */,
 				B1576BC11E4CAB020067020B /* OrganizationAddModels.swift in Sources */,
 				B1C320D11E44A43A00D84BC3 /* SignInShowWorker.swift in Sources */,
+				B18DF0DD1E5167EB00C9FBB3 /* SlideMenuShowWorker.swift in Sources */,
 				B1FBB89D1E43C57000C02BC3 /* String+Ext.swift in Sources */,
 				B1BD7B1C1E4634D100D8FA0A /* CustomStoriboardSegue.swift in Sources */,
 				B1E29E5D1E49F7910068B642 /* EnterCodeShowRouter.swift in Sources */,
@@ -882,6 +926,7 @@
 				B1BD7AF91E45F64800D8FA0A /* BaseViewController.swift in Sources */,
 				B15732CA1E4DD78100685A46 /* OrganizationMapShowRouter.swift in Sources */,
 				B1E29E5F1E49F7910068B642 /* EnterCodeShowWorker.swift in Sources */,
+				B18DF0D71E5167EB00C9FBB3 /* SlideMenuShowConfigurator.swift in Sources */,
 				B15BBB3B1E4B4F2700287505 /* RepetitionPasswordShowPresenter.swift in Sources */,
 				B1533C2B1E49A8BC00418B96 /* ErrorMessageView.swift in Sources */,
 				B1EADD081E4386F2006341D2 /* Config.swift in Sources */,
@@ -890,8 +935,11 @@
 				B1EADD301E4390A2006341D2 /* MainShowModels.swift in Sources */,
 				B1EADD321E4390A2006341D2 /* MainShowRouter.swift in Sources */,
 				B1FBB89B1E43C50300C02BC3 /* UILabel+Extensions.swift in Sources */,
+				B18DF0D81E5167EB00C9FBB3 /* SlideMenuShowInteractor.swift in Sources */,
+				B18DF0DB1E5167EB00C9FBB3 /* SlideMenuShowRouter.swift in Sources */,
 				B15732C61E4DD78100685A46 /* OrganizationMapShowConfigurator.swift in Sources */,
 				B15732CC1E4DD78100685A46 /* OrganizationMapShowWorker.swift in Sources */,
+				B18DF0DA1E5167EB00C9FBB3 /* SlideMenuShowPresenter.swift in Sources */,
 				B1E29E5B1E49F7910068B642 /* EnterCodeShowModels.swift in Sources */,
 				B1C320CF1E44A43A00D84BC3 /* SignInShowRouter.swift in Sources */,
 				B1FBB8DE1E43D28F00C02BC3 /* OrganizationsListShowViewController.swift in Sources */,
