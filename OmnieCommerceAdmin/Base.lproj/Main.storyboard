@@ -39,12 +39,12 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XQm-x8-8nJ" userLabel="NavBar View">
                                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FIO-Q0-I1x" userLabel="Menu Button">
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FIO-Q0-I1x" userLabel="Menu Button">
                                                         <rect key="frame" x="8" y="11" width="23" height="22"/>
                                                         <state key="normal" image="icon-navbar-menu"/>
                                                     </button>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My organization" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VW1-24-XvI" userLabel="Title Label">
-                                                        <rect key="frame" x="137" y="15" width="102" height="14"/>
+                                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My organization" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VW1-24-XvI" userLabel="Title Label">
+                                                        <rect key="frame" x="137" y="15.5" width="102" height="14"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeueCyr-Light" family="HelveticaNeueCyr" pointSize="15"/>
                                                         <color key="textColor" red="0.87058823529411766" green="0.87058823529411766" blue="0.87058823529411766" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>

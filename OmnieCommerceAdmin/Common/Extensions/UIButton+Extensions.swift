@@ -47,32 +47,39 @@ extension UIButton {
         case .Border:
             let themeDesign = Config().applyThemeDesign()
 
-            setTitleColor(UIColor(hexString: (Config.Constants.isAppThemesDark) ? "#dedede" : "#dedede", withAlpha: 1.0), for: .normal)
-            tintColor               =   UIColor(hexString: (Config.Constants.isAppThemesDark) ? "#dedede" : "#dedede", withAlpha: 1.0)
-            layer.borderColor       =   UIColor(hexString: (Config.Constants.isAppThemesDark) ? "#dedede" : "#dedede", withAlpha: 1.0)?.cgColor
+            switch themeDesign {
+            case .LightForUser, .DarkForUser:
+                tintColor           =   UIColor(hexString: "#dedede", withAlpha: 1.0)
+                layer.borderColor   =   UIColor(hexString: "#009395", withAlpha: 1.0)?.cgColor
+                
+                setTitleColor(UIColor(hexString: "#333333", withAlpha: 1.0), for: .normal)
+                
+            case .DarkForGuest:
+                tintColor           =   UIColor(hexString: "#dedede", withAlpha: 1.0)
+                layer.borderColor   =   UIColor(hexString: "#dedede", withAlpha: 1.0)?.cgColor
+                
+                setTitleColor(UIColor(hexString: "#dedede", withAlpha: 1.0), for: .normal)
+                
+            case .LightForGuest:
+                tintColor           =   UIColor(hexString: "#dedede", withAlpha: 1.0)
+                layer.borderColor   =   UIColor(hexString: "#dedede", withAlpha: 1.0)?.cgColor
+                
+                setTitleColor(UIColor(hexString: "#dedede", withAlpha: 1.0), for: .normal)
+            }
+            
             backgroundColor         =   UIColor.clear
             titleLabel?.font        =   UIFont.ubuntuLight14
             borderWidth             =   1
             layer.cornerRadius      =   bounds.size.height / 2 * ((bounds.size.width == bounds.size.height) ? 1 : 1.0)
-            
-            switch themeDesign {
-            case .LightForUser:
-                layer.borderColor   =   UIColor(hexString: "#009395", withAlpha: 1.0)?.cgColor
-                setTitleColor(UIColor(hexString: "#333333", withAlpha: 1.0), for: .normal)
-                
-                guard imageView?.image != nil, titleLabel?.text != nil else {
-                    return
-                }
-                
-                titleEdgeInsets     =   UIEdgeInsetsMake(0, -15, 0, 0)
-                imageEdgeInsets     =   UIEdgeInsetsMake(0, (titleLabel?.frame.maxX)! + 8, 0, 0)
-                
-            default:
-                break
-            }
-
             clipsToBounds           =   true
             
+            guard imageView?.image != nil, titleLabel?.text != nil else {
+                return
+            }
+            
+            titleEdgeInsets         =   UIEdgeInsetsMake(0, -15, 0, 0)
+            imageEdgeInsets         =   UIEdgeInsetsMake(0, (titleLabel?.frame.maxX)! + 8, 0, 0)
+
         case .CircleFillDarkCyan:
             layer.cornerRadius      =   frame.height / 2
             setBackgroundImage(UIImage(named: "image-background-color-dark-cyan-normal.png")?.withRenderingMode(.alwaysOriginal), for: .normal)
@@ -98,7 +105,7 @@ extension UIButton {
         let themeDesign = Config().applyThemeDesign()
         
         switch themeDesign {
-        case .LightForUser:
+        case .LightForUser, .DarkForUser:
             setBackgroundImage(UIImage(named: "image-background-color-very-light-gray-normal.png")?.withRenderingMode(.alwaysOriginal), for: .normal)
             setBackgroundImage(UIImage(named: "image-background-color-very-light-gray-highlighted.png")?.withRenderingMode(.alwaysOriginal), for: .highlighted)
             
@@ -106,7 +113,7 @@ extension UIButton {
             setBackgroundImage(UIImage(named: "image-background-color-dark-cyan-normal.png")?.withRenderingMode(.alwaysOriginal), for: .normal)
             setBackgroundImage(UIImage(named: "image-background-color-dark-cyan-highlighted.png")?.withRenderingMode(.alwaysOriginal), for: .highlighted)
             
-        case .DarkForGuest, .DarkForUser:
+        case .DarkForGuest:
             setBackgroundImage(UIImage(named: "image-background-color-black-normal.png")?.withRenderingMode(.alwaysOriginal), for: .normal)
             setBackgroundImage(UIImage(named: "image-background-color-black-highlighted.png")?.withRenderingMode(.alwaysOriginal), for: .highlighted)
         }

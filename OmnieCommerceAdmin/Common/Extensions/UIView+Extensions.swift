@@ -21,12 +21,17 @@ extension UIView {
     }
 
     func applyBackgroundTheme() {
-        switch Config.Constants.isAppThemesDark {
-        case true:
+        let themeDesign = Config().applyThemeDesign()
+
+        switch themeDesign {
+        case .LightForUser, .DarkForUser:
+            backgroundColor = UIColor(hexString: "#ececec", withAlpha: 1.0)
+
+        case .DarkForGuest:
             backgroundColor = UIColor(hexString: "#252929", withAlpha: 1.0)
-        
-        default:
-            backgroundColor = UIColor(hexString: (Config.Constants.isUserGuest) ? "#079897" : "#ececec", withAlpha: 1.0)
+
+        case .LightForGuest:
+            backgroundColor = UIColor(hexString: "#079897", withAlpha: 1.0)
         }
     }
 }

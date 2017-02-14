@@ -10,6 +10,7 @@
 //
 
 import UIKit
+import SWRevealViewController
 
 // MARK: - Input protocols for current ViewController component VIP-cicle
 protocol MainShowViewControllerInput {
@@ -65,11 +66,37 @@ class MainShowViewController: UIViewController, MainShowViewControllerInput {
         interactor.doSomething(request: request)
         
         showBackground()
+        didSetupFirstScene()
     }
     
     // Display logic
     func displaySomething(viewModel: MainShow.Something.ViewModel) {
         // NOTE: Display the result from the Presenter
         // nameTextField.text = viewModel.name
+    }
+    
+    func didSetupFirstScene() {
+        let isUserGuest = Config.Constants.isUserGuest
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+
+        if (isUserGuest) {
+            // Initial VC
+            let signInShowStoryboard = UIStoryboard(name: "SignInShow", bundle: nil)
+            let initialNC = signInShowStoryboard.instantiateViewController(withIdentifier: "SignInShowNC") as! UINavigationController
+            
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
+                appDelegate.window!.rootViewController = initialNC
+                appDelegate.window!.makeKeyAndVisible()
+            }
+        } else {
+            // Initial VC
+            let organizationsShowStoryboard = UIStoryboard(name: "SlideMenuShow", bundle: nil)
+            let initialVC = organizationsShowStoryboard.instantiateViewController(withIdentifier: "SWRevealVC") as! SWRevealViewController
+            
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
+                appDelegate.window!.rootViewController = initialVC
+                appDelegate.window!.makeKeyAndVisible()
+            }
+        }
     }
 }

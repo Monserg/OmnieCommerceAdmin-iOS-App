@@ -57,9 +57,9 @@
 		<string>UBUNTU-R.TTF</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
-	<string>SlideMenuShow</string>
+	<string>Main</string>
 	<key>UIMainStoryboardFile</key>
-	<string>SlideMenuShow</string>
+	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

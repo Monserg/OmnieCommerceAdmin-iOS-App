@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SWRevealViewController
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,7 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        window = UIWindow.init(frame: UIScreen.main.bounds)
 //        window?.backgroundColor = UIColor.orange
 //        
-//        didSetupFirstScene()
         
         return true
     }
@@ -49,25 +47,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     // MARK: - Custom Functions
-    func didSetupFirstScene() {
-        // FrontVC (first scene)
-        var storyboard = UIStoryboard.init(name: "OrganizationsListShow", bundle: nil)
-        let frontVC = storyboard.instantiateViewController(withIdentifier: "OrganizationsListShowVC") as! OrganizationsListShowViewController
-        
-        // RearVC (menu)
-        storyboard = UIStoryboard.init(name: "SlideMenuShow", bundle: nil)
-        let rearVC = storyboard.instantiateViewController(withIdentifier: "SlideMenuShowVC") as! SlideMenuShowViewController
-        
-        // SWRevealVC
-        storyboard = UIStoryboard.init(name: "SlideMenuShow", bundle: nil)
-        let revealVC = storyboard.instantiateViewController(withIdentifier: "SWRevealVC") as! SWRevealViewController
-        
-        revealVC.rightViewController = frontVC
-        revealVC.rearViewController = rearVC
-        
-        window?.rootViewController = revealVC
-        window?.makeKeyAndVisible()
-    }
 }
 
 
