@@ -13,25 +13,28 @@ import UIKit
 
 // MARK: - Input protocols for current ViewController component VIP-cicle
 protocol SlideMenuShowViewControllerInput {
-    func displaySomething(viewModel: SlideMenuShowModels.Something.ViewModel)
+    func didShowData(fromViewModel viewModel: SlideMenuShowModels.DataSource.ViewModel)
 }
 
 // MARK: - Output protocols for Interactor component VIP-cicle
 protocol SlideMenuShowViewControllerOutput {
-    func doSomething(requestModel: SlideMenuShowModels.Something.RequestModel)
+    func didLoadData(withRequestModel requestModel: SlideMenuShowModels.DataSource.RequestModel)
 }
 
-class SlideMenuShowViewController: UIViewController {
+class SlideMenuShowViewController: BaseViewController {
     // MARK: - Properties
     var interactor: SlideMenuShowViewControllerOutput!
     var router: SlideMenuShowRouter!
     
     var items = SlideMenu.Items()
+//    let managerTVC = ManagerTableViewController()
     
     @IBOutlet weak var tableView: UITableView! {
         didSet {
             tableView.delegate = self
             tableView.dataSource = self
+//            tableView.delegate = managerTVC
+//            tableView.dataSource = managerTVC
         }
     }
 
@@ -58,20 +61,19 @@ class SlideMenuShowViewController: UIViewController {
 
         // Create data source
         items = SlideMenu.Items.init()
-        
+//        interactor.didLoadData(withRequestModel: SlideMenuShowModels.DataSource.RequestModel())
         
         // NOTE: Ask the Interactor to do some work
-        let requestModel = SlideMenuShowModels.Something.RequestModel()
-        interactor.doSomething(requestModel: requestModel)
     }
 }
 
 
-// MARK: - ForgotPasswordShowViewControllerInput
+// MARK: - SlideMenuShowViewControllerInput
 extension SlideMenuShowViewController: SlideMenuShowViewControllerInput {
-    func displaySomething(viewModel: SlideMenuShowModels.Something.ViewModel) {
-        // NOTE: Display the result from the Presenter
-        // nameTextField.text = viewModel.name
+    func didShowData(fromViewModel viewModel: SlideMenuShowModels.DataSource.ViewModel) {
+//        managerTVC.dataSource = (viewModel.dataSource?.sections)!
+        
+        tableView.reloadData()
     }
 }
 
@@ -95,7 +97,6 @@ extension SlideMenuShowViewController: UITableViewDataSource {
         return cell
     }
 }
-
 
 
 // MARK: - UITableViewDelegate
@@ -126,15 +127,19 @@ extension SlideMenuShowViewController: UITableViewDelegate {
         return footerView
     }
     
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        
-    }
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-    }
-    
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath) as! MenuViewCell
+
+        if (cell.storyboardName == "SignOut") {
+            Config.Constants.isUserGuest = true
+            
+            dismiss(animated: true, completion: nil)
+        } else {
+            let initNC = UIStoryboard(name: cell.storyboardName, bundle: nil).instantiateViewController(withIdentifier: cell.storyboardName + "NC") as! UINavigationController
         
+            revealViewController().pushFrontViewController(initNC, animated: true)
+        }
+            
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }

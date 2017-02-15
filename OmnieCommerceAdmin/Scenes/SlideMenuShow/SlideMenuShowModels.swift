@@ -13,14 +13,16 @@ import UIKit
 
 // MARK: - Data models
 struct SlideMenuShowModels {
-    struct Something {
+    struct DataSource {
         struct RequestModel {
         }
         
         struct ResponseModel {
+            let dataSource: SlideMenu.Items?
         }
         
         struct ViewModel {
+            let dataSource: SlideMenu.Items?
         }
     }
 }

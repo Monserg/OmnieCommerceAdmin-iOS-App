@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="rao-N9-D5u">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Organizations Show View Controller-->
+        <scene sceneID="2HD-n5-cgO">
+            <objects>
+                <viewController storyboardIdentifier="OrganizationsShowVC" id="mPM-eg-IYH" customClass="OrganizationsShowViewController" customModule="OmnieCommerceAdmin" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QOM-8h-dob"/>
+                        <viewControllerLayoutGuide type="bottom" id="wFy-lZ-9Q8"/>
+                    </layoutGuides>
+                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="uWY-od-7g5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3bW-Ci-rXX" userLabel="Custom NavBar View" customClass="MainNavigationBarView" customModule="OmnieCommerceAdmin" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="KvY-xg-hM4">
+                                        <variation key="heightClass=compact-widthClass=compact" constant="32"/>
+                                        <variation key="heightClass=compact-widthClass=regular" constant="44"/>
+                                    </constraint>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="titleText" value="Organizations"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cLS-cY-S0Z">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="YoC-yM-wVf" userLabel="Empty Data Source View">
+                                    <rect key="frame" x="0.0" y="72" width="375" height="128.5"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="RVF-nH-6Oa">
+                                            <rect key="frame" x="88.5" y="40" width="198" height="44"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To add organization" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NkG-aU-in2" customClass="CustomLabel" customModule="OmnieCommerceAdmin" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="151" height="44"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="labelStyle" value="UbuntuLight12VeryDarkGray"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </label>
+                                                <button opaque="NO" clipsSubviews="YES" tag="99" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7vl-WM-zRy" userLabel="Action Button" customClass="CustomButton" customModule="OmnieCommerceAdmin" customModuleProvider="target">
+                                                    <rect key="frame" x="159" y="0.0" width="39" height="44"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <state key="normal" title="Here"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="buttonStyle" value="TitleUbuntuLight12UndirlineDarkCyan"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="handlerAddOrganizationButtonTap:" destination="mPM-eg-IYH" eventType="touchUpInside" id="x3M-E8-WlW"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="44" id="vP1-hQ-9vX"/>
+                                            </constraints>
+                                        </stackView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstItem="RVF-nH-6Oa" firstAttribute="centerX" secondItem="YoC-yM-wVf" secondAttribute="centerX" id="Anc-kd-1MH"/>
+                                        <constraint firstItem="RVF-nH-6Oa" firstAttribute="top" secondItem="YoC-yM-wVf" secondAttribute="top" constant="40" id="x43-gl-j5U"/>
+                                    </constraints>
+                                </view>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="OrganizationCell" textLabel="4w1-87-5A9" style="IBUITableViewCellStyleDefault" id="0Yc-1z-gGu">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0Yc-1z-gGu" id="MOI-dm-3P0">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4w1-87-5A9">
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" clipsSubviews="YES" tag="99" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wFg-lT-WoP" userLabel="Add Button" customClass="CustomButton" customModule="OmnieCommerceAdmin" customModuleProvider="target">
+                                <rect key="frame" x="317" y="609" width="50" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="XRJ-jn-d7z"/>
+                                    <constraint firstAttribute="width" constant="50" id="sDl-ut-XPd"/>
+                                </constraints>
+                                <state key="normal" image="image-add-organization-normal"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="buttonStyle" value="CircleFillDarkCyan"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="handlerAddOrganizationButtonTap:" destination="mPM-eg-IYH" eventType="touchUpInside" id="Yuu-fm-cOB"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="3bW-Ci-rXX" secondAttribute="trailing" id="2j9-CH-J0R"/>
+                            <constraint firstItem="3bW-Ci-rXX" firstAttribute="top" secondItem="uWY-od-7g5" secondAttribute="top" id="6BN-NP-GYo"/>
+                            <constraint firstAttribute="bottom" secondItem="cLS-cY-S0Z" secondAttribute="bottom" id="AyO-32-QqD"/>
+                            <constraint firstItem="3bW-Ci-rXX" firstAttribute="leading" secondItem="uWY-od-7g5" secondAttribute="leading" id="CW6-ER-r59"/>
+                            <constraint firstItem="wFy-lZ-9Q8" firstAttribute="top" secondItem="wFg-lT-WoP" secondAttribute="bottom" constant="8" id="QkS-Xa-MJW"/>
+                            <constraint firstAttribute="trailing" secondItem="cLS-cY-S0Z" secondAttribute="trailing" id="cgi-F5-KRK"/>
+                            <constraint firstItem="cLS-cY-S0Z" firstAttribute="top" secondItem="3bW-Ci-rXX" secondAttribute="bottom" id="h2R-GP-ba8"/>
+                            <constraint firstItem="cLS-cY-S0Z" firstAttribute="leading" secondItem="uWY-od-7g5" secondAttribute="leading" id="htM-oO-Qq6"/>
+                            <constraint firstAttribute="trailing" secondItem="wFg-lT-WoP" secondAttribute="trailing" constant="8" id="rU7-dI-aj8"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="s8K-sR-KyL"/>
+                    <connections>
+                        <outlet property="customNavigationBarView" destination="3bW-Ci-rXX" id="oio-ne-aRW"/>
+                        <outlet property="emptyDataSourceView" destination="YoC-yM-wVf" id="7FI-7c-AXq"/>
+                        <outlet property="tableView" destination="cLS-cY-S0Z" id="UXV-cU-yOz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AOp-za-WzR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1080.8" y="157.87106446776613"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Mjo-Hn-5At">
+            <objects>
+                <navigationController storyboardIdentifier="OrganizationsShowNC" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="rao-N9-D5u" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Hdy-nr-g7r">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="mPM-eg-IYH" kind="relationship" relationship="rootViewController" id="f2k-M0-pip"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pcs-sf-ZYU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="258" y="158"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="image-add-organization-normal" width="22" height="19"/>
+    </resources>
+</document>

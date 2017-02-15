@@ -10,6 +10,8 @@ import UIKit
 
 class MenuViewCell: UITableViewCell {
     // MARK: - Properties
+    var storyboardName = String()
+
     @IBOutlet weak var iconView: UIImageView!
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var pushCountButton: UIButton!
@@ -34,6 +36,9 @@ class MenuViewCell: UITableViewCell {
         self.title.text = item.title
         self.title.textAlignment = .left
         self.title.textColor = UIColor.init(hexString: (item.isColor!) ? "#f4d76c" : "#dedede", withAlpha: 1.0)
+        
+        // Storyboard name
+        self.storyboardName = item.storyboardName
         
         // Icon
         self.iconView.image = UIImage.init(named: item.imageName)

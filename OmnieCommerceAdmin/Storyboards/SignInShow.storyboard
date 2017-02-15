@@ -180,8 +180,11 @@
                     <connections>
                         <outlet property="containerStackView" destination="hRJ-Kv-iEv" id="wZT-RZ-qgF"/>
                         <outlet property="containerView" destination="Bkf-2j-A4E" id="8PP-ZG-ZvY"/>
+                        <outlet property="facebookButton" destination="FUe-Vr-dK3" id="2rI-Tg-cKp"/>
+                        <outlet property="googleButton" destination="t79-g0-C66" id="RGj-ks-4MB"/>
                         <outlet property="logoBackgroundView" destination="sZU-HY-1oB" id="cpz-WX-BCF"/>
                         <outlet property="socialButtonsView" destination="OQ1-Mo-Zb1" id="hsS-tG-suC"/>
+                        <outlet property="vkontakteButton" destination="uER-Ag-co8" id="yfu-Lq-BUl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WS8-oP-PqE" userLabel="First Responder" sceneMemberID="firstResponder"/>

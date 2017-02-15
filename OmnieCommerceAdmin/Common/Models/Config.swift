@@ -35,8 +35,8 @@ typealias SearchLocation                            =   (coordinates: CLLocation
 struct Config {
     struct Constants {
         // FIXME: - DELETE AFTER TEST
-        static let isUserGuest: Bool                =   true
-        static let isAppThemesDark                  =   false
+        static var isUserGuest: Bool                =   true
+        static let isAppThemesDark                  =   true
         static let errorMessageViewHeight: CGFloat  =   14
     }
     

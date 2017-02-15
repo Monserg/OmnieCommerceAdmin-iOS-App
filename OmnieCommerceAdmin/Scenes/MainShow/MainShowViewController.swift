@@ -79,7 +79,7 @@ class MainShowViewController: UIViewController, MainShowViewControllerInput {
         let isUserGuest = Config.Constants.isUserGuest
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
 
-        if (isUserGuest) {
+//        if (isUserGuest) {
             // Initial VC
             let signInShowStoryboard = UIStoryboard(name: "SignInShow", bundle: nil)
             let initialNC = signInShowStoryboard.instantiateViewController(withIdentifier: "SignInShowNC") as! UINavigationController
@@ -88,15 +88,15 @@ class MainShowViewController: UIViewController, MainShowViewControllerInput {
                 appDelegate.window!.rootViewController = initialNC
                 appDelegate.window!.makeKeyAndVisible()
             }
-        } else {
-            // Initial VC
-            let organizationsShowStoryboard = UIStoryboard(name: "SlideMenuShow", bundle: nil)
-            let initialVC = organizationsShowStoryboard.instantiateViewController(withIdentifier: "SWRevealVC") as! SWRevealViewController
-            
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
-                appDelegate.window!.rootViewController = initialVC
-                appDelegate.window!.makeKeyAndVisible()
-            }
-        }
+//        } else {
+//            // Initial VC
+//            let organizationsShowStoryboard = UIStoryboard(name: "SlideMenuShow", bundle: nil)
+//            let initialVC = organizationsShowStoryboard.instantiateViewController(withIdentifier: "SWRevealVC") as! SWRevealViewController
+//            
+//            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
+//                appDelegate.window!.rootViewController = initialVC
+//                appDelegate.window!.makeKeyAndVisible()
+//            }
+//        }
     }
 }

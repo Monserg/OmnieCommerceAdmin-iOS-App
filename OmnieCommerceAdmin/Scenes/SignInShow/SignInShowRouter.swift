@@ -10,6 +10,7 @@
 //
 
 import UIKit
+import SWRevealViewController
 
 // MARK: - Input & Output protocols
 protocol SignInShowRouterInput {
@@ -23,6 +24,13 @@ class SignInShowRouter: SignInShowRouterInput {
     
     
     // MARK: - Custom Functions. Navigation
+    func navigateAuthorizedUser(duringStartApp: Bool) {
+        let revealVC = UIStoryboard(name: "SlideMenuShow", bundle: nil).instantiateViewController(withIdentifier: "SWRevealVC") as! SWRevealViewController
+        revealVC.modalTransitionStyle = (duringStartApp) ? .crossDissolve : .flipHorizontal
+        
+        self.viewController.present(revealVC, animated: !duringStartApp, completion: nil)
+    }
+    
     func navigateBetweenContainerSubviews() {
         // Apply Container childVC
         viewController.signInContainerShowVC = UIStoryboard(name: "SignInShow", bundle: nil).instantiateViewController(withIdentifier: "SignInContainerShowVC") as? SignInContainerShowViewController

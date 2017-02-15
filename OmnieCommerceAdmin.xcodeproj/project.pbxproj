@@ -31,6 +31,32 @@
 		B1576BC41E4CAB020067020B /* OrganizationAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1576BBD1E4CAB020067020B /* OrganizationAddViewController.swift */; };
 		B1576BC51E4CAB020067020B /* OrganizationAddWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1576BBE1E4CAB020067020B /* OrganizationAddWorker.swift */; };
 		B1576BC71E4CAB120067020B /* OrganizationAdd.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1576BC61E4CAB120067020B /* OrganizationAdd.storyboard */; };
+		B15B752C1E52BAAE00044F88 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B15B752B1E52BAAE00044F88 /* SystemConfiguration.framework */; };
+		B15B75301E52BAD600044F88 /* SwiftyVK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B15B752F1E52BAD600044F88 /* SwiftyVK.framework */; };
+		B15B75321E52BB0F00044F88 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B15B75311E52BB0F00044F88 /* AddressBook.framework */; };
+		B15B753C1E52F40B00044F88 /* NewsShowConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15B75351E52F40B00044F88 /* NewsShowConfigurator.swift */; };
+		B15B753D1E52F40B00044F88 /* NewsShowInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15B75361E52F40B00044F88 /* NewsShowInteractor.swift */; };
+		B15B753E1E52F40B00044F88 /* NewsShowModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15B75371E52F40B00044F88 /* NewsShowModels.swift */; };
+		B15B753F1E52F40B00044F88 /* NewsShowPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15B75381E52F40B00044F88 /* NewsShowPresenter.swift */; };
+		B15B75401E52F40B00044F88 /* NewsShowRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15B75391E52F40B00044F88 /* NewsShowRouter.swift */; };
+		B15B75411E52F40B00044F88 /* NewsShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15B753A1E52F40B00044F88 /* NewsShowViewController.swift */; };
+		B15B75421E52F40B00044F88 /* NewsShowWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15B753B1E52F40B00044F88 /* NewsShowWorker.swift */; };
+		B15B75441E52F46E00044F88 /* NewsShow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B15B75431E52F46E00044F88 /* NewsShow.storyboard */; };
+		B15B754D1E5300B400044F88 /* OrganizationsShowConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15B75461E5300B400044F88 /* OrganizationsShowConfigurator.swift */; };
+		B15B754E1E5300B400044F88 /* OrganizationsShowInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15B75471E5300B400044F88 /* OrganizationsShowInteractor.swift */; };
+		B15B754F1E5300B400044F88 /* OrganizationsShowModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15B75481E5300B400044F88 /* OrganizationsShowModels.swift */; };
+		B15B75501E5300B400044F88 /* OrganizationsShowPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15B75491E5300B400044F88 /* OrganizationsShowPresenter.swift */; };
+		B15B75511E5300B400044F88 /* OrganizationsShowRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15B754A1E5300B400044F88 /* OrganizationsShowRouter.swift */; };
+		B15B75521E5300B400044F88 /* OrganizationsShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15B754B1E5300B400044F88 /* OrganizationsShowViewController.swift */; };
+		B15B75531E5300B400044F88 /* OrganizationsShowWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15B754C1E5300B400044F88 /* OrganizationsShowWorker.swift */; };
+		B15B75551E5329F400044F88 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B15B75541E5329F400044F88 /* Bolts.framework */; };
+		B15B75571E532A0D00044F88 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B15B75561E532A0D00044F88 /* FBSDKCoreKit.framework */; };
+		B15B75591E532A1A00044F88 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B15B75581E532A1A00044F88 /* FBSDKLoginKit.framework */; };
+		B15B755B1E532A2A00044F88 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B15B755A1E532A2A00044F88 /* FBSDKShareKit.framework */; };
+		B15B755D1E53443100044F88 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B15B755C1E53443100044F88 /* GoogleService-Info.plist */; };
+		B15B755F1E53456B00044F88 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B15B755E1E53456B00044F88 /* StoreKit.framework */; };
+		B15B75611E53466B00044F88 /* GoogleSignIn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B15B75601E53466B00044F88 /* GoogleSignIn.framework */; };
+		B15B75631E53492800044F88 /* GoogleSignInDependencies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B15B75621E53492800044F88 /* GoogleSignInDependencies.framework */; };
 		B15BBB381E4B4F2700287505 /* RepetitionPasswordShowConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15BBB311E4B4F2700287505 /* RepetitionPasswordShowConfigurator.swift */; };
 		B15BBB391E4B4F2700287505 /* RepetitionPasswordShowInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15BBB321E4B4F2700287505 /* RepetitionPasswordShowInteractor.swift */; };
 		B15BBB3A1E4B4F2700287505 /* RepetitionPasswordShowModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15BBB331E4B4F2700287505 /* RepetitionPasswordShowModels.swift */; };
@@ -40,6 +66,8 @@
 		B15BBB3E1E4B4F2700287505 /* RepetitionPasswordShowWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15BBB371E4B4F2700287505 /* RepetitionPasswordShowWorker.swift */; };
 		B16E8A7E1E51A57B00385CCB /* SlideMenuShow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B16E8A7D1E51A57B00385CCB /* SlideMenuShow.storyboard */; };
 		B16E8A801E51B7FC00385CCB /* MenuViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16E8A7F1E51B7FC00385CCB /* MenuViewCell.swift */; };
+		B177E5281E54081B004F1390 /* ManagerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B177E5271E54081B004F1390 /* ManagerTableViewController.swift */; };
+		B177E52A1E542DF3004F1390 /* ManagerRevealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B177E5291E542DF3004F1390 /* ManagerRevealViewController.swift */; };
 		B18373A81E458AE200A2F36B /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18373A71E458AE200A2F36B /* CustomButton.swift */; };
 		B18373AA1E458B0800A2F36B /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18373A91E458B0800A2F36B /* UIButton+Extensions.swift */; };
 		B18DF0D71E5167EB00C9FBB3 /* SlideMenuShowConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18DF0D01E5167EB00C9FBB3 /* SlideMenuShowConfigurator.swift */; };
@@ -138,14 +166,7 @@
 		B1FBB8CE1E43C75600C02BC3 /* UBUNTU-M.TTF in Resources */ = {isa = PBXBuildFile; fileRef = B1FBB8B51E43C75600C02BC3 /* UBUNTU-M.TTF */; };
 		B1FBB8CF1E43C75600C02BC3 /* UBUNTU-MI.TTF in Resources */ = {isa = PBXBuildFile; fileRef = B1FBB8B61E43C75600C02BC3 /* UBUNTU-MI.TTF */; };
 		B1FBB8D01E43C75600C02BC3 /* UBUNTU-R.TTF in Resources */ = {isa = PBXBuildFile; fileRef = B1FBB8B71E43C75600C02BC3 /* UBUNTU-R.TTF */; };
-		B1FBB8D91E43D28F00C02BC3 /* OrganizationsListShowConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FBB8D21E43D28F00C02BC3 /* OrganizationsListShowConfigurator.swift */; };
-		B1FBB8DA1E43D28F00C02BC3 /* OrganizationsListShowInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FBB8D31E43D28F00C02BC3 /* OrganizationsListShowInteractor.swift */; };
-		B1FBB8DB1E43D28F00C02BC3 /* OrganizationsListShowModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FBB8D41E43D28F00C02BC3 /* OrganizationsListShowModels.swift */; };
-		B1FBB8DC1E43D28F00C02BC3 /* OrganizationsListShowPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FBB8D51E43D28F00C02BC3 /* OrganizationsListShowPresenter.swift */; };
-		B1FBB8DD1E43D28F00C02BC3 /* OrganizationsListShowRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FBB8D61E43D28F00C02BC3 /* OrganizationsListShowRouter.swift */; };
-		B1FBB8DE1E43D28F00C02BC3 /* OrganizationsListShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FBB8D71E43D28F00C02BC3 /* OrganizationsListShowViewController.swift */; };
-		B1FBB8DF1E43D28F00C02BC3 /* OrganizationsListShowWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FBB8D81E43D28F00C02BC3 /* OrganizationsListShowWorker.swift */; };
-		B1FBB8E11E43D29E00C02BC3 /* OrganizationsListShow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1FBB8E01E43D29E00C02BC3 /* OrganizationsListShow.storyboard */; };
+		B1FBB8E11E43D29E00C02BC3 /* OrganizationsShow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1FBB8E01E43D29E00C02BC3 /* OrganizationsShow.storyboard */; };
 		CEB9B377E3609B58B2AB0EAF /* Pods_OmnieCommerceAdmin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1422BA451A52E370BFCE6B0 /* Pods_OmnieCommerceAdmin.framework */; };
 /* End PBXBuildFile section */
 
@@ -177,6 +198,33 @@
 		B1576BBD1E4CAB020067020B /* OrganizationAddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationAddViewController.swift; sourceTree = "<group>"; };
 		B1576BBE1E4CAB020067020B /* OrganizationAddWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationAddWorker.swift; sourceTree = "<group>"; };
 		B1576BC61E4CAB120067020B /* OrganizationAdd.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = OrganizationAdd.storyboard; sourceTree = "<group>"; };
+		B15B752B1E52BAAE00044F88 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		B15B752D1E52BAC200044F88 /* GoogleToolboxForMac.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleToolboxForMac.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/OmnieCommerceAdmin-bcosfrpwwujhsieglpxkruqvzabh/Build/Products/Debug-iphonesimulator/GoogleToolboxForMac/GoogleToolboxForMac.framework"; sourceTree = "<group>"; };
+		B15B752F1E52BAD600044F88 /* SwiftyVK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyVK.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/OmnieCommerceAdmin-bcosfrpwwujhsieglpxkruqvzabh/Build/Products/Debug-iphonesimulator/SwiftyVK/SwiftyVK.framework"; sourceTree = "<group>"; };
+		B15B75311E52BB0F00044F88 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		B15B75351E52F40B00044F88 /* NewsShowConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsShowConfigurator.swift; sourceTree = "<group>"; };
+		B15B75361E52F40B00044F88 /* NewsShowInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsShowInteractor.swift; sourceTree = "<group>"; };
+		B15B75371E52F40B00044F88 /* NewsShowModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsShowModels.swift; sourceTree = "<group>"; };
+		B15B75381E52F40B00044F88 /* NewsShowPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsShowPresenter.swift; sourceTree = "<group>"; };
+		B15B75391E52F40B00044F88 /* NewsShowRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsShowRouter.swift; sourceTree = "<group>"; };
+		B15B753A1E52F40B00044F88 /* NewsShowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsShowViewController.swift; sourceTree = "<group>"; };
+		B15B753B1E52F40B00044F88 /* NewsShowWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsShowWorker.swift; sourceTree = "<group>"; };
+		B15B75431E52F46E00044F88 /* NewsShow.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NewsShow.storyboard; sourceTree = "<group>"; };
+		B15B75461E5300B400044F88 /* OrganizationsShowConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationsShowConfigurator.swift; sourceTree = "<group>"; };
+		B15B75471E5300B400044F88 /* OrganizationsShowInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationsShowInteractor.swift; sourceTree = "<group>"; };
+		B15B75481E5300B400044F88 /* OrganizationsShowModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationsShowModels.swift; sourceTree = "<group>"; };
+		B15B75491E5300B400044F88 /* OrganizationsShowPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationsShowPresenter.swift; sourceTree = "<group>"; };
+		B15B754A1E5300B400044F88 /* OrganizationsShowRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationsShowRouter.swift; sourceTree = "<group>"; };
+		B15B754B1E5300B400044F88 /* OrganizationsShowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationsShowViewController.swift; sourceTree = "<group>"; };
+		B15B754C1E5300B400044F88 /* OrganizationsShowWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationsShowWorker.swift; sourceTree = "<group>"; };
+		B15B75541E5329F400044F88 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		B15B75561E532A0D00044F88 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		B15B75581E532A1A00044F88 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		B15B755A1E532A2A00044F88 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
+		B15B755C1E53443100044F88 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B15B755E1E53456B00044F88 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		B15B75601E53466B00044F88 /* GoogleSignIn.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleSignIn.framework; sourceTree = "<group>"; };
+		B15B75621E53492800044F88 /* GoogleSignInDependencies.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleSignInDependencies.framework; sourceTree = "<group>"; };
 		B15BBB311E4B4F2700287505 /* RepetitionPasswordShowConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepetitionPasswordShowConfigurator.swift; sourceTree = "<group>"; };
 		B15BBB321E4B4F2700287505 /* RepetitionPasswordShowInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepetitionPasswordShowInteractor.swift; sourceTree = "<group>"; };
 		B15BBB331E4B4F2700287505 /* RepetitionPasswordShowModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepetitionPasswordShowModels.swift; sourceTree = "<group>"; };
@@ -186,6 +234,8 @@
 		B15BBB371E4B4F2700287505 /* RepetitionPasswordShowWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepetitionPasswordShowWorker.swift; sourceTree = "<group>"; };
 		B16E8A7D1E51A57B00385CCB /* SlideMenuShow.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SlideMenuShow.storyboard; sourceTree = "<group>"; };
 		B16E8A7F1E51B7FC00385CCB /* MenuViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewCell.swift; sourceTree = "<group>"; };
+		B177E5271E54081B004F1390 /* ManagerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagerTableViewController.swift; sourceTree = "<group>"; };
+		B177E5291E542DF3004F1390 /* ManagerRevealViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagerRevealViewController.swift; sourceTree = "<group>"; };
 		B18373A71E458AE200A2F36B /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		B18373A91E458B0800A2F36B /* UIButton+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
 		B18DF0D01E5167EB00C9FBB3 /* SlideMenuShowConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideMenuShowConfigurator.swift; sourceTree = "<group>"; };
@@ -293,14 +343,7 @@
 		B1FBB8B51E43C75600C02BC3 /* UBUNTU-M.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "UBUNTU-M.TTF"; sourceTree = "<group>"; };
 		B1FBB8B61E43C75600C02BC3 /* UBUNTU-MI.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "UBUNTU-MI.TTF"; sourceTree = "<group>"; };
 		B1FBB8B71E43C75600C02BC3 /* UBUNTU-R.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "UBUNTU-R.TTF"; sourceTree = "<group>"; };
-		B1FBB8D21E43D28F00C02BC3 /* OrganizationsListShowConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationsListShowConfigurator.swift; sourceTree = "<group>"; };
-		B1FBB8D31E43D28F00C02BC3 /* OrganizationsListShowInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationsListShowInteractor.swift; sourceTree = "<group>"; };
-		B1FBB8D41E43D28F00C02BC3 /* OrganizationsListShowModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationsListShowModels.swift; sourceTree = "<group>"; };
-		B1FBB8D51E43D28F00C02BC3 /* OrganizationsListShowPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationsListShowPresenter.swift; sourceTree = "<group>"; };
-		B1FBB8D61E43D28F00C02BC3 /* OrganizationsListShowRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationsListShowRouter.swift; sourceTree = "<group>"; };
-		B1FBB8D71E43D28F00C02BC3 /* OrganizationsListShowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationsListShowViewController.swift; sourceTree = "<group>"; };
-		B1FBB8D81E43D28F00C02BC3 /* OrganizationsListShowWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationsListShowWorker.swift; sourceTree = "<group>"; };
-		B1FBB8E01E43D29E00C02BC3 /* OrganizationsListShow.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = OrganizationsListShow.storyboard; sourceTree = "<group>"; };
+		B1FBB8E01E43D29E00C02BC3 /* OrganizationsShow.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = OrganizationsShow.storyboard; sourceTree = "<group>"; };
 		E1422BA451A52E370BFCE6B0 /* Pods_OmnieCommerceAdmin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OmnieCommerceAdmin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -309,9 +352,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B15B755F1E53456B00044F88 /* StoreKit.framework in Frameworks */,
+				B15B75631E53492800044F88 /* GoogleSignInDependencies.framework in Frameworks */,
+				B15B75321E52BB0F00044F88 /* AddressBook.framework in Frameworks */,
+				B15B75301E52BAD600044F88 /* SwiftyVK.framework in Frameworks */,
+				B15B755B1E532A2A00044F88 /* FBSDKShareKit.framework in Frameworks */,
+				B15B75591E532A1A00044F88 /* FBSDKLoginKit.framework in Frameworks */,
+				B15B752C1E52BAAE00044F88 /* SystemConfiguration.framework in Frameworks */,
 				B15732DE1E4E245D00685A46 /* CoreLocation.framework in Frameworks */,
+				B15B75611E53466B00044F88 /* GoogleSignIn.framework in Frameworks */,
 				B15732D01E4DD96D00685A46 /* MapKit.framework in Frameworks */,
+				B15B75571E532A0D00044F88 /* FBSDKCoreKit.framework in Frameworks */,
 				CEB9B377E3609B58B2AB0EAF /* Pods_OmnieCommerceAdmin.framework in Frameworks */,
+				B15B75551E5329F400044F88 /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,9 +383,20 @@
 		6C3DEC16B866523CFFCC2056 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B15B75311E52BB0F00044F88 /* AddressBook.framework */,
+				B15B75541E5329F400044F88 /* Bolts.framework */,
 				B15732DD1E4E245D00685A46 /* CoreLocation.framework */,
+				B15B75561E532A0D00044F88 /* FBSDKCoreKit.framework */,
+				B15B75581E532A1A00044F88 /* FBSDKLoginKit.framework */,
+				B15B755A1E532A2A00044F88 /* FBSDKShareKit.framework */,
+				B15B75601E53466B00044F88 /* GoogleSignIn.framework */,
+				B15B75621E53492800044F88 /* GoogleSignInDependencies.framework */,
+				B15B752D1E52BAC200044F88 /* GoogleToolboxForMac.framework */,
 				B15732CF1E4DD96D00685A46 /* MapKit.framework */,
 				E1422BA451A52E370BFCE6B0 /* Pods_OmnieCommerceAdmin.framework */,
+				B15B755E1E53456B00044F88 /* StoreKit.framework */,
+				B15B752F1E52BAD600044F88 /* SwiftyVK.framework */,
+				B15B752B1E52BAAE00044F88 /* SystemConfiguration.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -372,6 +436,34 @@
 				B1576BBE1E4CAB020067020B /* OrganizationAddWorker.swift */,
 			);
 			path = OrganizationAdd;
+			sourceTree = "<group>";
+		};
+		B15B75341E52F3F500044F88 /* NewsShow */ = {
+			isa = PBXGroup;
+			children = (
+				B15B75351E52F40B00044F88 /* NewsShowConfigurator.swift */,
+				B15B75361E52F40B00044F88 /* NewsShowInteractor.swift */,
+				B15B75371E52F40B00044F88 /* NewsShowModels.swift */,
+				B15B75381E52F40B00044F88 /* NewsShowPresenter.swift */,
+				B15B75391E52F40B00044F88 /* NewsShowRouter.swift */,
+				B15B753A1E52F40B00044F88 /* NewsShowViewController.swift */,
+				B15B753B1E52F40B00044F88 /* NewsShowWorker.swift */,
+			);
+			path = NewsShow;
+			sourceTree = "<group>";
+		};
+		B15B75451E53008B00044F88 /* OrganizationsShow */ = {
+			isa = PBXGroup;
+			children = (
+				B15B75461E5300B400044F88 /* OrganizationsShowConfigurator.swift */,
+				B15B75471E5300B400044F88 /* OrganizationsShowInteractor.swift */,
+				B15B75481E5300B400044F88 /* OrganizationsShowModels.swift */,
+				B15B75491E5300B400044F88 /* OrganizationsShowPresenter.swift */,
+				B15B754A1E5300B400044F88 /* OrganizationsShowRouter.swift */,
+				B15B754B1E5300B400044F88 /* OrganizationsShowViewController.swift */,
+				B15B754C1E5300B400044F88 /* OrganizationsShowWorker.swift */,
+			);
+			path = OrganizationsShow;
 			sourceTree = "<group>";
 		};
 		B15BBB301E4B4F0100287505 /* RepetitionPasswordShow */ = {
@@ -504,6 +596,8 @@
 			isa = PBXGroup;
 			children = (
 				B1CF2F311E4EAE2300DF5CA0 /* LocationManager.swift */,
+				B177E5291E542DF3004F1390 /* ManagerRevealViewController.swift */,
+				B177E5271E54081B004F1390 /* ManagerTableViewController.swift */,
 				B1CF2F3B1E4F882000DF5CA0 /* MediaManager.swift */,
 			);
 			path = Managers;
@@ -558,9 +652,10 @@
 			isa = PBXGroup;
 			children = (
 				B1EADCEB1E4374C2006341D2 /* Main.storyboard */,
+				B15B75431E52F46E00044F88 /* NewsShow.storyboard */,
 				B1576BC61E4CAB120067020B /* OrganizationAdd.storyboard */,
 				B15732CD1E4DD7A100685A46 /* OrganizationMapShow.storyboard */,
-				B1FBB8E01E43D29E00C02BC3 /* OrganizationsListShow.storyboard */,
+				B1FBB8E01E43D29E00C02BC3 /* OrganizationsShow.storyboard */,
 				B1C320C11E44A41700D84BC3 /* SignInShow.storyboard */,
 				B16E8A7D1E51A57B00385CCB /* SlideMenuShow.storyboard */,
 			);
@@ -589,9 +684,10 @@
 				B1E29E511E49F76C0068B642 /* EnterCodeShow */,
 				B1C320D21E44A45900D84BC3 /* ForgotPasswordShow */,
 				B1EADD261E43906D006341D2 /* MainShow */,
+				B15B75341E52F3F500044F88 /* NewsShow */,
 				B1576BB71E4CAADD0067020B /* OrganizationAdd */,
 				B15732BE1E4DD76200685A46 /* OrganizationMapShow */,
-				B1FBB8D11E43D23100C02BC3 /* OrganizationsListShow */,
+				B15B75451E53008B00044F88 /* OrganizationsShow */,
 				B15BBB301E4B4F0100287505 /* RepetitionPasswordShow */,
 				B1BD7B1E1E464CA500D8FA0A /* SignInContainerShow */,
 				B1C320C31E44A41E00D84BC3 /* SignInShow */,
@@ -613,6 +709,7 @@
 			children = (
 				B1FBB89E1E43C75600C02BC3 /* Fonts */,
 				B15732DB1E4DF62A00685A46 /* Info.plist */,
+				B15B755C1E53443100044F88 /* GoogleService-Info.plist */,
 				B1EADCD11E436316006341D2 /* Assets.xcassets */,
 				B1EADCF71E437534006341D2 /* Localizable.strings */,
 				B1CF2F371E4F01D200DF5CA0 /* InfoPlist.strings */,
@@ -710,20 +807,6 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		B1FBB8D11E43D23100C02BC3 /* OrganizationsListShow */ = {
-			isa = PBXGroup;
-			children = (
-				B1FBB8D21E43D28F00C02BC3 /* OrganizationsListShowConfigurator.swift */,
-				B1FBB8D31E43D28F00C02BC3 /* OrganizationsListShowInteractor.swift */,
-				B1FBB8D41E43D28F00C02BC3 /* OrganizationsListShowModels.swift */,
-				B1FBB8D51E43D28F00C02BC3 /* OrganizationsListShowPresenter.swift */,
-				B1FBB8D61E43D28F00C02BC3 /* OrganizationsListShowRouter.swift */,
-				B1FBB8D71E43D28F00C02BC3 /* OrganizationsListShowViewController.swift */,
-				B1FBB8D81E43D28F00C02BC3 /* OrganizationsListShowWorker.swift */,
-			);
-			path = OrganizationsListShow;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -802,9 +885,10 @@
 				B1EADCF51E437534006341D2 /* Localizable.strings in Resources */,
 				B1FBB8C81E43C75600C02BC3 /* UBUNTU-B.TTF in Resources */,
 				B1EADCD21E436316006341D2 /* Assets.xcassets in Resources */,
-				B1FBB8E11E43D29E00C02BC3 /* OrganizationsListShow.storyboard in Resources */,
+				B1FBB8E11E43D29E00C02BC3 /* OrganizationsShow.storyboard in Resources */,
 				B1576BB61E4C97210067020B /* MainNavigationBarView.xib in Resources */,
 				B1FBB8B91E43C75600C02BC3 /* helveticaneuecyr-blackitalic.otf in Resources */,
+				B15B755D1E53443100044F88 /* GoogleService-Info.plist in Resources */,
 				B1FBB8CA1E43C75600C02BC3 /* UBUNTU-C.TTF in Resources */,
 				B15732CE1E4DD7A100685A46 /* OrganizationMapShow.storyboard in Resources */,
 				B1FBB8CF1E43C75600C02BC3 /* UBUNTU-MI.TTF in Resources */,
@@ -820,6 +904,7 @@
 				B1FBB8C11E43C75600C02BC3 /* helveticaneuecyr-medium.otf in Resources */,
 				B1FBB8BA1E43C75600C02BC3 /* helveticaneuecyr-bold.otf in Resources */,
 				B1FBB8CD1E43C75600C02BC3 /* UBUNTU-LI.TTF in Resources */,
+				B15B75441E52F46E00044F88 /* NewsShow.storyboard in Resources */,
 				B1FBB8C01E43C75600C02BC3 /* helveticaneuecyr-lightitalic.otf in Resources */,
 				B1FBB8BE1E43C75600C02BC3 /* helveticaneuecyr-italic.otf in Resources */,
 				B1FBB8C31E43C75600C02BC3 /* helveticaneuecyr-roman.otf in Resources */,
@@ -891,7 +976,6 @@
 				B15BBB3A1E4B4F2700287505 /* RepetitionPasswordShowModels.swift in Sources */,
 				B1576BC21E4CAB020067020B /* OrganizationAddPresenter.swift in Sources */,
 				B1576BC41E4CAB020067020B /* OrganizationAddViewController.swift in Sources */,
-				B1FBB8DC1E43D28F00C02BC3 /* OrganizationsListShowPresenter.swift in Sources */,
 				B1CF2F3C1E4F882000DF5CA0 /* MediaManager.swift in Sources */,
 				B1E29E5A1E49F7910068B642 /* EnterCodeShowInteractor.swift in Sources */,
 				B1C320CB1E44A43A00D84BC3 /* SignInShowConfigurator.swift in Sources */,
@@ -901,9 +985,9 @@
 				B15BBB3E1E4B4F2700287505 /* RepetitionPasswordShowWorker.swift in Sources */,
 				B1CAF3A61E50298900BBBDEB /* UIImage+Extensions.swift in Sources */,
 				B1EADCCB1E436316006341D2 /* AppDelegate.swift in Sources */,
+				B177E5281E54081B004F1390 /* ManagerTableViewController.swift in Sources */,
 				B18DF0DC1E5167EB00C9FBB3 /* SlideMenuShowViewController.swift in Sources */,
-				B1FBB8DF1E43D28F00C02BC3 /* OrganizationsListShowWorker.swift in Sources */,
-				B1FBB8DA1E43D28F00C02BC3 /* OrganizationsListShowInteractor.swift in Sources */,
+				B15B754F1E5300B400044F88 /* OrganizationsShowModels.swift in Sources */,
 				B1FBB8921E43B99000C02BC3 /* UIView+Extensions.swift in Sources */,
 				B15BBB381E4B4F2700287505 /* RepetitionPasswordShowConfigurator.swift in Sources */,
 				B1576BC51E4CAB020067020B /* OrganizationAddWorker.swift in Sources */,
@@ -920,26 +1004,31 @@
 				B1C320DD1E44A46700D84BC3 /* ForgotPasswordShowPresenter.swift in Sources */,
 				B15BBB391E4B4F2700287505 /* RepetitionPasswordShowInteractor.swift in Sources */,
 				B1BD7B271E464CD700D8FA0A /* SignInContainerShowInteractor.swift in Sources */,
+				B15B753C1E52F40B00044F88 /* NewsShowConfigurator.swift in Sources */,
+				B15B753E1E52F40B00044F88 /* NewsShowModels.swift in Sources */,
 				B1C320D01E44A43A00D84BC3 /* SignInShowViewController.swift in Sources */,
 				B15732BB1E4DA11500685A46 /* UniversalTextFieldView.swift in Sources */,
 				B1576BC11E4CAB020067020B /* OrganizationAddModels.swift in Sources */,
+				B15B75521E5300B400044F88 /* OrganizationsShowViewController.swift in Sources */,
 				B1C320D11E44A43A00D84BC3 /* SignInShowWorker.swift in Sources */,
 				B18DF0DD1E5167EB00C9FBB3 /* SlideMenuShowWorker.swift in Sources */,
 				B1FBB89D1E43C57000C02BC3 /* String+Ext.swift in Sources */,
 				B1BD7B1C1E4634D100D8FA0A /* CustomStoriboardSegue.swift in Sources */,
 				B1E29E5D1E49F7910068B642 /* EnterCodeShowRouter.swift in Sources */,
 				B1C320E61E44CBCD00D84BC3 /* CustomView.swift in Sources */,
-				B1FBB8DB1E43D28F00C02BC3 /* OrganizationsListShowModels.swift in Sources */,
 				B1BD7AF91E45F64800D8FA0A /* BaseViewController.swift in Sources */,
 				B15732CA1E4DD78100685A46 /* OrganizationMapShowRouter.swift in Sources */,
+				B15B754E1E5300B400044F88 /* OrganizationsShowInteractor.swift in Sources */,
 				B1E29E5F1E49F7910068B642 /* EnterCodeShowWorker.swift in Sources */,
 				B18DF0D71E5167EB00C9FBB3 /* SlideMenuShowConfigurator.swift in Sources */,
 				B15BBB3B1E4B4F2700287505 /* RepetitionPasswordShowPresenter.swift in Sources */,
 				B1533C2B1E49A8BC00418B96 /* ErrorMessageView.swift in Sources */,
+				B15B75401E52F40B00044F88 /* NewsShowRouter.swift in Sources */,
 				B1EADD081E4386F2006341D2 /* Config.swift in Sources */,
 				B1576BBF1E4CAB020067020B /* OrganizationAddConfigurator.swift in Sources */,
 				B15732C81E4DD78100685A46 /* OrganizationMapShowModels.swift in Sources */,
 				B1EADD301E4390A2006341D2 /* MainShowModels.swift in Sources */,
+				B15B753F1E52F40B00044F88 /* NewsShowPresenter.swift in Sources */,
 				B1EADD321E4390A2006341D2 /* MainShowRouter.swift in Sources */,
 				B1FBB89B1E43C50300C02BC3 /* UILabel+Extensions.swift in Sources */,
 				B18DF0D81E5167EB00C9FBB3 /* SlideMenuShowInteractor.swift in Sources */,
@@ -949,10 +1038,14 @@
 				B18DF0DA1E5167EB00C9FBB3 /* SlideMenuShowPresenter.swift in Sources */,
 				B1E29E5B1E49F7910068B642 /* EnterCodeShowModels.swift in Sources */,
 				B1C320CF1E44A43A00D84BC3 /* SignInShowRouter.swift in Sources */,
-				B1FBB8DE1E43D28F00C02BC3 /* OrganizationsListShowViewController.swift in Sources */,
 				B15732C91E4DD78100685A46 /* OrganizationMapShowPresenter.swift in Sources */,
+				B15B753D1E52F40B00044F88 /* NewsShowInteractor.swift in Sources */,
+				B15B754D1E5300B400044F88 /* OrganizationsShowConfigurator.swift in Sources */,
 				B1EADD341E4390A2006341D2 /* MainShowWorker.swift in Sources */,
+				B177E52A1E542DF3004F1390 /* ManagerRevealViewController.swift in Sources */,
 				B1C320BA1E44A3C400D84BC3 /* SignUpShowModels.swift in Sources */,
+				B15B75531E5300B400044F88 /* OrganizationsShowWorker.swift in Sources */,
+				B15B75511E5300B400044F88 /* OrganizationsShowRouter.swift in Sources */,
 				B1C320BB1E44A3C400D84BC3 /* SignUpShowPresenter.swift in Sources */,
 				B1DB436D1E48D2D400D3DE77 /* PasswordStrengthLevelView.swift in Sources */,
 				B15732CB1E4DD78100685A46 /* OrganizationMapShowViewController.swift in Sources */,
@@ -962,11 +1055,11 @@
 				B1CF2F321E4EAE2300DF5CA0 /* LocationManager.swift in Sources */,
 				B1C320DC1E44A46700D84BC3 /* ForgotPasswordShowModels.swift in Sources */,
 				B1CAF3AC1E505E8800BBBDEB /* PointAnnotation.swift in Sources */,
-				B1FBB8D91E43D28F00C02BC3 /* OrganizationsListShowConfigurator.swift in Sources */,
 				B18373AA1E458B0800A2F36B /* UIButton+Extensions.swift in Sources */,
 				B1C320E01E44A46700D84BC3 /* ForgotPasswordShowWorker.swift in Sources */,
-				B1FBB8DD1E43D28F00C02BC3 /* OrganizationsListShowRouter.swift in Sources */,
+				B15B75421E52F40B00044F88 /* NewsShowWorker.swift in Sources */,
 				B15BBB3C1E4B4F2700287505 /* RepetitionPasswordShowRouter.swift in Sources */,
+				B15B75501E5300B400044F88 /* OrganizationsShowPresenter.swift in Sources */,
 				B1FBB8941E43BA9700C02BC3 /* UIColor+Extensions.swift in Sources */,
 				B1C320BC1E44A3C400D84BC3 /* SignUpShowRouter.swift in Sources */,
 				B1BD7B2A1E464CD700D8FA0A /* SignInContainerShowRouter.swift in Sources */,
@@ -989,6 +1082,7 @@
 				B15732C71E4DD78100685A46 /* OrganizationMapShowInteractor.swift in Sources */,
 				B1BD7B291E464CD700D8FA0A /* SignInContainerShowPresenter.swift in Sources */,
 				B1E29E5E1E49F7910068B642 /* EnterCodeShowViewController.swift in Sources */,
+				B15B75411E52F40B00044F88 /* NewsShowViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1130,6 +1224,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 2DS2B364WY;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/OmnieCommerceAdmin/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1145,6 +1243,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 2DS2B364WY;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/OmnieCommerceAdmin/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

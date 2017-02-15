@@ -13,7 +13,10 @@ import UIKit
 
 class SlideMenuShowWorker {
     // MARK: - Custom Functions. Business Logic
-    func doSomeWork() {
-        // NOTE: Do the work
+    func createSlideMenu() -> SlideMenu.Items {
+        var items = SlideMenu.Items()
+        items = SlideMenu.Items.init()
+        
+        return items
     }
 }

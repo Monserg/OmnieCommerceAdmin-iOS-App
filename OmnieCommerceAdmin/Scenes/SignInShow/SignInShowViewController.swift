@@ -10,6 +10,9 @@
 //
 
 import UIKit
+import SwiftyVK
+import FBSDKLoginKit
+import GoogleSignIn
 
 // MARK: - Input protocols for current ViewController component VIP-cicle
 protocol SignInShowViewControllerInput {
@@ -26,7 +29,7 @@ enum AnimationDirection {
     case FromRightToLeft
 }
 
-class SignInShowViewController: BaseViewController, SignInShowViewControllerInput {
+class SignInShowViewController: BaseViewController {
     // MARK: - Properties
     var interactor: SignInShowViewControllerOutput!
     var router: SignInShowRouter!
@@ -51,6 +54,12 @@ class SignInShowViewController: BaseViewController, SignInShowViewControllerInpu
             router.removeInactiveViewController(inactiveViewController: oldValue)
         }
     }
+    
+    // Social network buttons
+    @IBOutlet weak var vkontakteButton: CustomButton!
+    @IBOutlet weak var googleButton: CustomButton!
+    @IBOutlet weak var facebookButton: CustomButton!
+
 
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var logoBackgroundView: UIView!
@@ -83,16 +92,10 @@ class SignInShowViewController: BaseViewController, SignInShowViewControllerInpu
         hideNavigationBar()
         
         // Apply Container childVC
-        router.navigateBetweenContainerSubviews()
+        (Config.Constants.isUserGuest) ? router.navigateBetweenContainerSubviews() : router.navigateAuthorizedUser(duringStartApp: true)
         
         // Setup App background color theme
         logoBackgroundView.applyBackgroundTheme()
-    }
-    
-    // Display logic
-    func displaySomething(viewModel: SignInShowModels.User.ViewModel) {
-        // NOTE: Display the result from the Presenter
-        // nameTextField.text = viewModel.name
     }
     
     
@@ -102,11 +105,32 @@ class SignInShowViewController: BaseViewController, SignInShowViewControllerInpu
     }
     
     @IBAction func handlerGoogleButtonTap(_ sender: CustomButton) {
-        print(object: "\(type(of: self)): \(#function) run. Google button tap.")
+        GIDSignIn.sharedInstance().signIn()
+        UIApplication.shared.statusBarStyle = .default
     }
     
     @IBAction func handlerFbButtonTap(_ sender: CustomButton) {
-        print(object: "\(type(of: self)): \(#function) run. Facebook button tap.")
+        let facebookLoginManager = FBSDKLoginManager()
+        
+        UINavigationBar.appearance().barTintColor = UIColor.red
+        facebookLoginManager.logIn(withReadPermissions: ["public_profile", "email"], from: self) { (result, error) in
+            // Done
+            guard result?.token != nil else {
+                return
+            }
+            
+            // Return values
+            let fbToken = result!.token.tokenString
+            let fbUserID = result!.token.userID
+            
+//            let fbUserEmail = result!.value(forKey: "e-mail") as! String
+//            let strFirstName = result!.value(forKey: "first_name") as! String
+//            let strLastName = result!.value(forKey: "last_name") as! String
+//            let strPictureURL = result!.value(forKey: "picture")value(forKey: "data")value(forKey: "url") as! String
+            
+            Config.Constants.isUserGuest = false
+            self.router.navigateAuthorizedUser(duringStartApp: false)
+        }
     }
 
     
@@ -115,3 +139,13 @@ class SignInShowViewController: BaseViewController, SignInShowViewControllerInpu
         view.endEditing(true)
     }
 }
+
+
+// MARK: - SignInShowViewControllerInput
+extension SignInShowViewController: SignInShowViewControllerInput {
+    func displaySomething(viewModel: SignInShowModels.User.ViewModel) {
+        // NOTE: Display the result from the Presenter
+        // nameTextField.text = viewModel.name
+    }
+}
+

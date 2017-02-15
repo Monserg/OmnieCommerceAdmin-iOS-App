@@ -15,6 +15,7 @@ class BaseViewController: UIViewController {
     var selectedRange: CGRect?
     var scrollViewBase = UIScrollView()
     var navigationBarView: MainNavigationBarView?
+
     var blackOutView: UIView?
     
     var haveMenuItem = false {
@@ -245,7 +246,7 @@ extension BaseViewController: SWRevealViewControllerDelegate {
         switch position {
         case .right, .rightMost, .rightMostRemoved:
             // Create blackOutView
-            blackOutView = UIView.init() //(frame: CGRect.init(x: 0, y: (navigationBarView?.frame.maxY)!, width: view.frame.width, height: view.frame.height - (navigationBarView?.frame.maxY)!))
+            blackOutView = UIView.init()
             blackOutView!.backgroundColor = UIColor.init(hexString: "#000000", withAlpha: 0.2)
             blackOutView!.translatesAutoresizingMaskIntoConstraints = false
 

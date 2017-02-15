@@ -13,12 +13,12 @@ import UIKit
 
 // MARK: - Input protocols for current Interactor component VIP-cicle
 protocol SlideMenuShowInteractorInput {
-    func doSomething(requestModel: SlideMenuShowModels.Something.RequestModel)
+    func didLoadData(withRequestModel requestModel: SlideMenuShowModels.DataSource.RequestModel)
 }
 
 // MARK: - Output protocols for Presenter component VIP-cicle
 protocol SlideMenuShowInteractorOutput {
-    func presentSomething(responseModel: SlideMenuShowModels.Something.ResponseModel)
+    func didPrepareShowData(fromResponseModel responseModel: SlideMenuShowModels.DataSource.ResponseModel)
 }
 
 class SlideMenuShowInteractor: SlideMenuShowInteractorInput {
@@ -28,13 +28,11 @@ class SlideMenuShowInteractor: SlideMenuShowInteractorInput {
     
     
     // MARK: - Custom Functions. Business logic
-    func doSomething(requestModel: SlideMenuShowModels.Something.RequestModel) {
-        // NOTE: Create some Worker to do the work
+    func didLoadData(withRequestModel requestModel: SlideMenuShowModels.DataSource.RequestModel) {
         worker = SlideMenuShowWorker()
-        worker.doSomeWork()
+        let items = worker.createSlideMenu()
         
         // NOTE: Pass the result to the Presenter
-        let responseModel = SlideMenuShowModels.Something.ResponseModel()
-        presenter.presentSomething(responseModel: responseModel)
+        presenter.didPrepareShowData(fromResponseModel: SlideMenuShowModels.DataSource.ResponseModel(dataSource: items))
     }
 }
