@@ -43,27 +43,27 @@
                                                             <userDefinedRuntimeAttribute type="string" keyPath="buttonStyle" value="Border"/>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <action selector="handlerVkButtonTap:" destination="593-QN-qcr" eventType="touchUpInside" id="psG-4A-VQp"/>
+                                                            <action selector="handlerSocialNetworkButtonTap:" destination="593-QN-qcr" eventType="touchUpInside" id="g84-y3-kAN"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t79-g0-C66" userLabel="Google Button" customClass="CustomButton" customModule="OmnieCommerceAdmin" customModuleProvider="target">
+                                                    <button opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t79-g0-C66" userLabel="Google Button" customClass="CustomButton" customModule="OmnieCommerceAdmin" customModuleProvider="target">
                                                         <rect key="frame" x="58" y="0.0" width="36" height="36"/>
                                                         <state key="normal" image="icon-google-normal"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="buttonStyle" value="Border"/>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <action selector="handlerGoogleButtonTap:" destination="593-QN-qcr" eventType="touchUpInside" id="wHp-5B-Yhs"/>
+                                                            <action selector="handlerSocialNetworkButtonTap:" destination="593-QN-qcr" eventType="touchUpInside" id="vjs-OJ-rcX"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FUe-Vr-dK3" userLabel="FB Button" customClass="CustomButton" customModule="OmnieCommerceAdmin" customModuleProvider="target">
+                                                    <button opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FUe-Vr-dK3" userLabel="FB Button" customClass="CustomButton" customModule="OmnieCommerceAdmin" customModuleProvider="target">
                                                         <rect key="frame" x="116" y="0.0" width="36" height="36"/>
                                                         <state key="normal" image="icon-facebook-normal"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="buttonStyle" value="Border"/>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <action selector="handlerFbButtonTap:" destination="593-QN-qcr" eventType="touchUpInside" id="v5k-jE-MPI"/>
+                                                            <action selector="handlerSocialNetworkButtonTap:" destination="593-QN-qcr" eventType="touchUpInside" id="pWa-Vy-b0O"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -830,7 +830,7 @@
                                                                 <rect key="frame" x="0.0" y="217" width="375" height="95.5"/>
                                                                 <subviews>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Nb3-dm-1aq">
-                                                                        <rect key="frame" x="110.5" y="23" width="155.5" height="30"/>
+                                                                        <rect key="frame" x="110" y="23" width="155.5" height="30"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not yet registered?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TZp-21-ZpS" customClass="CustomLabel" customModule="OmnieCommerceAdmin" customModuleProvider="target">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="102.5" height="30"/>
@@ -987,7 +987,7 @@
             <objects>
                 <navigationController storyboardIdentifier="SignInShowNC" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="6uh-TR-iIl" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="w6Z-de-2vo">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="w6Z-de-2vo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

@@ -103,13 +103,18 @@ class SignInShowViewController: BaseViewController {
     
     
     // MARK: - Actions
-    @IBAction func handlerVkButtonTap(_ sender: CustomButton) {
+    @IBAction func handlerSocialNetworkButtonTap(_ sender: CustomButton) {
         print(object: "\(type(of: self)): \(#function) run. Vk button tap.")
+       
+        // Only for Google
+        if (sender.tag == 1) {
+            GIDSignIn.sharedInstance().uiDelegate = self
+        }
         
-        socialNetworkManager = SocialNetworkManager(withNetwork: .VK)
+        socialNetworkManager = SocialNetworkManager(withNetwork: sender.tag)
         socialNetworkManager!.didAuthorizeUser()
-        
-        // Handler Log In successfull request
+
+        // Handler Auth successfull request
         socialNetworkManager?.handlerSendButtonCompletion = { _ in
             Config.Constants.isUserGuest = false
             
@@ -117,35 +122,6 @@ class SignInShowViewController: BaseViewController {
         }
     }
     
-    @IBAction func handlerGoogleButtonTap(_ sender: CustomButton) {
-        GIDSignIn.sharedInstance().signIn()
-        UIApplication.shared.statusBarStyle = .default
-    }
-    
-    @IBAction func handlerFbButtonTap(_ sender: CustomButton) {
-        let facebookLoginManager = FBSDKLoginManager()
-        
-        UINavigationBar.appearance().barTintColor = UIColor.red
-        facebookLoginManager.logIn(withReadPermissions: ["public_profile", "email"], from: self) { (result, error) in
-            // Done
-            guard result?.token != nil else {
-                return
-            }
-            
-            // Return values
-            let fbToken = result!.token.tokenString
-            let fbUserID = result!.token.userID
-            
-//            let fbUserEmail = result!.value(forKey: "e-mail") as! String
-//            let strFirstName = result!.value(forKey: "first_name") as! String
-//            let strLastName = result!.value(forKey: "last_name") as! String
-//            let strPictureURL = result!.value(forKey: "picture")value(forKey: "data")value(forKey: "url") as! String
-            
-            Config.Constants.isUserGuest = false
-            self.router.navigateAuthorizedUser(duringStartApp: false)
-        }
-    }
-
     
     // MARK: - Gesture
     @IBAction func handlerTapGestureRecognizer(_ sender: UITapGestureRecognizer) {
@@ -159,6 +135,29 @@ extension SignInShowViewController: SignInShowViewControllerInput {
     func displaySomething(viewModel: SignInShowModels.User.ViewModel) {
         // NOTE: Display the result from the Presenter
         // nameTextField.text = viewModel.name
+    }
+}
+
+
+// MARK: - GIDSignInUIDelegate
+extension SignInShowViewController: GIDSignInUIDelegate {
+    // Stop the UIActivityIndicatorView animation that was started when the user pressed the Sign In button
+    private func signInWillDispatch(signIn: GIDSignIn!, error: NSError!) {
+        print(object: #function)
+    }
+    
+    // Present a view that prompts the user to sign in with Google
+    private func signIn(signIn: GIDSignIn!, presentViewController viewController: UIViewController!) {
+        print(object: #function)
+        
+        self.present(viewController, animated: true, completion: nil)
+    }
+    
+    // Dismiss the "Sign in with Google" view
+    private func signIn(signIn: GIDSignIn!, dismissViewController viewController: UIViewController!) {
+        print(object: #function)
+        
+        self.dismiss(animated: true, completion: nil)
     }
 }
 

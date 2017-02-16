@@ -24,17 +24,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Facebook SDK
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
-        // Google SDK
-        // Initialize sign-in
-        var configureError: NSError?
-        GGLContext.sharedInstance().configureWithError(&configureError)
-        assert(configureError == nil, "Error configuring Google services: \(configureError)")
-        
-        GIDSignIn.sharedInstance().delegate = self
-
-        // VK
-//        VK.configure(withAppId: "5878120", delegate: SocialNetworkManager())
-        
         return true
     }
 
@@ -78,35 +67,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 
-}
-
-
-// MARK: - Google SDK
-extension AppDelegate: GIDSignInDelegate {
-    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-        if (error == nil) {
-            // Perform any operations on signed in user here.
-            let userId = user.userID                  // For client-side use only!
-            let idToken = user.authentication.idToken // Safe to send to the server
-            let fullName = user.profile.name
-            let givenName = user.profile.givenName
-            let familyName = user.profile.familyName
-            let email = user.profile.email
-            
-            print(userId ?? "xxx")
-            print(idToken ?? "xxx")
-            print(fullName ?? "xxx")
-            print(familyName ?? "xxx")
-            print(givenName ?? "xxx")
-            print(email ?? "xxx")
-
-            // ...
-        } else {
-            print("\(error.localizedDescription)")
-        }
-    }
-    
-    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
-        print(error.localizedDescription)
-    }
 }

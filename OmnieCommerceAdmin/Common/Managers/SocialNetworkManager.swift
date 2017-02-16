@@ -8,40 +8,68 @@
 
 import Foundation
 import SwiftyVK
+import Google
+import GoogleSignIn
 
-enum NetworkType {
-    case VK
-    case Google
-    case Facebook
+enum NetworkType: Int {
+    case VK         =   0
+    case Google     =   1
+    case Facebook   =   2
 }
 
-class SocialNetworkManager {
+class SocialNetworkManager: UIViewController {
     // MARK: - Properties
     let vkAppID = "5878120"
     let vkScope: Set<VK.Scope> = [.messages, .offline, .friends, .wall, .photos, .audio, .video, .docs, .market, .email]
+    
+    let googleID = "272068998103-o0pio7arbpcm4oruphira844pmvu05a5.apps.googleusercontent.com"
+    var configureError: NSError?
+    var networkType: NetworkType!
     
     var handlerSendButtonCompletion: HandlerSendButtonCompletion?
     
     
     // MARK: - Custom Functions
-    init(withNetwork type: NetworkType) {
-        switch type {
+    init(withNetwork rawValue: NetworkType.RawValue) {
+        super.init(nibName: nil, bundle: nil)
+        
+        self.networkType = NetworkType.init(rawValue: rawValue)
+        
+        switch networkType! {
         case .VK:
             VK.config.logToConsole = true
             VK.configure(withAppId: vkAppID, delegate: self)
+
+        case .Google:
+            GGLContext.sharedInstance().configureWithError(&configureError)
+            assert(configureError == nil, "Error configuring Google services: \(configureError)")
+
+            GIDSignIn.sharedInstance().clientID = googleID
+            GIDSignIn.sharedInstance().delegate = self
 
         default:
             break
         }
     }
     
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     // VK
     func didAuthorizeUser() {
-        VK.logOut()
-        print("SwiftyVK: LogOut")
-        
-        VK.logIn()
-        print("SwiftyVK: authorize")
+        switch networkType! {
+        case .VK:
+            VK.logOut()
+            VK.logIn()
+
+        case .Google:
+            GIDSignIn.sharedInstance().signOut()
+            GIDSignIn.sharedInstance().signIn()
+
+        default:
+            break
+        }
     }
     
     func didLogoutUser() {
@@ -92,5 +120,37 @@ extension SocialNetworkManager: VKDelegate {
     // Only for iOS! Called when need to display a view from SwiftyVK
     func vkWillPresentView() -> UIViewController {
         return UIApplication.shared.delegate!.window!!.rootViewController!
+    }
+}
+
+
+// MARK: - Google SDK
+extension SocialNetworkManager: GIDSignInDelegate {
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        if (error == nil) {
+            // Perform any operations on signed in user here.
+            let userId = user.userID                  // For client-side use only!
+            let idToken = user.authentication.idToken // Safe to send to the server
+            let fullName = user.profile.name
+            let givenName = user.profile.givenName
+            let familyName = user.profile.familyName
+            let email = user.profile.email
+            
+            print(userId ?? "xxx")
+            print(idToken ?? "xxx")
+            print(fullName ?? "xxx")
+            print(familyName ?? "xxx")
+            print(givenName ?? "xxx")
+            print(email ?? "xxx")
+            
+            Config.Constants.isUserGuest = false
+            handlerSendButtonCompletion!()
+        } else {
+            print("\(error.localizedDescription)")
+        }
+    }
+    
+    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
+        print(error.localizedDescription)
     }
 }
