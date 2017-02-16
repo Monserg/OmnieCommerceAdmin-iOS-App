@@ -40,6 +40,16 @@
 				<string>com.googleusercontent.apps.272068998103-o0pio7arbpcm4oruphira844pmvu05a5</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>vk5878120</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>vk5878120</string>
+			</array>
+		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>

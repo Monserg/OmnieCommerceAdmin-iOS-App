@@ -68,6 +68,7 @@
 		B16E8A801E51B7FC00385CCB /* MenuViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16E8A7F1E51B7FC00385CCB /* MenuViewCell.swift */; };
 		B177E5281E54081B004F1390 /* ManagerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B177E5271E54081B004F1390 /* ManagerTableViewController.swift */; };
 		B177E52A1E542DF3004F1390 /* ManagerRevealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B177E5291E542DF3004F1390 /* ManagerRevealViewController.swift */; };
+		B177E5641E555BEA004F1390 /* SocialNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B177E5631E555BEA004F1390 /* SocialNetworkManager.swift */; };
 		B18373A81E458AE200A2F36B /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18373A71E458AE200A2F36B /* CustomButton.swift */; };
 		B18373AA1E458B0800A2F36B /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18373A91E458B0800A2F36B /* UIButton+Extensions.swift */; };
 		B18DF0D71E5167EB00C9FBB3 /* SlideMenuShowConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18DF0D01E5167EB00C9FBB3 /* SlideMenuShowConfigurator.swift */; };
@@ -236,6 +237,7 @@
 		B16E8A7F1E51B7FC00385CCB /* MenuViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewCell.swift; sourceTree = "<group>"; };
 		B177E5271E54081B004F1390 /* ManagerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagerTableViewController.swift; sourceTree = "<group>"; };
 		B177E5291E542DF3004F1390 /* ManagerRevealViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagerRevealViewController.swift; sourceTree = "<group>"; };
+		B177E5631E555BEA004F1390 /* SocialNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialNetworkManager.swift; sourceTree = "<group>"; };
 		B18373A71E458AE200A2F36B /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		B18373A91E458B0800A2F36B /* UIButton+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
 		B18DF0D01E5167EB00C9FBB3 /* SlideMenuShowConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideMenuShowConfigurator.swift; sourceTree = "<group>"; };
@@ -599,6 +601,7 @@
 				B177E5291E542DF3004F1390 /* ManagerRevealViewController.swift */,
 				B177E5271E54081B004F1390 /* ManagerTableViewController.swift */,
 				B1CF2F3B1E4F882000DF5CA0 /* MediaManager.swift */,
+				B177E5631E555BEA004F1390 /* SocialNetworkManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -983,6 +986,7 @@
 				B1C320CE1E44A43A00D84BC3 /* SignInShowPresenter.swift in Sources */,
 				B18DF0E21E516C1600C9FBB3 /* SlideMenu.swift in Sources */,
 				B15BBB3E1E4B4F2700287505 /* RepetitionPasswordShowWorker.swift in Sources */,
+				B177E5641E555BEA004F1390 /* SocialNetworkManager.swift in Sources */,
 				B1CAF3A61E50298900BBBDEB /* UIImage+Extensions.swift in Sources */,
 				B1EADCCB1E436316006341D2 /* AppDelegate.swift in Sources */,
 				B177E5281E54081B004F1390 /* ManagerTableViewController.swift in Sources */,

@@ -35,6 +35,9 @@ class SignInShowViewController: BaseViewController {
     var router: SignInShowRouter!
     var animationDirection: AnimationDirection?
     
+    // Managers
+    var socialNetworkManager: SocialNetworkManager?
+    
     // Container childVC
     var signUpShowVC: SignUpShowViewController?
     var signInContainerShowVC: SignInContainerShowViewController?
@@ -102,6 +105,14 @@ class SignInShowViewController: BaseViewController {
     // MARK: - Actions
     @IBAction func handlerVkButtonTap(_ sender: CustomButton) {
         print(object: "\(type(of: self)): \(#function) run. Vk button tap.")
+        
+        if (VK.state == .unknown || VK.state == .configured) {
+            socialNetworkManager = SocialNetworkManager(withNetwork: .VK)
+
+            socialNetworkManager!.didAuthorizeUser()
+        } else if (VK.state == .authorized) {
+            socialNetworkManager?.didLogoutUser()
+        }
     }
     
     @IBAction func handlerGoogleButtonTap(_ sender: CustomButton) {

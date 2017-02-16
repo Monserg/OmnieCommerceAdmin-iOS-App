@@ -32,6 +32,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         GIDSignIn.sharedInstance().delegate = self
 
+        // VK
+//        VK.configure(withAppId: "5878120", delegate: SocialNetworkManager())
+        
         return true
     }
 
