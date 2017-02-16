@@ -13,18 +13,21 @@ import UIKit
 
 // MARK: - Input protocols for current ViewController component VIP-cicle
 protocol SignUpShowViewControllerInput {
-    func showPasswordTextFieldCheckResult(viewModel: SignUpShowModels.PasswordTextField.ViewModel)
+    func didShowPasswordTextFieldCheckResult(fromViewModel viewModel: SignUpShowModels.PasswordTextField.ViewModel)
+    func didShowShowRegisterUserResult(fromViewModel viewModel: SignUpShowModels.User.ViewModel)
 }
 
 // MARK: - Output protocols for Interactor component VIP-cicle
 protocol SignUpShowViewControllerOutput {
-    func validatePasswordTextFieldStrengthFrom(requestModel: SignUpShowModels.PasswordTextField.Request)
+    func didValidatePasswordTextFieldStrength(fromRequestModel requestModel: SignUpShowModels.PasswordTextField.RequestModel)
+    func didRegisterUser(fromRequestModel requestModel: SignUpShowModels.User.RequestModel)
 }
 
 class SignUpShowViewController: BaseViewController {
     // MARK: - Properties
     var interactor: SignUpShowViewControllerOutput!
     var router: SignUpShowRouter!
+    var handlerRegisterButtonCompletion: HandlerRegisterButtonCompletion?
     var handlerCancelButtonCompletion: HandlerCancelButtonCompletion?
     var passwordStrengthLevel: PasswordStrengthLevel = .None
     
@@ -69,7 +72,23 @@ class SignUpShowViewController: BaseViewController {
     
     // MARK: - Actions
     @IBAction func handlerRegisterButtonTap(_ sender: CustomButton) {
-        router.navigateToAppMainViewController()
+        let name = textFieldsCollection.first?.text
+        let email = textFieldsCollection[1].text
+        let password = textFieldsCollection.last?.text
+        
+        guard !((name?.isEmpty)!), !((password?.isEmpty)!), !((email?.isEmpty)!) else {
+            // TODO: - ADD ALERT
+            showAlertView(withTitle: "Info".localized(), andMessage: "All fields can be...".localized())
+            
+            return
+        }
+        
+        if (textFieldsCollection[1].checkEmailValidation(email!)) {
+            let requestModel = SignUpShowModels.User.RequestModel(name: name!, email: email!, password: password!)
+            interactor.didRegisterUser(fromRequestModel: requestModel)
+        } else {
+            emailErrorMessageView.didShow(true, withConstraint: emailErrorMessageViewTopConstraint)
+        }
     }
     
     @IBAction func handlerCancelButtonTap(_ sender: CustomButton) {
@@ -80,10 +99,22 @@ class SignUpShowViewController: BaseViewController {
 
 // MARK: - SignUpShowViewControllerInput
 extension SignUpShowViewController: SignUpShowViewControllerInput {
-    func showPasswordTextFieldCheckResult(viewModel: SignUpShowModels.PasswordTextField.ViewModel) {
+    func didShowPasswordTextFieldCheckResult(fromViewModel: SignUpShowModels.PasswordTextField.ViewModel) {
 //        passwordCheckResult?.strengthLevel = viewModel.strengthLevel
 //        passwordCheckResult?.isValid = viewModel.isValid
 //        passwordStrengthView.passwordStrengthLevel = viewModel.strengthLevel
+    }
+    
+    func didShowShowRegisterUserResult(fromViewModel viewModel: SignUpShowModels.User.ViewModel) {
+        guard viewModel.result.error == nil else {
+            self.showAlertView(withTitle: "Error".localized(), andMessage: (viewModel.result.error?.description)!)
+            
+            return
+        }
+        
+        Config.Constants.isUserGuest = false
+        
+        handlerRegisterButtonCompletion!()
     }
 }
 
@@ -92,10 +123,10 @@ extension SignUpShowViewController: SignUpShowViewControllerInput {
 extension SignUpShowViewController {
     override func textFieldDidEndEditing(_ textField: UITextField) {
         if (textField.tag == 1) {
-            if (!(textField as! CustomTextField).checkEmailValidation(textField.text!)) {
-                emailErrorMessageView.didShow(true, withConstraint: emailErrorMessageViewTopConstraint)
-            } else {
+            if ((textField as! CustomTextField).checkEmailValidation(textField.text!)) {
                 emailErrorMessageView.didShow(false, withConstraint: emailErrorMessageViewTopConstraint)
+            } else {
+                emailErrorMessageView.didShow(true, withConstraint: emailErrorMessageViewTopConstraint)
             }
         }
     }
@@ -121,12 +152,12 @@ extension SignUpShowViewController {
     
     override func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if (textField.tag == 1) {
-            if (!(textField as! CustomTextField).checkEmailValidation(textField.text!)) {
+            if ((textField as! CustomTextField).checkEmailValidation(textField.text!)) {
+                emailErrorMessageView.didShow(false, withConstraint: emailErrorMessageViewTopConstraint)
+            } else {
                 emailErrorMessageView.didShow(true, withConstraint: emailErrorMessageViewTopConstraint)
                 
                 return false
-            } else {
-                emailErrorMessageView.didShow(false, withConstraint: emailErrorMessageViewTopConstraint)
             }
         }
         

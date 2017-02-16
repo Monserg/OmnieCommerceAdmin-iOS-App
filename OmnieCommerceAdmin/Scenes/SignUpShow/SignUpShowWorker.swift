@@ -61,4 +61,10 @@ class SignUpShowWorker {
 //            return true
 //        }
 //    }
+    
+    func didApplyREST() -> ResponseAPI {
+        // NOTE: Do the work
+        
+        return (true, nil)
+    }
 }

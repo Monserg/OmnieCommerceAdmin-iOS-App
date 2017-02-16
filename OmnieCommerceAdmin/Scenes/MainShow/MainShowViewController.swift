@@ -76,7 +76,7 @@ class MainShowViewController: UIViewController, MainShowViewControllerInput {
     }
     
     func didSetupFirstScene() {
-        let isUserGuest = Config.Constants.isUserGuest
+//        let isUserGuest = Config.Constants.isUserGuest
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
 
 //        if (isUserGuest) {

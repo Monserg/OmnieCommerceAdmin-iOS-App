@@ -69,7 +69,6 @@ class SignInContainerShowViewController: BaseViewController {
     }
     
     @IBAction func handlerSignInButtonTap(_ sender: CustomButton) {
-        // NOTE: Ask the Interactor to do some work
         guard let name = textFieldsCollection.first?.text, let password = textFieldsCollection.last?.text, !(name.isEmpty), !(password.isEmpty) else {
             // TODO: - ADD ALERT
             showAlertView(withTitle: "Info".localized(), andMessage: "All fields can be...".localized())
@@ -92,6 +91,8 @@ extension SignInContainerShowViewController: SignInContainerShowViewControllerIn
             
             return
         }
+        
+        Config.Constants.isUserGuest = false
         
         handlerSendButtonCompletion!()
     }

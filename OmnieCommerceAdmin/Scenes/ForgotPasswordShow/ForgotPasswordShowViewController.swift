@@ -70,12 +70,14 @@ class ForgotPasswordShowViewController: BaseViewController {
     @IBAction func handlerSendButtonTap(_ sender: CustomButton) {
         let textField = textFieldsCollection.last!
         
-        if (!textField.checkEmailValidation(textField.text!)) {
-            phoneEmailErrorMessageView.didShow(true, withConstraint: phoneEmailErrorMessageViewTopConstraint)
+        if (textField.checkPhoneEmailValidation(textField.text!)) {
+            phoneEmailErrorMessageView.didShow(false, withConstraint: phoneEmailErrorMessageViewTopConstraint)
 
+            Config.Constants.isUserGuest = false
+            
             handlerSendButtonCompletion!()
         } else {
-            phoneEmailErrorMessageView.didShow(false, withConstraint: phoneEmailErrorMessageViewTopConstraint)
+            phoneEmailErrorMessageView.didShow(true, withConstraint: phoneEmailErrorMessageViewTopConstraint)
         }
     }
     
@@ -97,11 +99,13 @@ extension ForgotPasswordShowViewController: ForgotPasswordShowViewControllerInpu
 // MARK: - UITextFieldDelegate
 extension ForgotPasswordShowViewController {
     override func textFieldDidEndEditing(_ textField: UITextField) {
-        if (!(textField as! CustomTextField).checkEmailValidation(textField.text!)) {
-            phoneEmailErrorMessageView.didShow(true, withConstraint: phoneEmailErrorMessageViewTopConstraint)
-        } else {
+        if ((textField as! CustomTextField).checkPhoneEmailValidation(textField.text!)) {
             phoneEmailErrorMessageView.didShow(false, withConstraint: phoneEmailErrorMessageViewTopConstraint)
+        } else {
+            phoneEmailErrorMessageView.didShow(true, withConstraint: phoneEmailErrorMessageViewTopConstraint)
         }
+        
+        textField.attributedPlaceholder = (textField as! CustomTextField).attributedPlaceholderString
     }
     
     override func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -111,14 +115,14 @@ extension ForgotPasswordShowViewController {
     }
     
     override func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if (!(textField as! CustomTextField).checkPhoneEmailValidation(textField.text!)) {
-            phoneEmailErrorMessageView.didShow(true, withConstraint: phoneEmailErrorMessageViewTopConstraint)
-            
-            return false
-        } else {
+        if ((textField as! CustomTextField).checkPhoneEmailValidation(textField.text!)) {
             phoneEmailErrorMessageView.didShow(false, withConstraint: phoneEmailErrorMessageViewTopConstraint)
             
             textField.resignFirstResponder()
+        } else {
+            phoneEmailErrorMessageView.didShow(true, withConstraint: phoneEmailErrorMessageViewTopConstraint)
+            
+            return false
         }
         
         return true
