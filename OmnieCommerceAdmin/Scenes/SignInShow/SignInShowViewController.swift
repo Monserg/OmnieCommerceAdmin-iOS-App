@@ -106,12 +106,14 @@ class SignInShowViewController: BaseViewController {
     @IBAction func handlerVkButtonTap(_ sender: CustomButton) {
         print(object: "\(type(of: self)): \(#function) run. Vk button tap.")
         
-        if (VK.state == .unknown || VK.state == .configured) {
-            socialNetworkManager = SocialNetworkManager(withNetwork: .VK)
-
-            socialNetworkManager!.didAuthorizeUser()
-        } else if (VK.state == .authorized) {
-            socialNetworkManager?.didLogoutUser()
+        socialNetworkManager = SocialNetworkManager(withNetwork: .VK)
+        socialNetworkManager!.didAuthorizeUser()
+        
+        // Handler Log In successfull request
+        socialNetworkManager?.handlerSendButtonCompletion = { _ in
+            Config.Constants.isUserGuest = false
+            
+            self.router.navigateAuthorizedUser(duringStartApp: false)
         }
     }
     

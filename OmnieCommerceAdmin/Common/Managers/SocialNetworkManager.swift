@@ -20,6 +20,8 @@ class SocialNetworkManager {
     let vkAppID = "5878120"
     let vkScope: Set<VK.Scope> = [.messages, .offline, .friends, .wall, .photos, .audio, .video, .docs, .market, .email]
     
+    var handlerSendButtonCompletion: HandlerSendButtonCompletion?
+    
     
     // MARK: - Custom Functions
     init(withNetwork type: NetworkType) {
@@ -73,18 +75,14 @@ extension SocialNetworkManager: VKDelegate {
     // Called when the user is log in
     // Here you can start to send requests to the API
     func vkDidAuthorizeWith(parameters: Dictionary<String, String>) {
-        NotificationCenter.default.post(name: Notification.Name(rawValue: "didAuthorizeAppVK"), object: nil)
+        handlerSendButtonCompletion!()
     }
     
     // Called when user is log out
     func vkDidUnauthorize() {}
 
     // Called when SwiftyVK could not authorize. To let the application know that something went wrong
-    func vkAutorizationFailedWith(error: AuthError) {
-        print("Autorization failed with error: \n\(error)")
-        
-        NotificationCenter.default.post(name: Notification.Name(rawValue: "didNotAuthorizeAppVK"), object: nil)
-    }
+    func vkAutorizationFailedWith(error: AuthError) {}
 
     // Called when SwiftyVK need know where a token is located
     func vkShouldUseTokenPath() -> String? {

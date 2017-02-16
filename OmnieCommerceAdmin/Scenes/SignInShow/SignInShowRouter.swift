@@ -28,9 +28,7 @@ class SignInShowRouter: SignInShowRouterInput {
         let revealVC = UIStoryboard(name: "SlideMenuShow", bundle: nil).instantiateViewController(withIdentifier: "SWRevealVC") as! SWRevealViewController
         revealVC.modalTransitionStyle = (duringStartApp) ? .crossDissolve : .flipHorizontal
         
-        self.viewController.present(revealVC, animated: !duringStartApp, completion: {
-            self.viewController.activeViewController = self.viewController.signInContainerShowVC
-        })
+        self.viewController.present(revealVC, animated: !duringStartApp, completion: nil)
     }
     
     func navigateBetweenContainerSubviews() {
@@ -49,6 +47,7 @@ class SignInShowRouter: SignInShowRouterInput {
             // SignUpShowVC: Register button handler
             self.viewController.signUpShowVC?.handlerRegisterButtonCompletion = { _ in
                 self.navigateAuthorizedUser(duringStartApp: false)
+                self.viewController.activeViewController = self.viewController.signInContainerShowVC
             }
             
             // SignUpShowVC: Cancel button handler
