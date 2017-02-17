@@ -48,7 +48,18 @@ class SignInContainerShowViewController: BaseViewController {
         doInitialSetupOnLoad()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        view.applyBackgroundTheme()
+        
+        for view in view.subviews {
+            view.applyBackgroundTheme()
+        }
 
+    }
+
+    
     // MARK: - Custom Functions
     func doInitialSetupOnLoad() {
         // Delegates

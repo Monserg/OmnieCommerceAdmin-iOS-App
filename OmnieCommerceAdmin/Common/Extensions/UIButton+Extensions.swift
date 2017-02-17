@@ -70,7 +70,7 @@ extension UIButton {
             backgroundColor         =   UIColor.clear
             titleLabel?.font        =   UIFont.ubuntuLight14
             borderWidth             =   1
-            layer.cornerRadius      =   bounds.size.height / 2 * ((bounds.size.width == bounds.size.height) ? 1 : 1.0)
+            layer.cornerRadius      =   bounds.size.height / 2
             clipsToBounds           =   true
             
             guard imageView?.image != nil, titleLabel?.text != nil else {

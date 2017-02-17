@@ -26,9 +26,13 @@ class SignInShowRouter: SignInShowRouterInput {
     // MARK: - Custom Functions. Navigation
     func navigateAuthorizedUser(duringStartApp: Bool) {
         let revealVC = UIStoryboard(name: "SlideMenuShow", bundle: nil).instantiateViewController(withIdentifier: "SWRevealVC") as! SWRevealViewController
-        revealVC.modalTransitionStyle = (duringStartApp) ? .crossDissolve : .flipHorizontal
+        revealVC.modalTransitionStyle = .flipHorizontal //(duringStartApp) ? .crossDissolve : .flipHorizontal
         
-        self.viewController.present(revealVC, animated: !duringStartApp, completion: nil)
+        self.viewController.present(revealVC, animated: !duringStartApp, completion: {
+            if (duringStartApp) {
+                self.navigateBetweenContainerSubviews()
+            }
+        })
     }
     
     func navigateBetweenContainerSubviews() {

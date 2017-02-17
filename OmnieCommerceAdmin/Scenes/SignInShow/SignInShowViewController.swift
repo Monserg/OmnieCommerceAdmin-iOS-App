@@ -85,6 +85,14 @@ class SignInShowViewController: BaseViewController {
         doInitialSetupOnLoad()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        view.applyBackgroundTheme()
+        socialButtonsView.applyBackgroundTheme()
+        logoBackgroundView.applyBackgroundTheme()
+    }
+
 
     // MARK: - Custom Functions
     func doInitialSetupOnLoad() {
@@ -111,14 +119,36 @@ class SignInShowViewController: BaseViewController {
             GIDSignIn.sharedInstance().uiDelegate = self
         }
         
-        socialNetworkManager = SocialNetworkManager(withNetwork: sender.tag)
-        socialNetworkManager!.didAuthorizeUser()
-
-        // Handler Auth successfull request
-        socialNetworkManager?.handlerSendButtonCompletion = { _ in
-            Config.Constants.isUserGuest = false
+        if (sender.tag == 2) {
+            let facebook = FBSDKLoginManager()
             
-            self.router.navigateAuthorizedUser(duringStartApp: false)
+            facebook.logIn(withReadPermissions: ["public_profile", "email"], from: self) { (result, error) in
+                guard result?.token != nil else {
+                    return
+                }
+                
+                let fbToken = result!.token.tokenString
+                let fbUserID = result!.token.userID
+                
+                //            let fbUserEmail = result!.token.
+                //            let strFirstName: String = (result.objectForKey("first_name") as? String)!
+                //            let strLastName: String = (result.objectForKey("last_name") as? String)!
+                //            let strPictureURL: String = (result.objectForKey("picture")?.objectForKey("data")?.objectForKey("url") as? String)!
+                
+                Config.Constants.isUserGuest = false
+                
+                self.router.navigateAuthorizedUser(duringStartApp: false)
+            }
+        } else {
+            socialNetworkManager = SocialNetworkManager(withNetwork: sender.tag)
+            socialNetworkManager!.didAuthorizeUser()
+            
+            // Handler Auth successfull request
+            socialNetworkManager?.handlerSendButtonCompletion = { _ in
+                Config.Constants.isUserGuest = false
+                
+                self.router.navigateAuthorizedUser(duringStartApp: false)
+            }
         }
     }
     

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B106221D1E55983F00B2F3BD /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B106221C1E55983F00B2F3BD /* SafariServices.framework */; };
 		B137231D1E44E7DB001AE102 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B137231C1E44E7DB001AE102 /* CustomTextField.swift */; };
 		B1533C2B1E49A8BC00418B96 /* ErrorMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1533C2A1E49A8BC00418B96 /* ErrorMessageView.swift */; };
 		B15732BB1E4DA11500685A46 /* UniversalTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15732BA1E4DA11500685A46 /* UniversalTextFieldView.swift */; };
@@ -174,6 +175,7 @@
 /* Begin PBXFileReference section */
 		656665BD3E091CB0F3A1846D /* Pods-OmnieCommerceAdmin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OmnieCommerceAdmin.release.xcconfig"; path = "Pods/Target Support Files/Pods-OmnieCommerceAdmin/Pods-OmnieCommerceAdmin.release.xcconfig"; sourceTree = "<group>"; };
 		81B9D6299E9EC8CC0B95DFC7 /* Pods-OmnieCommerceAdmin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OmnieCommerceAdmin.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OmnieCommerceAdmin/Pods-OmnieCommerceAdmin.debug.xcconfig"; sourceTree = "<group>"; };
+		B106221C1E55983F00B2F3BD /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
 		B137231C1E44E7DB001AE102 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		B1533C2A1E49A8BC00418B96 /* ErrorMessageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorMessageView.swift; sourceTree = "<group>"; };
 		B15732BA1E4DA11500685A46 /* UniversalTextFieldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversalTextFieldView.swift; sourceTree = "<group>"; };
@@ -354,6 +356,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B106221D1E55983F00B2F3BD /* SafariServices.framework in Frameworks */,
 				B15B755F1E53456B00044F88 /* StoreKit.framework in Frameworks */,
 				B15B75631E53492800044F88 /* GoogleSignInDependencies.framework in Frameworks */,
 				B15B75321E52BB0F00044F88 /* AddressBook.framework in Frameworks */,
@@ -385,6 +388,7 @@
 		6C3DEC16B866523CFFCC2056 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B106221C1E55983F00B2F3BD /* SafariServices.framework */,
 				B15B75311E52BB0F00044F88 /* AddressBook.framework */,
 				B15B75541E5329F400044F88 /* Bolts.framework */,
 				B15732DD1E4E245D00685A46 /* CoreLocation.framework */,

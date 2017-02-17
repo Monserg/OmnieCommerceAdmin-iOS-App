@@ -10,6 +10,8 @@ import Foundation
 import SwiftyVK
 import Google
 import GoogleSignIn
+import FBSDKCoreKit
+import FBSDKLoginKit
 
 enum NetworkType: Int {
     case VK         =   0
@@ -47,8 +49,7 @@ class SocialNetworkManager: UIViewController {
             GIDSignIn.sharedInstance().clientID = googleID
             GIDSignIn.sharedInstance().delegate = self
 
-        default:
-            break
+        case .Facebook: break
         }
     }
     
@@ -103,6 +104,10 @@ extension SocialNetworkManager: VKDelegate {
     // Called when the user is log in
     // Here you can start to send requests to the API
     func vkDidAuthorizeWith(parameters: Dictionary<String, String>) {
+        guard handlerSendButtonCompletion != nil else {
+            return
+        }
+        
         handlerSendButtonCompletion!()
     }
     
